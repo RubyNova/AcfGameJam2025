@@ -1,10 +1,11 @@
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private FamiliarController _familiarControllerReference;
+
     [SerializeField]
     private Rigidbody2D _rigidbody;
     
@@ -20,15 +21,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _fallingGravityScale;
     
+    [SerializeField]
+    public bool ActiveCharacter;
     
     private bool _jumpRequested = false;
+    private bool switchCharacters = false;
     
-
+    
     [Header("Read-only Values")]
     
     [SerializeField]
     private bool _grounded = true;
-    
+
     [SerializeField]
     private Vector2 _movementVector = Vector2.zero;
 
@@ -41,41 +45,51 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(switchCharacters && ActiveCharacter)
+        {
+            SwapCharacters();
+        }
     }
 
     void FixedUpdate()
     {
-        _rigidbody.linearVelocityX = _movementVector.x * _movementSpeed;
-
-        if(_jumpRequested)
+        if(ActiveCharacter)
         {
-            if(_grounded)
+            _rigidbody.linearVelocityX = _movementVector.x * _movementSpeed;
+
+            if(_jumpRequested)
             {
-                _rigidbody.linearVelocity += Vector2.up * _jumpForce;
+                if(_grounded)
+                {
+                    _rigidbody.linearVelocity += Vector2.up * _jumpForce;
+                }
+                _jumpRequested = false;
             }
-            _jumpRequested = false;
-        }
 
-        if(_rigidbody.linearVelocityY >= 0)
-        {
-            _rigidbody.gravityScale = _gravityScale;
+            if(_rigidbody.linearVelocityY >= 0)
+            {
+                _rigidbody.gravityScale = _gravityScale;
+            }
+            else
+            {
+                _rigidbody.gravityScale = _fallingGravityScale;   
+            }
         }
-        else
-        {
-            _rigidbody.gravityScale = _fallingGravityScale;
-            
-        }
-
     }
 
     void OnMove(InputValue value)
     {
+        if(!ActiveCharacter)
+            return;
+
         _movementVector = value.Get<Vector2>();
     }
 
     void OnJump()
     {
+        if(!ActiveCharacter)
+            return;
+
         if(!_jumpRequested)
         {
             _jumpRequested = true;
@@ -84,8 +98,8 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision: "+collision.gameObject.name);
-        if(collision.gameObject.layer.Equals("Floor"))
+        Debug.Log("Collision: "+collision.gameObject.layer);
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             _grounded = true;
         }
@@ -93,12 +107,34 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("Collision Exit: "+collision.gameObject.name);
-        if(collision.gameObject.layer.Equals("Floor"))
+        Debug.Log("Collision Exit: "+collision.gameObject.layer);
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             _grounded = false;
         }
     }
 
+    void OnSwap(InputValue value)
+    {
+        if(value.isPressed && !switchCharacters)
+        {
+            if(!ActiveCharacter)
+                return;
+
+            Debug.Log("Swapping to player...");
+            switchCharacters = true;
+        }
+    }
+
+    private void SwapCharacters()
+    {
+        if(_familiarControllerReference)
+        {
+            ActiveCharacter = false;
+            switchCharacters = false;
+            _familiarControllerReference.ActiveCharacter = true;
+            _rigidbody.linearVelocity = Vector2.zero;
+        }
+    }
 
 }
