@@ -9,6 +9,6 @@ PhysicsMaterial2D:
   m_Name: Default2DPhsycisMat
   serializedVersion: 2
   friction: 0
-  bounciness: 0
-  m_FrictionCombine: 4
+  bounciness: 0.16
+  m_FrictionCombine: 0
   m_BounceCombine: 4

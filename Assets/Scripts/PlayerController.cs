@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision: "+collision.gameObject.name);
-        if(collision.gameObject.CompareTag("Floor"))
+        if(collision.gameObject.layer.Equals("Floor"))
         {
             _grounded = true;
         }
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log("Collision Exit: "+collision.gameObject.name);
-        if(collision.gameObject.CompareTag("Floor"))
+        if(collision.gameObject.layer.Equals("Floor"))
         {
             _grounded = false;
         }
