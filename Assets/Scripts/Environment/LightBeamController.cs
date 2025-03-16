@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Environment
@@ -8,28 +9,27 @@ namespace Environment
         [SerializeField]
         private LineRenderer _renderer;
 
+        [SerializeField]
+        private Transform _axisHelper;
+
         [Header("Configuration")]
         [SerializeField]
         private float _lightBeamLength;
 
         [SerializeField]
         private LightBeamMode _mode;
+        private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _contactPoint;
-        private Vector3? _targetPosition;
         private Vector3 _senderDirection;
+        private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[2];
+        private ContactFilter2D _beamRaycastFilter;
 
         private Vector3? RegisterPotentialBeamHit()
         {
-            print(_contactPoint.HasValue ? _contactPoint.Value + _senderDirection.normalized :  "Using transform position insted");
-            var hitInfo = Physics2D.Raycast(_contactPoint ?? transform.position, transform.right, _lightBeamLength);
+            var hitCount = Physics2D.Raycast(_contactPoint ?? transform.position, transform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
 
-            if (_contactPoint.HasValue)
-            {
-                Debug.DrawRay(_contactPoint.Value, transform.right, Color.black);
-            }
-
-            if (!hitInfo)
+            if (hitCount == 0)
             {
                 if (_targetHit != null)
                 {
@@ -40,7 +40,31 @@ namespace Environment
                 return null;
             }
 
-            var beamController = hitInfo.transform.GetComponentInChildren<LightBeamController>();
+            RaycastHit2D? hitInfo = null;
+            
+            foreach (var hit in _beamRaycastData)
+            {
+                if (hit.transform != null && hit.transform.GetComponentInChildren<LightBeamController>() != this)
+                {
+                    hitInfo = hit;
+                    break;
+                }
+            }
+
+            if (!hitInfo.HasValue)
+            {
+                if (_targetHit != null)
+                {
+                    _targetHit.UnregisterHit();
+                    _targetHit = null;
+                }
+
+                return null;
+            }
+
+            var hitInfoValue = hitInfo.Value;
+
+            var beamController = hitInfoValue.transform.GetComponentInChildren<LightBeamController>();
 
             if (beamController == null)
             {
@@ -50,13 +74,13 @@ namespace Environment
                     _targetHit = null;
                 }
 
-                return hitInfo.point; 
+                return hitInfoValue.point; 
             }
 
             if (_targetHit == beamController)
             {
-                beamController.RegisterHit(this, hitInfo.point);
-                return hitInfo.point;
+                beamController.RegisterHit(this, hitInfoValue.point);
+                return hitInfoValue.point;
             }
 
             if (_targetHit != null)
@@ -64,10 +88,10 @@ namespace Environment
                 _targetHit.UnregisterHit();
             }
 
-            beamController.RegisterHit(this, hitInfo.point);
+            beamController.RegisterHit(this, hitInfoValue.point);
             _targetHit = beamController;
 
-            return hitInfo.point;
+            return hitInfoValue.point;
         }
 
         private void ProduceBeam()
@@ -80,6 +104,9 @@ namespace Environment
 
         protected void Start()
         {
+            _beamRaycastFilter = new ContactFilter2D().NoFilter();
+            _cachedStartRotation = transform.rotation;
+
             if (_mode != LightBeamMode.Source)
             {
                 _renderer.enabled = false;   
@@ -110,12 +137,14 @@ namespace Environment
 
             _contactPoint = hitPoint;
             _renderer.enabled = true;
-            _senderDirection = hitPoint - transform.position;
+            _senderDirection = sender.transform.position - hitPoint;
 
             switch (_mode)
             {
                 case LightBeamMode.Bounce:
-                    var reflectedDirection = Vector2.Reflect(_senderDirection, transform.up);
+                    var reflectedDirection = Vector2.Reflect(_senderDirection, _axisHelper.up);
+                    var reflectedAngle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
                     break;
                 case LightBeamMode.Transform:
 
@@ -138,6 +167,7 @@ namespace Environment
                 _targetHit = null;
             }
 
+            transform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
             _contactPoint = null;
         }
