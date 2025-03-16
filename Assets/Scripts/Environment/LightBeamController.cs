@@ -1,4 +1,5 @@
 using System;
+using Controllers;
 using UnityEngine;
 
 namespace Environment
@@ -12,18 +13,26 @@ namespace Environment
         [SerializeField]
         private Transform _axisHelper;
 
+        [SerializeField]
+        private LightBeamModifier _beamModifierData;
+
         [Header("Configuration")]
         [SerializeField]
         private float _lightBeamLength;
 
         [SerializeField]
         private LightBeamMode _mode;
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _contactPoint;
         private Vector3 _senderDirection;
-        private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[2];
+        private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[3];
         private ContactFilter2D _beamRaycastFilter;
+        private int _beamPriority;
+        private PlayerController _player;
+
+        public LightBeamModifier BeamModifierData => _beamModifierData;
 
         private Vector3? RegisterPotentialBeamHit()
         {
@@ -37,17 +46,35 @@ namespace Environment
                     _targetHit = null;
                 }
 
+                if (_player != null)
+                {
+                    _beamModifierData.ClearBeamEffect(this, _beamPriority, _player);
+                    _player = null;
+                }
+
                 return null;
             }
 
             RaycastHit2D? hitInfo = null;
+
+            bool appliedForceToPlayerThisFrame = false;
             
             foreach (var hit in _beamRaycastData)
             {
                 if (hit.transform != null && hit.transform.GetComponentInChildren<LightBeamController>() != this)
                 {
-                    hitInfo = hit;
-                    break;
+                    _player = hit.transform.GetComponentInChildren<PlayerController>();
+
+                    if (_player != null && !appliedForceToPlayerThisFrame)
+                    {
+                        appliedForceToPlayerThisFrame = true;
+                        _beamModifierData.ApplyBeamEffect(this, _beamPriority, _player, transform.right);
+                    }
+                    else
+                    {
+                        hitInfo = hit;
+                        break;
+                    }
                 }
             }
 
@@ -100,6 +127,8 @@ namespace Environment
             var translatedPosition = transform.position;
             translatedPosition += transform.right * _lightBeamLength;
             _renderer.SetPositions(new[] { _contactPoint ?? transform.position, potentialHitPoint ?? translatedPosition});
+            _renderer.startColor = _beamModifierData.Colour; 
+            _renderer.endColor = _beamModifierData.Colour; 
         }
 
         protected void Start()
@@ -142,6 +171,7 @@ namespace Environment
             switch (_mode)
             {
                 case LightBeamMode.Bounce:
+                    _beamModifierData = sender.BeamModifierData;
                     var reflectedDirection = Vector2.Reflect(_senderDirection, _axisHelper.up);
                     var reflectedAngle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
@@ -165,6 +195,11 @@ namespace Environment
             {
                 _targetHit.UnregisterHit();
                 _targetHit = null;
+            }
+
+            if (_mode == LightBeamMode.Bounce)
+            {
+                _beamModifierData = null;   
             }
 
             transform.rotation = _cachedStartRotation;

@@ -1684,6 +1684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 331883125}
   _axisHelper: {fileID: 2037731236}
+  _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
 --- !u!1 &474129002
@@ -1840,6 +1841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 474129004}
   _axisHelper: {fileID: 961317270}
+  _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
 --- !u!1 &496010798
@@ -1996,6 +1998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 496010800}
   _axisHelper: {fileID: 1327103495}
+  _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
 --- !u!1 &604183311
@@ -5282,6 +5285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1226129313}
   _axisHelper: {fileID: 1087210529}
+  _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
 --- !u!1 &1327103492
@@ -5430,6 +5434,7 @@ GameObject:
   - component: {fileID: 1597989004}
   - component: {fileID: 1597989003}
   - component: {fileID: 1597989002}
+  - component: {fileID: 1597989005}
   m_Layer: 0
   m_Name: DummyControllerSource
   m_TagString: Untagged
@@ -5558,6 +5563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1597989002}
   _axisHelper: {fileID: 0}
+  _beamModifierData: {fileID: 1597989005}
   _lightBeamLength: 20
   _mode: 0
 --- !u!4 &1597989004
@@ -5575,6 +5581,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1597989005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597989001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c483be8df52a043b562df9c2fe4e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 1, g: 0.6136042, b: 0, a: 1}
+  _beamForce: 200
 --- !u!1 &1782676293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,6 +5734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1782676294}
   _axisHelper: {fileID: 604183313}
+  _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
 --- !u!4 &1782676296
