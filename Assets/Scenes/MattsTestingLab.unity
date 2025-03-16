@@ -1687,6 +1687,7 @@ MonoBehaviour:
   _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
+  _beamPierceDistance: 0
 --- !u!1 &474129002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1845,7 @@ MonoBehaviour:
   _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
+  _beamPierceDistance: 0
 --- !u!1 &496010798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,6 +2003,7 @@ MonoBehaviour:
   _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
+  _beamPierceDistance: 0
 --- !u!1 &604183311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5288,6 +5291,7 @@ MonoBehaviour:
   _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
   _mode: 1
+  _beamPierceDistance: 0
 --- !u!1 &1327103492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,6 +5570,7 @@ MonoBehaviour:
   _beamModifierData: {fileID: 1597989005}
   _lightBeamLength: 20
   _mode: 0
+  _beamPierceDistance: 0
 --- !u!4 &1597989004
 Transform:
   m_ObjectHideFlags: 0
@@ -5606,8 +5611,9 @@ GameObject:
   - component: {fileID: 1782676296}
   - component: {fileID: 1782676295}
   - component: {fileID: 1782676294}
+  - component: {fileID: 1782676297}
   m_Layer: 0
-  m_Name: DummyControllerBounce
+  m_Name: DummyControllerTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5734,9 +5740,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1782676294}
   _axisHelper: {fileID: 604183313}
-  _beamModifierData: {fileID: 0}
+  _beamModifierData: {fileID: 1782676297}
   _lightBeamLength: 20
-  _mode: 1
+  _mode: 2
+  _beamPierceDistance: 2
 --- !u!4 &1782676296
 Transform:
   m_ObjectHideFlags: 0
@@ -5752,6 +5759,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 604183313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1782676297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782676293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c483be8df52a043b562df9c2fe4e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 0.4329114, g: 0, b: 1, a: 1}
+  _beamForce: 50
 --- !u!1 &1828800772
 GameObject:
   m_ObjectHideFlags: 0

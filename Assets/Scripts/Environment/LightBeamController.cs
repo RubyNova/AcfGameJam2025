@@ -22,9 +22,12 @@ namespace Environment
         [SerializeField]
         private LightBeamMode _mode;
 
+        [SerializeField]
+        private float _beamPierceDistance;
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
-        private Vector3? _contactPoint;
+        private Vector3? _emissionPoint;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[3];
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
@@ -34,7 +37,7 @@ namespace Environment
 
         private Vector3? RegisterPotentialBeamHit()
         {
-            var hitCount = Physics2D.Raycast(_contactPoint ?? transform.position, transform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
+            var hitCount = Physics2D.Raycast(_emissionPoint ?? transform.position, transform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
 
             if (hitCount == 0)
             {
@@ -124,7 +127,7 @@ namespace Environment
             var potentialHitPoint = RegisterPotentialBeamHit();
             var translatedPosition = transform.position;
             translatedPosition += transform.right * _lightBeamLength;
-            _renderer.SetPositions(new[] { _contactPoint ?? transform.position, potentialHitPoint ?? translatedPosition});
+            _renderer.SetPositions(new[] { _emissionPoint ?? transform.position, potentialHitPoint ?? translatedPosition});
             _renderer.startColor = _beamModifierData.Colour; 
             _renderer.endColor = _beamModifierData.Colour; 
         }
@@ -162,9 +165,9 @@ namespace Environment
                 return;
             }
 
-            _contactPoint = hitPoint;
+            _emissionPoint = hitPoint;
             _renderer.enabled = true;
-            var senderDirection = sender.transform.position - hitPoint;
+            var senderDirection = (sender.transform.position - hitPoint).normalized;
 
             switch (_mode)
             {
@@ -175,7 +178,10 @@ namespace Environment
                     transform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
                     break;
                 case LightBeamMode.Transform:
-
+                    senderDirection = -senderDirection;
+                    _emissionPoint += senderDirection * _beamPierceDistance;
+                    var lookAtAngle = Mathf.Atan2(senderDirection.y, senderDirection.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0, 0, lookAtAngle);
                     break;
                 default:
                     break;
@@ -202,7 +208,7 @@ namespace Environment
 
             transform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
-            _contactPoint = null;
+            _emissionPoint = null;
         }
     }
 }
