@@ -26,7 +26,6 @@ namespace Environment
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _contactPoint;
-        private Vector3 _senderDirection;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[3];
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
@@ -166,13 +165,13 @@ namespace Environment
 
             _contactPoint = hitPoint;
             _renderer.enabled = true;
-            _senderDirection = sender.transform.position - hitPoint;
+            var senderDirection = sender.transform.position - hitPoint;
 
             switch (_mode)
             {
                 case LightBeamMode.Bounce:
                     _beamModifierData = sender.BeamModifierData;
-                    var reflectedDirection = Vector2.Reflect(_senderDirection, _axisHelper.up);
+                    var reflectedDirection = Vector2.Reflect(senderDirection, _axisHelper.up);
                     var reflectedAngle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
                     break;
