@@ -27,6 +27,7 @@ namespace Controllers
 
         private bool switchCharacters = false;
         private UnityEvent<int> SwitchCamerasEvent = new();
+        private InputActionMap _familiarActions;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -36,6 +37,7 @@ namespace Controllers
             {
                 SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
             }
+            _familiarActions = InputSystem.actions.FindActionMap("Familiar");
         }
 
         // Update is called once per frame
@@ -80,8 +82,18 @@ namespace Controllers
                 if (!ActiveCharacter)
                     return;
 
-                Debug.Log("Swapping to player...");
                 switchCharacters = true;
+            }
+        }
+
+        void OnZoomOut(InputValue value)
+        {
+            if (value.isPressed && !switchCharacters)
+            {
+                if (!ActiveCharacter)
+                    return;
+
+                SwitchCamerasEvent.Invoke(3);
             }
         }
 

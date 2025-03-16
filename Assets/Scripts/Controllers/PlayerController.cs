@@ -30,6 +30,7 @@ namespace Controllers
 
         private bool _jumpRequested = false;
         private bool switchCharacters = false;
+        private InputActionMap _playerActions;
 
         private UnityEvent<int> SwitchCamerasEvent = new();
 
@@ -50,6 +51,7 @@ namespace Controllers
             {
                 SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
             }
+            _playerActions = InputSystem.actions.FindActionMap("Player");
         }
 
         // Update is called once per frame
@@ -108,7 +110,6 @@ namespace Controllers
 
         void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("Collision: " + collision.gameObject.layer);
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _grounded = true;
@@ -117,7 +118,6 @@ namespace Controllers
 
         void OnCollisionExit2D(Collision2D collision)
         {
-            Debug.Log("Collision Exit: " + collision.gameObject.layer);
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _grounded = false;
@@ -131,8 +131,18 @@ namespace Controllers
                 if (!ActiveCharacter)
                     return;
 
-                Debug.Log("Swapping to player...");
                 switchCharacters = true;
+            }
+        }
+
+        void OnZoomOut(InputValue value)
+        {
+            if (value.isPressed && !switchCharacters)
+            {
+                if (!ActiveCharacter)
+                    return;
+
+                SwitchCamerasEvent.Invoke(3);
             }
         }
 
