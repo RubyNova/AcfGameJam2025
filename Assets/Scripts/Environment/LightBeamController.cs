@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Environment
@@ -8,25 +9,28 @@ namespace Environment
         [SerializeField]
         private LineRenderer _renderer;
 
+        [SerializeField]
+        private Transform _axisHelper;
+
         [Header("Configuration")]
         [SerializeField]
         private float _lightBeamLength;
 
         [SerializeField]
         private LightBeamMode _mode;
+        private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _contactPoint;
-        private Vector3? _targetPosition;
         private Vector3 _senderDirection;
 
         private Vector3? RegisterPotentialBeamHit()
         {
             print(_contactPoint.HasValue ? _contactPoint.Value + _senderDirection.normalized :  "Using transform position insted");
-            var hitInfo = Physics2D.Raycast(_contactPoint ?? transform.position, transform.right, _lightBeamLength);
+            var hitInfo = Physics2D.Raycast(_contactPoint.HasValue ? _contactPoint.Value + (-transform.right * 0.3f) : transform.position, transform.right, _lightBeamLength);
 
             if (_contactPoint.HasValue)
             {
-                Debug.DrawRay(_contactPoint.Value, transform.right, Color.black);
+                Debug.DrawRay(_contactPoint.Value + (-transform.right * 0.3f), transform.right, Color.black);
             }
 
             if (!hitInfo)
@@ -80,6 +84,8 @@ namespace Environment
 
         protected void Start()
         {
+            _cachedStartRotation = transform.rotation;
+
             if (_mode != LightBeamMode.Source)
             {
                 _renderer.enabled = false;   
@@ -110,12 +116,14 @@ namespace Environment
 
             _contactPoint = hitPoint;
             _renderer.enabled = true;
-            _senderDirection = hitPoint - transform.position;
+            _senderDirection = sender.transform.position - hitPoint;
 
             switch (_mode)
             {
                 case LightBeamMode.Bounce:
-                    var reflectedDirection = Vector2.Reflect(_senderDirection, transform.up);
+                    var reflectedDirection = Vector2.Reflect(_senderDirection, _axisHelper.up);
+                    var reflectedAngle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
                     break;
                 case LightBeamMode.Transform:
 
@@ -138,6 +146,7 @@ namespace Environment
                 _targetHit = null;
             }
 
+            transform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
             _contactPoint = null;
         }
