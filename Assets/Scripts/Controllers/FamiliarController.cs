@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Controllers
@@ -25,11 +26,16 @@ namespace Controllers
         private Vector2 _movementVector = Vector2.zero;
 
         private bool switchCharacters = false;
+        private UnityEvent<int> SwitchCamerasEvent = new();
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-
+            var cinemachineController = FindFirstObjectByType<CinemachineController>();
+            if(cinemachineController)
+            {
+                SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
+            }
         }
 
         // Update is called once per frame
@@ -87,6 +93,7 @@ namespace Controllers
                 switchCharacters = false;
                 _playerControllerReference.ActiveCharacter = true;
                 _rigidbody.linearVelocity = Vector2.zero;
+                SwitchCamerasEvent.Invoke(1);
             }
         }
 

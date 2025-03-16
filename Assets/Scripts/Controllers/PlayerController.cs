@@ -1,9 +1,9 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Controllers
 {
-
 
     public class PlayerController : MonoBehaviour
     {
@@ -31,6 +31,8 @@ namespace Controllers
         private bool _jumpRequested = false;
         private bool switchCharacters = false;
 
+        private UnityEvent<int> SwitchCamerasEvent = new();
+
 
         [Header("Read-only Values")]
 
@@ -43,7 +45,11 @@ namespace Controllers
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-
+            var cinemachineController = FindFirstObjectByType<CinemachineController>();
+            if(cinemachineController)
+            {
+                SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
+            }
         }
 
         // Update is called once per frame
@@ -138,6 +144,7 @@ namespace Controllers
                 switchCharacters = false;
                 _familiarControllerReference.ActiveCharacter = true;
                 _rigidbody.linearVelocity = Vector2.zero;
+                SwitchCamerasEvent.Invoke(2);
             }
         }
 
