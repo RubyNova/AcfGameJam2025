@@ -1,3 +1,4 @@
+using Environment;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -8,6 +9,9 @@ namespace Controllers
 
     public class FamiliarController : MonoBehaviour
     {
+        [SerializeField]
+        private LightBeamController _beamChanger;
+
         [SerializeField]
         private PlayerController _playerControllerReference;
 
@@ -28,6 +32,7 @@ namespace Controllers
         private bool switchCharacters = false;
         private UnityEvent<int> SwitchCamerasEvent = new();
         private InputActionMap _familiarActions;
+        private int _modifierIndex = 0;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -106,6 +111,17 @@ namespace Controllers
                 _playerControllerReference.ActiveCharacter = true;
                 _rigidbody.linearVelocity = Vector2.zero;
                 SwitchCamerasEvent.Invoke(1);
+            }
+        }
+
+        private void CycleModifiers()
+        {
+            var modifiers = GetComponentsInChildren<LightBeamModifier>();
+            _beamChanger.ChangeBeamModifier(modifiers[_modifierIndex]);
+
+            if (++_modifierIndex >= modifiers.Length)
+            {
+                _modifierIndex = 0;
             }
         }
 

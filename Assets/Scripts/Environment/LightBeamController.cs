@@ -34,6 +34,7 @@ namespace Environment
         private PlayerController _player;
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
+        public int BeamPriority => _beamPriority;
 
         private Vector3? RegisterPotentialBeamHit()
         {
@@ -165,6 +166,8 @@ namespace Environment
                 return;
             }
 
+            _beamPriority = sender.BeamPriority + 1;
+
             _emissionPoint = hitPoint;
             _renderer.enabled = true;
             var senderDirection = (sender.transform.position - hitPoint).normalized;
@@ -209,6 +212,21 @@ namespace Environment
             transform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
             _emissionPoint = null;
+        }
+
+        public void ChangeBeamModifier(LightBeamModifier newModifier)
+        {
+            if (_player != null)
+            {
+                _beamModifierData.ClearBeamEffect(this, _beamPriority, _player);
+            }
+
+            _beamModifierData = newModifier;
+
+            if (_player != null)
+            {
+                _beamModifierData.ApplyBeamEffect(this, BeamPriority, _player, transform.right);
+            }
         }
     }
 }
