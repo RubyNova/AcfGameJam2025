@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d528655db02ce4aa3ed5957063cb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beamChanger: {fileID: 0}
+  _beamChanger: {fileID: 2747804367269425522}
   _playerControllerReference: {fileID: 0}
   _rigidbody: {fileID: 7358544652446688784}
   _movementSpeed: 5
@@ -247,6 +247,8 @@ GameObject:
   - component: {fileID: 2262687684910580198}
   - component: {fileID: 2747804367269425522}
   - component: {fileID: 4627988395739533382}
+  - component: {fileID: 2720897914464504946}
+  - component: {fileID: 6925152222535806534}
   m_Layer: 0
   m_Name: LFLightBeamController
   m_TagString: Untagged
@@ -406,5 +408,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9586ab9f8ddd2f54295d1284e305dfd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colour: {r: 0, g: 0, b: 0, a: 0}
-  _beamForce: 0
+  _colour: {r: 1, g: 1, b: 1, a: 1}
+  _beamForce: 10
+--- !u!114 &2720897914464504946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6458314666040974726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b2fda522cc0cf4cbb0583fe35dc756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 1, g: 0.59788513, b: 0, a: 1}
+  _beamForce: 10
+--- !u!114 &6925152222535806534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6458314666040974726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec5bf09ed2c76d469d418b92295893a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 0.07406576, g: 0.7264151, b: 0, a: 1}
+  _beamForce: 10

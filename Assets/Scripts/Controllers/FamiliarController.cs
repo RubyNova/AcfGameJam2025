@@ -114,6 +114,11 @@ namespace Controllers
             }
         }
 
+        protected void OnCycleBeamModifier()
+        {
+            CycleModifiers();
+        }
+
         private void CycleModifiers()
         {
             var modifiers = GetComponentsInChildren<LightBeamModifier>();
