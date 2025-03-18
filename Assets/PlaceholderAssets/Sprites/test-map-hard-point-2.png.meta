@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      test-map-hard-point-2_0: 8229977564089370955
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
