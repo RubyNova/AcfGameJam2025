@@ -69,10 +69,12 @@ Material:
     - _EnableExternalAlpha: 0
     - _LightTolerance: 0.5
     - _LitValue: 1
-    - _UnlitValue: 0.5
+    - _ShadowInterpolation: 0.1
+    - _UnlitValue: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColour: {r: 0, g: 0, b: 0.462745, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
