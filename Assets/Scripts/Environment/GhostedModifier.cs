@@ -14,6 +14,16 @@ namespace Environment
             _ghostedLayer = LayerMask.NameToLayer("Ghosted");
         }
 
+        public override void Initialise(LightBeamController sender)
+        {
+            sender.ShouldIgnoreWalls = true;
+        }
+
+        public override void Shutdown(LightBeamController sender)
+        {
+            sender.ShouldIgnoreWalls = false;
+        }
+
         public override void ApplyBeamEffect(LightBeamController sender, int beamPriority, PlayerController player, Vector2 senderBeamDirection)
         {
             if (player.gameObject.layer != _ghostedLayer)

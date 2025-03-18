@@ -36,6 +36,8 @@ namespace Environment
         public LightBeamModifier BeamModifierData => _beamModifierData;
         public int BeamPriority => _beamPriority;
 
+        public bool ShouldIgnoreWalls { get; set; }
+
         private Vector3? RegisterPotentialBeamHit()
         {
             var hitCount = Physics2D.Raycast(_emissionPoint ?? transform.position, transform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
@@ -63,14 +65,22 @@ namespace Environment
             
             foreach (var hit in _beamRaycastData)
             {
-                if (hit.transform != null && hit.transform.GetComponentInChildren<LightBeamController>() != this)
+                if (hit.transform != null) // this should also return simple things like walls
                 {
                     _player = hit.transform.GetComponentInChildren<PlayerController>();
-
+                    
                     if (_player != null && !appliedForceToPlayerThisFrame)
                     {
                         appliedForceToPlayerThisFrame = true;
                         _beamModifierData.ApplyBeamEffect(this, _beamPriority, _player, transform.right);
+                        continue;
+                    }
+
+                    var beamControllerTest = hit.transform.GetComponentInChildren<LightBeamController>();
+
+                    if (beamControllerTest == this || (beamControllerTest == null && ShouldIgnoreWalls))
+                    {
+                        continue;
                     }
                     else
                     {
@@ -94,6 +104,17 @@ namespace Environment
             var hitInfoValue = hitInfo.Value;
 
             var beamController = hitInfoValue.transform.GetComponentInChildren<LightBeamController>();
+
+            if (beamController == null)
+            {
+                if (_targetHit != null)
+                {
+                    _targetHit.UnregisterHit();
+                    _targetHit = null;
+                }
+                
+                return hitInfoValue.point;
+            }
 
             if (beamController == null)
             {
@@ -138,7 +159,11 @@ namespace Environment
             _beamRaycastFilter = new ContactFilter2D().NoFilter();
             _cachedStartRotation = transform.rotation;
 
-            if (_mode != LightBeamMode.Source)
+            if (_mode == LightBeamMode.Source)
+            {
+                _beamModifierData.Initialise(this);
+            }
+            else
             {
                 _renderer.enabled = false;   
             }
@@ -175,7 +200,14 @@ namespace Environment
             switch (_mode)
             {
                 case LightBeamMode.Bounce:
+
+                    if (_beamModifierData != null)
+                    {
+                        _beamModifierData.Shutdown(this);
+                    }
+
                     _beamModifierData = sender.BeamModifierData;
+                    _beamModifierData.Initialise(this);
                     var reflectedDirection = Vector2.Reflect(senderDirection, _axisHelper.up);
                     var reflectedAngle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
@@ -221,7 +253,13 @@ namespace Environment
                 _beamModifierData.ClearBeamEffect(this, _beamPriority, _player);
             }
 
+            if (_beamModifierData != null)
+            {
+                _beamModifierData.Shutdown(this);
+            }
+
             _beamModifierData = newModifier;
+            _beamModifierData.Initialise(this);
 
             if (_player != null)
             {
