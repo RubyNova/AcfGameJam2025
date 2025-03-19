@@ -51,6 +51,8 @@ namespace Controllers
         [SerializeField]
         private Vector2 _movementVector = Vector2.zero;
 
+        
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -76,7 +78,14 @@ namespace Controllers
             if (ActiveCharacter)
             {
                 _rigidbody.linearVelocityX = _movementVector.x * _movementSpeed;
-                _rigidbody.linearVelocity += _outsideForces;
+                if(_outsideForces != Vector2.zero)
+                {
+                    _rigidbody.Slide(_outsideForces, 1f, new Rigidbody2D.SlideMovement {});
+                    _rigidbody.linearDamping = 5; 
+                }
+                else
+                    _rigidbody.linearDamping = 0;
+                    
 
                 if (_jumpRequested)
                 {
@@ -87,13 +96,17 @@ namespace Controllers
                     _jumpRequested = false;
                 }
 
-                if (_rigidbody.linearVelocityY >= 0)
+                if (_rigidbody.linearVelocityY >= 0 && _grounded)
                 {
                     _rigidbody.gravityScale = _gravityScale;
                 }
-                else
+                else if(_rigidbody.linearVelocityY < 0)
                 {
                     _rigidbody.gravityScale = _fallingGravityScale;
+                }
+                else if(_outsideForces != Vector2.zero) //outside forces are at play
+                {
+                    _rigidbody.gravityScale = 0.2f;
                 }
             }
         }

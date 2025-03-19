@@ -25,6 +25,9 @@ namespace Environment
         [SerializeField]
         private float _beamPierceDistance;
 
+        [SerializeField]
+        private MeshCollider _meshCollider;
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
@@ -32,6 +35,8 @@ namespace Environment
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
         private PlayerController _player;
+
+        Mesh _mesh;
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
         public int BeamPriority => _beamPriority;
@@ -156,6 +161,7 @@ namespace Environment
 
         protected void Start()
         {
+            _mesh = new Mesh();
             _beamRaycastFilter = new ContactFilter2D().NoFilter();
             _cachedStartRotation = transform.rotation;
 
@@ -177,6 +183,9 @@ namespace Environment
             }
 
             ProduceBeam();
+
+            _renderer.BakeMesh(_mesh, true);
+            _meshCollider.sharedMesh = _mesh;
         }
 
         public void RegisterHit(LightBeamController sender, Vector3 hitPoint)
