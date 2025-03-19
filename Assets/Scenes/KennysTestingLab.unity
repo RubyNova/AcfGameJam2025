@@ -273,7 +273,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 2
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &121980328
@@ -1861,6 +1861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 794965545}
   - component: {fileID: 794965544}
+  - component: {fileID: 794965546}
   m_Layer: 0
   m_Name: LineRender
   m_TagString: Untagged
@@ -1990,6 +1991,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1552418747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &794965546
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794965543}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &808435051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,7 +2388,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 2
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &1055960531
@@ -3023,7 +3046,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 2
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &1150850620
@@ -4875,6 +4898,7 @@ MonoBehaviour:
   _lightBeamLength: 5
   _mode: 0
   _beamPierceDistance: 200
+  _meshCollider: {fileID: 794965546}
 --- !u!114 &1654298489 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3914036207532161062, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
