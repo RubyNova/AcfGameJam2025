@@ -77,14 +77,14 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                _rigidbody.linearVelocityX = _movementVector.x * _movementSpeed;
+                _rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
+                //_rigidbody.linearVelocityX = _movementVector.x * _movementSpeed;
                 if(_outsideForces != Vector2.zero)
                 {
                     _rigidbody.Slide(_outsideForces, 1f, new Rigidbody2D.SlideMovement {});
-                    _rigidbody.linearDamping = 5; 
+                    //_rigidbody.linearDamping = 5; 
                 }
-                else
-                    _rigidbody.linearDamping = 0;
+                
                     
 
                 if (_jumpRequested)
@@ -96,18 +96,20 @@ namespace Controllers
                     _jumpRequested = false;
                 }
 
-                if (_rigidbody.linearVelocityY >= 0 && _grounded)
-                {
-                    _rigidbody.gravityScale = _gravityScale;
-                }
-                else if(_rigidbody.linearVelocityY < 0)
-                {
-                    _rigidbody.gravityScale = _fallingGravityScale;
-                }
-                else if(_outsideForces != Vector2.zero) //outside forces are at play
-                {
-                    _rigidbody.gravityScale = 0.2f;
-                }
+                print("Vector2 mag: " + _rigidbody.linearVelocity.magnitude);
+
+                // if (_rigidbody.linearVelocityY >= 0 && _grounded)
+                // {
+                //     _rigidbody.gravityScale = _gravityScale;
+                // }
+                // else if(_rigidbody.linearVelocityY < 0)
+                // {
+                //     _rigidbody.gravityScale = _fallingGravityScale;
+                // }
+                // else if(_outsideForces != Vector2.zero) //outside forces are at play
+                // {
+                //     _rigidbody.gravityScale = 0.2f;
+                // }
             }
         }
 
@@ -187,6 +189,7 @@ namespace Controllers
                 var beamVelocity =senderBeamDirection * beamForce; 
                 _outsideForces += beamVelocity;
                 _listOfOutsideForces.Add(sender.gameObject.GetHashCode(), beamVelocity);
+                print("Player registers force!");
             }
             // TODO: This method is called every tick that the beam detects the player. The beam priority is a value that increments the more controllers this single beam of light
             // has been through. The senderBeamDirection dictates the direction the beam is flowing. The beamForce value is a raw force to be applied in the given direction, the simplest
@@ -196,14 +199,17 @@ namespace Controllers
 
         internal void UnregisterIncomingBeamForce(LightBeamController sender, int beamPriority)
         {
-            var beamVelocity = _listOfOutsideForces[sender.gameObject.GetHashCode()];
-            _outsideForces -= beamVelocity;
-            _listOfOutsideForces.Remove(sender.gameObject.GetHashCode());
-                
+            if(_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
+            {
+                var beamVelocity = _listOfOutsideForces[sender.gameObject.GetHashCode()];
+                _outsideForces -= beamVelocity;
+                _listOfOutsideForces.Remove(sender.gameObject.GetHashCode());
+                print("Player unregisters force!");
+            }   
             // TODO: This method is only called once by the sending beam controller to effectively flag the player is no longer under the control of that particular light beam controller.
             // This method exists to help you clean up any state, or help you track multiple controllers if your implementation requires it, and need a way to figure out which controllers to
             // stop caring about. - Matt
-            print("Player unregisters force!");
+            
         }
     }
 }

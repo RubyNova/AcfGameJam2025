@@ -1697,6 +1697,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1741039017114101850, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 218597434}
+    - targetCorrespondingSourceObject: {fileID: 1741039017114101850, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 218597436}
   m_SourcePrefab: {fileID: 100100000, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
 --- !u!4 &218597428 stripped
 Transform:
@@ -1715,7 +1718,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218597429}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1817,9 +1820,9 @@ MonoBehaviour:
   _characterAnimator: {fileID: 0}
   _familiarControllerReference: {fileID: 1654298489}
   _rigidbody: {fileID: 218597431}
-  _movementSpeed: 5
+  _movementSpeed: 7
   _jumpForce: 10
-  _gravityScale: 1.5
+  _gravityScale: 1
   _fallingGravityScale: 3
   ActiveCharacter: 1
   _grounded: 0
@@ -1846,6 +1849,52 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &218597436
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218597429}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -1.3953629, y: 39.300526}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 19.834023, y: 55.31948}
+  m_EdgeRadius: 0
 --- !u!4 &475586344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2384100095630875932, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
@@ -3046,7 +3095,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 2
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &1150850620
