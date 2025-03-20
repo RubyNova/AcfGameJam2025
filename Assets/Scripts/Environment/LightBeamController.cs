@@ -1,4 +1,5 @@
 using Controllers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Environment
@@ -28,15 +29,16 @@ namespace Environment
         [SerializeField]
         private MeshCollider _meshCollider;
 
+        private Mesh _mesh;
+        
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[3];
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
-        private PlayerController _player;
-
-        Mesh _mesh;
+        private PlayerController _player; 
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
         public int BeamPriority => _beamPriority;
@@ -154,9 +156,15 @@ namespace Environment
             var potentialHitPoint = RegisterPotentialBeamHit();
             var translatedPosition = transform.position;
             translatedPosition += transform.right * _lightBeamLength;
-            _renderer.SetPositions(new[] { _emissionPoint ?? transform.position, potentialHitPoint ?? translatedPosition});
+            var positions = new[] { 
+                _emissionPoint.HasValue ? transform.InverseTransformPoint(_emissionPoint.Value) : transform.InverseTransformPoint(transform.position), 
+                potentialHitPoint.HasValue ? transform.InverseTransformPoint(potentialHitPoint.Value) : transform.InverseTransformPoint(translatedPosition)
+            };
+            _renderer.SetPositions(positions);
             _renderer.startColor = _beamModifierData.Colour; 
             _renderer.endColor = _beamModifierData.Colour; 
+            _renderer.BakeMesh(_mesh, true);
+            _meshCollider.sharedMesh = _mesh;
         }
 
         protected void Start()
@@ -183,9 +191,6 @@ namespace Environment
             }
 
             ProduceBeam();
-
-            _renderer.BakeMesh(_mesh, true);
-            _meshCollider.sharedMesh = _mesh;
         }
 
         public void RegisterHit(LightBeamController sender, Vector3 hitPoint)

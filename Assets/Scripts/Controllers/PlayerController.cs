@@ -71,6 +71,14 @@ namespace Controllers
             {
                 SwapCharacters();
             }
+
+            if(_outsideForces != Vector2.zero)
+            {
+                _rigidbody.Slide(_outsideForces, Time.deltaTime, new Rigidbody2D.SlideMovement {
+                    surfaceAnchor = Vector2.zero,
+                    gravity = new Vector2(0, -0.5f)
+                });
+            }
         }
 
         void FixedUpdate()
@@ -78,15 +86,8 @@ namespace Controllers
             if (ActiveCharacter)
             {
                 _rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
-                //_rigidbody.linearVelocityX = _movementVector.x * _movementSpeed;
-                if(_outsideForces != Vector2.zero)
-                {
-                    _rigidbody.Slide(_outsideForces, 1f, new Rigidbody2D.SlideMovement {});
-                    //_rigidbody.linearDamping = 5; 
-                }
                 
-                    
-
+                
                 if (_jumpRequested)
                 {
                     if (_grounded)
@@ -95,21 +96,7 @@ namespace Controllers
                     }
                     _jumpRequested = false;
                 }
-
-                print("Vector2 mag: " + _rigidbody.linearVelocity.magnitude);
-
-                // if (_rigidbody.linearVelocityY >= 0 && _grounded)
-                // {
-                //     _rigidbody.gravityScale = _gravityScale;
-                // }
-                // else if(_rigidbody.linearVelocityY < 0)
-                // {
-                //     _rigidbody.gravityScale = _fallingGravityScale;
-                // }
-                // else if(_outsideForces != Vector2.zero) //outside forces are at play
-                // {
-                //     _rigidbody.gravityScale = 0.2f;
-                // }
+                //TODO: modify jumping if needed after anims wired up
             }
         }
 
