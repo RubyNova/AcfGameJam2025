@@ -1,5 +1,4 @@
 using Controllers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Environment
@@ -28,10 +27,6 @@ namespace Environment
 
         [SerializeField]
         private BoxCollider2D _boxCollider;
-
-        private Mesh _mesh;
-
-        private bool _meshIsBaked = false;
         
 
         private Quaternion _cachedStartRotation;
@@ -165,12 +160,7 @@ namespace Environment
             _renderer.startColor = _beamModifierData.Colour; 
             _renderer.endColor = _beamModifierData.Colour;
 
-            if (!_meshIsBaked)
-            {
-                _renderer.BakeMesh(_mesh, true);
-                _boxCollider.size = _mesh.bounds.size;
-                _meshIsBaked = true;
-            }
+            _boxCollider.size = new Vector2(Vector2.Distance(positions[0], positions[1]), _renderer.startWidth);
 
             var centrePosition = transform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
 
@@ -179,7 +169,6 @@ namespace Environment
 
         protected void Start()
         {
-            _mesh = new Mesh();
             _beamRaycastFilter = new ContactFilter2D().NoFilter();
             _cachedStartRotation = transform.rotation;
 
