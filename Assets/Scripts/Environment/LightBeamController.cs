@@ -30,6 +30,8 @@ namespace Environment
         private BoxCollider2D _boxCollider;
 
         private Mesh _mesh;
+
+        private bool _meshIsBaked = false;
         
 
         private Quaternion _cachedStartRotation;
@@ -161,10 +163,18 @@ namespace Environment
             };
             _renderer.SetPositions(positions);
             _renderer.startColor = _beamModifierData.Colour; 
-            _renderer.endColor = _beamModifierData.Colour; 
-            _renderer.BakeMesh(_mesh, true);
-            _boxCollider.size = _mesh.bounds.size;
-            _boxCollider.offset = new Vector2(transform.InverseTransformPoint(_mesh.bounds.center).x, transform.InverseTransformPoint(_mesh.bounds.center).y);
+            _renderer.endColor = _beamModifierData.Colour;
+
+            if (!_meshIsBaked)
+            {
+                _renderer.BakeMesh(_mesh, true);
+                _boxCollider.size = _mesh.bounds.size;
+                _meshIsBaked = true;
+            }
+
+            var centrePosition = transform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
+
+            _boxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
         }
 
         protected void Start()
