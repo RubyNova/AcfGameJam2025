@@ -1,4 +1,5 @@
 using Controllers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Environment
@@ -32,7 +33,7 @@ namespace Environment
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
-        private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[3];
+        private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[5];
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
         private PlayerController _player; 
@@ -66,9 +67,10 @@ namespace Environment
             RaycastHit2D? hitInfo = null;
 
             bool appliedForceToPlayerThisFrame = false;
-            
-            foreach (var hit in _beamRaycastData)
+
+            for (int i = 0; i < hitCount; i++)
             {
+                RaycastHit2D hit = _beamRaycastData[i];
                 if (hit.transform != null) // this should also return simple things like walls
                 {
                     _player = hit.transform.GetComponentInChildren<PlayerController>();
@@ -88,6 +90,7 @@ namespace Environment
                     }
                     else
                     {
+                        print("Returning " + hit.transform.gameObject.name);
                         hitInfo = hit;
                         break;
                     }
@@ -118,17 +121,6 @@ namespace Environment
                 }
                 
                 return hitInfoValue.point;
-            }
-
-            if (beamController == null)
-            {
-                if (_targetHit != null)
-                {
-                    _targetHit.UnregisterHit();
-                    _targetHit = null;
-                }
-
-                return hitInfoValue.point; 
             }
 
             if (_targetHit == beamController)
