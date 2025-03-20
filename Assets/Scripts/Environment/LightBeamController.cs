@@ -27,7 +27,7 @@ namespace Environment
         private float _beamPierceDistance;
 
         [SerializeField]
-        private MeshCollider _meshCollider;
+        private BoxCollider2D _boxCollider;
 
         private Mesh _mesh;
         
@@ -156,15 +156,15 @@ namespace Environment
             var potentialHitPoint = RegisterPotentialBeamHit();
             var translatedPosition = transform.position;
             translatedPosition += transform.right * _lightBeamLength;
-            var positions = new[] { 
-                _emissionPoint.HasValue ? transform.InverseTransformPoint(_emissionPoint.Value) : transform.InverseTransformPoint(transform.position), 
-                potentialHitPoint.HasValue ? transform.InverseTransformPoint(potentialHitPoint.Value) : transform.InverseTransformPoint(translatedPosition)
+            var positions = new[] { _emissionPoint ?? transform.position, 
+                potentialHitPoint ?? translatedPosition
             };
             _renderer.SetPositions(positions);
             _renderer.startColor = _beamModifierData.Colour; 
             _renderer.endColor = _beamModifierData.Colour; 
             _renderer.BakeMesh(_mesh, true);
-            _meshCollider.sharedMesh = _mesh;
+            _boxCollider.size = _mesh.bounds.size;
+            _boxCollider.offset = new Vector2(transform.InverseTransformPoint(_mesh.bounds.center).x, transform.InverseTransformPoint(_mesh.bounds.center).y);
         }
 
         protected void Start()
