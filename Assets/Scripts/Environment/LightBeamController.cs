@@ -41,6 +41,8 @@ namespace Environment
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
         private PlayerController _player; 
+        private PlayerController _playerControllerForBoundsChecks;
+
         private bool _isColliding = false;
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
@@ -147,35 +149,17 @@ namespace Environment
 
         private void CheckForPlayerBelow()
         {
-            var hitCount = Physics2D.Raycast(_emissionPoint ?? transform.position, -transform.up, _beamRaycastFilter, _beamLowerRaycastData, _lightBeamLength);
-            if(hitCount == 0 && !_boxCollider.enabled)
-            {
-                _boxCollider.enabled = true;
-            }
-
-            for (int i = 0; i < hitCount; i++)
-            {
-                RaycastHit2D hit = _beamRaycastData[i];
-                if (hit.transform != null) // this should also return simple things like walls
+            if(_playerControllerForBoundsChecks != null)
+            {        
+                if(_playerControllerForBoundsChecks.MinColliderPoint.y < _boxCollider.bounds.min.y)
                 {
-                    _player = hit.transform.GetComponentInChildren<PlayerController>();
-                    
-                    if(_player != null)
-                    {    
-                        if(_player.transform.position.y < _boxCollider.bounds.max.y)
-                        {
-                            _boxCollider.enabled = false;
-                        }
-                        else
-                        {
-                            _boxCollider.enabled = true;
-                        }
-
-                        return;
-                    }
+                    _boxCollider.enabled = false;
+                }
+                else
+                {
+                    _boxCollider.enabled = true;
                 }
             }
-
         }
 
         private void ProduceBeam()
@@ -203,6 +187,7 @@ namespace Environment
         {
             _beamRaycastFilter = new ContactFilter2D().NoFilter();
             _cachedStartRotation = transform.rotation;
+            _playerControllerForBoundsChecks = FindFirstObjectByType<PlayerController>();
 
             if (_mode == LightBeamMode.Source)
             {
@@ -320,6 +305,10 @@ namespace Environment
                 if(!_isColliding)
                 {
                     _isColliding = true;
+                    if(transform.rotation.z != 0)
+                    {
+                        playerComponent.RotateCharacter(transform.localEulerAngles);
+                    }
 
                     _beamModifierData.ApplyBeamEffect(this, 
                         BeamPriority, 
@@ -339,19 +328,27 @@ namespace Environment
                 var playerComponent = collision.gameObject.GetComponent<PlayerController>();
                 if(_isColliding)
                 {
-                _isColliding = false;
-                _beamModifierData.ClearBeamEffect(this, 
-                    BeamPriority, 
-                    playerComponent
-                    );
+                    _isColliding = false;
+                    _beamModifierData.ClearBeamEffect(this, 
+                        BeamPriority, 
+                        playerComponent
+                        );
                 }
 
                 if(playerComponent.Grounded)
                 {
                     playerComponent.Grounded = false;
+                    playerComponent.RotateCharacter(-transform.localEulerAngles);
                     var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
-                    playerComponent.AddLinearVelocity(this.gameObject.GetHashCode(), 
-                        vel);
+                    if(playerComponent.BeamCollisionCount > 1)
+                    {
+                        playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
+                            vel);
+                    }
+                    else
+                    {
+                        playerComponent.AddLinearVelocityRaw(vel);
+                    }
                 }
             }
             

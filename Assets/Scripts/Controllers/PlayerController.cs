@@ -35,6 +35,9 @@ namespace Controllers
         [SerializeField]
         public bool ActiveCharacter;
 
+        [SerializeField]
+        public Collider2D _collider;
+
         private bool _jumpRequested = false;
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
@@ -43,6 +46,9 @@ namespace Controllers
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
         private int _cachedAffectingBeam = 0;
+
+        public Vector2 MinColliderPoint;
+        public int BeamCollisionCount;
 
 
         [Header("Read-only Values")]
@@ -69,6 +75,9 @@ namespace Controllers
         // Update is called once per frame
         void Update()
         {
+            MinColliderPoint = new Vector2 {x = _collider.bounds.min.x, y = _collider.bounds.min.y};
+            BeamCollisionCount = _listOfOutsideForces.Count;
+
             if (switchCharacters && ActiveCharacter)
             {
                 SwapCharacters();
@@ -90,9 +99,11 @@ namespace Controllers
                     var force = _listOfOutsideForces.ElementAt(0);
                     _cachedAffectingBeam = force.Key;
                     _outsideForces += force.Value.DirectionAndForce;
+                    if(transform.rotation.z > 0)
+                    {
+                        _outsideForces.y = 0.0f;
+                    }
                 }
-
-               
             }
         }
 
@@ -196,6 +207,20 @@ namespace Controllers
             }
         }
 
+        public void AddLinearVelocityRaw(Vector2 velocity)
+        {
+                _rigidbody.linearVelocity += velocity;
+        }
+
+        public void RotateCharacter(Vector3 eulerAngles) 
+        {
+            // Rotation is absolutely fucked right now because we need to
+            // accurately and slowly transition the character back upright after launching them
+            // with beams... I cannot figure out the proper way so we'll come back to this soon.
+            // - kenny
+            //transform.Rotate(eulerAngles);
+        }
+
         public void RegisterIncomingBeamForce(LightBeamController sender, int beamPriority, Vector2 senderBeamDirection, float beamForce)
         {
             if(!_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
@@ -204,7 +229,6 @@ namespace Controllers
                     Priority = beamPriority,
                     DirectionAndForce = senderBeamDirection * beamForce
                 });
-                print("Player registers force!");
             }
             // TODO: This method is called every tick that the beam detects the player. The beam priority is a value that increments the more controllers this single beam of light
             // has been through. The senderBeamDirection dictates the direction the beam is flowing. The beamForce value is a raw force to be applied in the given direction, the simplest
@@ -217,7 +241,6 @@ namespace Controllers
             if(_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
             {
                 _listOfOutsideForces.Remove(sender.gameObject.GetHashCode());
-                print("Player unregisters force!");
                 if(_listOfOutsideForces.Count == 0)
                 {
                     _cachedAffectingBeam = 0;
