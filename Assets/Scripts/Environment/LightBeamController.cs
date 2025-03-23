@@ -37,6 +37,7 @@ namespace Environment
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[5];
+        private RaycastHit2D[] _beamLowerRaycastData = new RaycastHit2D[5];
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
         private PlayerController _player; 
@@ -79,13 +80,13 @@ namespace Environment
                 {
                     _player = hit.transform.GetComponentInChildren<PlayerController>();
                     
-                    if (_player != null && !appliedForceToPlayerThisFrame)
-                    {
+                    if(_player != null && !appliedForceToPlayerThisFrame)
+                    {    
                         appliedForceToPlayerThisFrame = true;
                         //_beamModifierData.ApplyBeamEffect(this, _beamPriority, _player, transform.right);
                         continue;
                     }
-
+                    
                     var beamControllerTest = hit.transform.GetComponentInChildren<LightBeamController>();
 
                     if (beamControllerTest == this || (beamControllerTest == null && ShouldIgnoreWalls))
@@ -144,6 +145,39 @@ namespace Environment
             return hitInfoValue.point;
         }
 
+        private void CheckForPlayerBelow()
+        {
+            var hitCount = Physics2D.Raycast(_emissionPoint ?? transform.position, -transform.up, _beamRaycastFilter, _beamLowerRaycastData, _lightBeamLength);
+            if(hitCount == 0 && !_boxCollider.enabled)
+            {
+                _boxCollider.enabled = true;
+            }
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                RaycastHit2D hit = _beamRaycastData[i];
+                if (hit.transform != null) // this should also return simple things like walls
+                {
+                    _player = hit.transform.GetComponentInChildren<PlayerController>();
+                    
+                    if(_player != null)
+                    {    
+                        if(_player.transform.position.y < _boxCollider.bounds.max.y)
+                        {
+                            _boxCollider.enabled = false;
+                        }
+                        else
+                        {
+                            _boxCollider.enabled = true;
+                        }
+
+                        return;
+                    }
+                }
+            }
+
+        }
+
         private void ProduceBeam()
         {
             var potentialHitPoint = RegisterPotentialBeamHit();
@@ -161,6 +195,8 @@ namespace Environment
             var centrePosition = transform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
 
             _boxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
+
+            CheckForPlayerBelow();
         }
 
         protected void Start()
@@ -284,6 +320,7 @@ namespace Environment
                 if(!_isColliding)
                 {
                     _isColliding = true;
+
                     _beamModifierData.ApplyBeamEffect(this, 
                         BeamPriority, 
                         playerComponent, 
@@ -318,6 +355,14 @@ namespace Environment
                 }
             }
             
+        }
+
+        public void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(_emissionPoint ?? transform.position, transform.right);
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(_emissionPoint ?? transform.position, -transform.up);
         }
     }
 }
