@@ -349,9 +349,9 @@ namespace Environment
                     {
                         playerComponent.Grounded = false;
                     //     //playerComponent._rigidbody.freezeRotation = true;
-                        
-                        playerComponent.RotateCharacter(-transform.localEulerAngles);
-                    //     var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
+                      
+
+                    //    var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
                     //     if(playerComponent.BeamCollisionCount > 1)
                     //     {
                     //         playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
@@ -362,10 +362,52 @@ namespace Environment
                     //         playerComponent.AddLinearVelocityRaw(vel);
                     //     }
                     }
+
+                    playerComponent.RotateCharacter(-transform.localEulerAngles);
                 }
                 else
                 {
-                    
+                   if(playerComponent.transform.position.x > _boxCollider.bounds.max.x ||
+                    playerComponent.transform.position.x < _boxCollider.bounds.min.x)
+                    {
+                        if(_isColliding)
+                    {
+                        _isColliding = false;
+                        _beamModifierData.ClearBeamEffect(this, 
+                            BeamPriority, 
+                            playerComponent
+                            );
+                    }
+
+                    if(playerComponent.Grounded)
+                    {
+                        playerComponent.Grounded = false;
+                    //     //playerComponent._rigidbody.freezeRotation = true;
+                      
+
+                    //    var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
+                    //     if(playerComponent.BeamCollisionCount > 1)
+                    //     {
+                    //         playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
+                    //             vel);
+                    //     }
+                    //     else
+                    //     {
+                    //         playerComponent.AddLinearVelocityRaw(vel);
+                    //     }
+                    }
+
+                    playerComponent.RotateCharacter(-transform.localEulerAngles);
+                    if(playerComponent.BeamCollisionCount > 1)
+                    {
+                        playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
+                            _beamModifierData.BeamForce * transform.right );
+                    }
+                    else
+                    {
+                        playerComponent.AddLinearVelocityRaw(_beamModifierData.BeamForce * transform.right );
+                    }
+                    } 
                 }
             }
             
