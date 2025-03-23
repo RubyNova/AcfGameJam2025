@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Environment;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -11,8 +10,12 @@ namespace Controllers
 
     public class PlayerController : MonoBehaviour
     {
+        [Header("Animation")]
+
         [SerializeField]
         private Animator _characterAnimator;
+
+        [Header("Character Setup")]
 
         [SerializeField]
         private FamiliarController _familiarControllerReference;
@@ -109,6 +112,8 @@ namespace Controllers
                         _outsideForces.y = 0.0f;
                     }
                 }
+
+                UpdateAnims();
             }
         }
 
@@ -264,6 +269,18 @@ namespace Controllers
             // This method exists to help you clean up any state, or help you track multiple controllers if your implementation requires it, and need a way to figure out which controllers to
             // stop caring about. - Matt
             
+        }
+    
+        internal void UpdateAnims()
+        {
+            _characterAnimator.SetFloat("MovementX", _movementVector.x);
+            _characterAnimator.SetFloat("MovementY", _movementVector.y);
+
+            if((_movementVector.x < 0 && transform.localScale.x > 0) || (_movementVector.x > 0 && transform.localScale.x < 0))
+            {
+                var scale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                transform.localScale = scale;
+            }
         }
     }
 }
