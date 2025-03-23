@@ -10,7 +10,7 @@ namespace Environment
         private Color _colour;
         
         [SerializeField]
-        private float _beamForce;
+        public float BeamForce;
 
         public Color Colour => _colour;
 
@@ -26,7 +26,7 @@ namespace Environment
 
         public virtual void ApplyBeamEffect(LightBeamController sender, int beamPriority, PlayerController player, Vector2 senderBeamDirection)
         {
-            player.RegisterIncomingBeamForce(sender, beamPriority, senderBeamDirection, _beamForce);
+            player.RegisterIncomingBeamForce(sender, beamPriority, senderBeamDirection, BeamForce);
         }
 
         public virtual void ClearBeamEffect(LightBeamController sender, int beamPriority, PlayerController player)

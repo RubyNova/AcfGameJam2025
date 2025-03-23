@@ -9,6 +9,6 @@ PhysicsMaterial2D:
   m_Name: FloorPhysicsMat
   serializedVersion: 2
   friction: 0
-  bounciness: 0.34
+  bounciness: 0
   m_FrictionCombine: 0
   m_BounceCombine: 0

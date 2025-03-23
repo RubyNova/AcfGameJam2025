@@ -28,6 +28,9 @@ namespace Environment
 
         [SerializeField]
         private BoxCollider2D _boxCollider;
+
+        [SerializeField]
+        private float _beamExitVelocityMultiplier;
         
 
         private Quaternion _cachedStartRotation;
@@ -37,6 +40,7 @@ namespace Environment
         private ContactFilter2D _beamRaycastFilter;
         private int _beamPriority;
         private PlayerController _player; 
+        private bool _isColliding = false;
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
         public int BeamPriority => _beamPriority;
@@ -57,7 +61,7 @@ namespace Environment
 
                 if (_player != null)
                 {
-                    _beamModifierData.ClearBeamEffect(this, _beamPriority, _player);
+                    //_beamModifierData.ClearBeamEffect(this, _beamPriority, _player);
                     _player = null;
                 }
 
@@ -78,7 +82,7 @@ namespace Environment
                     if (_player != null && !appliedForceToPlayerThisFrame)
                     {
                         appliedForceToPlayerThisFrame = true;
-                        _beamModifierData.ApplyBeamEffect(this, _beamPriority, _player, transform.right);
+                        //_beamModifierData.ApplyBeamEffect(this, _beamPriority, _player, transform.right);
                         continue;
                     }
 
@@ -270,6 +274,50 @@ namespace Environment
             {
                 _beamModifierData.ApplyBeamEffect(this, BeamPriority, _player, transform.right);
             }
+        }
+
+        public void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(collision.gameObject.CompareTag("Player"))
+            {
+                var playerComponent = collision.gameObject.GetComponent<PlayerController>();
+                if(!_isColliding)
+                {
+                    _isColliding = true;
+                    _beamModifierData.ApplyBeamEffect(this, 
+                        BeamPriority, 
+                        playerComponent, 
+                        transform.right);
+                }
+
+                playerComponent.Grounded = true;
+            }
+            
+        }
+
+        public void OnCollisionExit2D(Collision2D collision)
+        {
+            if(collision.gameObject.CompareTag("Player"))
+            {
+                var playerComponent = collision.gameObject.GetComponent<PlayerController>();
+                if(_isColliding)
+                {
+                _isColliding = false;
+                _beamModifierData.ClearBeamEffect(this, 
+                    BeamPriority, 
+                    playerComponent
+                    );
+                }
+
+                if(playerComponent.Grounded)
+                {
+                    playerComponent.Grounded = false;
+                    var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
+                    playerComponent.AddLinearVelocity(this.gameObject.GetHashCode(), 
+                        vel);
+                }
+            }
+            
         }
     }
 }

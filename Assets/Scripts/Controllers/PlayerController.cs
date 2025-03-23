@@ -1,6 +1,7 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Environment;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -40,13 +41,14 @@ namespace Controllers
         private Vector2 _outsideForces = Vector2.zero;
 
         private UnityEvent<int> SwitchCamerasEvent = new();
-        private Dictionary<int, Vector2> _listOfOutsideForces = new();
+        private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
+        private int _cachedAffectingBeam = 0;
 
 
         [Header("Read-only Values")]
 
         [SerializeField]
-        private bool _grounded = true;
+        public bool Grounded = true;
 
         [SerializeField]
         private Vector2 _movementVector = Vector2.zero;
@@ -72,12 +74,25 @@ namespace Controllers
                 SwapCharacters();
             }
 
-            if(_outsideForces != Vector2.zero)
+            if(ActiveCharacter)
             {
-                _rigidbody.Slide(_outsideForces, Time.deltaTime, new Rigidbody2D.SlideMovement {
-                    surfaceAnchor = Vector2.zero,
-                    gravity = new Vector2(0, -0.5f)
-                });
+                _outsideForces = Vector2.zero;
+                //Sort by priority and only apply the right outside forces if applicable
+                if(_listOfOutsideForces.Count > 1)
+                {
+                    KeyValuePair<int, LightBeamDataGroup> forceWithMaxPriority = _listOfOutsideForces.Aggregate(
+                        (left, right) => left.Value.Priority > right.Value.Priority ? left : right);
+                    _cachedAffectingBeam = forceWithMaxPriority.Key;
+                    _outsideForces += forceWithMaxPriority.Value.DirectionAndForce;
+                }
+                else if(_listOfOutsideForces.Count > 0)
+                {
+                    var force = _listOfOutsideForces.ElementAt(0);
+                    _cachedAffectingBeam = force.Key;
+                    _outsideForces += force.Value.DirectionAndForce;
+                }
+
+               
             }
         }
 
@@ -86,13 +101,17 @@ namespace Controllers
             if (ActiveCharacter)
             {
                 _rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
-                
-                
+
+                if(_outsideForces != Vector2.zero)
+                {
+                    _rigidbody.linearVelocity += _outsideForces;
+                }
+                                
                 if (_jumpRequested)
                 {
-                    if (_grounded)
+                    if (Grounded)
                     {
-                        _rigidbody.linearVelocity += Vector2.up * _jumpForce;
+                        _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                     }
                     _jumpRequested = false;
                 }
@@ -123,7 +142,7 @@ namespace Controllers
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
-                _grounded = true;
+                Grounded = true;
             }
         }
 
@@ -131,7 +150,7 @@ namespace Controllers
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
-                _grounded = false;
+                Grounded = false;
             }
         }
 
@@ -169,15 +188,24 @@ namespace Controllers
             }
         }
 
+        public void AddLinearVelocity(int cachedAffectingBeamHash, Vector2 velocity)
+        {
+            if(_cachedAffectingBeam == cachedAffectingBeamHash)
+            {
+                _rigidbody.linearVelocity += velocity;
+            }
+        }
+
         public void RegisterIncomingBeamForce(LightBeamController sender, int beamPriority, Vector2 senderBeamDirection, float beamForce)
         {
-            // if(!_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
-            // {
-            //     var beamVelocity =senderBeamDirection * beamForce; 
-            //     _outsideForces += beamVelocity;
-            //     _listOfOutsideForces.Add(sender.gameObject.GetHashCode(), beamVelocity);
-            //     print("Player registers force!");
-            // }
+            if(!_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
+            {
+                _listOfOutsideForces.Add(sender.gameObject.GetHashCode(), new LightBeamDataGroup { 
+                    Priority = beamPriority,
+                    DirectionAndForce = senderBeamDirection * beamForce
+                });
+                print("Player registers force!");
+            }
             // TODO: This method is called every tick that the beam detects the player. The beam priority is a value that increments the more controllers this single beam of light
             // has been through. The senderBeamDirection dictates the direction the beam is flowing. The beamForce value is a raw force to be applied in the given direction, the simplest
             // application of this being senderBeamDirection * beamForce, but I didn't want to just "implement that" in this way. I might change the beamForce parameter to a vec2
@@ -186,13 +214,15 @@ namespace Controllers
 
         internal void UnregisterIncomingBeamForce(LightBeamController sender, int beamPriority)
         {
-            // if(_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
-            // {
-            //     var beamVelocity = _listOfOutsideForces[sender.gameObject.GetHashCode()];
-            //     _outsideForces -= beamVelocity;
-            //     _listOfOutsideForces.Remove(sender.gameObject.GetHashCode());
-            //     print("Player unregisters force!");
-            // }   
+            if(_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
+            {
+                _listOfOutsideForces.Remove(sender.gameObject.GetHashCode());
+                print("Player unregisters force!");
+                if(_listOfOutsideForces.Count == 0)
+                {
+                    _cachedAffectingBeam = 0;
+                }
+            }   
             // TODO: This method is only called once by the sending beam controller to effectively flag the player is no longer under the control of that particular light beam controller.
             // This method exists to help you clean up any state, or help you track multiple controllers if your implementation requires it, and need a way to figure out which controllers to
             // stop caring about. - Matt
