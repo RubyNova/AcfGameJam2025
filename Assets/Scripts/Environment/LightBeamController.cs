@@ -1,4 +1,5 @@
 using Controllers;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -307,8 +308,16 @@ namespace Environment
                     _isColliding = true;
                     if(transform.rotation.z != 0)
                     {
+                        //playerComponent._rigidbody.freezeRotation = false;
                         playerComponent.RotateCharacter(transform.localEulerAngles);
+                        // if(collision.contactCount > 0)
+                        // {
+                        //     playerComponent._rigidbody.MovePosition(collision.GetContact(0).point);
+                        // }
+                        
                     }
+
+                    playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
 
                     _beamModifierData.ApplyBeamEffect(this, 
                         BeamPriority, 
@@ -318,7 +327,6 @@ namespace Environment
 
                 playerComponent.Grounded = true;
             }
-            
         }
 
         public void OnCollisionExit2D(Collision2D collision)
@@ -326,28 +334,33 @@ namespace Environment
             if(collision.gameObject.CompareTag("Player"))
             {
                 var playerComponent = collision.gameObject.GetComponent<PlayerController>();
-                if(_isColliding)
+                if(playerComponent._jumpRequested)
                 {
-                    _isColliding = false;
-                    _beamModifierData.ClearBeamEffect(this, 
-                        BeamPriority, 
-                        playerComponent
-                        );
-                }
-
-                if(playerComponent.Grounded)
-                {
-                    playerComponent.Grounded = false;
-                    playerComponent.RotateCharacter(-transform.localEulerAngles);
-                    var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
-                    if(playerComponent.BeamCollisionCount > 1)
+                    if(_isColliding)
                     {
-                        playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
-                            vel);
+                        _isColliding = false;
+                        _beamModifierData.ClearBeamEffect(this, 
+                            BeamPriority, 
+                            playerComponent
+                            );
                     }
-                    else
+
+                    if(playerComponent.Grounded)
                     {
-                        playerComponent.AddLinearVelocityRaw(vel);
+                        playerComponent.Grounded = false;
+                    //     //playerComponent._rigidbody.freezeRotation = true;
+                        
+                        playerComponent.RotateCharacter(-transform.localEulerAngles);
+                    //     var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
+                    //     if(playerComponent.BeamCollisionCount > 1)
+                    //     {
+                    //         playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
+                    //             vel);
+                    //     }
+                    //     else
+                    //     {
+                    //         playerComponent.AddLinearVelocityRaw(vel);
+                    //     }
                     }
                 }
             }

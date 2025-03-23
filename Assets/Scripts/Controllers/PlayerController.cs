@@ -18,7 +18,7 @@ namespace Controllers
         private FamiliarController _familiarControllerReference;
 
         [SerializeField]
-        private Rigidbody2D _rigidbody;
+        public Rigidbody2D _rigidbody;
 
         [SerializeField]
         private float _movementSpeed;
@@ -38,14 +38,14 @@ namespace Controllers
         [SerializeField]
         public Collider2D _collider;
 
-        private bool _jumpRequested = false;
+        public bool _jumpRequested = false;
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
         private Vector2 _outsideForces = Vector2.zero;
 
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
-        private int _cachedAffectingBeam = 0;
+        
 
         public Vector2 MinColliderPoint;
         public int BeamCollisionCount;
@@ -58,7 +58,12 @@ namespace Controllers
 
         [SerializeField]
         private Vector2 _movementVector = Vector2.zero;
-
+        [SerializeField]
+        private int _cachedAffectingBeam = 0;
+        [SerializeField]
+        private bool _cachedVelocityUpdate = false;
+        [SerializeField]
+        private Vector2 _cachedVelocity = Vector2.zero;
         
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -115,7 +120,13 @@ namespace Controllers
 
                 if(_outsideForces != Vector2.zero)
                 {
-                    _rigidbody.linearVelocity += _outsideForces;
+                    _rigidbody.linearVelocityX += _outsideForces.x;
+                }
+
+                if(_cachedVelocityUpdate)
+                {
+                    _rigidbody.linearVelocity += _cachedVelocity;
+                    _cachedVelocityUpdate = false;
                 }
                                 
                 if (_jumpRequested)
@@ -203,13 +214,15 @@ namespace Controllers
         {
             if(_cachedAffectingBeam == cachedAffectingBeamHash)
             {
-                _rigidbody.linearVelocity += velocity;
+                _cachedVelocityUpdate = true;
+                _cachedVelocity = velocity;
             }
         }
 
         public void AddLinearVelocityRaw(Vector2 velocity)
         {
-                _rigidbody.linearVelocity += velocity;
+            _cachedVelocity = velocity;
+            _cachedVelocityUpdate = true;
         }
 
         public void RotateCharacter(Vector3 eulerAngles) 
@@ -218,7 +231,8 @@ namespace Controllers
             // accurately and slowly transition the character back upright after launching them
             // with beams... I cannot figure out the proper way so we'll come back to this soon.
             // - kenny
-            //transform.Rotate(eulerAngles);
+            //_rigidbody.MoveRotation(eulerAngles);
+            transform.Rotate(eulerAngles);
         }
 
         public void RegisterIncomingBeamForce(LightBeamController sender, int beamPriority, Vector2 senderBeamDirection, float beamForce)
