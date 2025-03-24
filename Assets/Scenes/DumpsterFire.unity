@@ -888,6 +888,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6779154681501759977, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
       propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779154681501759977, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7578696745383328337, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
