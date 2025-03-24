@@ -1544,7 +1544,7 @@ GameObject:
   - component: {fileID: 331883127}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1751,7 +1751,7 @@ GameObject:
   - component: {fileID: 474129006}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1958,7 +1958,7 @@ GameObject:
   - component: {fileID: 496010802}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2695,7 +2695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &961317268
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3486,7 +3486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1087210527
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5466,7 +5466,7 @@ GameObject:
   - component: {fileID: 1226129315}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5676,7 +5676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1327103493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6037,7 +6037,7 @@ Transform:
   m_GameObject: {fileID: 1597989001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.23, y: 11.15, z: 0.004709914}
+  m_LocalPosition: {x: -9.42, y: 11.45, z: 0.004709914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6117,7 +6117,7 @@ GameObject:
   - component: {fileID: 1782676297}
   m_Layer: 0
   m_Name: DummyControllerTransform
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6489,7 +6489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2037731234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6665,6 +6665,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3923391215170929848, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923391215170929848, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4770078755903285949, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}

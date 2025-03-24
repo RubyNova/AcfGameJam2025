@@ -93,13 +93,12 @@ namespace Environment
                     
                     var beamControllerTest = hit.transform.GetComponentInChildren<LightBeamController>();
 
-                    if (beamControllerTest == this || beamControllerTest == _currentSender || (beamControllerTest == null && ShouldIgnoreWalls))
+                    if (beamControllerTest == this || beamControllerTest == _currentSender || hit.transform.CompareTag("IgnoredByBeam") || (beamControllerTest == null && ShouldIgnoreWalls))
                     {
                         continue;
                     }
                     else
                     {
-                        print("Returning " + hit.transform.gameObject.name);
                         hitInfo = hit;
                         break;
                     }
