@@ -121,7 +121,8 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                _rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
+                _rigidbody.linearVelocity += _movementVector * _movementSpeed * Time.fixedDeltaTime;
+                //_rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
 
                 if(_outsideForces != Vector2.zero)
                 {

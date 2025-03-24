@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.917953, g: 1, b: 0, a: 1}
-  BeamForce: 30
+  BeamForce: 3
 --- !u!61 &561061781
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4485,7 +4485,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.2, y: 4}
+  m_Offset: {x: -0.20000005, y: 4.094312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4495,7 +4495,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.5, y: 6}
+  m_Size: {x: 3.5, y: 5.8113756}
   m_EdgeRadius: 0
 --- !u!114 &1975707814
 MonoBehaviour:
@@ -4542,9 +4542,9 @@ MonoBehaviour:
   _characterAnimator: {fileID: 218597434}
   _familiarControllerReference: {fileID: 1654298489}
   _rigidbody: {fileID: 1975707816}
-  _movementSpeed: 5
-  _jumpForce: 10
-  _gravityScale: 0.5
+  _movementSpeed: 10
+  _jumpForce: 200
+  _gravityScale: 1
   _fallingGravityScale: 3
   ActiveCharacter: 1
   _collider: {fileID: 1975707813}
@@ -4572,7 +4572,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7b3739c8602999843b3cb5423d8db5fd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
