@@ -334,7 +334,7 @@ namespace Environment
             if(collision.gameObject.CompareTag("Player"))
             {
                 var playerComponent = collision.gameObject.GetComponent<PlayerController>();
-                if(playerComponent._jumpRequested)
+                if(playerComponent.JumpRequested)
                 {
                     if(_isColliding)
                     {

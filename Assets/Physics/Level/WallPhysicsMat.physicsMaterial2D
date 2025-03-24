@@ -6,9 +6,9 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FloorPhysicsMat
+  m_Name: WallPhysicsMat
   serializedVersion: 2
   friction: 0.4
   bounciness: 0
-  m_FrictionCombine: 0
-  m_BounceCombine: 0
+  m_FrictionCombine: 3
+  m_BounceCombine: 4

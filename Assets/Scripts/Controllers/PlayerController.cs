@@ -10,18 +10,15 @@ namespace Controllers
 
     public class PlayerController : MonoBehaviour
     {
+        public const int NO_BEAM_CACHED = 0;
+
+
         [Header("Animation")]
 
         [SerializeField]
         private Animator _characterAnimator;
 
-        [Header("Character Setup")]
-
-        [SerializeField]
-        private FamiliarController _familiarControllerReference;
-
-        [SerializeField]
-        public Rigidbody2D _rigidbody;
+        [Header("Character Configuration")]
 
         [SerializeField]
         private float _movementSpeed;
@@ -36,23 +33,19 @@ namespace Controllers
         private float _fallingGravityScale;
 
         [SerializeField]
-        public bool ActiveCharacter;
+        [Range(0.1f, 2.0f)]
+        private float _fallingMovementSpeedDivider;
+
+        [Header("Character Setup")]
+
+        [SerializeField]
+        private FamiliarController _familiarControllerReference;
+
+        [SerializeField]
+        public Rigidbody2D _rigidbody;
 
         [SerializeField]
         public Collider2D _collider;
-
-        public bool _jumpRequested = false;
-        private bool switchCharacters = false;
-        private InputActionMap _playerActions;
-        private Vector2 _outsideForces = Vector2.zero;
-
-        private UnityEvent<int> SwitchCamerasEvent = new();
-        private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
-        
-
-        public Vector2 MinColliderPoint;
-        public int BeamCollisionCount;
-
 
         [Header("Read-only Values")]
 
@@ -61,13 +54,27 @@ namespace Controllers
 
         [SerializeField]
         private Vector2 _movementVector = Vector2.zero;
+        
         [SerializeField]
-        private int _cachedAffectingBeam = 0;
+        private int _cachedAffectingBeam = NO_BEAM_CACHED;
+        
         [SerializeField]
         private bool _cachedVelocityUpdate = false;
+        
         [SerializeField]
         private Vector2 _cachedVelocity = Vector2.zero;
         
+        [SerializeField]
+        public bool ActiveCharacter;
+        public Vector2 MinColliderPoint;
+        public int BeamCollisionCount;
+        public bool JumpRequested = false;
+        private bool switchCharacters = false;
+        private InputActionMap _playerActions;
+        private Vector2 _outsideForces = Vector2.zero;
+
+        private UnityEvent<int> SwitchCamerasEvent = new();
+        private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -121,8 +128,14 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                _rigidbody.linearVelocity += _movementVector * _movementSpeed * Time.fixedDeltaTime;
-                //_rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
+                if(_rigidbody.linearVelocityY < 0)
+                {
+                    _rigidbody.AddForce(_movementVector * _movementSpeed * _fallingMovementSpeedDivider, ForceMode2D.Force);
+                }
+                else
+                {
+                    _rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
+                }
 
                 if(_outsideForces != Vector2.zero)
                 {
@@ -135,13 +148,13 @@ namespace Controllers
                     _cachedVelocityUpdate = false;
                 }
                                 
-                if (_jumpRequested)
+                if (JumpRequested)
                 {
                     if (Grounded)
                     {
                         _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                     }
-                    _jumpRequested = false;
+                    JumpRequested = false;
                 }
                 //TODO: modify jumping if needed after anims wired up
             }
@@ -160,9 +173,9 @@ namespace Controllers
             if (!ActiveCharacter)
                 return;
 
-            if (!_jumpRequested)
+            if (!JumpRequested)
             {
-                _jumpRequested = true;
+                JumpRequested = true;
             }
         }
 
@@ -263,7 +276,7 @@ namespace Controllers
                 _listOfOutsideForces.Remove(sender.gameObject.GetHashCode());
                 if(_listOfOutsideForces.Count == 0)
                 {
-                    _cachedAffectingBeam = 0;
+                    _cachedAffectingBeam = NO_BEAM_CACHED;
                 }
             }   
             // TODO: This method is only called once by the sending beam controller to effectively flag the player is no longer under the control of that particular light beam controller.
@@ -274,8 +287,9 @@ namespace Controllers
     
         internal void UpdateAnims()
         {
-            _characterAnimator.SetFloat("MovementX", _movementVector.x);
-            _characterAnimator.SetFloat("MovementY", _movementVector.y);
+            _characterAnimator.SetFloat("MovementX", _rigidbody.linearVelocityX);
+            _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
+            _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
 
             if((_movementVector.x < 0 && transform.localScale.x > 0) || (_movementVector.x > 0 && transform.localScale.x < 0))
             {

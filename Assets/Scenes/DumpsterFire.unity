@@ -886,6 +886,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000013952239
       objectReference: {fileID: 0}
+    - target: {fileID: 6779154681501759977, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7578696745383328337, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.015605865
@@ -925,43 +929,18 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1741039017114101850, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 218597434}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
 --- !u!4 &218597428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 639915862654267449, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
   m_PrefabInstance: {fileID: 218597427}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &218597429 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1741039017114101850, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
+--- !u!95 &218597434 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6779154681501759977, guid: 29ced25fc3921684cb9be5a8dc8998ef, type: 3}
   m_PrefabInstance: {fileID: 218597427}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &218597434
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218597429}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f91c2ae6be095d44b963e29c3db7459f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &475586344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2384100095630875932, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
@@ -1614,7 +1593,7 @@ TilemapCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e696013690206674587d739d5f5f9501, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4001,7 +3980,7 @@ CompositeCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e696013690206674587d739d5f5f9501, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4540,22 +4519,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterAnimator: {fileID: 218597434}
-  _familiarControllerReference: {fileID: 1654298489}
-  _rigidbody: {fileID: 1975707816}
   _movementSpeed: 10
-  _jumpForce: 200
+  _jumpForce: 10
   _gravityScale: 1
   _fallingGravityScale: 3
-  ActiveCharacter: 1
+  _fallingMovementSpeedDivider: 0.1
+  _familiarControllerReference: {fileID: 1654298489}
+  _rigidbody: {fileID: 1975707816}
   _collider: {fileID: 1975707813}
-  _jumpRequested: 0
-  MinColliderPoint: {x: 0, y: 0}
-  BeamCollisionCount: 0
   Grounded: 1
   _movementVector: {x: 0, y: 0}
   _cachedAffectingBeam: 0
   _cachedVelocityUpdate: 0
   _cachedVelocity: {x: 0, y: 0}
+  ActiveCharacter: 1
+  MinColliderPoint: {x: 0, y: 0}
+  BeamCollisionCount: 0
+  JumpRequested: 0
 --- !u!50 &1975707816
 Rigidbody2D:
   serializedVersion: 5
