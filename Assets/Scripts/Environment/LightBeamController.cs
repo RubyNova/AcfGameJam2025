@@ -149,7 +149,7 @@ namespace Environment
 
             if (_targetHit == beamController)
             {
-                beamController.RegisterHit(this, hitInfoValue.point);
+                beamController.RegisterHit(this, hitInfoValue.point, hitInfoValue.normal);
                 return hitInfoValue.point;
             }
 
@@ -158,7 +158,7 @@ namespace Environment
                 _targetHit.UnregisterHit();
             }
 
-            beamController.RegisterHit(this, hitInfoValue.point);
+            beamController.RegisterHit(this, hitInfoValue.point, hitInfoValue.normal);
             _targetHit = beamController;
             
             return hitInfoValue.point;
@@ -226,7 +226,7 @@ namespace Environment
             ProduceBeam();
         }
 
-        public void RegisterHit(LightBeamController sender, Vector3 hitPoint)
+        public void RegisterHit(LightBeamController sender, Vector3 hitPoint, Vector2 normal)
         {
             if (sender == this)
             {
@@ -257,7 +257,7 @@ namespace Environment
 
                     _beamModifierData = sender.BeamModifierData;
                     _beamModifierData.Initialise(this);
-                    var reflectedDirection = Vector2.Reflect(senderDirection, _axisHelper.up);
+                    var reflectedDirection = Vector2.Reflect(senderDirection, new Vector2(normal.y, -normal.x));
                     var reflectedAngle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
                     _targetTransform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
                     break;
