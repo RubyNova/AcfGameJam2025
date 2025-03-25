@@ -40,6 +40,7 @@ namespace Environment
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[5];
         private RaycastHit2D[] _beamLowerRaycastData = new RaycastHit2D[5];
         private ContactFilter2D _beamRaycastFilter;
+        private LightBeamController _currentSender;
         private int _beamPriority;
         private PlayerController _player; 
         private PlayerController _playerControllerForBoundsChecks;
@@ -92,13 +93,12 @@ namespace Environment
                     
                     var beamControllerTest = hit.transform.GetComponentInChildren<LightBeamController>();
 
-                    if (beamControllerTest == this || (beamControllerTest == null && ShouldIgnoreWalls))
+                    if (beamControllerTest == this || beamControllerTest == _currentSender || hit.transform.CompareTag("IgnoredByBeam") || (beamControllerTest == null && ShouldIgnoreWalls))
                     {
                         continue;
                     }
                     else
                     {
-                        print("Returning " + hit.transform.gameObject.name);
                         hitInfo = hit;
                         break;
                     }
@@ -222,6 +222,8 @@ namespace Environment
                 return;
             }
 
+            _currentSender = sender;
+
             _beamPriority = sender.BeamPriority + 1;
 
             _emissionPoint = hitPoint;
@@ -272,6 +274,7 @@ namespace Environment
                 _beamModifierData = null;   
             }
 
+            _currentSender = null;
             transform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
             _emissionPoint = null;

@@ -128,12 +128,20 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                if(_rigidbody.linearVelocityY < 0)
+                if(_rigidbody.linearVelocityY < 0 && !Grounded)
                 {
-                    _rigidbody.AddForce(_movementVector * _movementSpeed * _fallingMovementSpeedDivider, ForceMode2D.Force);
+                    if(_rigidbody.gravityScale != _fallingGravityScale)
+                    {
+                        _rigidbody.gravityScale = _fallingGravityScale;
+                    }
+                    //_rigidbody.AddForce(_movementVector * _movementSpeed * _fallingMovementSpeedDivider, ForceMode2D.Force);
                 }
                 else
                 {
+                    if(_rigidbody.gravityScale != _gravityScale)
+                    {
+                        _rigidbody.gravityScale = _gravityScale;
+                    }
                     _rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
                 }
 

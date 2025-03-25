@@ -1541,9 +1541,10 @@ GameObject:
   - component: {fileID: 331883124}
   - component: {fileID: 331883126}
   - component: {fileID: 331883125}
+  - component: {fileID: 331883127}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1688,7 +1689,54 @@ MonoBehaviour:
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 0}
+  _boxCollider: {fileID: 331883127}
+  _beamExitVelocityMultiplier: 0
+--- !u!61 &331883127
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331883123}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0
 --- !u!1 &474129002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,9 +1748,10 @@ GameObject:
   - component: {fileID: 474129003}
   - component: {fileID: 474129005}
   - component: {fileID: 474129004}
+  - component: {fileID: 474129006}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,7 +1896,54 @@ MonoBehaviour:
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 0}
+  _boxCollider: {fileID: 474129006}
+  _beamExitVelocityMultiplier: 0
+--- !u!61 &474129006
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474129002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0
 --- !u!1 &496010798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,9 +1955,10 @@ GameObject:
   - component: {fileID: 496010799}
   - component: {fileID: 496010801}
   - component: {fileID: 496010800}
+  - component: {fileID: 496010802}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2006,7 +2103,54 @@ MonoBehaviour:
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 0}
+  _boxCollider: {fileID: 496010802}
+  _beamExitVelocityMultiplier: 0
+--- !u!61 &496010802
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496010798}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0
 --- !u!1 &604183311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &604183312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2081,7 +2225,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.91, y: 16.65, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1782676296}
@@ -2551,7 +2695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &961317268
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2663,7 +2807,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.05, y: 31.36, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 474129003}
@@ -3342,7 +3486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1087210527
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3454,7 +3598,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.96, y: 21.54, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1226129312}
@@ -5319,9 +5463,10 @@ GameObject:
   - component: {fileID: 1226129312}
   - component: {fileID: 1226129314}
   - component: {fileID: 1226129313}
+  - component: {fileID: 1226129315}
   m_Layer: 0
   m_Name: DummyControllerBounce
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5466,7 +5611,54 @@ MonoBehaviour:
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 0}
+  _boxCollider: {fileID: 1226129315}
+  _beamExitVelocityMultiplier: 0
+--- !u!61 &1226129315
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226129311}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0
 --- !u!1 &1327103492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5484,7 +5676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1327103493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5596,7 +5788,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.91, y: 26.55, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 496010799}
@@ -5835,6 +6027,7 @@ MonoBehaviour:
   _mode: 0
   _beamPierceDistance: 0
   _boxCollider: {fileID: 1597989006}
+  _beamExitVelocityMultiplier: 0
 --- !u!4 &1597989004
 Transform:
   m_ObjectHideFlags: 0
@@ -5844,7 +6037,7 @@ Transform:
   m_GameObject: {fileID: 1597989001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.23, y: 11.15, z: 0.004709914}
+  m_LocalPosition: {x: -9.42, y: 11.45, z: 0.004709914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5909,7 +6102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.917953, g: 1, b: 0, a: 1}
-  _beamForce: 10
+  BeamForce: 0
 --- !u!1 &1782676293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5924,7 +6117,7 @@ GameObject:
   - component: {fileID: 1782676297}
   m_Layer: 0
   m_Name: DummyControllerTransform
-  m_TagString: Untagged
+  m_TagString: IgnoredByBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6050,11 +6243,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1782676294}
   _axisHelper: {fileID: 604183313}
-  _beamModifierData: {fileID: 1782676297}
+  _beamModifierData: {fileID: 0}
   _lightBeamLength: 20
-  _mode: 2
+  _mode: 1
   _beamPierceDistance: 2
-  _boxCollider: {fileID: 0}
+  _boxCollider: {fileID: 1782676297}
+  _beamExitVelocityMultiplier: 0
 --- !u!4 &1782676296
 Transform:
   m_ObjectHideFlags: 0
@@ -6070,20 +6264,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 604183313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1782676297
-MonoBehaviour:
+--- !u!61 &1782676297
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782676293}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c483be8df52a043b562df9c2fe4e89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colour: {r: 0.4329114, g: 0, b: 1, a: 1}
-  _beamForce: 50
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0
 --- !u!1 &1828800772
 GameObject:
   m_ObjectHideFlags: 0
@@ -6263,7 +6489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2037731234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6375,7 +6601,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.91, y: 36.52, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 331883124}
@@ -6439,6 +6665,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3923391215170929848, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923391215170929848, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4770078755903285949, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
