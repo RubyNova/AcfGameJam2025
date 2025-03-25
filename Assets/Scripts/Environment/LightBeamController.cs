@@ -1,6 +1,4 @@
 using Controllers;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Environment
@@ -17,6 +15,12 @@ namespace Environment
         [SerializeField]
         private LightBeamModifier _beamModifierData;
 
+        [SerializeField]
+        private Transform _targetTransform;
+        
+        [SerializeField]
+        private BoxCollider2D _boxCollider;
+
         [Header("Configuration")]
         [SerializeField]
         private float _lightBeamLength;
@@ -28,11 +32,7 @@ namespace Environment
         private float _beamPierceDistance;
 
         [SerializeField]
-        private BoxCollider2D _boxCollider;
-
-        [SerializeField]
         private float _beamExitVelocityMultiplier;
-        
 
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
@@ -41,20 +41,21 @@ namespace Environment
         private RaycastHit2D[] _beamLowerRaycastData = new RaycastHit2D[5];
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
+        
+        [SerializeField]
         private int _beamPriority;
         private PlayerController _player; 
         private PlayerController _playerControllerForBoundsChecks;
 
-        private bool _isColliding = false;
-
         public LightBeamModifier BeamModifierData => _beamModifierData;
+        
         public int BeamPriority => _beamPriority;
 
         public bool ShouldIgnoreWalls { get; set; }
 
         private Vector3? RegisterPotentialBeamHit()
         {
-            var hitCount = Physics2D.Raycast(_emissionPoint ?? transform.position, transform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
+            var hitCount = Physics2D.Raycast(_emissionPoint ?? _targetTransform.position, _targetTransform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
 
             if (hitCount == 0)
             {
@@ -87,7 +88,7 @@ namespace Environment
                     if(_player != null && !appliedForceToPlayerThisFrame)
                     {    
                         appliedForceToPlayerThisFrame = true;
-                        //_beamModifierData.ApplyBeamEffect(this, _beamPriority, _player, transform.right);
+                        //_beamModifierData.ApplyBeamEffect(this, _beamPriority, _player, _targetTransform.right);
                         continue;
                     }
                     
@@ -166,9 +167,9 @@ namespace Environment
         private void ProduceBeam()
         {
             var potentialHitPoint = RegisterPotentialBeamHit();
-            var translatedPosition = transform.position;
-            translatedPosition += transform.right * _lightBeamLength;
-            var positions = new[] { _emissionPoint ?? transform.position, 
+            var translatedPosition = _targetTransform.position;
+            translatedPosition += _targetTransform.right * _lightBeamLength;
+            var positions = new[] { _emissionPoint ?? _targetTransform.position, 
                 potentialHitPoint ?? translatedPosition
             };
             _renderer.SetPositions(positions);
@@ -177,7 +178,7 @@ namespace Environment
 
             _boxCollider.size = new Vector2(Vector2.Distance(positions[0], positions[1]), _renderer.startWidth);
 
-            var centrePosition = transform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
+            var centrePosition = _targetTransform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
 
             _boxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
 
@@ -187,7 +188,7 @@ namespace Environment
         protected void Start()
         {
             _beamRaycastFilter = new ContactFilter2D().NoFilter();
-            _cachedStartRotation = transform.rotation;
+            _cachedStartRotation = _targetTransform.rotation;
             _playerControllerForBoundsChecks = FindFirstObjectByType<PlayerController>();
 
             if (_mode == LightBeamMode.Source)
@@ -243,13 +244,13 @@ namespace Environment
                     _beamModifierData.Initialise(this);
                     var reflectedDirection = Vector2.Reflect(senderDirection, _axisHelper.up);
                     var reflectedAngle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
+                    _targetTransform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
                     break;
                 case LightBeamMode.Transform:
                     senderDirection = -senderDirection;
                     _emissionPoint += senderDirection * _beamPierceDistance;
                     var lookAtAngle = Mathf.Atan2(senderDirection.y, senderDirection.x) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0, 0, lookAtAngle);
+                    _targetTransform.rotation = Quaternion.Euler(0, 0, lookAtAngle);
                     break;
                 default:
                     break;
@@ -275,7 +276,7 @@ namespace Environment
             }
 
             _currentSender = null;
-            transform.rotation = _cachedStartRotation;
+            _targetTransform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
             _emissionPoint = null;
         }
@@ -297,131 +298,132 @@ namespace Environment
 
             if (_player != null)
             {
-                _beamModifierData.ApplyBeamEffect(this, BeamPriority, _player, transform.right);
+                _beamModifierData.ApplyBeamEffect(this, BeamPriority, _player, _targetTransform.right);
             }
         }
 
-        public void OnCollisionEnter2D(Collision2D collision)
-        {
-            if(collision.gameObject.CompareTag("Player"))
-            {
-                var playerComponent = collision.gameObject.GetComponent<PlayerController>();
-                if(!_isColliding)
-                {
-                    _isColliding = true;
-                    if(transform.rotation.z != 0)
-                    {
-                        //playerComponent._rigidbody.freezeRotation = false;
-                        playerComponent.RotateCharacter(transform.localEulerAngles);
-                        // if(collision.contactCount > 0)
-                        // {
-                        //     playerComponent._rigidbody.MovePosition(collision.GetContact(0).point);
-                        // }
+        // public void OnCollisionEnter2D(Collision2D collision)
+        // {
+        //     if(collision.gameObject.CompareTag("Player"))
+        //     {
+        //         print("player col");
+        //         var playerComponent = collision.gameObject.GetComponent<PlayerController>();
+        //         if(!_isColliding)
+        //         {
+        //             _isColliding = true;
+        //             if(transform.rotation.z != 0)
+        //             {
+        //                 //playerComponent._rigidbody.freezeRotation = false;
+        //                 playerComponent.RotateCharacter(transform.localEulerAngles);
+        //                 // if(collision.contactCount > 0)
+        //                 // {
+        //                 //     playerComponent._rigidbody.MovePosition(collision.GetContact(0).point);
+        //                 // }
                         
-                    }
+        //             }
 
-                    playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
+        //             playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
 
-                    _beamModifierData.ApplyBeamEffect(this, 
-                        BeamPriority, 
-                        playerComponent, 
-                        transform.right);
-                }
+        //             _beamModifierData.ApplyBeamEffect(this, 
+        //                 BeamPriority, 
+        //                 playerComponent, 
+        //                 _targetTransform.right);
+        //         }
 
-                playerComponent.Grounded = true;
-            }
-        }
+        //         playerComponent.Grounded = true;
+        //     }
+        // }
 
-        public void OnCollisionExit2D(Collision2D collision)
-        {
-            if(collision.gameObject.CompareTag("Player"))
-            {
-                var playerComponent = collision.gameObject.GetComponent<PlayerController>();
-                if(playerComponent.JumpRequested)
-                {
-                    if(_isColliding)
-                    {
-                        _isColliding = false;
-                        _beamModifierData.ClearBeamEffect(this, 
-                            BeamPriority, 
-                            playerComponent
-                            );
-                    }
+        // public void OnCollisionExit2D(Collision2D collision)
+        // {
+        //     if(collision.gameObject.CompareTag("Player"))
+        //     {
+        //         var playerComponent = collision.gameObject.GetComponent<PlayerController>();
+        //         if(playerComponent.JumpRequested)
+        //         {
+        //             if(_isColliding)
+        //             {
+        //                 _isColliding = false;
+        //                 _beamModifierData.ClearBeamEffect(this, 
+        //                     BeamPriority, 
+        //                     playerComponent
+        //                     );
+        //             }
 
-                    if(playerComponent.Grounded)
-                    {
-                        playerComponent.Grounded = false;
-                    //     //playerComponent._rigidbody.freezeRotation = true;
+        //             if(playerComponent.Grounded)
+        //             {
+        //                 playerComponent.Grounded = false;
+        //             //     //playerComponent._rigidbody.freezeRotation = true;
                       
 
-                    //    var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
-                    //     if(playerComponent.BeamCollisionCount > 1)
-                    //     {
-                    //         playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
-                    //             vel);
-                    //     }
-                    //     else
-                    //     {
-                    //         playerComponent.AddLinearVelocityRaw(vel);
-                    //     }
-                    }
+        //             //    var vel = _beamModifierData.BeamForce * _targetTransform.right * _beamExitVelocityMultiplier;
+        //             //     if(playerComponent.BeamCollisionCount > 1)
+        //             //     {
+        //             //         playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
+        //             //             vel);
+        //             //     }
+        //             //     else
+        //             //     {
+        //             //         playerComponent.AddLinearVelocityRaw(vel);
+        //             //     }
+        //             }
 
-                    playerComponent.RotateCharacter(-transform.localEulerAngles);
-                }
-                else
-                {
-                   if(playerComponent.transform.position.x > _boxCollider.bounds.max.x ||
-                    playerComponent.transform.position.x < _boxCollider.bounds.min.x)
-                    {
-                        if(_isColliding)
-                    {
-                        _isColliding = false;
-                        _beamModifierData.ClearBeamEffect(this, 
-                            BeamPriority, 
-                            playerComponent
-                            );
-                    }
+        //             playerComponent.RotateCharacter(-transform.localEulerAngles);
+        //         }
+        //         else
+        //         {
+        //            if(playerComponent.transform.position.x > _boxCollider.bounds.max.x ||
+        //             playerComponent.transform.position.x < _boxCollider.bounds.min.x)
+        //             {
+        //                 if(_isColliding)
+        //             {
+        //                 _isColliding = false;
+        //                 _beamModifierData.ClearBeamEffect(this, 
+        //                     BeamPriority, 
+        //                     playerComponent
+        //                     );
+        //             }
 
-                    if(playerComponent.Grounded)
-                    {
-                        playerComponent.Grounded = false;
-                    //     //playerComponent._rigidbody.freezeRotation = true;
+        //             if(playerComponent.Grounded)
+        //             {
+        //                 playerComponent.Grounded = false;
+        //             //     //playerComponent._rigidbody.freezeRotation = true;
                       
 
-                    //    var vel = _beamModifierData.BeamForce * transform.right * _beamExitVelocityMultiplier;
-                    //     if(playerComponent.BeamCollisionCount > 1)
-                    //     {
-                    //         playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
-                    //             vel);
-                    //     }
-                    //     else
-                    //     {
-                    //         playerComponent.AddLinearVelocityRaw(vel);
-                    //     }
-                    }
+        //             //    var vel = _beamModifierData.BeamForce * _targetTransform.right * _beamExitVelocityMultiplier;
+        //             //     if(playerComponent.BeamCollisionCount > 1)
+        //             //     {
+        //             //         playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
+        //             //             vel);
+        //             //     }
+        //             //     else
+        //             //     {
+        //             //         playerComponent.AddLinearVelocityRaw(vel);
+        //             //     }
+        //             }
 
-                    playerComponent.RotateCharacter(-transform.localEulerAngles);
-                    if(playerComponent.BeamCollisionCount > 1)
-                    {
-                        playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
-                            _beamModifierData.BeamForce * transform.right );
-                    }
-                    else
-                    {
-                        playerComponent.AddLinearVelocityRaw(_beamModifierData.BeamForce * transform.right );
-                    }
-                    } 
-                }
-            }
+        //             playerComponent.RotateCharacter(-transform.localEulerAngles);
+        //             if(playerComponent.BeamCollisionCount > 1)
+        //             {
+        //                 playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
+        //                     _beamModifierData.BeamForce * _targetTransform.right );
+        //             }
+        //             else
+        //             {
+        //                 playerComponent.AddLinearVelocityRaw(_beamModifierData.BeamForce * _targetTransform.right );
+        //             }
+        //             } 
+        //         }
+        //     }
             
-        }
+        // }
 
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawRay(_emissionPoint ?? transform.position, transform.right);
+            Gizmos.DrawRay(_emissionPoint ?? _targetTransform.position, _targetTransform.right);
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(_emissionPoint ?? transform.position, -transform.up);
+            Gizmos.DrawRay(_emissionPoint ?? _targetTransform.position, -_targetTransform.up);
         }
     }
 }
