@@ -1,3 +1,4 @@
+using System.Linq;
 using Controllers;
 using UnityEngine;
 
@@ -34,6 +35,9 @@ namespace Environment
         [SerializeField]
         private float _beamExitVelocityMultiplier;
 
+        [SerializeField]
+        private GameObject[] _objectsToIgnoreDuringHitChecks;
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
@@ -41,8 +45,6 @@ namespace Environment
         private RaycastHit2D[] _beamLowerRaycastData = new RaycastHit2D[5];
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
-        
-        [SerializeField]
         private int _beamPriority;
         private PlayerController _player; 
         private PlayerController _playerControllerForBoundsChecks;
@@ -93,10 +95,19 @@ namespace Environment
                     }
                     
                     var beamControllerTest = hit.transform.GetComponentInChildren<LightBeamController>();
+                    var beamControllerParentTest = hit.transform.GetComponentInParent<LightBeamController>();
 
-                    if (beamControllerTest == this || beamControllerTest == _currentSender || hit.transform.CompareTag("IgnoredByBeam") || (beamControllerTest == null && ShouldIgnoreWalls))
+                    if (beamControllerTest == this || beamControllerTest == _currentSender || hit.transform.CompareTag("IgnoredByBeam") || (beamControllerTest == null && ShouldIgnoreWalls) || _objectsToIgnoreDuringHitChecks.Any(o => o == hit.transform.gameObject))
                     {
-                        continue;
+                        if (beamControllerParentTest == this || beamControllerParentTest == _currentSender || (beamControllerParentTest == null && ShouldIgnoreWalls))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            hitInfo = hit;
+                            break;
+                        }
                     }
                     else
                     {
@@ -123,13 +134,17 @@ namespace Environment
 
             if (beamController == null)
             {
-                if (_targetHit != null)
+                beamController = hitInfoValue.transform.GetComponentInParent<LightBeamController>();
+                if(beamController == null)
                 {
-                    _targetHit.UnregisterHit();
-                    _targetHit = null;
+                    if (_targetHit != null)
+                    {
+                        _targetHit.UnregisterHit();
+                        _targetHit = null;
+                    }
+                    
+                    return hitInfoValue.point;
                 }
-                
-                return hitInfoValue.point;
             }
 
             if (_targetHit == beamController)
@@ -145,7 +160,7 @@ namespace Environment
 
             beamController.RegisterHit(this, hitInfoValue.point);
             _targetHit = beamController;
-
+            
             return hitInfoValue.point;
         }
 

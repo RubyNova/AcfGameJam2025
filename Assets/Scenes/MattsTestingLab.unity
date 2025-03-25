@@ -1686,11 +1686,13 @@ MonoBehaviour:
   _renderer: {fileID: 331883125}
   _axisHelper: {fileID: 2037731236}
   _beamModifierData: {fileID: 0}
+  _targetTransform: {fileID: 331883124}
+  _boxCollider: {fileID: 331883127}
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 331883127}
   _beamExitVelocityMultiplier: 0
+  _beamPriority: 0
 --- !u!61 &331883127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1893,11 +1895,13 @@ MonoBehaviour:
   _renderer: {fileID: 474129004}
   _axisHelper: {fileID: 961317270}
   _beamModifierData: {fileID: 0}
+  _targetTransform: {fileID: 474129003}
+  _boxCollider: {fileID: 474129006}
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 474129006}
   _beamExitVelocityMultiplier: 0
+  _beamPriority: 0
 --- !u!61 &474129006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2100,11 +2104,13 @@ MonoBehaviour:
   _renderer: {fileID: 496010800}
   _axisHelper: {fileID: 1327103495}
   _beamModifierData: {fileID: 0}
+  _targetTransform: {fileID: 496010799}
+  _boxCollider: {fileID: 496010802}
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 496010802}
   _beamExitVelocityMultiplier: 0
+  _beamPriority: 0
 --- !u!61 &496010802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5608,11 +5614,13 @@ MonoBehaviour:
   _renderer: {fileID: 1226129313}
   _axisHelper: {fileID: 1087210529}
   _beamModifierData: {fileID: 0}
+  _targetTransform: {fileID: 1226129312}
+  _boxCollider: {fileID: 1226129315}
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 1226129315}
   _beamExitVelocityMultiplier: 0
+  _beamPriority: 0
 --- !u!61 &1226129315
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6023,11 +6031,13 @@ MonoBehaviour:
   _renderer: {fileID: 1597989002}
   _axisHelper: {fileID: 0}
   _beamModifierData: {fileID: 1597989007}
+  _targetTransform: {fileID: 1597989004}
+  _boxCollider: {fileID: 1597989006}
   _lightBeamLength: 20
   _mode: 0
   _beamPierceDistance: 0
-  _boxCollider: {fileID: 1597989006}
   _beamExitVelocityMultiplier: 0
+  _beamPriority: 0
 --- !u!4 &1597989004
 Transform:
   m_ObjectHideFlags: 0
@@ -6244,11 +6254,13 @@ MonoBehaviour:
   _renderer: {fileID: 1782676294}
   _axisHelper: {fileID: 604183313}
   _beamModifierData: {fileID: 0}
+  _targetTransform: {fileID: 1782676296}
+  _boxCollider: {fileID: 1782676297}
   _lightBeamLength: 20
   _mode: 1
   _beamPierceDistance: 2
-  _boxCollider: {fileID: 1782676297}
   _beamExitVelocityMultiplier: 0
+  _beamPriority: 0
 --- !u!4 &1782676296
 Transform:
   m_ObjectHideFlags: 0
