@@ -11,6 +11,7 @@ namespace Controllers
     public class PlayerController : MonoBehaviour
     {
         public const int NO_BEAM_CACHED = 0;
+        public const string KEYBOARD_MOUSE_CONTROL_SCHEME = "Keyboard&Mouse";
 
 
         [Header("Animation")]
@@ -66,6 +67,10 @@ namespace Controllers
         
         [SerializeField]
         public bool ActiveCharacter;
+
+        [SerializeField]
+        private bool _isRunning = true;
+
         public Vector2 MinColliderPoint;
         public int BeamCollisionCount;
         public bool JumpRequested = false;
@@ -75,6 +80,7 @@ namespace Controllers
 
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
+        private InputAction _moveAction;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -85,6 +91,7 @@ namespace Controllers
                 SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
             }
             _playerActions = InputSystem.actions.FindActionMap("Player");
+            _moveAction = _playerActions["Move"];
         }
 
         // Update is called once per frame
@@ -142,7 +149,8 @@ namespace Controllers
                     {
                         _rigidbody.gravityScale = _gravityScale;
                     }
-                    _rigidbody.AddForce(_movementVector * _movementSpeed, ForceMode2D.Force);
+                    
+                    _rigidbody.AddForce(_movementVector * _movementSpeed * _rigidbody.mass, ForceMode2D.Force);
                 }
 
                 if(_outsideForces != Vector2.zero)
@@ -160,7 +168,7 @@ namespace Controllers
                 {
                     if (Grounded)
                     {
-                        _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+                        _rigidbody.AddForce(Vector2.up * _jumpForce * _rigidbody.mass, ForceMode2D.Impulse);
                     }
                     JumpRequested = false;
                 }
@@ -173,7 +181,21 @@ namespace Controllers
             if (!ActiveCharacter)
                 return;
 
-            _movementVector = value.Get<Vector2>();
+            var originalVector = value.Get<Vector2>();
+
+            if(!_isRunning && _moveAction.activeControl?.device is Keyboard)
+            {
+                originalVector.x *= 0.4f;
+            }
+
+            _movementVector = originalVector;
+        }
+
+        void OnRun(InputValue _)
+        {
+            if(!ActiveCharacter) return;
+
+            _isRunning = !_isRunning;
         }
 
         void OnJump()
@@ -295,7 +317,7 @@ namespace Controllers
     
         internal void UpdateAnims()
         {
-            _characterAnimator.SetFloat("MovementX", _rigidbody.linearVelocityX);
+            _characterAnimator.SetFloat("MovementX", _movementVector.x);
             _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
             _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
 

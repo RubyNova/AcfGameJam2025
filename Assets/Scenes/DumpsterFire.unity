@@ -4848,10 +4848,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterAnimator: {fileID: 218597434}
-  _movementSpeed: 10
-  _jumpForce: 10
-  _gravityScale: 1
-  _fallingGravityScale: 3
+  _movementSpeed: 50
+  _jumpForce: 25
+  _gravityScale: 3
+  _fallingGravityScale: 5
   _fallingMovementSpeedDivider: 0.1
   _familiarControllerReference: {fileID: 1654298489}
   _rigidbody: {fileID: 1975707816}
@@ -4877,10 +4877,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_Mass: 50
+  m_LinearDamping: 3
+  m_AngularDamping: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
