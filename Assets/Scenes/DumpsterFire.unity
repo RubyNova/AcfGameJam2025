@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.66500044, g: 0, b: 1, a: 1}
-  BeamForce: 50
+  BeamForce: 7
 --- !u!1 &808435051
 GameObject:
   m_ObjectHideFlags: 0
@@ -4862,6 +4862,7 @@ MonoBehaviour:
   _cachedVelocityUpdate: 0
   _cachedVelocity: {x: 0, y: 0}
   ActiveCharacter: 1
+  _isRunning: 0
   MinColliderPoint: {x: 0, y: 0}
   BeamCollisionCount: 0
   JumpRequested: 0
