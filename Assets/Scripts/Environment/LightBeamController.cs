@@ -162,30 +162,39 @@ namespace Environment
             var centre = _boxCollider.offset;
             var size = _boxCollider.size;
             var targetTransform = _boxCollider.transform;
+            var halfHeight = size.x * 0.5f;
+            var halfWidth = size.y * 0.5f;
+            _colliderPoints[0] = targetTransform.TransformPoint(new Vector2(centre.x - halfWidth, centre.y + halfHeight));
+            _colliderPoints[1] = targetTransform.TransformPoint(new Vector2(centre.x + halfWidth, centre.y + halfHeight));
+            _colliderPoints[2] = targetTransform.TransformPoint(new Vector2(centre.x + halfWidth, centre.y - halfHeight));
+            _colliderPoints[3] = targetTransform.TransformPoint(new Vector2(centre.x - halfWidth, centre.y - halfHeight));
 
-            _colliderPoints[0] = targetTransform.TransformPoint(new Vector2(centre.x - size.x / 2, centre.y + size.y / 2));
-            _colliderPoints[1] = targetTransform.TransformPoint(new Vector2(centre.x + size.x / 2, centre.y + size.y / 2));
-            _colliderPoints[2] = targetTransform.TransformPoint(new Vector2(centre.x + size.x / 2, centre.y - size.y / 2));
-            _colliderPoints[3] = targetTransform.TransformPoint(new Vector2(centre.x - size.x / 2, centre.y - size.y / 2));
-
-            var firstHighestPoint = Vector2.zero;
-            var secondHighestPoint = Vector2.zero;
+            Vector2? firstLowestPoint = null;
+            Vector2? secondLowestPoint = null;
 
             foreach (var point in _colliderPoints)
             {
-                if (point.y > firstHighestPoint.y)
+                if (!firstLowestPoint.HasValue)
                 {
-                    secondHighestPoint = firstHighestPoint;
-                    firstHighestPoint = point;
+                    firstLowestPoint = point;
+                    continue;
                 }
-                else if (point.y > secondHighestPoint.y)
+
+                if (point.y < firstLowestPoint.Value.y)
                 {
-                    secondHighestPoint = point;
+                    secondLowestPoint = firstLowestPoint;
+                    firstLowestPoint = point;
+                }
+                else if (!secondLowestPoint.HasValue || point.y < secondLowestPoint.Value.y)
+                {
+                    secondLowestPoint = point;
                 }
             }
 
-            if (_playerControllerForBoundsChecks.MinColliderPoint.y < secondHighestPoint.y)
+            var yValue = _playerControllerForBoundsChecks.transform.TransformPoint(_playerControllerForBoundsChecks.MinColliderPoint).y;
+            if (yValue < secondLowestPoint.Value.y)
             {
+                print($"VALUES: {yValue}, {secondLowestPoint.Value.y}");
                 _boxCollider.enabled = false;
             }
             else
