@@ -141,7 +141,6 @@ namespace Controllers
                     {
                         _rigidbody.gravityScale = _fallingGravityScale;
                     }
-                    //_rigidbody.AddForce(_movementVector * _movementSpeed * _fallingMovementSpeedDivider, ForceMode2D.Force);
                 }
                 else
                 {
@@ -172,7 +171,6 @@ namespace Controllers
                     }
                     JumpRequested = false;
                 }
-                //TODO: modify jumping if needed after anims wired up
             }
         }
 
@@ -274,16 +272,6 @@ namespace Controllers
             _cachedVelocityUpdate = true;
         }
 
-        public void RotateCharacter(Vector3 eulerAngles) 
-        {
-            // Rotation is absolutely fucked right now because we need to
-            // accurately and slowly transition the character back upright after launching them
-            // with beams... I cannot figure out the proper way so we'll come back to this soon.
-            // - kenny
-            //_rigidbody.MoveRotation(eulerAngles);
-            transform.Rotate(eulerAngles);
-        }
-
         public void RegisterIncomingBeamForce(LightBeamController sender, int beamPriority, Vector2 senderBeamDirection, float beamForce)
         {
             if(!_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
@@ -323,9 +311,19 @@ namespace Controllers
 
             if((_movementVector.x < 0 && transform.localScale.x > 0) || (_movementVector.x > 0 && transform.localScale.x < 0))
             {
-                var scale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                transform.localScale = scale;
+                FlipCharacterSprite();
             }
         }
+
+        public void RotateCharacter(Vector3 eulerAngles) => transform.Rotate(eulerAngles);
+
+        public void FlipCharacterSprite(bool normalDirection = true)
+        {
+            transform.GetPositionAndRotation(out Vector3 pos, out var rot);
+            rot.y = normalDirection ? 0 : 180;
+            transform.SetPositionAndRotation(pos, rot);
+        }
+
+        public LightBeamDataGroup? GetCachedBeamData() => _cachedAffectingBeam == NO_BEAM_CACHED ? null : _listOfOutsideForces[_cachedAffectingBeam];
     }
 }

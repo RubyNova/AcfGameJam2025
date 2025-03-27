@@ -22,21 +22,34 @@ public class LightBeamCollisionHandler : MonoBehaviour
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
             if(playerComponent != null)
             {
+                var cachedBeamOnPlayer = playerComponent.GetCachedBeamData();
+
+                if(cachedBeamOnPlayer != null && cachedBeamOnPlayer.Priority > _parentController.BeamPriority)
+                {
+                    //fuck right off
+                    return;
+                }
+
                 if(!_isColliding)
                 {
                     _isColliding = true;
+                    
+                    
+                    playerComponent.FlipCharacterSprite(transform.right.x >= 0);
+
                     if(transform.rotation.z != 0)
                     {
                         playerComponent.RotateCharacter(transform.localEulerAngles);   
                     }
 
                     playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
-
                     _parentController.BeamModifierData.ApplyBeamEffect(_parentController,
                         _parentController.BeamPriority, 
                         playerComponent, 
                         transform.right);
                     _parentController.CurrentPlayer = playerComponent;
+                    
+                    
                 }
 
                 playerComponent.Grounded = true;
@@ -46,11 +59,20 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D collision)
     {
+        print($"PONG - {collision.gameObject.name} - {_parentController.BeamPriority}");
         if(collision.gameObject.CompareTag("Player"))
         {
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
             if(playerComponent != null)
             {
+                var cachedBeamOnPlayer = playerComponent.GetCachedBeamData();
+
+                if(cachedBeamOnPlayer != null && cachedBeamOnPlayer.Priority > _parentController.BeamPriority)
+                {
+                    //fuck right off
+                    return;
+                }
+
                 if(playerComponent.JumpRequested)
                 {
                     if(_isColliding)

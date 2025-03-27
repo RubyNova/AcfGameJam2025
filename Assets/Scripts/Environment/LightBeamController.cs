@@ -198,7 +198,6 @@ namespace Environment
             }
             else
             {
-                print($"ACTIVATING COLLIDER ON {gameObject.name}, PLAYER VALUE: {yValue}, COLLIDER VALUE: {secondLowestPoint.Value.y}");
                 _boxCollider.enabled = true;
             }
         }
