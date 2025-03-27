@@ -36,6 +36,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
                         _parentController.BeamPriority, 
                         playerComponent, 
                         transform.right);
+                    _parentController.CurrentPlayer = playerComponent;
                 }
 
                 playerComponent.Grounded = true;
@@ -57,6 +58,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
                         _isColliding = false;
                         _parentController.BeamModifierData.ClearBeamEffect(_parentController, 
                             _parentController.BeamPriority, playerComponent);
+                        _parentController.CurrentPlayer = null;
                     }
 
                     if(playerComponent.Grounded)
