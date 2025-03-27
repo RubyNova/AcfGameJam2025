@@ -1,5 +1,6 @@
 using System.Linq;
 using Controllers;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Environment
@@ -159,15 +160,14 @@ namespace Environment
 
         private void CheckForPlayerBelow()
         {
-            var centre = _boxCollider.offset;
-            var size = _boxCollider.size;
             var targetTransform = _boxCollider.transform;
-            var halfHeight = size.x * 0.5f;
-            var halfWidth = size.y * 0.5f;
-            _colliderPoints[0] = targetTransform.TransformPoint(new Vector2(centre.x - halfWidth, centre.y + halfHeight));
-            _colliderPoints[1] = targetTransform.TransformPoint(new Vector2(centre.x + halfWidth, centre.y + halfHeight));
-            _colliderPoints[2] = targetTransform.TransformPoint(new Vector2(centre.x + halfWidth, centre.y - halfHeight));
-            _colliderPoints[3] = targetTransform.TransformPoint(new Vector2(centre.x - halfWidth, centre.y - halfHeight));
+            var startPoint =  targetTransform.InverseTransformPoint(_renderer.GetPosition(0));
+            var endPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(1));
+            var halfHeight = _renderer.startWidth * 0.5f;
+            _colliderPoints[0] = targetTransform.TransformPoint(new Vector2(startPoint.x, startPoint.y + halfHeight));
+            _colliderPoints[1] = targetTransform.TransformPoint(new Vector2(startPoint.x, startPoint.y - halfHeight));
+            _colliderPoints[2] = targetTransform.TransformPoint(new Vector2(endPoint.x, endPoint.y + halfHeight));
+            _colliderPoints[3] = targetTransform.TransformPoint(new Vector2(endPoint.x, endPoint.y - halfHeight));
 
             Vector2? firstLowestPoint = null;
             Vector2? secondLowestPoint = null;
@@ -191,13 +191,14 @@ namespace Environment
                 }
             }
 
-            var yValue = _playerControllerForBoundsChecks.transform.TransformPoint(_playerControllerForBoundsChecks.MinColliderPoint).y;
+            var yValue = _playerControllerForBoundsChecks.MinColliderPoint.y;
             if (yValue < secondLowestPoint.Value.y)
             {
                 _boxCollider.enabled = false;
             }
             else
             {
+                print($"ACTIVATING COLLIDER ON {gameObject.name}, PLAYER VALUE: {yValue}, COLLIDER VALUE: {secondLowestPoint.Value.y}");
                 _boxCollider.enabled = true;
             }
         }
