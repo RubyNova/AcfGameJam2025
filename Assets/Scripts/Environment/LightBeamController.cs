@@ -194,7 +194,6 @@ namespace Environment
             var yValue = _playerControllerForBoundsChecks.transform.TransformPoint(_playerControllerForBoundsChecks.MinColliderPoint).y;
             if (yValue < secondLowestPoint.Value.y)
             {
-                print($"VALUES: {yValue}, {secondLowestPoint.Value.y}");
                 _boxCollider.enabled = false;
             }
             else
