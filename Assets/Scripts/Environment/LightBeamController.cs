@@ -47,6 +47,7 @@ namespace Environment
         private LightBeamController _currentSender;
         private int _beamPriority;
         private PlayerController _playerControllerForBoundsChecks;
+        private Vector2[] _colliderPoints = new Vector2[4];
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
 
@@ -158,7 +159,32 @@ namespace Environment
 
         private void CheckForPlayerBelow()
         {
-            if (_playerControllerForBoundsChecks.MinColliderPoint.y < _boxCollider.bounds.min.y)
+            var centre = _boxCollider.offset;
+            var size = _boxCollider.size;
+            var targetTransform = _boxCollider.transform;
+
+            _colliderPoints[0] = targetTransform.TransformPoint(new Vector2(centre.x - size.x / 2, centre.y + size.y / 2));
+            _colliderPoints[1] = targetTransform.TransformPoint(new Vector2(centre.x + size.x / 2, centre.y + size.y / 2));
+            _colliderPoints[2] = targetTransform.TransformPoint(new Vector2(centre.x + size.x / 2, centre.y - size.y / 2));
+            _colliderPoints[3] = targetTransform.TransformPoint(new Vector2(centre.x - size.x / 2, centre.y - size.y / 2));
+
+            var firstHighestPoint = Vector2.zero;
+            var secondHighestPoint = Vector2.zero;
+
+            foreach (var point in _colliderPoints)
+            {
+                if (point.y > firstHighestPoint.y)
+                {
+                    secondHighestPoint = firstHighestPoint;
+                    firstHighestPoint = point;
+                }
+                else if (point.y > secondHighestPoint.y)
+                {
+                    secondHighestPoint = point;
+                }
+            }
+
+            if (_playerControllerForBoundsChecks.MinColliderPoint.y < secondHighestPoint.y)
             {
                 _boxCollider.enabled = false;
             }
