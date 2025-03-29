@@ -9,7 +9,7 @@
                     "name": "Navigate",
                     "type": "PassThrough",
                     "id": "c95b2375-e6d9-4b88-9c4c-c5e76515df4b",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -523,7 +523,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "351f2ccd-1f9f-44bf-9bec-d62ac5c5f408",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -585,9 +585,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Run",
+                    "name": "ToggleRun",
                     "type": "Button",
-                    "id": "14d5a547-3cf7-4a32-901d-07f037887958",
+                    "id": "3320c10b-768f-4401-a7cc-bb625e3130ef",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -607,8 +607,19 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "3ea4d645-4504-4529-b061-ab81934c3752",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "WASD",
-                    "id": "00ca640b-d935-4593-8157-c05846ea39b3",
+                    "id": "3941d613-4776-4779-a62a-e916fa7cea02",
                     "path": "Dpad",
                     "interactions": "",
                     "processors": "",
@@ -619,7 +630,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "d2581a9b-1d11-4566-b27d-b92aff5fabbc",
+                    "id": "bff98abb-d0ad-4a07-bc1e-d6b008998ded",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -630,7 +641,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "2e46982e-44cc-431b-9f0b-c11910bf467a",
+                    "id": "f72b6b58-3a03-4fb5-9bec-efce838eaa3c",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -641,7 +652,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "fcfe95b8-67b9-4526-84b5-5d0bc98d6400",
+                    "id": "9a3aad55-03e7-44a8-895f-c34d7bbb9811",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -652,7 +663,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "77bff152-3580-4b21-b6de-dcd0c7e41164",
+                    "id": "0f13c7ea-7632-4804-a848-8380fde094f1",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
@@ -660,17 +671,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "3ea4d645-4504-4529-b061-ab81934c3752",
-                    "path": "<Joystick>/stick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -872,12 +872,12 @@
                 },
                 {
                     "name": "",
-                    "id": "b719455c-05f8-438a-8bb7-8e850425bf44",
+                    "id": "fdb35126-88ec-41b1-baba-d18978cddfcb",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Run",
+                    "action": "ToggleRun",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

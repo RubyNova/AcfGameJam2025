@@ -37,15 +37,15 @@ public class LightBeamCollisionHandler : MonoBehaviour
                     
                     playerComponent.FlipCharacterSprite(transform.right.x >= 0);
 
-                    var parentTransform = gameObject.GetComponentInParent<Transform>();
+                    Transform parentTransform = gameObject.GetComponentInParent<Transform>();
 
-                    if(transform.rotation.z != 0)
+                    if(transform.localEulerAngles.z != 0)
                     {
                         playerComponent.RotateCharacterToBeam(transform.localEulerAngles);   
                     }
-                    else if(parentTransform != null && parentTransform.rotation.z != 0)
+                    else if(parentTransform != null && parentTransform.eulerAngles.z != 0)
                     {
-                        playerComponent.RotateCharacterToBeam(parentTransform.localEulerAngles);   
+                        playerComponent.RotateCharacterToBeam(parentTransform.eulerAngles);   
                     }
 
                     playerComponent._rigidbody.MovePosition(collision.contacts[0].point);

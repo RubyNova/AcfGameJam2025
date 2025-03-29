@@ -5119,6 +5119,11 @@ Transform:
   - {fileID: 121980325}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1860506527 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4156026668027660735, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+  m_PrefabInstance: {fileID: 2246016847305481406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1868402067
 GameObject:
   m_ObjectHideFlags: 0
@@ -6059,6 +6064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControllableCharacters
       objectReference: {fileID: 0}
+    - target: {fileID: 7751522648571147027, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: _spriteRotator
+      value: 
+      objectReference: {fileID: 1860506527}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
