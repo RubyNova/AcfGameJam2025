@@ -43,7 +43,6 @@ namespace Environment
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[5];
-        private RaycastHit2D[] _beamLowerRaycastData = new RaycastHit2D[5];
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
         private int _beamPriority;
@@ -61,6 +60,8 @@ namespace Environment
         private Vector3? RegisterPotentialBeamHit()
         {
             var hitCount = Physics2D.Raycast(_emissionPoint ?? _targetTransform.position, _targetTransform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
+            var debugValue = _emissionPoint ?? _targetTransform.position;
+            UnityEngine.Debug.DrawLine(debugValue, debugValue += _targetTransform.right * _lightBeamLength);
 
             if (hitCount == 0)
             {
@@ -205,7 +206,7 @@ namespace Environment
         private void ProduceBeam()
         {
             var potentialHitPoint = RegisterPotentialBeamHit();
-            var translatedPosition = _targetTransform.position;
+            var translatedPosition = _emissionPoint ?? _targetTransform.position;
             translatedPosition += _targetTransform.right * _lightBeamLength;
             var positions = new[] { _emissionPoint ?? _targetTransform.position,
                 potentialHitPoint ?? translatedPosition
