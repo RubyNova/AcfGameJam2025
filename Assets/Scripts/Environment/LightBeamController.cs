@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Controllers;
 using Unity.Mathematics;
@@ -37,6 +38,9 @@ namespace Environment
         private float _beamExitVelocityMultiplier;
 
         [SerializeField]
+        private float _snapPointOffset = 1;
+
+        [SerializeField]
         private GameObject[] _objectsToIgnoreDuringHitChecks;
 
         private Quaternion _cachedStartRotation;
@@ -48,6 +52,7 @@ namespace Environment
         private int _beamPriority;
         private PlayerController _playerControllerForBoundsChecks;
         private Vector2[] _colliderPoints = new Vector2[4];
+        private Vector2 _playerSnapPoint;
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
 
@@ -57,11 +62,12 @@ namespace Environment
 
         public PlayerController CurrentPlayer { get; set; }
 
+        public Vector2 PlayerSnapPoint => _playerSnapPoint;
+
         private Vector3? RegisterPotentialBeamHit()
         {
             var hitCount = Physics2D.Raycast(_emissionPoint ?? _targetTransform.position, _targetTransform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
             var debugValue = _emissionPoint ?? _targetTransform.position;
-            UnityEngine.Debug.DrawLine(debugValue, debugValue += _targetTransform.right * _lightBeamLength);
 
             if (hitCount == 0)
             {
@@ -222,6 +228,38 @@ namespace Environment
             _boxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
 
             CheckForPlayerBelow();
+            CalculateTopsideSnapPoint();
+        }
+
+        private void CalculateTopsideSnapPoint()
+        {
+            Vector2? firstHighestYPoint = null;
+            Vector2? secondHighestYPoint = null;
+
+            foreach (var point in _colliderPoints)
+            {
+                if (!firstHighestYPoint.HasValue)
+                {
+                    firstHighestYPoint = point;
+                    continue;
+                }
+
+                if (firstHighestYPoint.Value.y <= point.y)
+                {
+                    secondHighestYPoint = firstHighestYPoint;
+                    firstHighestYPoint = point;
+                }
+                else if (!secondHighestYPoint.HasValue || secondHighestYPoint.Value.y <= point.y)
+                {
+                    secondHighestYPoint = point;
+                }
+            }
+
+            Vector2 startPoint = Vector2.Distance(firstHighestYPoint.Value, _emissionPoint ?? (Vector2)_targetTransform.position) < Vector2.Distance(secondHighestYPoint.Value, _emissionPoint ?? (Vector2)_targetTransform.position)
+                ? firstHighestYPoint.Value
+                : secondHighestYPoint.Value;
+
+            _playerSnapPoint = startPoint + (Vector2)(transform.right * _snapPointOffset);
         }
 
         protected void Start()
