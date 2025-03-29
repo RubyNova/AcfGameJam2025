@@ -354,7 +354,12 @@ namespace Controllers
         {
             if(collision.gameObject.CompareTag("Wall"))
             {
-                print("YOLO");
+                var lightBeamController = collision.GetComponentInParent<LightBeamController>();
+                if(lightBeamController != null)
+                {
+                    _rigidbody.linearVelocity = Vector2.zero;
+                    transform.position = lightBeamController.PlayerSnapPoint;
+                }
             }
         }
     }
