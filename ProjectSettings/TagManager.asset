@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - IgnoredByBeam
+  - Wall
   layers:
   - Default
   - TransparentFX
