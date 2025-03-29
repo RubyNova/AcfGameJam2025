@@ -37,9 +37,15 @@ public class LightBeamCollisionHandler : MonoBehaviour
                     
                     playerComponent.FlipCharacterSprite(transform.right.x >= 0);
 
+                    var parentTransform = gameObject.GetComponentInParent<Transform>();
+
                     if(transform.rotation.z != 0)
                     {
-                        playerComponent.RotateCharacter(transform.localEulerAngles);   
+                        playerComponent.RotateCharacterToBeam(transform.localEulerAngles);   
+                    }
+                    else if(parentTransform != null && parentTransform.rotation.z != 0)
+                    {
+                        playerComponent.RotateCharacterToBeam(parentTransform.localEulerAngles);   
                     }
 
                     playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
@@ -73,6 +79,9 @@ public class LightBeamCollisionHandler : MonoBehaviour
                     return;
                 }
 
+                var parentTransform = gameObject.GetComponentInParent<Transform>();
+                var rotationReductionAmount = transform.localEulerAngles.z == 0 ? -parentTransform.localEulerAngles : -transform.localEulerAngles;
+
                 if(playerComponent.JumpRequested)
                 {
                     if(_isColliding)
@@ -88,7 +97,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
                         playerComponent.Grounded = false;
                     }
 
-                    playerComponent.RotateCharacter(-transform.localEulerAngles);
+                    playerComponent.RotateCharacterToBeam(rotationReductionAmount);
                 }
                 else
                 {
@@ -107,7 +116,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
                             playerComponent.Grounded = false;
                         }
 
-                        playerComponent.RotateCharacter(-transform.localEulerAngles);
+                        playerComponent.RotateCharacterToBeam(rotationReductionAmount);
                         if(playerComponent.BeamCollisionCount > 1)
                         {
                             playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 

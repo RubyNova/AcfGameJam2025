@@ -48,6 +48,9 @@ namespace Controllers
         [SerializeField]
         public Collider2D _collider;
 
+        [SerializeField]
+        public Transform _spriteRotator;
+
         [Header("Read-only Values")]
 
         [SerializeField]
@@ -316,6 +319,21 @@ namespace Controllers
         }
 
         public void RotateCharacter(Vector3 eulerAngles) => transform.Rotate(eulerAngles);
+
+        public void RotateCharacterToBeam(Vector3 localEulerAngles)
+        {
+            //Reset rotation first
+            if(_spriteRotator.rotation.z > 0)
+            {
+                _spriteRotator.Rotate(-_spriteRotator.localEulerAngles);
+            }
+            else if(_spriteRotator.rotation.z < 0)
+            {
+                _spriteRotator.Rotate(_spriteRotator.localEulerAngles);
+            }
+
+            _spriteRotator.Rotate(localEulerAngles);
+        }
 
         public void FlipCharacterSprite(bool normalDirection = true)
         {
