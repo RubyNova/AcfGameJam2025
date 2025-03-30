@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &950990756917472206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8177297233155880620}
+  m_Layer: 0
+  m_Name: Feetsies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8177297233155880620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950990756917472206}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8077570158492271931}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021995475186326193
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4156026668027660735}
+  - {fileID: 8177297233155880620}
   m_Father: {fileID: 3164417712867505803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5852338104788843258
@@ -84,6 +116,9 @@ MonoBehaviour:
   _familiarControllerReference: {fileID: 3914036207532161062}
   _rigidbody: {fileID: 5852338104788843258}
   _collider: {fileID: 1047131086249340933}
+  _triggerCollider: {fileID: 0}
+  _spriteRotator: {fileID: 4156026668027660735}
+  _feetTargetTransform: {fileID: 8177297233155880620}
   Grounded: 1
   _movementVector: {x: 0, y: 0}
   _cachedAffectingBeam: 0
@@ -669,6 +704,7 @@ MonoBehaviour:
   _mode: 2
   _beamPierceDistance: 0
   _beamExitVelocityMultiplier: 0
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 7850566374596847418}
   - {fileID: 5688382727879582895}

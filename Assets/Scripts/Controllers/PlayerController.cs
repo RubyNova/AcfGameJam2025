@@ -54,6 +54,9 @@ namespace Controllers
         [SerializeField]
         public Transform _spriteRotator;
 
+        [SerializeField]
+        private Transform _feetTargetTransform;
+
         [Header("Read-only Values")]
 
         [SerializeField]
@@ -358,7 +361,13 @@ namespace Controllers
                 if(lightBeamController != null)
                 {
                     _rigidbody.linearVelocity = Vector2.zero;
-                    transform.position = lightBeamController.PlayerSnapPoint;
+
+                    var distance = Vector2.Distance(transform.position, _feetTargetTransform.position);
+
+                    var newPosition = lightBeamController.PlayerSnapPoint;
+                    newPosition.y += distance;
+
+                    transform.position = newPosition;
                 }
             }
         }
