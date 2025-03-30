@@ -80,12 +80,15 @@ namespace Controllers
         [SerializeField]
         private bool _isRunning = true;
 
+        [SerializeField]
+        private Vector2 _outsideForces = Vector2.zero;
+
         public Vector2 MinColliderPoint;
-        public int BeamCollisionCount;
+        public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool JumpRequested = false;
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
-        private Vector2 _outsideForces = Vector2.zero;
+        
 
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
@@ -107,7 +110,6 @@ namespace Controllers
         void Update()
         {
             MinColliderPoint = new Vector2 {x = _collider.bounds.min.x, y = _collider.bounds.min.y};
-            BeamCollisionCount = _listOfOutsideForces.Count;
 
             if (switchCharacters && ActiveCharacter)
             {
@@ -144,12 +146,13 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                if(_rigidbody.linearVelocityY < 0 && !Grounded)
+                if(_rigidbody.linearVelocityY < 0 && !Grounded && _cachedAffectingBeam == NO_BEAM_CACHED)
                 {
                     if(_rigidbody.gravityScale != _fallingGravityScale)
                     {
                         _rigidbody.gravityScale = _fallingGravityScale;
                     }
+
                 }
                 else
                 {
@@ -221,6 +224,11 @@ namespace Controllers
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 Grounded = true;
+
+                if(_spriteRotator.localEulerAngles.z != 0)
+                {
+                    _spriteRotator.localEulerAngles = Vector3.zero;
+                }
             }
         }
 
@@ -327,8 +335,6 @@ namespace Controllers
             }
         }
 
-        public void RotateCharacter(Vector3 eulerAngles) => transform.Rotate(eulerAngles);
-
         public void RotateCharacterToBeam(Vector3 localEulerAngles)
         {
             //Reset rotation first
@@ -357,10 +363,12 @@ namespace Controllers
         {
             if(collision.gameObject.CompareTag("Wall"))
             {
+
                 var lightBeamController = collision.GetComponentInParent<LightBeamController>();
                 if(lightBeamController != null)
                 {
-                    _rigidbody.linearVelocity = Vector2.zero;
+                    Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
+                    _rigidbody.linearVelocity = flippedVelocity;
 
                     var distance = Vector2.Distance(transform.position, _feetTargetTransform.position);
 
@@ -370,6 +378,12 @@ namespace Controllers
                     transform.position = newPosition;
                 }
             }
+        }
+
+        private Vector2 FlipVelocity(Vector2 velocity, Vector2 direction)
+        {
+            float directionalVelocity = Vector2.Dot(velocity, direction);
+            return new Vector2(directionalVelocity, _rigidbody.linearVelocityY);
         }
     }
 }

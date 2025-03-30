@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.917953, g: 1, b: 0, a: 1}
-  BeamForce: 3
+  BeamForce: 7
 --- !u!114 &545178552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,9 +1332,10 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
-  _snapPointOffset: 1
+  _snapPointOffset: 3
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 232679083}
+  _beamPriority: 0
 --- !u!4 &545178553
 Transform:
   m_ObjectHideFlags: 0
@@ -1393,6 +1394,7 @@ MonoBehaviour:
   _beamExitVelocityMultiplier: 1
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
+  _beamPriority: 0
 --- !u!4 &561061784
 Transform:
   m_ObjectHideFlags: 0
@@ -4346,7 +4348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.917953, g: 1, b: 0, a: 1}
-  BeamForce: 3
+  BeamForce: 7
 --- !u!114 &1151547968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4368,9 +4370,10 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
-  _snapPointOffset: 1
+  _snapPointOffset: 4
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 2079471411}
+  _beamPriority: 0
 --- !u!4 &1151547969
 Transform:
   m_ObjectHideFlags: 0
@@ -4717,6 +4720,7 @@ MonoBehaviour:
   _beamExitVelocityMultiplier: 1
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
+  _beamPriority: 0
 --- !u!120 &1552418751
 LineRenderer:
   serializedVersion: 2
@@ -5149,7 +5153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.917953, g: 1, b: 0, a: 1}
-  BeamForce: 3
+  BeamForce: 7
 --- !u!114 &1868402069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5171,9 +5175,10 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
-  _snapPointOffset: 1
+  _snapPointOffset: 4
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 854734988}
+  _beamPriority: 0
 --- !u!4 &1868402070
 Transform:
   m_ObjectHideFlags: 0
@@ -5648,6 +5653,7 @@ MonoBehaviour:
   _beamExitVelocityMultiplier: 1
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
+  _beamPriority: 0
 --- !u!4 &2002727229
 Transform:
   m_ObjectHideFlags: 0
@@ -5829,7 +5835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.917953, g: 1, b: 0, a: 1}
-  BeamForce: 3
+  BeamForce: 7
 --- !u!114 &2107680879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5851,9 +5857,10 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
-  _snapPointOffset: 1
+  _snapPointOffset: 4
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 2115142495}
+  _beamPriority: 0
 --- !u!4 &2107680880
 Transform:
   m_ObjectHideFlags: 0
@@ -6060,6 +6067,14 @@ PrefabInstance:
     - target: {fileID: 3923391215170929848, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_Name
       value: ControllableCharacters
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

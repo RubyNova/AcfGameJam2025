@@ -50,13 +50,12 @@ public class LightBeamCollisionHandler : MonoBehaviour
                     }
 
                     playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
+                    
                     _parentController.BeamModifierData.ApplyBeamEffect(_parentController,
                         _parentController.BeamPriority, 
                         playerComponent, 
                         transform.right);
                     _parentController.CurrentPlayer = playerComponent;
-                    
-                    
                 }
 
                 playerComponent.Grounded = true;
@@ -66,39 +65,35 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        print($"PONG - {collision.gameObject.name} - {_parentController.BeamPriority}");
         if(collision.gameObject.CompareTag("Player"))
         {
+            print("Exiting collision w/ Player - "+gameObject.GetHashCode());
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
             if(playerComponent != null)
             {
                 var cachedBeamOnPlayer = playerComponent.GetCachedBeamData();
 
-                if(cachedBeamOnPlayer != null && cachedBeamOnPlayer.Priority > _parentController.BeamPriority)
+                if(cachedBeamOnPlayer != null && cachedBeamOnPlayer.Priority > _parentController.BeamPriority && playerComponent.BeamCollisionCount > 1)
                 {
                     //fuck right off
                     return;
                 }
 
-                var parentTransform = gameObject.GetComponentInParent<Transform>();
-                var rotationReductionAmount = transform.localEulerAngles.z == 0 ? -parentTransform.localEulerAngles : -transform.localEulerAngles;
+                _parentController.BeamModifierData.ClearBeamEffect(_parentController, 
+                            _parentController.BeamPriority, playerComponent);
+                _parentController.CurrentPlayer = null;
 
                 if(playerComponent.JumpRequested)
                 {
                     if(_isColliding)
                     {
                         _isColliding = false;
-                        _parentController.BeamModifierData.ClearBeamEffect(_parentController, 
-                            _parentController.BeamPriority, playerComponent);
-                        _parentController.CurrentPlayer = null;
                     }
 
                     if(playerComponent.Grounded)
                     {
                         playerComponent.Grounded = false;
                     }
-
-                    playerComponent.RotateCharacterToBeam(rotationReductionAmount);
                 }
                 else
                 {
@@ -108,24 +103,11 @@ public class LightBeamCollisionHandler : MonoBehaviour
                         if(_isColliding)
                         {
                             _isColliding = false;
-                            _parentController.BeamModifierData.ClearBeamEffect(_parentController,
-                                _parentController.BeamPriority, playerComponent);
                         }
 
                         if(playerComponent.Grounded)
                         {
                             playerComponent.Grounded = false;
-                        }
-
-                        playerComponent.RotateCharacterToBeam(rotationReductionAmount);
-                        if(playerComponent.BeamCollisionCount > 1)
-                        {
-                            playerComponent.AddLinearVelocity(gameObject.GetHashCode(), 
-                                _parentController.BeamModifierData.BeamForce * transform.right );
-                        }
-                        else
-                        {
-                            playerComponent.AddLinearVelocityRaw(_parentController.BeamModifierData.BeamForce * transform.right );
                         }
                     } 
                 }

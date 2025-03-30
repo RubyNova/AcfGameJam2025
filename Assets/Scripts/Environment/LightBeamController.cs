@@ -43,13 +43,16 @@ namespace Environment
         [SerializeField]
         private GameObject[] _objectsToIgnoreDuringHitChecks;
 
+        [SerializeField]
+        private int _beamPriority;
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[5];
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
-        private int _beamPriority;
+        
         private PlayerController _playerControllerForBoundsChecks;
         private Vector2[] _colliderPoints = new Vector2[4];
         private Vector2 _playerSnapPoint;
@@ -63,6 +66,8 @@ namespace Environment
         public PlayerController CurrentPlayer { get; set; }
 
         public Vector2 PlayerSnapPoint => _playerSnapPoint;
+
+        public Transform BeamTransform => _targetTransform;
 
         private Vector3? RegisterPotentialBeamHit()
         {
