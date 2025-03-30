@@ -41,7 +41,8 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
                     if(transform.localEulerAngles.z != 0)
                     {
-                        playerComponent.RotateCharacterToBeam(transform.localEulerAngles);   
+                        var angles = transform.localEulerAngles.z > 180 ? transform.eulerAngles : transform.localEulerAngles;
+                        playerComponent.RotateCharacterToBeam(angles);   
                     }
                     else if(parentTransform != null && parentTransform.eulerAngles.z != 0)
                     {

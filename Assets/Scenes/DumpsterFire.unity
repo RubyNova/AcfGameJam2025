@@ -6061,22 +6061,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControllableCharacters
       objectReference: {fileID: 0}
-    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: m_Size.x
-      value: 2.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: m_Size.y
-      value: 5.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: m_Offset.x
-      value: 1.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.22
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
