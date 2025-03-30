@@ -36,7 +36,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
                     playerComponent.FlipCharacterSprite(_parentController.BeamTransform.right.x >= 0);
 
-                    if(playerComponent.transform.rotation.z == 0)
+                    if(playerComponent.transform.rotation.z == 0 || !playerComponent.Triggered)
                     {
                         playerComponent._rigidbody.linearVelocity = Vector2.zero;
                         Transform parentTransform = gameObject.GetComponentInParent<Transform>();
@@ -75,15 +75,15 @@ public class LightBeamCollisionHandler : MonoBehaviour
             {
                 var cachedBeamOnPlayer = playerComponent.GetCachedBeamData();
 
+                _parentController.BeamModifierData.ClearBeamEffect(_parentController, 
+                    _parentController.BeamPriority, playerComponent);
+                _parentController.CurrentPlayer = null;
+
                 if(cachedBeamOnPlayer != null && cachedBeamOnPlayer.Priority > _parentController.BeamPriority && playerComponent.BeamCollisionCount > 1)
                 {
                     //fuck right off
                     return;
                 }
-
-                _parentController.BeamModifierData.ClearBeamEffect(_parentController, 
-                            _parentController.BeamPriority, playerComponent);
-                _parentController.CurrentPlayer = null;
 
                 if(playerComponent.JumpRequested)
                 {

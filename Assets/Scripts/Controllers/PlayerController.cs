@@ -19,7 +19,7 @@ namespace Controllers
         [SerializeField]
         private Animator _characterAnimator;
 
-        [Header("Character Configuration")]
+        [Header("Configuration")]
 
         [SerializeField]
         private float _movementSpeed;
@@ -37,7 +37,11 @@ namespace Controllers
         [Range(0.1f, 2.0f)]
         private float _fallingMovementSpeedDivider;
 
-        [Header("Character Setup")]
+        [SerializeField]
+        [Range(0.01f, 1.0f)]
+        private float _verticalLaunchDamping;
+
+        [Header("Dependencies")]
 
         [SerializeField]
         private FamiliarController _familiarControllerReference;
@@ -86,6 +90,8 @@ namespace Controllers
         public Vector2 MinColliderPoint;
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool JumpRequested = false;
+
+        public bool Triggered => _triggered; 
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
         
@@ -93,6 +99,8 @@ namespace Controllers
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
         private InputAction _moveAction;
+
+        private bool _triggered = false;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -153,6 +161,10 @@ namespace Controllers
                         _rigidbody.gravityScale = _fallingGravityScale;
                     }
 
+                    if(_triggered)
+                        _triggered = false;
+
+                    _rigidbody.AddForce(_movementVector * _movementSpeed * _fallingMovementSpeedDivider * _rigidbody.mass, ForceMode2D.Force);
                 }
                 else
                 {
@@ -329,7 +341,7 @@ namespace Controllers
             _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
             _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
 
-            if(_movementVector.x != 0)
+            if(_movementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)
             {
                 FlipCharacterSprite(_movementVector.x > 0);
             }
@@ -363,13 +375,13 @@ namespace Controllers
         {
             if(collision.gameObject.CompareTag("Wall"))
             {
-
                 var lightBeamController = collision.GetComponentInParent<LightBeamController>();
                 if(lightBeamController != null)
                 {
+                    _triggered = true;
                     //Get flipped velocity
                     Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
-                    
+                    flippedVelocity.y *= _verticalLaunchDamping;
 
                     // Get the distance between feetsies and origin
                     var distance = Vector2.Distance(transform.position, _feetTargetTransform.position);
@@ -385,7 +397,6 @@ namespace Controllers
                     if(lightBeamController.BeamTransform.localEulerAngles.z != 0)
                     {
                         angles = lightBeamController.BeamTransform.localEulerAngles.z > 180 ? lightBeamController.BeamTransform.eulerAngles : lightBeamController.BeamTransform.localEulerAngles;
-                        print("Transform angles: " + angles);
 
                         if(angles.z > 90)
                         {
@@ -395,10 +406,7 @@ namespace Controllers
                     else if(beamParentTransform != null && beamParentTransform.eulerAngles.z != 0)
                     {
                         angles = beamParentTransform.eulerAngles;
-                        print("Parent angles: " + angles);
                     }
-
-                    
 
                     FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
                     RotateCharacterToBeam(angles);

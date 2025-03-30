@@ -113,7 +113,8 @@ MonoBehaviour:
   _jumpForce: 25
   _gravityScale: 3
   _fallingGravityScale: 5
-  _fallingMovementSpeedDivider: 0.1
+  _fallingMovementSpeedDivider: 0.505
+  _verticalLaunchDamping: 0.339
   _familiarControllerReference: {fileID: 3914036207532161062}
   _rigidbody: {fileID: 5852338104788843258}
   _collider: {fileID: 1047131086249340933}
@@ -127,8 +128,8 @@ MonoBehaviour:
   _cachedVelocity: {x: 0, y: 0}
   ActiveCharacter: 1
   _isRunning: 0
+  _outsideForces: {x: 0, y: 0}
   MinColliderPoint: {x: 0, y: 0}
-  BeamCollisionCount: 0
   JumpRequested: 0
 --- !u!114 &8958349282182756975
 MonoBehaviour:
@@ -756,6 +757,7 @@ MonoBehaviour:
   - {fileID: 7850566374596847418}
   - {fileID: 5688382727879582895}
   - {fileID: 2807066728222202094}
+  _beamPriority: 0
 --- !u!114 &9045772458707104777
 MonoBehaviour:
   m_ObjectHideFlags: 0
