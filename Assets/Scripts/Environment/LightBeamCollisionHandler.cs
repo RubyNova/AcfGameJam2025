@@ -34,8 +34,11 @@ public class LightBeamCollisionHandler : MonoBehaviour
                 {
                     _isColliding = true;
 
+                    playerComponent.FlipCharacterSprite(_parentController.BeamTransform.right.x >= 0);
+
                     if(playerComponent.transform.rotation.z == 0)
                     {
+                        playerComponent._rigidbody.linearVelocity = Vector2.zero;
                         Transform parentTransform = gameObject.GetComponentInParent<Transform>();
                         Vector3 angles = Vector3.zero;
                         if(transform.localEulerAngles.z != 0)

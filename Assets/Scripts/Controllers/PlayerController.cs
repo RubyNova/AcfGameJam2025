@@ -166,7 +166,7 @@ namespace Controllers
 
                 if(_outsideForces != Vector2.zero)
                 {
-                    _rigidbody.linearVelocityX += _outsideForces.x;
+                    _rigidbody.linearVelocity += _outsideForces;
                 }
 
                 if(_cachedVelocityUpdate)
