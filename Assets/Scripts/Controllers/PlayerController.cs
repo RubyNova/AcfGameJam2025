@@ -367,15 +367,35 @@ namespace Controllers
                 var lightBeamController = collision.GetComponentInParent<LightBeamController>();
                 if(lightBeamController != null)
                 {
+                    //Get flipped velocity
                     Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
-                    _rigidbody.linearVelocity = flippedVelocity;
+                    
 
+                    // Get the distance between feetsies and origin
                     var distance = Vector2.Distance(transform.position, _feetTargetTransform.position);
 
+                    //Get the new position from the LBC's snap point
                     var newPosition = lightBeamController.PlayerSnapPoint;
                     newPosition.y += distance;
 
+                    //identify rotation
+                    Transform beamParentTransform = lightBeamController.transform;
+                    Vector3 angles = Vector3.zero;
+
+                    if(lightBeamController.BeamTransform.localEulerAngles.z != 0)
+                    {
+                        angles = lightBeamController.BeamTransform.localEulerAngles.z > 180 ? lightBeamController.BeamTransform.eulerAngles : lightBeamController.BeamTransform.localEulerAngles;
+                    }
+                    else if(beamParentTransform != null && beamParentTransform.eulerAngles.z != 0)
+                    {
+                        angles = beamParentTransform.eulerAngles;
+                    }
+
+                    //Assign stuff to the character
+                    FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
                     transform.position = newPosition;
+                    RotateCharacterToBeam(angles);
+                    _rigidbody.linearVelocity = flippedVelocity;
                 }
             }
         }

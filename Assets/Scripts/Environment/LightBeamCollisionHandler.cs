@@ -33,23 +33,23 @@ public class LightBeamCollisionHandler : MonoBehaviour
                 if(!_isColliding)
                 {
                     _isColliding = true;
-                    
-                    
-                    playerComponent.FlipCharacterSprite(transform.right.x >= 0);
 
-                    Transform parentTransform = gameObject.GetComponentInParent<Transform>();
-
-                    if(transform.localEulerAngles.z != 0)
+                    if(playerComponent.transform.rotation.z == 0)
                     {
-                        var angles = transform.localEulerAngles.z > 180 ? transform.eulerAngles : transform.localEulerAngles;
-                        playerComponent.RotateCharacterToBeam(angles);   
-                    }
-                    else if(parentTransform != null && parentTransform.eulerAngles.z != 0)
-                    {
-                        playerComponent.RotateCharacterToBeam(parentTransform.eulerAngles);   
+                        Transform parentTransform = gameObject.GetComponentInParent<Transform>();
+                        Vector3 angles = Vector3.zero;
+                        if(transform.localEulerAngles.z != 0)
+                        {
+                            angles = transform.localEulerAngles.z > 180 ? transform.eulerAngles : transform.localEulerAngles;
+                        }
+                        else if(parentTransform != null && parentTransform.eulerAngles.z != 0)
+                        {
+                            angles = parentTransform.eulerAngles;
+                        }
+                        playerComponent.RotateCharacterToBeam(angles);
                     }
 
-                    playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
+                    //playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
                     
                     _parentController.BeamModifierData.ApplyBeamEffect(_parentController,
                         _parentController.BeamPriority, 
@@ -67,7 +67,6 @@ public class LightBeamCollisionHandler : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            print("Exiting collision w/ Player - "+gameObject.GetHashCode());
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
             if(playerComponent != null)
             {
