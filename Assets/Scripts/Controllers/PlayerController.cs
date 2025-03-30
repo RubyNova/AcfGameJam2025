@@ -348,7 +348,7 @@ namespace Controllers
             transform.SetPositionAndRotation(pos, rot);
         }
 
-        public LightBeamDataGroup? GetCachedBeamData() => _cachedAffectingBeam == NO_BEAM_CACHED ? null : _listOfOutsideForces[_cachedAffectingBeam];
+        public LightBeamDataGroup GetCachedBeamData() => _cachedAffectingBeam == NO_BEAM_CACHED ? null : _listOfOutsideForces[_cachedAffectingBeam];
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
