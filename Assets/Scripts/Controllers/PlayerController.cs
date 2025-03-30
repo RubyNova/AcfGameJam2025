@@ -329,9 +329,9 @@ namespace Controllers
             _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
             _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
 
-            if((_movementVector.x < 0 && transform.localScale.x > 0) || (_movementVector.x > 0 && transform.localScale.x < 0))
+            if(_movementVector.x != 0)
             {
-                FlipCharacterSprite();
+                FlipCharacterSprite(_movementVector.x > 0);
             }
         }
 
@@ -391,10 +391,12 @@ namespace Controllers
                         angles = beamParentTransform.eulerAngles;
                     }
 
+                    print(angles);
+
                     //Assign stuff to the character
                     FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
-                    transform.position = newPosition;
                     RotateCharacterToBeam(angles);
+                    transform.position = newPosition;
                     _rigidbody.linearVelocity = flippedVelocity;
                 }
             }
@@ -403,7 +405,9 @@ namespace Controllers
         private Vector2 FlipVelocity(Vector2 velocity, Vector2 direction)
         {
             float directionalVelocity = Vector2.Dot(velocity, direction);
-            return new Vector2(directionalVelocity, _rigidbody.linearVelocityY);
+            Vector2 newVelocity = new Vector2(directionalVelocity, _rigidbody.linearVelocityY);
+            print("Flip: "+newVelocity);
+            return newVelocity;
         }
     }
 }

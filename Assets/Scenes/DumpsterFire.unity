@@ -5857,7 +5857,7 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
-  _snapPointOffset: 4
+  _snapPointOffset: 5
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 2115142495}
   _beamPriority: 0
@@ -6161,6 +6161,18 @@ PrefabInstance:
     - target: {fileID: 8936151430494184470, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: TargetOffset.y
       value: -1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936151430494184470, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: TrackerSettings.BindingMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936151430494184470, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: VerticalAxis.Recentering.Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936151430494184470, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.x
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9068803214189826816, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.x

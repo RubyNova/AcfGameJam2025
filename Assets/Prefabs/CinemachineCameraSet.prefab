@@ -360,10 +360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetOffset: {x: -1.63, y: -0.41, z: 0}
+  TargetOffset: {x: -1.63, y: -1.61, z: 0}
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 4, y: 1, z: 1}
+    PositionDamping: {x: 2, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
