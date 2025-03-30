@@ -233,33 +233,35 @@ namespace Environment
 
         private void CalculateTopsideSnapPoint()
         {
-            Vector2? firstHighestYPoint = null;
-            Vector2? secondHighestYPoint = null;
+            Vector2? firstOriginPoint = null;
+            Vector2? secondOriginPoint = null;
+
+            var origin = _emissionPoint ?? _targetTransform.position;
 
             foreach (var point in _colliderPoints)
             {
-                if (!firstHighestYPoint.HasValue)
+                if (!firstOriginPoint.HasValue)
                 {
-                    firstHighestYPoint = point;
+                    firstOriginPoint = point;
                     continue;
                 }
 
-                if (firstHighestYPoint.Value.y <= point.y)
+                if (Vector2.Distance(point, origin) <= Vector2.Distance(firstOriginPoint.Value, origin))
                 {
-                    secondHighestYPoint = firstHighestYPoint;
-                    firstHighestYPoint = point;
+                    secondOriginPoint = firstOriginPoint;
+                    firstOriginPoint = point;
                 }
-                else if (!secondHighestYPoint.HasValue || secondHighestYPoint.Value.y <= point.y)
+                else if (!secondOriginPoint.HasValue || Vector2.Distance(point, origin) < Vector2.Distance(secondOriginPoint.Value, origin))
                 {
-                    secondHighestYPoint = point;
+                    secondOriginPoint = point;
                 }
             }
 
-            Vector2 startPoint = Vector2.Distance(firstHighestYPoint.Value, _emissionPoint ?? (Vector2)_targetTransform.position) < Vector2.Distance(secondHighestYPoint.Value, _emissionPoint ?? (Vector2)_targetTransform.position)
-                ? firstHighestYPoint.Value
-                : secondHighestYPoint.Value;
+            Vector2 startPoint = firstOriginPoint.Value.y > secondOriginPoint.Value.y
+                ? firstOriginPoint.Value
+                : secondOriginPoint.Value;
 
-            _playerSnapPoint = startPoint + (Vector2)(transform.right * _snapPointOffset);
+            _playerSnapPoint = startPoint + (Vector2)(_targetTransform.right * _snapPointOffset);
         }
 
         protected void Start()
@@ -385,6 +387,7 @@ namespace Environment
             Gizmos.DrawRay(_emissionPoint ?? _targetTransform.position, _targetTransform.right);
             Gizmos.color = Color.red;
             Gizmos.DrawRay(_emissionPoint ?? _targetTransform.position, -_targetTransform.up);
+            Gizmos.DrawSphere(_playerSnapPoint, 0.5f);
         }
     }
 }

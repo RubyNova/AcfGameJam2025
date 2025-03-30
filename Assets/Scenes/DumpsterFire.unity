@@ -1337,6 +1337,7 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 232679083}
 --- !u!4 &545178553
@@ -1395,6 +1396,7 @@ MonoBehaviour:
   _mode: 0
   _beamPierceDistance: 0
   _beamExitVelocityMultiplier: 1
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
 --- !u!4 &561061784
 Transform:
@@ -4371,6 +4373,7 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 2079471411}
 --- !u!4 &1151547969
@@ -4717,6 +4720,7 @@ MonoBehaviour:
   _mode: 0
   _beamPierceDistance: 200
   _beamExitVelocityMultiplier: 1
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
 --- !u!120 &1552418751
 LineRenderer:
@@ -5177,6 +5181,7 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 854734988}
 --- !u!4 &1868402070
@@ -5651,6 +5656,7 @@ MonoBehaviour:
   _mode: 0
   _beamPierceDistance: 0
   _beamExitVelocityMultiplier: 1
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
 --- !u!4 &2002727229
 Transform:
@@ -5660,14 +5666,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002727226}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.30853555, w: 0.9512129}
+  m_LocalRotation: {x: 0, y: 0, z: 0.31878564, w: 0.94782686}
   m_LocalPosition: {x: -0.44, y: -3.46, z: 0.004709914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 27486660}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 35.942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 37.179}
 --- !u!1 &2079471411
 GameObject:
   m_ObjectHideFlags: 0
@@ -5855,6 +5861,7 @@ MonoBehaviour:
   _mode: 1
   _beamPierceDistance: 2
   _beamExitVelocityMultiplier: 1
+  _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 2115142495}
 --- !u!4 &2107680880
@@ -6123,6 +6130,10 @@ PrefabInstance:
       propertyPath: _triggerCollider
       value: 
       objectReference: {fileID: 2130135367}
+    - target: {fileID: 7850566374596847418, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
