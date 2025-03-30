@@ -385,15 +385,21 @@ namespace Controllers
                     if(lightBeamController.BeamTransform.localEulerAngles.z != 0)
                     {
                         angles = lightBeamController.BeamTransform.localEulerAngles.z > 180 ? lightBeamController.BeamTransform.eulerAngles : lightBeamController.BeamTransform.localEulerAngles;
+                        print("Transform angles: " + angles);
+
+                        if(angles.z > 90)
+                        {
+                            angles.z -= 180;
+                        }
                     }
                     else if(beamParentTransform != null && beamParentTransform.eulerAngles.z != 0)
                     {
                         angles = beamParentTransform.eulerAngles;
+                        print("Parent angles: " + angles);
                     }
 
-                    print(angles);
+                    
 
-                    //Assign stuff to the character
                     FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
                     RotateCharacterToBeam(angles);
                     transform.position = newPosition;
