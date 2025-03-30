@@ -405,8 +405,7 @@ namespace Controllers
         private Vector2 FlipVelocity(Vector2 velocity, Vector2 direction)
         {
             float directionalVelocity = Vector2.Dot(velocity, direction);
-            Vector2 newVelocity = new Vector2(directionalVelocity, _rigidbody.linearVelocityY);
-            print("Flip: "+newVelocity);
+            Vector2 newVelocity = new Vector2(directionalVelocity, _rigidbody.linearVelocityY);           
             return newVelocity;
         }
     }
