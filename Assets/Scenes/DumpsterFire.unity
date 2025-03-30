@@ -939,11 +939,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!4 &218597428 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1210297491019167486, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-  m_PrefabInstance: {fileID: 2246016847305481406}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &232679083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1486,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.5
+  orthographic size: 9.36
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1516,7 +1511,7 @@ Transform:
   m_GameObject: {fileID: 808435051}
   serializedVersion: 2
   m_LocalRotation: {x: -1.9467339e-10, y: 0.08554752, z: 1.6715102e-11, w: 0.99633414}
-  m_LocalPosition: {x: -6.29, y: 1.297058, z: -9.537169}
+  m_LocalPosition: {x: -6.29, y: 2.047058, z: -9.537169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5889,7 +5884,7 @@ GameObject:
   - component: {fileID: 2115142496}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6066,11 +6061,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControllableCharacters
       objectReference: {fileID: 0}
+    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Size.x
+      value: 2.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Size.y
+      value: 5.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420883059033993175, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+--- !u!4 &2246016847305481409 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8077570158492271931, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+  m_PrefabInstance: {fileID: 2246016847305481406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6041641081088542651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6084,13 +6100,9 @@ PrefabInstance:
       value: CinemachineCameraSet
       objectReference: {fileID: 0}
     - target: {fileID: 4016156181933948205, guid: 38041f907d034e64f8675e990f96045c, type: 3}
-      propertyPath: Lens.OrthographicSize
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4016156181933948205, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 218597428}
+      objectReference: {fileID: 2246016847305481409}
     - target: {fileID: 5480749634822397666, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -6105,7 +6117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6642620772205117192, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.9655194
+      value: 4.71552
       objectReference: {fileID: 0}
     - target: {fileID: 7629765785686741078, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6149,7 +6161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936151430494184470, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: TargetOffset.y
-      value: 1.59
+      value: -1.61
       objectReference: {fileID: 0}
     - target: {fileID: 9068803214189826816, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.x
