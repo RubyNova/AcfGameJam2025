@@ -115,6 +115,7 @@ MonoBehaviour:
   _fallingGravityScale: 5
   _fallingMovementSpeedDivider: 0.505
   _verticalLaunchDamping: 0.339
+  _interactionRayLength: -3.15
   _familiarControllerReference: {fileID: 3914036207532161062}
   _rigidbody: {fileID: 5852338104788843258}
   _collider: {fileID: 1047131086249340933}

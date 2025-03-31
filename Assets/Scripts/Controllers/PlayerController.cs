@@ -41,6 +41,9 @@ namespace Controllers
         [Range(0.01f, 1.0f)]
         private float _verticalLaunchDamping;
 
+        [SerializeField]
+        private float _interactionRayLength;
+
         [Header("Dependencies")]
 
         [SerializeField]
@@ -68,16 +71,16 @@ namespace Controllers
 
         [SerializeField]
         private Vector2 _movementVector = Vector2.zero;
-        
+
         [SerializeField]
         private int _cachedAffectingBeam = NO_BEAM_CACHED;
-        
+
         [SerializeField]
         private bool _cachedVelocityUpdate = false;
-        
+
         [SerializeField]
         private Vector2 _cachedVelocity = Vector2.zero;
-        
+
         [SerializeField]
         public bool ActiveCharacter;
 
@@ -91,14 +94,15 @@ namespace Controllers
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool JumpRequested = false;
 
-        public bool Triggered => _triggered; 
+        public bool Triggered => _triggered;
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
-        
+
 
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
         private InputAction _moveAction;
+        private InputAction _interactAction;
 
         private bool _triggered = false;
 
@@ -106,41 +110,50 @@ namespace Controllers
         void Start()
         {
             var cinemachineController = FindFirstObjectByType<CinemachineController>();
-            if(cinemachineController)
+            if (cinemachineController)
             {
                 SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
             }
             _playerActions = InputSystem.actions.FindActionMap("Player");
             _moveAction = _playerActions["Move"];
+            _interactAction = _playerActions["Interact"];
         }
 
         // Update is called once per frame
         void Update()
         {
-            MinColliderPoint = new Vector2 {x = _collider.bounds.min.x, y = _collider.bounds.min.y};
+            MinColliderPoint = new Vector2 { x = _collider.bounds.min.x, y = _collider.bounds.min.y };
 
             if (switchCharacters && ActiveCharacter)
             {
                 SwapCharacters();
             }
 
-            if(ActiveCharacter)
+            if (ActiveCharacter)
             {
+                //Interactions
+                if (_interactAction.WasPressedThisFrame())
+                {
+                    HandleInteractions();
+                }
+
+
+                // Outside Forces
                 _outsideForces = Vector2.zero;
                 //Sort by priority and only apply the right outside forces if applicable
-                if(_listOfOutsideForces.Count > 1)
+                if (_listOfOutsideForces.Count > 1)
                 {
                     KeyValuePair<int, LightBeamDataGroup> forceWithMaxPriority = _listOfOutsideForces.Aggregate(
                         (left, right) => left.Value.Priority > right.Value.Priority ? left : right);
                     _cachedAffectingBeam = forceWithMaxPriority.Key;
                     _outsideForces += forceWithMaxPriority.Value.DirectionAndForce;
                 }
-                else if(_listOfOutsideForces.Count > 0)
+                else if (_listOfOutsideForces.Count > 0)
                 {
                     var force = _listOfOutsideForces.ElementAt(0);
                     _cachedAffectingBeam = force.Key;
                     _outsideForces += force.Value.DirectionAndForce;
-                    if(transform.rotation.z > 0)
+                    if (transform.rotation.z > 0)
                     {
                         _outsideForces.y = 0.0f;
                     }
@@ -154,39 +167,39 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                if(_rigidbody.linearVelocityY < 0 && !Grounded && _cachedAffectingBeam == NO_BEAM_CACHED)
+                if (_rigidbody.linearVelocityY < 0 && !Grounded && _cachedAffectingBeam == NO_BEAM_CACHED)
                 {
-                    if(_rigidbody.gravityScale != _fallingGravityScale)
+                    if (_rigidbody.gravityScale != _fallingGravityScale)
                     {
                         _rigidbody.gravityScale = _fallingGravityScale;
                     }
 
-                    if(_triggered)
+                    if (_triggered)
                         _triggered = false;
 
                     _rigidbody.AddForce(_movementVector * _movementSpeed * _fallingMovementSpeedDivider * _rigidbody.mass, ForceMode2D.Force);
                 }
                 else
                 {
-                    if(_rigidbody.gravityScale != _gravityScale)
+                    if (_rigidbody.gravityScale != _gravityScale)
                     {
                         _rigidbody.gravityScale = _gravityScale;
                     }
-                    
+
                     _rigidbody.AddForce(_movementVector * _movementSpeed * _rigidbody.mass, ForceMode2D.Force);
                 }
 
-                if(_outsideForces != Vector2.zero)
+                if (_outsideForces != Vector2.zero)
                 {
                     _rigidbody.linearVelocity += _outsideForces;
                 }
 
-                if(_cachedVelocityUpdate)
+                if (_cachedVelocityUpdate)
                 {
                     _rigidbody.linearVelocity += _cachedVelocity;
                     _cachedVelocityUpdate = false;
                 }
-                                
+
                 if (JumpRequested)
                 {
                     if (Grounded)
@@ -205,7 +218,7 @@ namespace Controllers
 
             var originalVector = value.Get<Vector2>();
 
-            if(!_isRunning && _moveAction.activeControl?.device is Keyboard)
+            if (!_isRunning && _moveAction.activeControl?.device is Keyboard)
             {
                 originalVector.x *= 0.4f;
             }
@@ -215,7 +228,7 @@ namespace Controllers
 
         void OnRun(InputValue _)
         {
-            if(!ActiveCharacter) return;
+            if (!ActiveCharacter) return;
 
             _isRunning = !_isRunning;
         }
@@ -237,7 +250,7 @@ namespace Controllers
             {
                 Grounded = true;
 
-                if(_spriteRotator.localEulerAngles.z != 0)
+                if (_spriteRotator.localEulerAngles.z != 0)
                 {
                     _spriteRotator.localEulerAngles = Vector3.zero;
                 }
@@ -288,7 +301,7 @@ namespace Controllers
 
         public void AddLinearVelocity(int cachedAffectingBeamHash, Vector2 velocity)
         {
-            if(_cachedAffectingBeam == cachedAffectingBeamHash)
+            if (_cachedAffectingBeam == cachedAffectingBeamHash)
             {
                 _cachedVelocityUpdate = true;
                 _cachedVelocity = velocity;
@@ -303,9 +316,10 @@ namespace Controllers
 
         public void RegisterIncomingBeamForce(LightBeamController sender, int beamPriority, Vector2 senderBeamDirection, float beamForce)
         {
-            if(!_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
+            if (!_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
             {
-                _listOfOutsideForces.Add(sender.gameObject.GetHashCode(), new LightBeamDataGroup { 
+                _listOfOutsideForces.Add(sender.gameObject.GetHashCode(), new LightBeamDataGroup
+                {
                     Priority = beamPriority,
                     DirectionAndForce = senderBeamDirection * beamForce
                 });
@@ -320,28 +334,28 @@ namespace Controllers
 
         internal void UnregisterIncomingBeamForce(LightBeamController sender, int beamPriority)
         {
-            if(_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
+            if (_listOfOutsideForces.ContainsKey(sender.gameObject.GetHashCode()))
             {
                 _listOfOutsideForces.Remove(sender.gameObject.GetHashCode());
-                if(_listOfOutsideForces.Count == 0)
+                if (_listOfOutsideForces.Count == 0)
                 {
                     _cachedAffectingBeam = NO_BEAM_CACHED;
                     _triggerCollider.enabled = false;
                 }
-            }   
+            }
             // TODO: This method is only called once by the sending beam controller to effectively flag the player is no longer under the control of that particular light beam controller.
             // This method exists to help you clean up any state, or help you track multiple controllers if your implementation requires it, and need a way to figure out which controllers to
             // stop caring about. - Matt
-            
+
         }
-    
+
         internal void UpdateAnims()
         {
             _characterAnimator.SetFloat("MovementX", _movementVector.x);
             _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
             _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
 
-            if(_movementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)
+            if (_movementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)
             {
                 FlipCharacterSprite(_movementVector.x > 0);
             }
@@ -350,11 +364,11 @@ namespace Controllers
         public void RotateCharacterToBeam(Vector3 localEulerAngles)
         {
             //Reset rotation first
-            if(_spriteRotator.rotation.z > 0)
+            if (_spriteRotator.rotation.z > 0)
             {
                 _spriteRotator.Rotate(-_spriteRotator.localEulerAngles);
             }
-            else if(_spriteRotator.rotation.z < 0)
+            else if (_spriteRotator.rotation.z < 0)
             {
                 _spriteRotator.Rotate(_spriteRotator.localEulerAngles);
             }
@@ -373,10 +387,10 @@ namespace Controllers
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.gameObject.CompareTag("Wall"))
+            if (collision.gameObject.CompareTag("Wall"))
             {
                 var lightBeamController = collision.GetComponentInParent<LightBeamController>();
-                if(lightBeamController != null)
+                if (lightBeamController != null)
                 {
                     _triggered = true;
                     //Get flipped velocity
@@ -394,16 +408,16 @@ namespace Controllers
                     Transform beamParentTransform = lightBeamController.transform;
                     Vector3 angles = Vector3.zero;
 
-                    if(lightBeamController.BeamTransform.localEulerAngles.z != 0)
+                    if (lightBeamController.BeamTransform.localEulerAngles.z != 0)
                     {
                         angles = lightBeamController.BeamTransform.localEulerAngles.z > 180 ? lightBeamController.BeamTransform.eulerAngles : lightBeamController.BeamTransform.localEulerAngles;
 
-                        if(angles.z > 90)
+                        if (angles.z > 90)
                         {
                             angles.z -= 180;
                         }
                     }
-                    else if(beamParentTransform != null && beamParentTransform.eulerAngles.z != 0)
+                    else if (beamParentTransform != null && beamParentTransform.eulerAngles.z != 0)
                     {
                         angles = beamParentTransform.eulerAngles;
                     }
@@ -419,8 +433,29 @@ namespace Controllers
         private Vector2 FlipVelocity(Vector2 velocity, Vector2 direction)
         {
             float directionalVelocity = Vector2.Dot(velocity, direction);
-            Vector2 newVelocity = new Vector2(directionalVelocity, _rigidbody.linearVelocityY);           
+            Vector2 newVelocity = new Vector2(directionalVelocity, _rigidbody.linearVelocityY);
             return newVelocity;
+        }
+
+        private void HandleInteractions()
+        {
+            RaycastHit2D[] hitCount = Physics2D.RaycastAll(_spriteRotator.position, _spriteRotator.right, distance: _interactionRayLength);
+
+            foreach(var hit in hitCount)
+            {
+                IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                if(interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
+        }
+    
+        public void OnDrawGizmos()
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawRay(_spriteRotator.position, _spriteRotator.right *  _interactionRayLength);
+            Gizmos.DrawSphere(_spriteRotator.right*  _interactionRayLength, 0.5f);
         }
     }
 }
