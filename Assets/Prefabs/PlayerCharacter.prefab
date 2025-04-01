@@ -151,13 +151,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5545db166552be64a82880d41d008cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 6601359480412505423}
+  _characterAnimator: {fileID: 0}
   _movementSpeed: 5
   _jumpForce: 10
   _gravityScale: 1.5
   _fallingGravityScale: 3
-  _grounded: 1
+  _fallingMovementSpeedDivider: 0.1
+  _verticalLaunchDamping: 0.01
+  _interactionRayLength: 0
+  _familiarControllerReference: {fileID: 0}
+  _rigidbody: {fileID: 6601359480412505423}
+  _collider: {fileID: 0}
+  _triggerCollider: {fileID: 0}
+  _spriteRotator: {fileID: 0}
+  _feetTargetTransform: {fileID: 0}
+  Grounded: 1
   _movementVector: {x: 0, y: 0}
+  _cachedAffectingBeam: 0
+  _cachedVelocityUpdate: 0
+  _cachedVelocity: {x: 0, y: 0}
+  ActiveCharacter: 0
+  _isRunning: 1
+  _outsideForces: {x: 0, y: 0}
+  MinColliderPoint: {x: 0, y: 0}
+  JumpRequested: 0
 --- !u!1 &6073109875696436389
 GameObject:
   m_ObjectHideFlags: 0

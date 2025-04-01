@@ -394,5 +394,18 @@ namespace Environment
             Gizmos.DrawRay(_emissionPoint ?? _targetTransform.position, -_targetTransform.up);
             Gizmos.DrawSphere(_playerSnapPoint, 0.5f);
         }
+
+        public void OnDrawGizmosSelected()
+        {
+            var directionPosition = _targetTransform.right * _lightBeamLength;
+            var emission = _emissionPoint ?? _targetTransform.position;
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(emission, 0.25f);
+            Gizmos.color = Color.grey;
+            Gizmos.DrawRay(emission, directionPosition);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere((emission + directionPosition), 0.25f);
+        }
     }
 }
