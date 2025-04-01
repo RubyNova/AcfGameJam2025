@@ -95,7 +95,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
-  - name: Hair Fringe
+  - name: Thick Hair Fringe
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -733,7 +733,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -798, y: 319}
     spritePosition: {x: 802, y: 1425}
-  - name: Hair Dangle L
+  - name: Thick Hair Dangle L
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1426,7 +1426,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 489, y: -832}
     spritePosition: {x: 814, y: 1098}
-  - name: Eyes
+  - name: Thick  Eyes
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -2079,7 +2079,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 94, y: 214}
     spritePosition: {x: 970, y: 1290}
-  - name: Head
+  - name: Thick Head
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -2463,7 +2463,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -181, y: -691}
     spritePosition: {x: 765, y: 1202}
-  - name: Hair Dangle R
+  - name: Thick Hair Dangle R
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -3071,7 +3071,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 122, y: -321}
     spritePosition: {x: 1181, y: 1103}
-  - name: Hair Back
+  - name: Thick Hair Back
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -3569,7 +3569,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -739, y: 49}
     spritePosition: {x: 743, y: 1253}
-  - name: Hair Accessory
+  - name: Thick Hair Accessory
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -4124,7 +4124,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -95, y: -130}
     spritePosition: {x: 679, y: 1634}
-  - name: Hood Front
+  - name: Thick Hood Front
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -4632,7 +4632,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -40, y: -1029}
     spritePosition: {x: 624, y: 1033}
-  - name: Left Arm 2
+  - name: Thick Left Arm 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -5150,7 +5150,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 205, y: -4}
     spritePosition: {x: 379, y: 962}
-  - name: Left Arm 1
+  - name: Thick Left Arm 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -5532,7 +5532,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -30, y: 766}
     spritePosition: {x: 614, y: 966}
-  - name: Torso
+  - name: Thick Torso
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -5960,7 +5960,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -733, y: 105}
     spritePosition: {x: 737, y: 646}
-  - name: Right Arm 2
+  - name: Thick Right Arm 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -6407,7 +6407,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -578, y: 266}
     spritePosition: {x: 1162, y: 965}
-  - name: Right Arm 1
+  - name: Thick Right Arm 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -6779,7 +6779,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 232, y: -962}
     spritePosition: {x: 1071, y: 966}
-  - name: Hood Back
+  - name: Thick Hood Back
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -7237,7 +7237,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 367, y: 636}
     spritePosition: {x: 587, y: 1096}
-  - name: Left Leg 1
+  - name: Thick Left Leg 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -7699,7 +7699,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 229, y: 44}
     spritePosition: {x: 833, y: 467}
-  - name: Left Leg 2
+  - name: Thick Left Leg 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -8090,7 +8090,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 447, y: 952}
     spritePosition: {x: 856, y: 265}
-  - name: Left Leg 3
+  - name: Thick Left Leg 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -8577,7 +8577,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 428, y: 1683}
     spritePosition: {x: 875, y: 248}
-  - name: Right Leg 1
+  - name: Thick Right Leg 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -9106,7 +9106,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 463, y: -201}
     spritePosition: {x: 1013, y: 467}
-  - name: Right Leg 2
+  - name: Thick Right Leg 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -9548,7 +9548,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 267, y: 1309}
     spritePosition: {x: 1036, y: 265}
-  - name: Right Leg 3
+  - name: Thick Right Leg 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -10035,7 +10035,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 9, y: 1387}
     spritePosition: {x: 1055, y: 248}
-  - name: Ponytail
+  - name: Thick Ponytail
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -10852,8 +10852,8 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: Hair Fringe
-    spriteName: Hair Fringe
+  - name: Thick Hair Fringe
+    spriteName: Thick Hair Fringe
     isGroup: 0
     parentIndex: -1
     spriteID: 92550954a04254342a3de31dfcee2e47
@@ -10862,8 +10862,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Hair Dangle L
-    spriteName: Hair Dangle L
+  - name: Thick Hair Dangle L
+    spriteName: Thick Hair Dangle L
     isGroup: 0
     parentIndex: -1
     spriteID: 6de4122228c74d042b3c4a81f564b6f9
@@ -10872,8 +10872,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Eyes
-    spriteName: Eyes
+  - name: Thick  Eyes
+    spriteName: Thick  Eyes
     isGroup: 0
     parentIndex: -1
     spriteID: 230cd8c6f5187f74792ea2519e29f7f3
@@ -10882,8 +10882,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Head
-    spriteName: Head
+  - name: Thick Head
+    spriteName: Thick Head
     isGroup: 0
     parentIndex: -1
     spriteID: 4f6a57377f90ca144b0513d635d8a692
@@ -10892,8 +10892,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Hair Dangle R
-    spriteName: Hair Dangle R
+  - name: Thick Hair Dangle R
+    spriteName: Thick Hair Dangle R
     isGroup: 0
     parentIndex: -1
     spriteID: 87dfba3322da0dc40b24cfd25fb8ae90
@@ -10902,8 +10902,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Hair Back
-    spriteName: Hair Back
+  - name: Thick Hair Back
+    spriteName: Thick Hair Back
     isGroup: 0
     parentIndex: -1
     spriteID: 5421cbd49a1e4604cad4fa90013ab004
@@ -10912,8 +10912,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Hair Accessory
-    spriteName: Hair Accessory
+  - name: Thick Hair Accessory
+    spriteName: Thick Hair Accessory
     isGroup: 0
     parentIndex: -1
     spriteID: e9e23e3b19cb5c846aea07f090e4086e
@@ -10922,8 +10922,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Hood Front
-    spriteName: Hood Front
+  - name: Thick Hood Front
+    spriteName: Thick Hood Front
     isGroup: 0
     parentIndex: -1
     spriteID: 0f0eba4ac0f00564f9af66697bc15403
@@ -10932,8 +10932,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Left Arm 2
-    spriteName: Left Arm 2
+  - name: Thick Left Arm 2
+    spriteName: Thick Left Arm 2
     isGroup: 0
     parentIndex: -1
     spriteID: e509dcdeca6b70449be69815bdc584dd
@@ -10942,8 +10942,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Left Arm 1
-    spriteName: Left Arm 1
+  - name: Thick Left Arm 1
+    spriteName: Thick Left Arm 1
     isGroup: 0
     parentIndex: -1
     spriteID: 8fdaf549ae0c34048bff1d3cf4c0b69b
@@ -10952,8 +10952,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Torso
-    spriteName: Torso
+  - name: Thick Torso
+    spriteName: Thick Torso
     isGroup: 0
     parentIndex: -1
     spriteID: bd0469317459895469718c3d749e9bad
@@ -10962,8 +10962,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Right Arm 2
-    spriteName: Right Arm 2
+  - name: Thick Right Arm 2
+    spriteName: Thick Right Arm 2
     isGroup: 0
     parentIndex: -1
     spriteID: f93914ca1e68d5c49b36a569ecaf1fa9
@@ -10972,8 +10972,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Right Arm 1
-    spriteName: Right Arm 1
+  - name: Thick Right Arm 1
+    spriteName: Thick Right Arm 1
     isGroup: 0
     parentIndex: -1
     spriteID: a69046ee8fc1b1f459eda6a95fa419b3
@@ -10982,8 +10982,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Hood Back
-    spriteName: Hood Back
+  - name: Thick Hood Back
+    spriteName: Thick Hood Back
     isGroup: 0
     parentIndex: -1
     spriteID: 06cef512aa398bc4b98ab4eab11637df
@@ -10992,8 +10992,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Left Leg 1
-    spriteName: Left Leg 1
+  - name: Thick Left Leg 1
+    spriteName: Thick Left Leg 1
     isGroup: 0
     parentIndex: -1
     spriteID: 3e60bf0862ae46f4a902577f60b11fc8
@@ -11002,8 +11002,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Left Leg 2
-    spriteName: Left Leg 2
+  - name: Thick Left Leg 2
+    spriteName: Thick Left Leg 2
     isGroup: 0
     parentIndex: -1
     spriteID: 9635f75c6baf0ba4bbe8f0c7e654babe
@@ -11012,8 +11012,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Left Leg 3
-    spriteName: Left Leg 3
+  - name: Thick Left Leg 3
+    spriteName: Thick Left Leg 3
     isGroup: 0
     parentIndex: -1
     spriteID: 4f00c946d586965429ffb4afe03f81d0
@@ -11022,8 +11022,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Right Leg 1
-    spriteName: Right Leg 1
+  - name: Thick Right Leg 1
+    spriteName: Thick Right Leg 1
     isGroup: 0
     parentIndex: -1
     spriteID: 1f4ad5ea77e02a143854f0954f0b9f1c
@@ -11032,8 +11032,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Right Leg 2
-    spriteName: Right Leg 2
+  - name: Thick Right Leg 2
+    spriteName: Thick Right Leg 2
     isGroup: 0
     parentIndex: -1
     spriteID: 669eadd8083faa64aac0febd288c15c7
@@ -11042,8 +11042,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Right Leg 3
-    spriteName: Right Leg 3
+  - name: Thick Right Leg 3
+    spriteName: Thick Right Leg 3
     isGroup: 0
     parentIndex: -1
     spriteID: 2b5febbc5f168004e94babac32c429c9
@@ -11052,8 +11052,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Ponytail
-    spriteName: Ponytail
+  - name: Thick Ponytail
+    spriteName: Thick Ponytail
     isGroup: 0
     parentIndex: -1
     spriteID: 78205d89912a9044e9dbf0a9c6bedcb6
