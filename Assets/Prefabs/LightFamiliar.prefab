@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6792053646727862388}
   - component: {fileID: 7525251501113283827}
   - component: {fileID: 7358544652446688784}
-  - component: {fileID: 6346260941698570190}
   - component: {fileID: 5261697059083877710}
   m_Layer: 0
   m_Name: LightFamiliar
@@ -100,36 +99,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6346260941698570190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416081020816024146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Familiar
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &5261697059083877710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,9 +362,15 @@ MonoBehaviour:
   _renderer: {fileID: 2262687684910580198}
   _axisHelper: {fileID: 6792053646727862388}
   _beamModifierData: {fileID: 4627988395739533382}
+  _targetTransform: {fileID: 0}
+  _boxCollider: {fileID: 0}
   _lightBeamLength: 10
   _mode: 2
   _beamPierceDistance: 0
+  _beamExitVelocityMultiplier: 0
+  _snapPointOffset: 1
+  _objectsToIgnoreDuringHitChecks: []
+  _beamPriority: 0
 --- !u!114 &4627988395739533382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 1, g: 1, b: 1, a: 1}
-  _beamForce: 10
+  BeamForce: 0
 --- !u!114 &2720897914464504946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 1, g: 0.59788513, b: 0, a: 1}
-  _beamForce: 10
+  BeamForce: 0
 --- !u!114 &6925152222535806534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,4 +412,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.07406576, g: 0.7264151, b: 0, a: 1}
-  _beamForce: 10
+  BeamForce: 0
