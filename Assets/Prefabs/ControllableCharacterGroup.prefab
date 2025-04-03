@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d342147805ff9a9359814d2cee5a06c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInputComponent: {fileID: 0}
+  _playerInputComponent: {fileID: 4904842878889719647}
   _defaultActionMapName: Player
   _playerActionMapName: Player
   _familiarActionMapName: Familiar
