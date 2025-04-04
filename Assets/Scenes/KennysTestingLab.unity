@@ -9243,7 +9243,7 @@ PrefabInstance:
     - target: {fileID: 7091140664768956240, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: _playerInputComponent
       value: 
-      objectReference: {fileID: 2060498075}
+      objectReference: {fileID: 0}
     - target: {fileID: 7217658569169669478, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99983406
@@ -9295,17 +9295,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8077570158492271931, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
   m_PrefabInstance: {fileID: 2060498071}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2060498075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4904842878889719647, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-  m_PrefabInstance: {fileID: 2060498071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
