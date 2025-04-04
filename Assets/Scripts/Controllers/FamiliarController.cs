@@ -118,7 +118,7 @@ namespace Controllers
                 var inputComponent = GetComponentInParent<InputController>();
                 if(inputComponent != null)
                 {
-                    inputComponent.SwapCharacterMaps(false);
+                    inputComponent.SwapCharacterMaps(true);
                 }
 
                 //Swap Cameras
