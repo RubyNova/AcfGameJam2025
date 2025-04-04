@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Environment;
+using Environment.Interactables;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -387,47 +388,45 @@ namespace Controllers
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Wall"))
+            var lightBeamController = collision.GetComponentInParent<LightBeamController>();
+            if (lightBeamController != null)
             {
-                var lightBeamController = collision.GetComponentInParent<LightBeamController>();
-                if (lightBeamController != null)
+                _triggered = true;
+                //Get flipped velocity
+                Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
+                flippedVelocity.y *= _verticalLaunchDamping;
+
+                // Get the distance between feetsies and origin
+                var distance = Vector2.Distance(transform.position, _feetTargetTransform.position);
+
+                //Get the new position from the LBC's snap point
+                var newPosition = lightBeamController.PlayerSnapPoint;
+                newPosition.y += distance;
+
+                //identify rotation
+                Transform beamParentTransform = lightBeamController.transform;
+                Vector3 angles = Vector3.zero;
+
+                if (lightBeamController.BeamTransform.localEulerAngles.z != 0)
                 {
-                    _triggered = true;
-                    //Get flipped velocity
-                    Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
-                    flippedVelocity.y *= _verticalLaunchDamping;
+                    angles = lightBeamController.BeamTransform.localEulerAngles.z > 180 ? lightBeamController.BeamTransform.eulerAngles : lightBeamController.BeamTransform.localEulerAngles;
 
-                    // Get the distance between feetsies and origin
-                    var distance = Vector2.Distance(transform.position, _feetTargetTransform.position);
-
-                    //Get the new position from the LBC's snap point
-                    var newPosition = lightBeamController.PlayerSnapPoint;
-                    newPosition.y += distance;
-
-                    //identify rotation
-                    Transform beamParentTransform = lightBeamController.transform;
-                    Vector3 angles = Vector3.zero;
-
-                    if (lightBeamController.BeamTransform.localEulerAngles.z != 0)
+                    if (angles.z > 90)
                     {
-                        angles = lightBeamController.BeamTransform.localEulerAngles.z > 180 ? lightBeamController.BeamTransform.eulerAngles : lightBeamController.BeamTransform.localEulerAngles;
-
-                        if (angles.z > 90)
-                        {
-                            angles.z -= 180;
-                        }
+                        angles.z -= 180;
                     }
-                    else if (beamParentTransform != null && beamParentTransform.eulerAngles.z != 0)
-                    {
-                        angles = beamParentTransform.eulerAngles;
-                    }
-
-                    FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
-                    RotateCharacterToBeam(angles);
-                    transform.position = newPosition;
-                    _rigidbody.linearVelocity = flippedVelocity;
                 }
+                else if (beamParentTransform != null && beamParentTransform.eulerAngles.z != 0)
+                {
+                    angles = beamParentTransform.eulerAngles;
+                }
+
+                FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
+                RotateCharacterToBeam(angles);
+                transform.position = newPosition;
+                _rigidbody.linearVelocity = flippedVelocity;
             }
+
         }
 
         private Vector2 FlipVelocity(Vector2 velocity, Vector2 direction)
@@ -439,23 +438,24 @@ namespace Controllers
 
         private void HandleInteractions()
         {
-            RaycastHit2D[] hitCount = Physics2D.RaycastAll(_spriteRotator.position, _spriteRotator.right, distance: _interactionRayLength);
+           //Physics2D.RaycastAll(_spriteRotator.position, _spriteRotator.right, distance: _interactionRayLength);
+            RaycastHit2D[] hitCount = Physics2D.CircleCastAll(_spriteRotator.position, 1, _spriteRotator.right, _interactionRayLength);
 
-            foreach(var hit in hitCount)
+            foreach (var hit in hitCount)
             {
                 IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
-                if(interactable != null)
+                if (interactable != null)
                 {
                     interactable.Interact();
                 }
             }
         }
-    
+
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.magenta;
-            Gizmos.DrawRay(_spriteRotator.position, _spriteRotator.right *  _interactionRayLength);
-            Gizmos.DrawSphere(_spriteRotator.right*  _interactionRayLength, 0.5f);
+            Gizmos.DrawRay(_spriteRotator.position, _spriteRotator.right * _interactionRayLength);
+            Gizmos.DrawSphere(_spriteRotator.right * _interactionRayLength, 0.5f);
         }
     }
 }

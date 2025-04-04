@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class IInteractable : MonoBehaviour
+namespace Environment.Interactables
 {
-    public virtual void Interact()
+    public abstract class IInteractable : MonoBehaviour
     {
-
+        public abstract void Interact();
     }
 }

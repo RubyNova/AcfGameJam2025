@@ -1,16 +1,21 @@
 using UnityEngine;
+using Controllers;
 
-public class PitfallDetector : MonoBehaviour
+namespace Environment
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class PitfallDetector : MonoBehaviour
     {
-        
-    }
+        [SerializeField]
+        private Transform _resetPositionTransform;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (!collision.gameObject.TryGetComponent<PlayerController>(out var component))
+            {
+                return;
+            }
+
+            component.transform.position = _resetPositionTransform.position;
+        }
     }
 }
