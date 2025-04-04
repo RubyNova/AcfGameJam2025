@@ -19,6 +19,10 @@ namespace Controllers
         [SerializeField]
         private string _familiarActionMapName;
 
+        [Header("Read Only")]
+        [SerializeField]
+        private string _currentActionMapName = string.Empty;
+
         private InputActionMap _playerActionMap;
 
         private InputActionMap _familiarActionMap;
@@ -34,7 +38,19 @@ namespace Controllers
         // Update is called once per frame
         void Update()
         {
-            
+            _currentActionMapName = _playerInputComponent.currentActionMap.name;
+        }
+
+        public void SwapCharacterMaps(bool player)
+        {
+            if(player)
+            {
+                _playerInputComponent.SwitchCurrentActionMap(_playerActionMapName);
+            }
+            else
+            {
+                _playerInputComponent.SwitchCurrentActionMap(_familiarActionMapName);
+            }
         }
     }
 }

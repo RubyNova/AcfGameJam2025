@@ -106,10 +106,22 @@ namespace Controllers
         {
             if (_playerControllerReference)
             {
+                //Set flags
                 ActiveCharacter = false;
                 switchCharacters = false;
                 _playerControllerReference.ActiveCharacter = true;
+                
+                //Drop velocity
                 _rigidbody.linearVelocity = Vector2.zero;
+
+                //Change Input Action Maps
+                var inputComponent = GetComponentInParent<InputController>();
+                if(inputComponent != null)
+                {
+                    inputComponent.SwapCharacterMaps(false);
+                }
+
+                //Swap Cameras
                 SwitchCamerasEvent.Invoke(1);
             }
         }

@@ -292,10 +292,22 @@ namespace Controllers
         {
             if (_familiarControllerReference)
             {
+                //Change active status
                 ActiveCharacter = false;
                 switchCharacters = false;
                 _familiarControllerReference.ActiveCharacter = true;
+                
+                //Shutdown velocity for this character
                 _rigidbody.linearVelocity = Vector2.zero;
+                
+                //Change Input Action Maps
+                var inputComponent = GetComponentInParent<InputController>();
+                if(inputComponent != null)
+                {
+                    inputComponent.SwapCharacterMaps(false);
+                }
+
+                //Swap the Camera
                 SwitchCamerasEvent.Invoke(2);
             }
         }
