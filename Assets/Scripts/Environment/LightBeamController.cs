@@ -113,6 +113,11 @@ namespace Environment
 
                     if (shouldFilterOut)
                     {
+                        if (hit.transform.TryGetComponent<GenericBeamForceReactor>(out var reactor))
+                        {
+                            _beamModifierData.ApplyBeamEffectToObject(this, _beamPriority, reactor, _targetTransform.right); // objects on the generic object physics layer should still be detected and interacted with.
+                        }
+
                         continue;
                     }
                     else
@@ -369,7 +374,7 @@ namespace Environment
         {
             if (CurrentPlayer != null)
             {
-                _beamModifierData.ClearBeamEffect(this, _beamPriority, CurrentPlayer);
+                _beamModifierData.ClearBeamEffectOnPlayer(this, _beamPriority, CurrentPlayer);
             }
 
             if (_beamModifierData != null)
@@ -382,7 +387,7 @@ namespace Environment
 
             if (CurrentPlayer != null)
             {
-                _beamModifierData.ApplyBeamEffect(this, BeamPriority, CurrentPlayer, _targetTransform.right);
+                _beamModifierData.ApplyBeamEffectToPlayer(this, BeamPriority, CurrentPlayer, _targetTransform.right);
             }
         }
 

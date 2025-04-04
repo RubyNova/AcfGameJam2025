@@ -24,20 +24,20 @@ namespace Environment
             sender.ShouldIgnoreWalls = false;
         }
 
-        public override void ApplyBeamEffect(LightBeamController sender, int beamPriority, PlayerController player, Vector2 senderBeamDirection)
+        public override void ApplyBeamEffectToPlayer(LightBeamController sender, int beamPriority, PlayerController player, Vector2 senderBeamDirection)
         {
             if (player.gameObject.layer != _ghostedLayer)
             {
                 player.gameObject.layer = _ghostedLayer;
             }
 
-            base.ApplyBeamEffect(sender, beamPriority, player, senderBeamDirection);
+            base.ApplyBeamEffectToPlayer(sender, beamPriority, player, senderBeamDirection);
         }
 
-        public override void ClearBeamEffect(LightBeamController sender, int beamPriority, PlayerController player)
+        public override void ClearBeamEffectOnPlayer(LightBeamController sender, int beamPriority, PlayerController player)
         {
             player.gameObject.layer = _defaultLayer; 
-            base.ClearBeamEffect(sender, beamPriority, player);
+            base.ClearBeamEffectOnPlayer(sender, beamPriority, player);
         }
     }
 }

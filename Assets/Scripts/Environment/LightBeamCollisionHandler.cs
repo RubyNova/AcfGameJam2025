@@ -54,7 +54,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
                     //playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
                     
-                    _parentController.BeamModifierData.ApplyBeamEffect(_parentController,
+                    _parentController.BeamModifierData.ApplyBeamEffectToPlayer(_parentController,
                         _parentController.BeamPriority, 
                         playerComponent, 
                         transform.right);
@@ -75,7 +75,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
             {
                 var cachedBeamOnPlayer = playerComponent.GetCachedBeamData();
 
-                _parentController.BeamModifierData.ClearBeamEffect(_parentController, 
+                _parentController.BeamModifierData.ClearBeamEffectOnPlayer(_parentController, 
                     _parentController.BeamPriority, playerComponent);
                 _parentController.CurrentPlayer = null;
 

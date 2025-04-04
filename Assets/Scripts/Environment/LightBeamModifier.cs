@@ -24,14 +24,19 @@ namespace Environment
 
         }
 
-        public virtual void ApplyBeamEffect(LightBeamController sender, int beamPriority, PlayerController player, Vector2 senderBeamDirection)
+        public virtual void ApplyBeamEffectToPlayer(LightBeamController sender, int beamPriority, PlayerController player, Vector2 senderBeamDirection)
         {
             player.RegisterIncomingBeamForce(sender, beamPriority, senderBeamDirection, BeamForce);
         }
 
-        public virtual void ClearBeamEffect(LightBeamController sender, int beamPriority, PlayerController player)
+        public virtual void ClearBeamEffectOnPlayer(LightBeamController sender, int beamPriority, PlayerController player)
         {
             player.UnregisterIncomingBeamForce(sender, beamPriority);
+        }
+
+        public virtual void ApplyBeamEffectToObject(LightBeamController sender, int beamPriority, GenericBeamForceReactor target, Vector2 senderBeamDirection)
+        {
+
         }
     }
 }
