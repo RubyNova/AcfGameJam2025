@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Controllers;
+using Environment.Interactables;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -49,7 +50,7 @@ namespace Environment
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
-        private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[5];
+        private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[10];
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
         
@@ -105,16 +106,20 @@ namespace Environment
 
                     bool isPlayerOrTaggedForIgnore = hit.transform.CompareTag("IgnoredByBeam") || hit.transform.CompareTag("Player");
 
+                    bool hasGenericForceBeamReactor = hit.transform.TryGetComponent<GenericBeamForceReactor>(out var reactor); 
+
                     bool shouldFilterOut = isSelf
                     || isSendingController
                     || isAWallAndShouldBeIgnored
                     || anyIgnoredObjects
-                    || isPlayerOrTaggedForIgnore;
+                    || isPlayerOrTaggedForIgnore
+                    || hasGenericForceBeamReactor;
 
                     if (shouldFilterOut)
                     {
-                        if (hit.transform.TryGetComponent<GenericBeamForceReactor>(out var reactor))
+                        if (hasGenericForceBeamReactor)
                         {
+                            print("FOUND!");
                             _beamModifierData.ApplyBeamEffectToObject(this, _beamPriority, reactor, _targetTransform.right); // objects on the generic object physics layer should still be detected and interacted with.
                         }
 

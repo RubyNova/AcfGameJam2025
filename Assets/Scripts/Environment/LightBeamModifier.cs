@@ -1,4 +1,5 @@
 using Controllers;
+using Environment.Interactables;
 using UnityEngine;
 
 namespace Environment
@@ -35,6 +36,11 @@ namespace Environment
         }
 
         public virtual void ApplyBeamEffectToObject(LightBeamController sender, int beamPriority, GenericBeamForceReactor target, Vector2 senderBeamDirection)
+        {
+
+        }
+
+        public virtual void ClearBeamEffectOnObject(LightBeamController sender, int beamPriority, GenericBeamForceReactor target)
         {
 
         }

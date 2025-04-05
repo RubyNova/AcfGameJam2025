@@ -458,7 +458,7 @@ namespace Controllers
                 IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
-                    interactable.Interact();
+                    interactable.Interact(this);
                 }
             }
         }
