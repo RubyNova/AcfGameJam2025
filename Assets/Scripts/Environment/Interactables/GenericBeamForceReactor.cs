@@ -31,9 +31,7 @@ namespace Environment.Interactables
                 return;
             }
 
-            //_rigidbodyToDrive.gravityScale = 0;
             _beamPriority = priority;
-            //_rigidbodyToDrive.AddForce(senderBeamDirection * force);
             _rigidbodyToDrive.linearVelocity = senderBeamDirection * force;
             _rigidbodyToDrive.gravityScale = 0;
         }
@@ -45,8 +43,8 @@ namespace Environment.Interactables
                 return;   
             }
 
-            _beamPriority = 0;
             _rigidbodyToDrive.gravityScale = _startingGravityScale;
+            _beamPriority = 0;
         }
     }
 }

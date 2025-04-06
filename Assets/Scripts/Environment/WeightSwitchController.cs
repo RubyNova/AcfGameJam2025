@@ -26,9 +26,7 @@ namespace Environment
                 _onActivate.Invoke();
             }
 
-            _entityCount++;
-            
-            print("ENTER NEW VALUE: " + _entityCount);
+            _entityCount++; 
         }
 
         protected void OnCollisionExit2D(Collision2D collision)
@@ -39,8 +37,6 @@ namespace Environment
             }
             
             _entityCount--;
-
-            print("EXIT NEW VALUE: " + _entityCount);
 
             if (_entityCount == 0)
             {

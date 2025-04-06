@@ -393,6 +393,11 @@ namespace Environment
             {
                 _beamModifierData = null;
             }
+            
+            foreach (var trackedReactor in _trackedPhyscsInteractables)
+            {
+                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);   
+            }
 
             _currentSender = null;
             _targetTransform.rotation = _cachedStartRotation;
