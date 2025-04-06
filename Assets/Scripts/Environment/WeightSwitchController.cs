@@ -38,6 +38,8 @@ namespace Environment
             {
                 return;
             }
+            
+            _entityCount--;
 
             if (_entityCount == 0)
             {
@@ -45,7 +47,6 @@ namespace Environment
                 _isActivated = false;
             }
 
-            _entityCount--;
         }
     }
 }

@@ -407,10 +407,12 @@ namespace Environment
                 _beamModifierData.ClearBeamEffectOnPlayer(this, _beamPriority, CurrentPlayer);
             }
 
-            if (_beamModifierData != null)
+            foreach (var trackedReactor in _trackedPhyscsInteractables)
             {
-                _beamModifierData.Shutdown(this);
+                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);   
             }
+            
+            _beamModifierData.Shutdown(this);
 
             _beamModifierData = newModifier;
             _beamModifierData.Initialise(this);
@@ -418,6 +420,11 @@ namespace Environment
             if (CurrentPlayer != null)
             {
                 _beamModifierData.ApplyBeamEffectToPlayer(this, BeamPriority, CurrentPlayer, _targetTransform.right);
+            }
+
+            foreach (var trackedReactor in _trackedPhyscsInteractables)
+            {
+                _beamModifierData.ApplyBeamEffectToObject(this, BeamPriority, trackedReactor, _targetTransform.right);   
             }
         }
 
