@@ -17,7 +17,6 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        print("Collision - Beam to "+collision.collider.name);
         if(collision.gameObject.CompareTag("Player"))
         {
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
@@ -52,8 +51,6 @@ public class LightBeamCollisionHandler : MonoBehaviour
                         }
                         playerComponent.RotateCharacterToBeam(angles);
                     }
-
-                    //playerComponent._rigidbody.MovePosition(collision.contacts[0].point);
                     
                     _parentController.BeamModifierData.ApplyBeamEffectToPlayer(_parentController,
                         _parentController.BeamPriority, 
@@ -69,7 +66,6 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        print("Collision Exit - Beam to "+collision.collider.name);
         if(collision.gameObject.CompareTag("Player"))
         {
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
