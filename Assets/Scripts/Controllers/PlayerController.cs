@@ -46,6 +46,11 @@ namespace Controllers
         [SerializeField]
         private float _interactionRayLength;
 
+        //Temporary til we find a good value
+        [SerializeField]
+        [Range(0.01f, 0.99f)]
+        private float _walkSpeedReductionMultiplier = 0.4f;
+
         [Header("Dependencies")]
 
         [SerializeField]
@@ -87,10 +92,16 @@ namespace Controllers
         public bool JumpRequested = false;
 
         [SerializeField]
+        private bool _keyboardIsDevice = false;
+
+        [SerializeField]
         private int _cachedAffectingBeam = NO_BEAM_CACHED;
 
         [SerializeField]
-        private Vector2 _movementVector = Vector2.zero;
+        private Vector2 _currentMovementVector = Vector2.zero;
+
+        [SerializeField]
+        private Vector2 _cachedMovementVector = Vector2.zero;
 
         [SerializeField]
         private Vector2 _cachedVelocity = Vector2.zero;
@@ -104,7 +115,7 @@ namespace Controllers
 
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
-        
+
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
         private UnityEvent<int> SwitchCamerasEvent = new();
@@ -112,6 +123,8 @@ namespace Controllers
         private InputAction _moveAction;
         private InputAction _runAction;
         private InputAction _interactAction;
+        private bool _resetMovement = false;
+
         
 
         private bool _triggered = false;
@@ -131,8 +144,14 @@ namespace Controllers
 
             //Setup Input specific to player
             _playerActions = InputSystem.actions.FindActionMap("Player");
-            _moveAction = _playerActions["Move"];
             _interactAction = _playerActions["Interact"];
+
+            _moveAction = _playerActions["Move"];
+            if(_moveAction != null)
+            {
+                _moveAction.performed += (context) => HandleMovement(context);
+                _moveAction.canceled += (context) => HandleMovementCanceled(context);
+            }
             
             _runAction = _playerActions["Run"];
             if(_runAction != null)
@@ -160,6 +179,25 @@ namespace Controllers
                     HandleInteractions();
                 }
 
+                //Movement
+                if(_resetMovement)
+                {
+                    _resetMovement = false;
+                    _currentMovementVector = _cachedMovementVector = Vector2.zero;
+                }
+                else
+                {
+                    if(_isRunning && _cachedMovementVector.x != 0.0f && _keyboardIsDevice)
+                    {
+                        _cachedMovementVector = new Vector2(_cachedMovementVector.x < 0 ? -1 : 1, 0);
+                    }
+                    else if (_cachedMovementVector.x != 0.0f && _keyboardIsDevice)
+                    {
+                        _cachedMovementVector = new Vector2(_cachedMovementVector.x < 0 ? -_walkSpeedReductionMultiplier : _walkSpeedReductionMultiplier, 0);
+                    }
+                    _currentMovementVector = _cachedMovementVector;
+                }
+                
 
                 // Outside Forces
                 _outsideForces = Vector2.zero;
@@ -181,9 +219,9 @@ namespace Controllers
                         _outsideForces.y = 0.0f;
                     }
                 }
-
-                UpdateAnims();
             }
+       
+            UpdateAnims();
         }
 
         void FixedUpdate()
@@ -200,7 +238,7 @@ namespace Controllers
                     if (_triggered)
                         _triggered = false;
 
-                    _rigidbody.AddForce(_movementVector * _movementSpeed * _fallingMovementSpeedDivider * _rigidbody.mass, ForceMode2D.Force);
+                    _rigidbody.AddForce(_currentMovementVector * _movementSpeed * _fallingMovementSpeedDivider * _rigidbody.mass, ForceMode2D.Force);
                 }
                 else
                 {
@@ -208,8 +246,8 @@ namespace Controllers
                     {
                         _rigidbody.gravityScale = _gravityScale;
                     }
-
-                    _rigidbody.AddForce(_movementVector * _movementSpeed * _rigidbody.mass, ForceMode2D.Force);
+                    
+                    _rigidbody.AddForce(_currentMovementVector * _movementSpeed * _rigidbody.mass, ForceMode2D.Force);
                 }
 
                 if (_outsideForces != Vector2.zero)
@@ -232,32 +270,7 @@ namespace Controllers
                     JumpRequested = false;
                 }
             }
-        }
 
-        void OnMove(InputValue value)
-        {
-            if (!ActiveCharacter)
-                return;
-
-            var originalVector = value.Get<Vector2>();
-
-            if (!_isRunning && _moveAction.activeControl?.device is Keyboard)
-            {
-                originalVector.x *= 0.4f;
-            }
-
-            //Disable Up and Down movement for the player - they only move left & right
-            //and have separate controls for jumping
-            originalVector.y = 0f;
-
-            _movementVector = originalVector;
-        }
-
-        void OnRun(InputValue _)
-        {
-            // if (!ActiveCharacter) return;
-
-            // _isRunning = !_isRunning;
         }
 
         void OnJump()
@@ -375,13 +388,13 @@ namespace Controllers
 
         internal void UpdateAnims()
         {
-            _characterAnimator.SetFloat("MovementX", _movementVector.x);
+            _characterAnimator.SetFloat("MovementX", _currentMovementVector.x);
             _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
             _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
 
-            if (_movementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)
+            if (_currentMovementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)
             {
-                FlipCharacterSprite(_movementVector.x > 0);
+                FlipCharacterSprite(_currentMovementVector.x > 0);
             }
         }
 
@@ -532,12 +545,40 @@ namespace Controllers
                 if(device is Keyboard)
                 {
                     _isRunning = false;
+                    _keyboardIsDevice = true;
                 }
                 else
                 {
                     _isRunning = true;
+                    _keyboardIsDevice = false;
                 }
             }
+        }
+    
+        private void HandleMovement(InputAction.CallbackContext context)
+        {
+            if (!ActiveCharacter)
+                return;
+
+            _cachedMovementVector = context.ReadValue<Vector2>();
+            if(context.control?.device is Keyboard)
+            {
+                
+                _keyboardIsDevice = true;
+            }
+            else
+            {
+                _keyboardIsDevice = false;
+            }
+            //Disable Up and Down movement for the player - they only move left & right
+            //and have separate controls for jumping
+            _cachedMovementVector.y = 0f;
+            
+        }
+
+        private void HandleMovementCanceled(InputAction.CallbackContext _)
+        {
+            _resetMovement = true;
         }
     }
 }

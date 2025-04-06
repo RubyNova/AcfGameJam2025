@@ -612,7 +612,7 @@
                     "name": "WASD",
                     "id": "3941d613-4776-4779-a62a-e916fa7cea02",
                     "path": "Dpad",
-                    "interactions": "",
+                    "interactions": "Press,Hold",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
