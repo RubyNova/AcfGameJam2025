@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Environment;
 using Environment.Interactables;
+using Saveables;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -68,56 +69,77 @@ namespace Controllers
         [Header("Read-only Values")]
 
         [SerializeField]
+        public bool ActiveCharacter;
+
+        [SerializeField]
         public bool Grounded = true;
 
         [SerializeField]
-        private Vector2 _movementVector = Vector2.zero;
-
-        [SerializeField]
-        private int _cachedAffectingBeam = NO_BEAM_CACHED;
-
-        [SerializeField]
-        private bool _cachedVelocityUpdate = false;
-
-        [SerializeField]
-        private Vector2 _cachedVelocity = Vector2.zero;
-
-        [SerializeField]
-        public bool ActiveCharacter;
+        private bool _toggleSprintEnabled = true;
 
         [SerializeField]
         private bool _isRunning = true;
 
         [SerializeField]
-        private Vector2 _outsideForces = Vector2.zero;
+        private bool _cachedVelocityUpdate = false;
 
-        public Vector2 MinColliderPoint;
-        public int BeamCollisionCount => _listOfOutsideForces.Count;
+        [SerializeField]
         public bool JumpRequested = false;
 
+        [SerializeField]
+        private int _cachedAffectingBeam = NO_BEAM_CACHED;
+
+        [SerializeField]
+        private Vector2 _movementVector = Vector2.zero;
+
+        [SerializeField]
+        private Vector2 _cachedVelocity = Vector2.zero;
+
+        [SerializeField]
+        private Vector2 _outsideForces = Vector2.zero;
+
+        [SerializeField]
+        public Vector2 MinColliderPoint;
+
+
+        public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
+        
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
-
-
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
         private InputAction _moveAction;
+        private InputAction _runAction;
         private InputAction _interactAction;
+        
 
         private bool _triggered = false;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            _toggleSprintEnabled = PreferencesController.Instance.Settings.ToggleSprint;
+
+            PreferencesController.Instance.SettingsUpdated.AddListener((controller) => UpdatePlayerSpecificSettings(controller.Settings));
+
             var cinemachineController = FindFirstObjectByType<CinemachineController>();
             if (cinemachineController)
             {
                 SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
             }
+
+            //Setup Input specific to player
             _playerActions = InputSystem.actions.FindActionMap("Player");
             _moveAction = _playerActions["Move"];
             _interactAction = _playerActions["Interact"];
+            
+            _runAction = _playerActions["Run"];
+            if(_runAction != null)
+            {
+                _runAction.performed += (context) => HandleSprinting(context);
+                _runAction.canceled += (context) => HandleSprintCancel(context);
+            }
         }
 
         // Update is called once per frame
@@ -133,7 +155,7 @@ namespace Controllers
             if (ActiveCharacter)
             {
                 //Interactions
-                if (_interactAction.WasPressedThisFrame())
+                if (_interactAction != null && _interactAction.WasPressedThisFrame())
                 {
                     HandleInteractions();
                 }
@@ -233,9 +255,9 @@ namespace Controllers
 
         void OnRun(InputValue _)
         {
-            if (!ActiveCharacter) return;
+            // if (!ActiveCharacter) return;
 
-            _isRunning = !_isRunning;
+            // _isRunning = !_isRunning;
         }
 
         void OnJump()
@@ -457,6 +479,65 @@ namespace Controllers
             Gizmos.color = Color.magenta;
             Gizmos.DrawRay(_spriteRotator.position, _spriteRotator.right * _interactionRayLength);
             Gizmos.DrawSphere(_spriteRotator.right * _interactionRayLength, 0.5f);
+        }
+    
+        private void UpdatePlayerSpecificSettings(Preferences settings)
+        {
+            _toggleSprintEnabled = settings.ToggleSprint;
+        }
+    
+        private void HandleSprinting(InputAction.CallbackContext context)
+        {
+            if(!ActiveCharacter) return;
+
+            if(context.control?.device is Keyboard)
+            {
+                if(_toggleSprintEnabled)
+                {
+                    _isRunning = !_isRunning;
+                }
+                else
+                {
+                    _isRunning = true;
+                }
+            }
+            else
+            {
+                if(!_isRunning)
+                {
+                    _isRunning = true;
+                }
+            }
+        }
+
+        private void HandleSprintCancel(InputAction.CallbackContext context)
+        {
+            if(!ActiveCharacter) return;
+
+            if(context.control?.device is not Keyboard) return;
+            
+            if(!_toggleSprintEnabled)
+            {
+                _isRunning = false;
+            }
+        }
+    
+        public void OnDeviceChanged(InputDevice device, InputDeviceChange change)
+        {
+            if(change == InputDeviceChange.Added ||
+                change == InputDeviceChange.ConfigurationChanged ||
+                change == InputDeviceChange.UsageChanged ||
+                change == InputDeviceChange.SoftReset)
+            {
+                if(device is Keyboard)
+                {
+                    _isRunning = false;
+                }
+                else
+                {
+                    _isRunning = true;
+                }
+            }
         }
     }
 }
