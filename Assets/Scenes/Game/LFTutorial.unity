@@ -252,6 +252,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2384100095630875932, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807066728222202094, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3164417712867505803, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -296,9 +304,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControllableCharacterGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 5688382727879582895, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850566374596847418, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7850566374596847418, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -389,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068803214189826816, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.27552
+      value: 21.405518
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1607,7 +1623,7 @@ PrefabInstance:
       objectReference: {fileID: 1402764071}
     - target: {fileID: 3673076560047142501, guid: d125d4107ec8e904a96bd03df7fec0fb, type: 3}
       propertyPath: _lightBeamLength
-      value: 40
+      value: 12.3
       objectReference: {fileID: 0}
     - target: {fileID: 3673076560047142501, guid: d125d4107ec8e904a96bd03df7fec0fb, type: 3}
       propertyPath: _beamModifierData
@@ -2852,6 +2868,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2860529767675633969, guid: 233bca1094f712f4fbd89f2530e1fdd9, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2860529767675633969, guid: 233bca1094f712f4fbd89f2530e1fdd9, type: 3}
+      propertyPath: m_GravityScale
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4109796447416337594, guid: 233bca1094f712f4fbd89f2530e1fdd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13

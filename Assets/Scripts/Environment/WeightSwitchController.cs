@@ -20,7 +20,6 @@ namespace Environment
             {
                 return;
             }
-            print("Firing!");
 
             _onActivate.Invoke();
             _isActivated = true;

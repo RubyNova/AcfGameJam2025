@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Controllers;
 using Environment.Interactables;
@@ -7,6 +8,7 @@ using UnityEngine;
 
 namespace Environment
 {
+    
     public class LightBeamController : MonoBehaviour
     {
         [Header("Dependencies")]
@@ -57,6 +59,7 @@ namespace Environment
         private PlayerController _playerControllerForBoundsChecks;
         private Vector2[] _colliderPoints = new Vector2[4];
         private Vector2 _playerSnapPoint;
+        private HashSet<GenericBeamForceReactor> _trackedPhyscsInteractables = new();
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
 
@@ -83,10 +86,19 @@ namespace Environment
                     _targetHit = null;
                 }
 
+                foreach (var reactorToUntrack in _trackedPhyscsInteractables)
+                {
+                    _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, reactorToUntrack);
+                }
+
+                _trackedPhyscsInteractables.Clear();
+
                 return null;
             }
 
             RaycastHit2D? hitInfo = null;
+
+            List<GenericBeamForceReactor> reactorsFoundThisFrame = new();
 
             for (int i = 0; i < hitCount; i++)
             {
@@ -119,7 +131,8 @@ namespace Environment
                     {
                         if (hasGenericForceBeamReactor)
                         {
-                            print("FOUND!");
+                            reactorsFoundThisFrame.Add(reactor);
+                            _trackedPhyscsInteractables.Add(reactor);
                             _beamModifierData.ApplyBeamEffectToObject(this, _beamPriority, reactor, _targetTransform.right); // objects on the generic object physics layer should still be detected and interacted with.
                         }
 
@@ -131,6 +144,14 @@ namespace Environment
                         break;
                     }
                 }
+            }
+
+            var difference = _trackedPhyscsInteractables.Except(reactorsFoundThisFrame).ToList();
+
+            foreach (var reactorToUntrack in difference)
+            {
+                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, reactorToUntrack);
+                _trackedPhyscsInteractables.Remove(reactorToUntrack);
             }
 
             if (!hitInfo.HasValue)

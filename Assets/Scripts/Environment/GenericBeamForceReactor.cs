@@ -35,11 +35,17 @@ namespace Environment.Interactables
             _beamPriority = priority;
             //_rigidbodyToDrive.AddForce(senderBeamDirection * force);
             _rigidbodyToDrive.linearVelocity = senderBeamDirection * force;
+            _rigidbodyToDrive.gravityScale = 0;
         }
 
-        public void UnregisterIncomingForce(LightBeamController sender, int beamPriority)
+        public void UnregisterIncomingForce(LightBeamController sender, int priority)
         {
-            print("RE_ENABLE_GRAVITY");
+            if (_beamPriority > priority)
+            {
+                return;   
+            }
+
+            _beamPriority = 0;
             _rigidbodyToDrive.gravityScale = _startingGravityScale;
         }
     }
