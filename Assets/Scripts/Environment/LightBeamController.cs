@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Environment
 {
-    
+
     public class LightBeamController : MonoBehaviour
     {
         [Header("Dependencies")]
@@ -55,7 +55,7 @@ namespace Environment
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[10];
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
-        
+
         private PlayerController _playerControllerForBoundsChecks;
         private Vector2[] _colliderPoints = new Vector2[4];
         private Vector2 _playerSnapPoint;
@@ -73,10 +73,13 @@ namespace Environment
 
         public Transform BeamTransform => _targetTransform;
 
+        public float LightBeamLength { get => _lightBeamLength; set => _lightBeamLength = value; }
+
+        public Vector3 EmissionPoint => _emissionPoint ?? _targetTransform.position;
+
         private Vector3? RegisterPotentialBeamHit()
         {
-            var hitCount = Physics2D.Raycast(_emissionPoint ?? _targetTransform.position, _targetTransform.right, _beamRaycastFilter, _beamRaycastData, _lightBeamLength);
-            var debugValue = _emissionPoint ?? _targetTransform.position;
+            var hitCount = Physics2D.Raycast(EmissionPoint, _targetTransform.right, _beamRaycastFilter, _beamRaycastData, LightBeamLength);
 
             if (hitCount == 0)
             {
@@ -111,14 +114,14 @@ namespace Environment
                     bool isSelf = beamControllerTest == this || beamControllerParentTest == this;
 
                     bool isSendingController = (beamControllerTest != null && beamControllerTest == _currentSender) || (beamControllerParentTest != null && beamControllerParentTest == _currentSender);
-                    
+
                     bool isAWallAndShouldBeIgnored = beamControllerTest == null && beamControllerParentTest == null && ShouldIgnoreWalls;
 
                     bool anyIgnoredObjects = _objectsToIgnoreDuringHitChecks.Any(x => x.transform.gameObject == hit.transform.gameObject);
 
                     bool isPlayerOrTaggedForIgnore = hit.transform.CompareTag("IgnoredByBeam") || hit.transform.CompareTag("Player");
 
-                    bool hasGenericForceBeamReactor = hit.transform.TryGetComponent<GenericBeamForceReactor>(out var reactor); 
+                    bool hasGenericForceBeamReactor = hit.transform.TryGetComponent<GenericBeamForceReactor>(out var reactor);
 
                     bool shouldFilterOut = isSelf
                     || isSendingController
@@ -204,7 +207,7 @@ namespace Environment
         private void CheckForPlayerBelow()
         {
             var targetTransform = _boxCollider.transform;
-            var startPoint =  targetTransform.InverseTransformPoint(_renderer.GetPosition(0));
+            var startPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(0));
             var endPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(1));
             var halfHeight = _renderer.startWidth * 0.5f;
             _colliderPoints[0] = targetTransform.TransformPoint(new Vector2(startPoint.x, startPoint.y + halfHeight));
@@ -248,9 +251,9 @@ namespace Environment
         private void ProduceBeam()
         {
             var potentialHitPoint = RegisterPotentialBeamHit();
-            var translatedPosition = _emissionPoint ?? _targetTransform.position;
-            translatedPosition += _targetTransform.right * _lightBeamLength;
-            var positions = new[] { _emissionPoint ?? _targetTransform.position,
+            var translatedPosition = EmissionPoint;
+            translatedPosition += _targetTransform.right * LightBeamLength;
+            var positions = new[] { EmissionPoint,
                 potentialHitPoint ?? translatedPosition
             };
             _renderer.SetPositions(positions);
@@ -272,7 +275,7 @@ namespace Environment
             Vector2? firstOriginPoint = null;
             Vector2? secondOriginPoint = null;
 
-            var origin = _emissionPoint ?? _targetTransform.position;
+            var origin = EmissionPoint;
 
             foreach (var point in _colliderPoints)
             {
@@ -364,6 +367,7 @@ namespace Environment
                 case LightBeamMode.Transform:
                     senderDirection = -senderDirection;
                     _emissionPoint += senderDirection * _beamPierceDistance;
+                    LightBeamLength = sender.LightBeamLength - Vector2.Distance(EmissionPoint, sender.EmissionPoint);
                     var lookAtAngle = Mathf.Atan2(senderDirection.y, senderDirection.x) * Mathf.Rad2Deg;
                     _targetTransform.rotation = Quaternion.Euler(0, 0, lookAtAngle);
                     break;
@@ -420,16 +424,16 @@ namespace Environment
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawRay(_emissionPoint ?? _targetTransform.position, _targetTransform.right);
+            Gizmos.DrawRay(EmissionPoint, _targetTransform.right);
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(_emissionPoint ?? _targetTransform.position, -_targetTransform.up);
+            Gizmos.DrawRay(EmissionPoint, -_targetTransform.up);
             Gizmos.DrawSphere(_playerSnapPoint, 0.5f);
         }
 
         public void OnDrawGizmosSelected()
         {
-            var directionPosition = _targetTransform.right * _lightBeamLength;
-            var emission = _emissionPoint ?? _targetTransform.position;
+            var directionPosition = _targetTransform.right * LightBeamLength;
+            var emission = EmissionPoint;
 
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(emission, 0.25f);

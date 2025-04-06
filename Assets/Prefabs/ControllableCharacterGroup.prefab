@@ -265,6 +265,7 @@ MonoBehaviour:
   _defaultActionMapName: Player
   _playerActionMapName: Player
   _familiarActionMapName: Familiar
+  _currentActionMapName: 
 --- !u!114 &8419510844817589331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,7 +769,7 @@ MonoBehaviour:
   _boxCollider: {fileID: 6542828758001938945}
   _lightBeamLength: 10
   _mode: 2
-  _beamPierceDistance: 0
+  _beamPierceDistance: 1
   _beamExitVelocityMultiplier: 0
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks:
