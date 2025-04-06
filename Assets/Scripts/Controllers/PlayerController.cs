@@ -224,6 +224,10 @@ namespace Controllers
                 originalVector.x *= 0.4f;
             }
 
+            //Disable Up and Down movement for the player - they only move left & right
+            //and have separate controls for jumping
+            originalVector.y = 0f;
+
             _movementVector = originalVector;
         }
 
@@ -310,21 +314,6 @@ namespace Controllers
                 //Swap the Camera
                 SwitchCamerasEvent.Invoke(2);
             }
-        }
-
-        public void AddLinearVelocity(int cachedAffectingBeamHash, Vector2 velocity)
-        {
-            if (_cachedAffectingBeam == cachedAffectingBeamHash)
-            {
-                _cachedVelocityUpdate = true;
-                _cachedVelocity = velocity;
-            }
-        }
-
-        public void AddLinearVelocityRaw(Vector2 velocity)
-        {
-            _cachedVelocity = velocity;
-            _cachedVelocityUpdate = true;
         }
 
         public void RegisterIncomingBeamForce(LightBeamController sender, int beamPriority, Vector2 senderBeamDirection, float beamForce)
