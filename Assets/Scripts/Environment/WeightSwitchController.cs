@@ -12,13 +12,11 @@ namespace Environment
         [SerializeField]
         private UnityEvent _onDeactivate;
 
-        private bool _isActivated = false;
-
         private int _entityCount = 0;
 
         protected void OnCollisionEnter2D(Collision2D collision)
         {
-            if (_isActivated || (collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) || collision.transform.position.y <= transform.position.y)
+            if ((collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) || collision.transform.position.y <= transform.position.y)
             {
                 return;
             }
@@ -26,25 +24,27 @@ namespace Environment
             if (_entityCount == 0)
             {
                 _onActivate.Invoke();
-                _isActivated = true;
             }
 
             _entityCount++;
+            
+            print("ENTER NEW VALUE: " + _entityCount);
         }
 
         protected void OnCollisionExit2D(Collision2D collision)
         {
-            if (!_isActivated || (collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) || collision.transform.position.y <= transform.position.y)
+            if ((collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) || collision.transform.position.y <= transform.position.y)
             {
                 return;
             }
             
             _entityCount--;
 
+            print("EXIT NEW VALUE: " + _entityCount);
+
             if (_entityCount == 0)
             {
                 _onDeactivate.Invoke();
-                _isActivated = false;
             }
 
         }
