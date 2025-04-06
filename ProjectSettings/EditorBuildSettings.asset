@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/BeamTutorial.unity
     guid: 4b8753e727f8a8049b286402cbd85655
+  - enabled: 1
+    path: Assets/Scenes/Game/LFTutorial.unity
+    guid: ee68a03e3fbdda44c94bff18edf830ec
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 51e5be2a12bb21543a7663ba51e037a4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}

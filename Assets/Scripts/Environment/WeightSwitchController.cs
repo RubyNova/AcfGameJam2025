@@ -14,6 +14,8 @@ namespace Environment
 
         private bool _isActivated = false;
 
+        private int _entityCount = 0;
+
         protected void OnCollisionEnter2D(Collision2D collision)
         {
             if (_isActivated || (collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) || collision.transform.position.y <= transform.position.y)
@@ -21,8 +23,13 @@ namespace Environment
                 return;
             }
 
-            _onActivate.Invoke();
-            _isActivated = true;
+            if (_entityCount == 0)
+            {
+                _onActivate.Invoke();
+                _isActivated = true;
+            }
+
+            _entityCount++;
         }
 
         protected void OnCollisionExit2D(Collision2D collision)
@@ -32,8 +39,13 @@ namespace Environment
                 return;
             }
 
-            _onDeactivate.Invoke();
-            _isActivated = false;
+            if (_entityCount == 0)
+            {
+                _onDeactivate.Invoke();
+                _isActivated = false;
+            }
+
+            _entityCount--;
         }
     }
 }

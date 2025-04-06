@@ -587,10 +587,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightFamiliar
       objectReference: {fileID: 0}
+    - target: {fileID: 2262687684910580198, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262687684910580198, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262687684910580198, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5261697059083877710, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
       propertyPath: _beamChanger
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7201591611855911695}
     - target: {fileID: 5261697059083877710, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
       propertyPath: _playerControllerReference
       value: 
@@ -659,6 +671,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1416081020816024146, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3460603776212991289}
+    - targetCorrespondingSourceObject: {fileID: 1416081020816024146, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6542709911969843803}
     - targetCorrespondingSourceObject: {fileID: 6458314666040974726, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6542828758001938945}
@@ -819,3 +834,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _colour: {r: 0.07406576, g: 0.7264151, b: 0, a: 1}
   BeamForce: 10
+--- !u!114 &6542709911969843803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7850566374596847418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407ca2e230e0c2848a1118d13a2bff87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 0, g: 0.7900574, b: 1, a: 1}
+  BeamForce: 5

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 9015729033035233827}
-  _axisHelper: {fileID: 0}
+  _axisHelper: {fileID: 1357461550460724817}
   _beamModifierData: {fileID: 972154243405144626}
   _targetTransform: {fileID: 7697161256769109243}
   _boxCollider: {fileID: 2446526771299501827}
@@ -212,13 +212,13 @@ LineRenderer:
   - {x: 4.7700005, y: 11.15, z: 0.004709914}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0

@@ -134,12 +134,14 @@ namespace Controllers
         private void CycleModifiers()
         {
             var modifiers = GetComponentsInChildren<LightBeamModifier>();
-            _beamChanger.ChangeBeamModifier(modifiers[_modifierIndex]);
-
+            
             if (++_modifierIndex >= modifiers.Length)
             {
                 _modifierIndex = 0;
             }
+
+            _beamChanger.ChangeBeamModifier(modifiers[_modifierIndex]);
+
         }
 
     }
