@@ -444,10 +444,9 @@ namespace Controllers
         public void OnTriggerEnter2D(Collider2D collision)
         {
             var lightBeamController = collision.GetComponentInParent<LightBeamController>();
-            if (lightBeamController != null)
+            if (lightBeamController != null && _cachedAffectingBeam != lightBeamController.gameObject.GetHashCode())
             {
                 _triggered = true;
-                var isCachedBeam = _cachedAffectingBeam == lightBeamController.gameObject.GetHashCode();
                 
                 //Get flipped velocity
                 Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
@@ -480,11 +479,7 @@ namespace Controllers
 
                 FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
                 RotateCharacterToBeam(angles);
-                
-                if(!isCachedBeam)
-                {
-                    transform.position = newPosition;
-                }
+                transform.position = newPosition;
                 _rigidbody.linearVelocity = flippedVelocity;
             }
 
