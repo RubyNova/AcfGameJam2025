@@ -115,22 +115,26 @@ MonoBehaviour:
   _fallingMovementSpeedDivider: 0.505
   _verticalLaunchDamping: 0.339
   _interactionRayLength: 3.15
+  _baseVelocityCap: 15
+  _walkSpeed: 0.6
   _familiarControllerReference: {fileID: 3914036207532161062}
   _rigidbody: {fileID: 5852338104788843258}
   _collider: {fileID: 1047131086249340933}
   _triggerCollider: {fileID: 6420883059033993175}
   _spriteRotator: {fileID: 4156026668027660735}
   _feetTargetTransform: {fileID: 8177297233155880620}
-  Grounded: 1
-  _movementVector: {x: 0, y: 0}
-  _cachedAffectingBeam: 0
-  _cachedVelocityUpdate: 0
-  _cachedVelocity: {x: 0, y: 0}
   ActiveCharacter: 1
+  Grounded: 1
+  _toggleSprintEnabled: 1
   _isRunning: 0
+  JumpRequested: 0
+  _keyboardIsDevice: 0
+  _cachedAffectingBeam: 0
+  _currentMovementVector: {x: 0, y: 0}
+  _cachedMovementVector: {x: 0, y: 0}
   _outsideForces: {x: 0, y: 0}
   MinColliderPoint: {x: 0, y: 0}
-  JumpRequested: 0
+  _currentVelocityCap: 0
 --- !u!70 &1047131086249340933
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

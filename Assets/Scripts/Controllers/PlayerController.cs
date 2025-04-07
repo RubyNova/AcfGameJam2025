@@ -52,7 +52,7 @@ namespace Controllers
         //Temporary til we find a good value
         [SerializeField]
         [Range(0.01f, 0.99f)]
-        private float _walkSpeedReductionMultiplier = 0.4f;
+        private float _walkSpeed = 0.5f;
 
         [Header("Dependencies")]
 
@@ -89,9 +89,6 @@ namespace Controllers
         private bool _isRunning = true;
 
         [SerializeField]
-        private bool _cachedVelocityUpdate = false;
-
-        [SerializeField]
         public bool JumpRequested = false;
 
         [SerializeField]
@@ -105,9 +102,6 @@ namespace Controllers
 
         [SerializeField]
         private Vector2 _cachedMovementVector = Vector2.zero;
-
-        [SerializeField]
-        private Vector2 _cachedVelocity = Vector2.zero;
 
         [SerializeField]
         private Vector2 _outsideForces = Vector2.zero;
@@ -200,7 +194,7 @@ namespace Controllers
                     }
                     else if (_cachedMovementVector.x != 0.0f && _keyboardIsDevice)
                     {
-                        _cachedMovementVector = new Vector2(_cachedMovementVector.x < 0 ? -_walkSpeedReductionMultiplier : _walkSpeedReductionMultiplier, 0);
+                        _cachedMovementVector = new Vector2(_cachedMovementVector.x < 0 ? -_walkSpeed : _walkSpeed, 0);
                     }
                     _currentMovementVector = _cachedMovementVector;
                 }
@@ -262,12 +256,6 @@ namespace Controllers
                 if (_outsideForces != Vector2.zero)
                 {
                     _rigidbody.linearVelocity += _outsideForces;
-                }
-
-                if (_cachedVelocityUpdate)
-                {
-                    _rigidbody.linearVelocity += _cachedVelocity;
-                    _cachedVelocityUpdate = false;
                 }
 
                 if (JumpRequested)
