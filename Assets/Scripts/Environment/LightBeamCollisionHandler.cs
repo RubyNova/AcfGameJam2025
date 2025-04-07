@@ -30,8 +30,6 @@ public class LightBeamCollisionHandler : MonoBehaviour
                     return;
                 }
 
-                if(!_isColliding)
-                {
                     _isColliding = true;
 
                     playerComponent.FlipCharacterSprite(_parentController.BeamTransform.right.x >= 0);
@@ -57,8 +55,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
                         playerComponent, 
                         transform.right);
                     _parentController.CurrentPlayer = playerComponent;
-                }
-
+             
                 playerComponent.Grounded = true;
             }
         }
@@ -111,6 +108,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
                         }
                     } 
                 }
+
             }
         }
         

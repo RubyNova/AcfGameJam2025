@@ -276,7 +276,6 @@ namespace Controllers
                 {
                     var startingVelocity = _rigidbody.linearVelocity;
                     float currentSquareMagnitude = startingVelocity.sqrMagnitude;
-                    print(currentSquareMagnitude);
 
                     if (currentSquareMagnitude > _currentVelocityCap)
                     {
