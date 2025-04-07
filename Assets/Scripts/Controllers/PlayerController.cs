@@ -295,7 +295,7 @@ namespace Controllers
             if (!ActiveCharacter)
                 return;
 
-            if (!JumpRequested)
+            if (!JumpRequested && Grounded)
             {
                 JumpRequested = true;
             }
@@ -318,7 +318,8 @@ namespace Controllers
 
         void OnCollisionExit2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ||
+                collision.gameObject.layer == LayerMask.NameToLayer("LightBeam"))
             {
                 Grounded = false;
             }
