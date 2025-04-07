@@ -228,13 +228,6 @@ namespace Controllers
                         _outsideForces.y = 0.0f;
                     }
                 }
-
-                int basicMovementAdjustment = 1;
-
-                basicMovementAdjustment += _isRunning ? 1 : 0;
-                basicMovementAdjustment += (JumpRequested && Grounded) || !Grounded ? 10 : 0;
-
-                _currentVelocityCap =  _baseVelocityCap * (outsideForcesCount + basicMovementAdjustment);
             }
        
             UpdateAnims();
@@ -286,6 +279,11 @@ namespace Controllers
                     JumpRequested = false;
                 }
 
+                int basicMovementAdjustment = 0;
+
+                basicMovementAdjustment += _isRunning ? 1 : 0;
+
+                _currentVelocityCap =  _baseVelocityCap * (_listOfOutsideForces.Count + basicMovementAdjustment);
                 if (_rigidbody.linearVelocity != Vector2.zero)
                 {
                     var startingVelocity = _rigidbody.linearVelocity;
@@ -295,7 +293,9 @@ namespace Controllers
                     if (currentSquareMagnitude > _currentVelocityCap)
                     {
                         float scaleFactor = Mathf.Sqrt(_currentVelocityCap / currentSquareMagnitude);
-                        _rigidbody.linearVelocity = startingVelocity * scaleFactor;
+                        var cappedVelocity = startingVelocity * scaleFactor;
+                        var difference = startingVelocity - cappedVelocity;
+                        _rigidbody.AddForce(-difference, ForceMode2D.Impulse);
                     }
                 }
             }
