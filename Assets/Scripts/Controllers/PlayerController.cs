@@ -46,6 +46,9 @@ namespace Controllers
         [SerializeField]
         private float _interactionRayLength;
 
+        [SerializeField]
+        private float _baseVelocityCap = new Vector2(1, 1).sqrMagnitude;
+
         //Temporary til we find a good value
         [SerializeField]
         [Range(0.01f, 0.99f)]
@@ -112,6 +115,9 @@ namespace Controllers
         [SerializeField]
         public Vector2 MinColliderPoint;
 
+        [SerializeField]
+        private float _currentVelocityCap;
+
 
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
@@ -132,6 +138,7 @@ namespace Controllers
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            _currentVelocityCap = _baseVelocityCap;
             _toggleSprintEnabled = PreferencesController.Instance.Settings.ToggleSprint;
 
             PreferencesController.Instance.SettingsUpdated.AddListener((controller) => UpdatePlayerSpecificSettings(controller.Settings));
@@ -202,14 +209,16 @@ namespace Controllers
                 // Outside Forces
                 _outsideForces = Vector2.zero;
                 //Sort by priority and only apply the right outside forces if applicable
-                if (_listOfOutsideForces.Count > 1)
+                int outsideForcesCount = _listOfOutsideForces.Count;
+
+                if (outsideForcesCount > 1)
                 {
                     KeyValuePair<int, LightBeamDataGroup> forceWithMaxPriority = _listOfOutsideForces.Aggregate(
                         (left, right) => left.Value.Priority > right.Value.Priority ? left : right);
                     _cachedAffectingBeam = forceWithMaxPriority.Key;
                     _outsideForces += forceWithMaxPriority.Value.DirectionAndForce;
                 }
-                else if (_listOfOutsideForces.Count > 0)
+                else if (outsideForcesCount > 0)
                 {
                     var force = _listOfOutsideForces.ElementAt(0);
                     _cachedAffectingBeam = force.Key;
@@ -219,6 +228,13 @@ namespace Controllers
                         _outsideForces.y = 0.0f;
                     }
                 }
+
+                int basicMovementAdjustment = 1;
+
+                basicMovementAdjustment += _isRunning ? 1 : 0;
+                basicMovementAdjustment += (JumpRequested && Grounded) || !Grounded ? 10 : 0;
+
+                _currentVelocityCap =  _baseVelocityCap * (outsideForcesCount + basicMovementAdjustment);
             }
        
             UpdateAnims();
@@ -269,6 +285,19 @@ namespace Controllers
                     }
                     JumpRequested = false;
                 }
+
+                if (_rigidbody.linearVelocity != Vector2.zero)
+                {
+                    var startingVelocity = _rigidbody.linearVelocity;
+                    float currentSquareMagnitude = startingVelocity.sqrMagnitude;
+                    print(currentSquareMagnitude);
+
+                    if (currentSquareMagnitude > _currentVelocityCap)
+                    {
+                        float scaleFactor = Mathf.Sqrt(_currentVelocityCap / currentSquareMagnitude);
+                        _rigidbody.linearVelocity = startingVelocity * scaleFactor;
+                    }
+                }
             }
 
         }
@@ -286,9 +315,11 @@ namespace Controllers
 
         void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") && _rigidbody.linearVelocityY < 0)
             {
                 Grounded = true;
+
+                _currentVelocityCap = _baseVelocityCap;
 
                 if (_spriteRotator.localEulerAngles.z != 0)
                 {

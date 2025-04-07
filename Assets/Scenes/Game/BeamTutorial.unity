@@ -4314,6 +4314,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControllableCharacterGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 7751522648571147027, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: Grounded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751522648571147027, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: _baseVelocityCap
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
