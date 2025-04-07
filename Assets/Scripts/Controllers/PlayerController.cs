@@ -447,6 +447,8 @@ namespace Controllers
             if (lightBeamController != null)
             {
                 _triggered = true;
+                var isCachedBeam = _cachedAffectingBeam == lightBeamController.gameObject.GetHashCode();
+                
                 //Get flipped velocity
                 Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
                 flippedVelocity.y *= _verticalLaunchDamping;
@@ -478,7 +480,11 @@ namespace Controllers
 
                 FlipCharacterSprite(lightBeamController.BeamTransform.right.x >= 0);
                 RotateCharacterToBeam(angles);
-                transform.position = newPosition;
+                
+                if(!isCachedBeam)
+                {
+                    transform.position = newPosition;
+                }
                 _rigidbody.linearVelocity = flippedVelocity;
             }
 
