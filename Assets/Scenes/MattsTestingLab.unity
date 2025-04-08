@@ -2294,26 +2294,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControllableCharacterGroup
       objectReference: {fileID: 0}
-    - target: {fileID: 5852338104788843258, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: m_Mass
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201591611855911695, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: _beamPierceDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7751522648571147027, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: BeamGravityScale
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7751522648571147027, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: BeamVerticalLaunchDamping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7751522648571147027, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: _triggerVerticalLaunchDamping
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 7850566374596847418, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_Layer
       value: 10

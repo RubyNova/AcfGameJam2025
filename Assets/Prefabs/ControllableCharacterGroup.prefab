@@ -113,13 +113,14 @@ MonoBehaviour:
   _jumpForce: 25
   _gravityScale: 3
   _fallingGravityScale: 5
-  BeamGravityScale: 0.5
-  _triggerVerticalLaunchDamping: 0
-  BeamVerticalLaunchDamping: 0.5
+  BeamGravityScale: 5
+  _triggerVerticalLaunchDamping: 0.01
+  BeamVerticalLaunchDamping: 0
   _fallingMovementSpeedDivider: 0.505
   _fallingVelocityXThreshold: 5
   _interactionRayLength: 3.15
   _baseVelocityCap: 15
+  _outsideForceInfluenceMultiplier: 100
   _familiarControllerReference: {fileID: 3914036207532161062}
   _audioController: {fileID: 7980841897968653829}
   _rigidbody: {fileID: 5852338104788843258}
