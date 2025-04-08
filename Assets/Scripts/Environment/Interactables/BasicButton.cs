@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace Environment.Interactables
 {
-    public class BasicButton : IInteractable
+    public class BasicButton : InteractableBehaviour
     {
         public UnityEvent _actions;
         public int fuck;

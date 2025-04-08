@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Environment.Interactables
 {
-    public class GenericBeamForceReactor : IInteractable
+    public class GenericBeamForceReactor : MonoBehaviour 
     {
         [Header("Dependencies")]
         [SerializeField]
@@ -17,11 +17,6 @@ namespace Environment.Interactables
         protected void Start()
         {
             _startingGravityScale = _rigidbodyToDrive.gravityScale;
-        }
-
-        public override void Interact(PlayerController controller)
-        {
-
         }
 
         public void RegisterIncomingForce(LightBeamController sender, int priority, Vector2 senderBeamDirection, float force)

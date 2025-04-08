@@ -136,6 +136,7 @@ namespace Controllers
         
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
+        public InteractableBehaviour HeldObject { get; set; }
 
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
@@ -477,12 +478,21 @@ namespace Controllers
 
         private void HandleInteractions()
         {
+            if (HeldObject != null)
+            {
+                HeldObject.GetComponent<Collider2D>().enabled = true;
+                HeldObject.transform.parent = null;
+                HeldObject.GetComponent<Rigidbody2D>().simulated = true;
+                HeldObject = null;
+                return;
+            }
+
            //Physics2D.RaycastAll(_spriteRotator.position, _spriteRotator.right, distance: _interactionRayLength);
             RaycastHit2D[] hitCount = Physics2D.CircleCastAll(_spriteRotator.position, 1, _spriteRotator.right, _interactionRayLength);
 
             foreach (var hit in hitCount)
             {
-                IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                InteractableBehaviour interactable = hit.transform.gameObject.GetComponent<InteractableBehaviour>();
                 if (interactable != null)
                 {
                     interactable.Interact(this);
