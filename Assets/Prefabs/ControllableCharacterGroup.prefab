@@ -66,6 +66,7 @@ Transform:
   m_Children:
   - {fileID: 4156026668027660735}
   - {fileID: 8177297233155880620}
+  - {fileID: 3982190401322705535}
   m_Father: {fileID: 3164417712867505803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5852338104788843258
@@ -128,6 +129,7 @@ MonoBehaviour:
   _triggerCollider: {fileID: 6420883059033993175}
   _spriteRotator: {fileID: 4156026668027660735}
   _feetTargetTransform: {fileID: 8177297233155880620}
+  _heldItemPoint: {fileID: 3982190401322705535}
   ActiveCharacter: 1
   Grounded: 1
   _toggleSprintEnabled: 1
@@ -224,6 +226,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.66, y: 4.4}
   m_EdgeRadius: 0
+--- !u!1 &1713834758886756275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3982190401322705535}
+  m_Layer: 11
+  m_Name: Handsies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3982190401322705535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713834758886756275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.01, y: 0.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8077570158492271931}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3923391215170929848
 GameObject:
   m_ObjectHideFlags: 0

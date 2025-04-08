@@ -91,6 +91,9 @@ namespace Controllers
 
         [SerializeField]
         private Transform _feetTargetTransform;
+        
+        [SerializeField]
+        private Transform _heldItemPoint;
 
         [Header("Read-only Values")]
 
@@ -137,6 +140,7 @@ namespace Controllers
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
         public InteractableBehaviour HeldObject { get; set; }
+        public Transform HeldItemPoint => _heldItemPoint;
 
         private bool switchCharacters = false;
         private InputActionMap _playerActions;

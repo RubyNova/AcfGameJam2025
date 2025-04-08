@@ -12,6 +12,7 @@ namespace Environment.Interactables
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Rigidbody2D>().simulated = false;
             player.HeldObject = this;
+            transform.localPosition = player.HeldItemPoint.localPosition;
         }
     }
 }
