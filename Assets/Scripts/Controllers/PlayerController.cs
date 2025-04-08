@@ -66,6 +66,9 @@ namespace Controllers
         [SerializeField]
         private float _baseVelocityCap = new Vector2(1, 1).sqrMagnitude;
 
+        [SerializeField]
+        private float _outsideForceInfluenceMultiplier = 100;
+
         [Header("Dependencies")]
 
         [SerializeField]
@@ -143,10 +146,8 @@ namespace Controllers
         private InputAction _interactAction;
         private bool _resetMovement = false;
         private bool _triggered = false;
+        private float _capMultiplierForOutsideForces;
 
-        
-
-    
         void Start()
         {
             _currentVelocityCap = _baseVelocityCap;
@@ -297,7 +298,7 @@ namespace Controllers
 
                 basicMovementAdjustment += _isRunning ? 1 : 0;
 
-                _currentVelocityCap =  _baseVelocityCap * ((_biggestOutsideForcesCount * 3) + basicMovementAdjustment);
+                _currentVelocityCap =  _baseVelocityCap * ((_biggestOutsideForcesCount * _capMultiplierForOutsideForces) + basicMovementAdjustment);
                 if (_rigidbody.linearVelocity != Vector2.zero)
                 {
                     var startingVelocity = _rigidbody.linearVelocity;
@@ -308,7 +309,7 @@ namespace Controllers
                         float scaleFactor = Mathf.Sqrt(_currentVelocityCap / currentSquareMagnitude);
                         var cappedVelocity = startingVelocity * scaleFactor;
                         var difference = startingVelocity - cappedVelocity;
-                        //_rigidbody.AddForce(-difference, ForceMode2D.Impulse);
+                        _rigidbody.AddForce(-difference, ForceMode2D.Impulse);
                     }
                 }
             }
@@ -327,6 +328,7 @@ namespace Controllers
                     Priority = beamPriority,
                     DirectionAndForce = senderBeamDirection * beamForce
                 });
+                _capMultiplierForOutsideForces += beamForce * _outsideForceInfluenceMultiplier;
                 _triggerCollider.enabled = true;
             }
             // TODO: This method is called every tick that the beam detects the player. The beam priority is a value that increments the more controllers this single beam of light
