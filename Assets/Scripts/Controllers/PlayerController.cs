@@ -72,6 +72,9 @@ namespace Controllers
         private FamiliarController _familiarControllerReference;
 
         [SerializeField]
+        private PlayerAudioController _audioController;
+
+        [SerializeField]
         public Rigidbody2D _rigidbody;
 
         [SerializeField]
@@ -408,6 +411,7 @@ namespace Controllers
                 {
                     _spriteRotator.localEulerAngles = Vector3.zero;
                 }
+                _audioController.PlayLandingClip(_rigidbody.linearVelocityY < -10.0f);
             }
         }
 

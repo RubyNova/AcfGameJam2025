@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6649107589262713156}
   - component: {fileID: 5290019095392925128}
   - component: {fileID: 343529432515065455}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WeightedFloorSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
