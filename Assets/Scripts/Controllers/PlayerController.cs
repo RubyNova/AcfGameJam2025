@@ -26,6 +26,11 @@ namespace Controllers
         [SerializeField]
         private float _movementSpeed;
 
+        //Temporary til we find a good value
+        [SerializeField]
+        [Range(0.01f, 0.99f)]
+        private float _walkSpeed = 0.5f;
+
         [SerializeField]
         private float _jumpForce;
 
@@ -36,23 +41,29 @@ namespace Controllers
         private float _fallingGravityScale;
 
         [SerializeField]
-        [Range(0.1f, 2.0f)]
-        private float _fallingMovementSpeedDivider;
+        public float BeamGravityScale = 0.5f;
 
         [SerializeField]
         [Range(0.01f, 1.0f)]
-        private float _verticalLaunchDamping;
+        private float _triggerVerticalLaunchDamping;
+
+        [SerializeField]
+        public float BeamVerticalLaunchDamping = 1.0f;
+
+        [SerializeField]
+        [Range(0.1f, 2.0f)]
+        private float _fallingMovementSpeedDivider;
+
+        //Controls how much movement on the X axis there needs to be when falling
+        //before falling gravity kicks in
+        [SerializeField]
+        private float _fallingVelocityXThreshold = 0.1f;
 
         [SerializeField]
         private float _interactionRayLength;
 
         [SerializeField]
         private float _baseVelocityCap = new Vector2(1, 1).sqrMagnitude;
-
-        //Temporary til we find a good value
-        [SerializeField]
-        [Range(0.01f, 0.99f)]
-        private float _walkSpeed = 0.5f;
 
         [Header("Dependencies")]
 
@@ -98,6 +109,12 @@ namespace Controllers
         private int _cachedAffectingBeam = NO_BEAM_CACHED;
 
         [SerializeField]
+        private int _biggestOutsideForcesCount;
+        
+        [SerializeField]
+        private float _currentVelocityCap;
+        
+        [SerializeField]
         private Vector2 _currentMovementVector = Vector2.zero;
 
         [SerializeField]
@@ -109,10 +126,7 @@ namespace Controllers
         [SerializeField]
         public Vector2 MinColliderPoint;
 
-        [SerializeField]
-        private float _currentVelocityCap;
-
-
+        
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
 
@@ -124,15 +138,11 @@ namespace Controllers
         private InputAction _runAction;
         private InputAction _interactAction;
         private bool _resetMovement = false;
+        private bool _triggered = false;
 
         
 
-        private bool _triggered = false;
-
-        [SerializeField]
-        private int _biggestOutsideForcesCount;
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
         void Start()
         {
             _currentVelocityCap = _baseVelocityCap;
@@ -165,7 +175,6 @@ namespace Controllers
             }
         }
 
-        // Update is called once per frame
         void Update()
         {
             MinColliderPoint = new Vector2 { x = _collider.bounds.min.x, y = _collider.bounds.min.y };
@@ -239,8 +248,13 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                if (_rigidbody.linearVelocityY < 0 && !Grounded && _cachedAffectingBeam == NO_BEAM_CACHED)
+                if (_rigidbody.linearVelocityY < 0 &&
+                     _rigidbody.linearVelocityX > -_fallingVelocityXThreshold && 
+                     _rigidbody.linearVelocityX < _fallingVelocityXThreshold && 
+                     !Grounded &&
+                     _cachedAffectingBeam == NO_BEAM_CACHED)
                 {
+                    //Free-falling
                     if (_rigidbody.gravityScale != _fallingGravityScale)
                     {
                         _rigidbody.gravityScale = _fallingGravityScale;
@@ -253,10 +267,10 @@ namespace Controllers
                 }
                 else
                 {
-                    if (_rigidbody.gravityScale != _gravityScale)
-                    {
-                        _rigidbody.gravityScale = _gravityScale;
-                    }
+                    // if (_rigidbody.gravityScale != _gravityScale)
+                    // {
+                    //     _rigidbody.gravityScale = _gravityScale;
+                    // }
                     
                     _rigidbody.AddForce(_currentMovementVector * _movementSpeed * _rigidbody.mass, ForceMode2D.Force);
                 }
@@ -297,88 +311,8 @@ namespace Controllers
 
         }
 
-        void OnJump()
-        {
-            if (!ActiveCharacter)
-                return;
-
-            if (!JumpRequested && Grounded)
-            {
-                JumpRequested = true;
-            }
-        }
-
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-            {
-                Grounded = true;
-
-                _biggestOutsideForcesCount = 0;
-
-                _currentVelocityCap = _baseVelocityCap;
-
-                if (_spriteRotator.localEulerAngles.z != 0)
-                {
-                    _spriteRotator.localEulerAngles = Vector3.zero;
-                }
-            }
-        }
-
-        void OnCollisionExit2D(Collision2D collision)
-        {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ||
-                collision.gameObject.layer == LayerMask.NameToLayer("LightBeam"))
-            {
-                Grounded = false;
-            }
-        }
-
-        void OnSwap(InputValue value)
-        {
-            if (value.isPressed && !switchCharacters)
-            {
-                if (!ActiveCharacter)
-                    return;
-
-                switchCharacters = true;
-            }
-        }
-
-        void OnZoomOut(InputValue value)
-        {
-            if (value.isPressed && !switchCharacters)
-            {
-                if (!ActiveCharacter)
-                    return;
-
-                SwitchCamerasEvent.Invoke(3);
-            }
-        }
-
-        private void SwapCharacters()
-        {
-            if (_familiarControllerReference)
-            {
-                //Change active status
-                ActiveCharacter = false;
-                switchCharacters = false;
-                _familiarControllerReference.ActiveCharacter = true;
-                
-                //Shutdown velocity for this character
-                _rigidbody.linearVelocity = Vector2.zero;
-                
-                //Change Input Action Maps
-                var inputComponent = GetComponentInParent<InputController>();
-                if(inputComponent != null)
-                {
-                    inputComponent.SwapCharacterMaps(false);
-                }
-
-                //Swap the Camera
-                SwitchCamerasEvent.Invoke(2);
-            }
-        }
+        //Beam-related functions
+        public LightBeamDataGroup GetCachedBeamData() => _cachedAffectingBeam == NO_BEAM_CACHED ? null : _listOfOutsideForces[_cachedAffectingBeam];
 
         public void RegisterIncomingBeamForce(LightBeamController sender, int beamPriority, Vector2 senderBeamDirection, float beamForce)
         {
@@ -389,7 +323,6 @@ namespace Controllers
                     Priority = beamPriority,
                     DirectionAndForce = senderBeamDirection * beamForce
                 });
-
                 _triggerCollider.enabled = true;
             }
             // TODO: This method is called every tick that the beam detects the player. The beam priority is a value that increments the more controllers this single beam of light
@@ -415,18 +348,7 @@ namespace Controllers
 
         }
 
-        internal void UpdateAnims()
-        {
-            _characterAnimator.SetFloat("MovementX", _currentMovementVector.x);
-            _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
-            _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
-
-            if (_currentMovementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)
-            {
-                FlipCharacterSprite(_currentMovementVector.x > 0);
-            }
-        }
-
+        //Physics-related (Non-collision) functions
         public void RotateCharacterToBeam(Vector3 localEulerAngles)
         {
             //Reset rotation first
@@ -449,7 +371,53 @@ namespace Controllers
             transform.SetPositionAndRotation(pos, rot);
         }
 
-        public LightBeamDataGroup GetCachedBeamData() => _cachedAffectingBeam == NO_BEAM_CACHED ? null : _listOfOutsideForces[_cachedAffectingBeam];
+        private Vector2 FlipVelocity(Vector2 velocity, Vector2 direction)
+        {
+            float directionalVelocity = Vector2.Dot(velocity, direction);
+            Vector2 newVelocity = new Vector2(directionalVelocity, _rigidbody.linearVelocityY);
+            return newVelocity;
+        }
+
+        public void SetGravityScale(float scale) => _rigidbody.gravityScale = scale;
+
+        public void ResetGravityScale() => _rigidbody.gravityScale = _gravityScale;
+
+        public void SetLinearDamping(float dampingValue) => _rigidbody.linearDamping = dampingValue;
+        
+        public void ResetLinearDamping() => _rigidbody.linearDamping = _gravityScale;
+
+        //Collision-specific functions
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            {
+                Grounded = true;
+                if(_rigidbody.gravityScale != _gravityScale)
+                {
+                    _rigidbody.gravityScale = _gravityScale;
+                    //Reset linear damping just in case
+                    _rigidbody.linearDamping = _gravityScale;
+                }
+
+                _biggestOutsideForcesCount = 0;
+
+                _currentVelocityCap = _baseVelocityCap;
+
+                if (_spriteRotator.localEulerAngles.z != 0)
+                {
+                    _spriteRotator.localEulerAngles = Vector3.zero;
+                }
+            }
+        }
+
+        void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ||
+                collision.gameObject.layer == LayerMask.NameToLayer("LightBeam"))
+            {
+                Grounded = false;
+            }
+        }
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
@@ -457,10 +425,12 @@ namespace Controllers
             if (lightBeamController != null && _cachedAffectingBeam != lightBeamController.gameObject.GetHashCode())
             {
                 _triggered = true;
+                ResetGravityScale();
+                ResetLinearDamping();
                 
                 //Get flipped velocity
                 Vector2 flippedVelocity = FlipVelocity(_rigidbody.linearVelocity, lightBeamController.BeamTransform.right);
-                flippedVelocity.y *= _verticalLaunchDamping;
+                flippedVelocity.y *= _triggerVerticalLaunchDamping;
 
                 // Get the distance between feetsies and origin
                 var distance = Vector2.Distance(transform.position, _feetTargetTransform.position);
@@ -491,15 +461,11 @@ namespace Controllers
                 RotateCharacterToBeam(angles);
                 transform.position = newPosition;
                 _rigidbody.linearVelocity = flippedVelocity;
+
+                SetGravityScale(BeamGravityScale);
+                SetLinearDamping(BeamVerticalLaunchDamping);
             }
 
-        }
-
-        private Vector2 FlipVelocity(Vector2 velocity, Vector2 direction)
-        {
-            float directionalVelocity = Vector2.Dot(velocity, direction);
-            Vector2 newVelocity = new Vector2(directionalVelocity, _rigidbody.linearVelocityY);
-            return newVelocity;
         }
 
         private void HandleInteractions()
@@ -524,6 +490,7 @@ namespace Controllers
             Gizmos.DrawSphere(_spriteRotator.right * _interactionRayLength, 0.5f);
         }
     
+        //Input-related functions
         private void UpdatePlayerSpecificSettings(Preferences settings)
         {
             _toggleSprintEnabled = settings.ToggleSprint;
@@ -610,5 +577,76 @@ namespace Controllers
         {
             _resetMovement = true;
         }
+        
+        void OnJump()
+        {
+            if (!ActiveCharacter)
+                return;
+
+            if (!JumpRequested && Grounded)
+            {
+                JumpRequested = true;
+            }
+        }
+
+        void OnSwap(InputValue value)
+        {
+            if (value.isPressed && !switchCharacters)
+            {
+                if (!ActiveCharacter)
+                    return;
+
+                switchCharacters = true;
+            }
+        }
+
+        void OnZoomOut(InputValue value)
+        {
+            if (value.isPressed && !switchCharacters)
+            {
+                if (!ActiveCharacter)
+                    return;
+
+                SwitchCamerasEvent.Invoke(3);
+            }
+        }
+
+        private void SwapCharacters()
+        {
+            if (_familiarControllerReference)
+            {
+                //Change active status
+                ActiveCharacter = false;
+                switchCharacters = false;
+                _familiarControllerReference.ActiveCharacter = true;
+                
+                //Shutdown velocity for this character
+                _rigidbody.linearVelocity = Vector2.zero;
+                
+                //Change Input Action Maps
+                var inputComponent = GetComponentInParent<InputController>();
+                if(inputComponent != null)
+                {
+                    inputComponent.SwapCharacterMaps(false);
+                }
+
+                //Swap the Camera
+                SwitchCamerasEvent.Invoke(2);
+            }
+        }
+
+        //Animation-related functions
+        internal void UpdateAnims()
+        {
+            _characterAnimator.SetFloat("MovementX", _currentMovementVector.x);
+            _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
+            _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
+
+            if (_currentMovementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)
+            {
+                FlipCharacterSprite(_currentMovementVector.x > 0);
+            }
+        }
+
     }
 }

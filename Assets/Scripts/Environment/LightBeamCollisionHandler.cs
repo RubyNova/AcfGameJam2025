@@ -31,6 +31,8 @@ public class LightBeamCollisionHandler : MonoBehaviour
                 }
 
                     _isColliding = true;
+                    playerComponent.SetGravityScale(playerComponent.BeamGravityScale);
+                    playerComponent.SetLinearDamping(playerComponent.BeamVerticalLaunchDamping);
 
                     playerComponent.FlipCharacterSprite(_parentController.BeamTransform.right.x >= 0);
 
