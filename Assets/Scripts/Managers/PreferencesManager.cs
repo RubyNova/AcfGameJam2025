@@ -1,15 +1,15 @@
-using System;
 using Saveables;
 using UnityEngine;
 using UnityEngine.Events;
 using Utilities;
 
 
-namespace Controllers 
+namespace Managers
 {
-    public class PreferencesController : MonoSingleton<PreferencesController>
+    public class PreferencesManager : MonoSingleton<PreferencesManager>
     {
-        public UnityEvent<PreferencesController> SettingsUpdated;
+        [HideInInspector]
+        public UnityEvent<PreferencesManager> SettingsUpdated;
 
         private const string _playerPrefencesName = "settings";
 

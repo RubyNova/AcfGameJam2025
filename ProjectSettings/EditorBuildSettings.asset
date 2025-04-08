@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/KennysTestingLab.unity
     guid: 42c1ce801509d9c4bafe9a226ae0fa8d
   - enabled: 1
+    path: Assets/Scenes/Game/Preloader.unity
+    guid: 955da95d8358aac4f8d462db374bb691
+  - enabled: 1
     path: Assets/Scenes/Game/BeamTutorial.unity
     guid: 4b8753e727f8a8049b286402cbd85655
   - enabled: 1

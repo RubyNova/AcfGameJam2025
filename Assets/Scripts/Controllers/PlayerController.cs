@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Environment;
 using Environment.Interactables;
+using Managers;
 using Saveables;
 using UnityEngine;
 using UnityEngine.Events;
@@ -146,9 +147,9 @@ namespace Controllers
         void Start()
         {
             _currentVelocityCap = _baseVelocityCap;
-            _toggleSprintEnabled = PreferencesController.Instance.Settings.ToggleSprint;
+            _toggleSprintEnabled = PreferencesManager.Instance.Settings.ToggleSprint;
 
-            PreferencesController.Instance.SettingsUpdated.AddListener((controller) => UpdatePlayerSpecificSettings(controller.Settings));
+            PreferencesManager.Instance.SettingsUpdated.AddListener((controller) => UpdatePlayerSpecificSettings(controller.Settings));
 
             var cinemachineController = FindFirstObjectByType<CinemachineController>();
             if (cinemachineController)
@@ -389,7 +390,7 @@ namespace Controllers
         //Collision-specific functions
         void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") || collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject"))
             {
                 Grounded = true;
                 if(_rigidbody.gravityScale != _gravityScale)
