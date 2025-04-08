@@ -129,6 +129,9 @@ namespace Controllers
 
         private bool _triggered = false;
 
+        [SerializeField]
+        private int _biggestOutsideForcesCount;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -222,6 +225,11 @@ namespace Controllers
                         _outsideForces.y = 0.0f;
                     }
                 }
+                
+                if (_biggestOutsideForcesCount < outsideForcesCount)
+                {
+                    _biggestOutsideForcesCount = outsideForcesCount;
+                }
             }
        
             UpdateAnims();
@@ -271,7 +279,7 @@ namespace Controllers
 
                 basicMovementAdjustment += _isRunning ? 1 : 0;
 
-                _currentVelocityCap =  _baseVelocityCap * (_listOfOutsideForces.Count + basicMovementAdjustment);
+                _currentVelocityCap =  _baseVelocityCap * ((_biggestOutsideForcesCount * 3) + basicMovementAdjustment);
                 if (_rigidbody.linearVelocity != Vector2.zero)
                 {
                     var startingVelocity = _rigidbody.linearVelocity;
@@ -282,7 +290,7 @@ namespace Controllers
                         float scaleFactor = Mathf.Sqrt(_currentVelocityCap / currentSquareMagnitude);
                         var cappedVelocity = startingVelocity * scaleFactor;
                         var difference = startingVelocity - cappedVelocity;
-                        _rigidbody.AddForce(-difference, ForceMode2D.Impulse);
+                        //_rigidbody.AddForce(-difference, ForceMode2D.Impulse);
                     }
                 }
             }
@@ -305,6 +313,8 @@ namespace Controllers
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 Grounded = true;
+
+                _biggestOutsideForcesCount = 0;
 
                 _currentVelocityCap = _baseVelocityCap;
 

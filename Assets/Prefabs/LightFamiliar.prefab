@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 225683384587995120}
   - component: {fileID: 3122491213623158915}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 4627988395739533382}
   - component: {fileID: 2720897914464504946}
   - component: {fileID: 6925152222535806534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LFLightBeamController
   m_TagString: Untagged
   m_Icon: {fileID: 0}

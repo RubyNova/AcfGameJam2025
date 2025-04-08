@@ -345,9 +345,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7768159041964217798}
   - component: {fileID: 5308968410253178259}
-  - component: {fileID: 281263939681181583}
+  - component: {fileID: 7518634984758403798}
   m_Layer: 0
-  m_Name: TestBounceWall
+  m_Name: BounceWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 3914571812181843913}
   _axisHelper: {fileID: 7768159041964217798}
-  _beamModifierData: {fileID: 0}
+  _beamModifierData: {fileID: 7518634984758403798}
   _targetTransform: {fileID: 6115993174357101783}
   _boxCollider: {fileID: 9085544912934145943}
   _lightBeamLength: 40
@@ -395,7 +395,7 @@ MonoBehaviour:
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 1610458265086327465}
   _beamPriority: 0
---- !u!114 &281263939681181583
+--- !u!114 &7518634984758403798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,8 +404,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8430857117571596053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c483be8df52a043b562df9c2fe4e89, type: 3}
+  m_Script: {fileID: 11500000, guid: 9586ab9f8ddd2f54295d1284e305dfd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colour: {r: 0.917953, g: 1, b: 0, a: 1}
-  BeamForce: 7
+  _colour: {r: 0.91764706, g: 1, b: 0, a: 0}
+  BeamForce: 5
