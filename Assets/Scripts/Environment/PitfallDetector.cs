@@ -10,12 +10,14 @@ namespace Environment
 
         protected void OnTriggerEnter2D(Collider2D collision)
         {
-            if (!collision.gameObject.TryGetComponent<PlayerController>(out var component))
+            if (collision.gameObject.TryGetComponent<PlayerController>(out var playerComponent))
             {
-                return;
+                playerComponent.transform.position = _resetPositionTransform.position;
             }
-
-            component.transform.position = _resetPositionTransform.position;
+            else if (collision.gameObject.TryGetComponent<RespawnComponent>(out var respawnComponent))
+            {
+                respawnComponent.Respawn();
+            }
         }
     }
 }

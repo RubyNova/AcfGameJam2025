@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2860529767675633969}
   - component: {fileID: 7739773005456331283}
   - component: {fileID: 5804564217194741854}
+  - component: {fileID: 5492658568588601921}
   m_Layer: 9
   m_Name: WeightedBasicCube
   m_TagString: Untagged
@@ -187,5 +188,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fcea0f1817f2ba41a1e6a3234b99430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5492658568588601921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181252304550953022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475ad3e5cb32bad4a9db9ad71488caef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
