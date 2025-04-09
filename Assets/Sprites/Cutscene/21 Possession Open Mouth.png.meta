@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0905f0bb36b2c504aa2ac61ea1015381
+guid: ae63f314ccd2a644b95d9add8c8ce29c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8218178859842182533
-    second: 20 Possession Open Mouth_0
+      213: 6959526169741655283
+    second: 21 Possession Open Mouth_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 20 Possession Open Mouth_0
+      name: 21 Possession Open Mouth_0
       rect:
         serializedVersion: 2
         x: 692
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58d94899126dc0270800000000000000
-      internalID: 8218178859842182533
+      spriteID: 3fc7c70ad24359060800000000000000
+      internalID: 6959526169741655283
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      20 Possession Open Mouth_0: 8218178859842182533
+      21 Possession Open Mouth_0: 6959526169741655283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
