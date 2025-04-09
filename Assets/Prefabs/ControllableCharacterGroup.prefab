@@ -94,7 +94,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7751522648571147027
 MonoBehaviour:
@@ -1202,6 +1202,7 @@ MonoBehaviour:
   - {fileID: 5688382727879582895}
   - {fileID: 2807066728222202094}
   _beamPriority: 0
+  _forceAlwaysOn: 0
 --- !u!114 &9045772458707104777
 MonoBehaviour:
   m_ObjectHideFlags: 0

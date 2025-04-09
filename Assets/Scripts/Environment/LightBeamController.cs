@@ -49,6 +49,9 @@ namespace Environment
         [SerializeField]
         private int _beamPriority;
 
+        [SerializeField]
+        private bool _forceAlwaysOn = false;
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
@@ -238,7 +241,7 @@ namespace Environment
             }
 
             var yValue = _playerControllerForBoundsChecks.MinColliderPoint.y;
-            if (yValue < secondLowestPoint.Value.y)
+            if (yValue < secondLowestPoint.Value.y && !_forceAlwaysOn)
             {
                 _boxCollider.enabled = false;
             }

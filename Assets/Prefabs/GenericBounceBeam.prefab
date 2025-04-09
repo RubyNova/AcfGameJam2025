@@ -59,6 +59,7 @@ MonoBehaviour:
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
   _beamPriority: 0
+  _forceAlwaysOn: 0
 --- !u!114 &972154243405144626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.8970159, g: 1, b: 0, a: 1}
-  BeamForce: 7
+  BeamForce: 5
 --- !u!212 &4648518073277434858
 SpriteRenderer:
   m_ObjectHideFlags: 0
