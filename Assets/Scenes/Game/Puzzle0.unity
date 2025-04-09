@@ -776,6 +776,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1396949037576897715, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396949037576897715, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396949037576897715, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2856383427658910766, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_Name
       value: CinemachineCameraSet
@@ -795,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 5480749634822397666, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 1692016853}
+      objectReference: {fileID: 593750171}
     - target: {fileID: 6238296818746863963, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -850,11 +862,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017836408948715658, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.8408413
+      value: -9.009999
       objectReference: {fileID: 0}
     - target: {fileID: 8017836408948715658, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.698462
+      value: 23.429998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017836408948715658, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 9068803214189826816, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -869,6 +885,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+--- !u!4 &593750171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1396949037576897715, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+  m_PrefabInstance: {fileID: 593750170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &753393203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9950,37 +9971,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2384100095630875932, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
   m_PrefabInstance: {fileID: 1539868296}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1692016852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1692016853}
-  m_Layer: 0
-  m_Name: OverworldFocusPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1692016853
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692016852}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.7, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1785256597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11159,4 +11149,3 @@ SceneRoots:
   - {fileID: 100115522}
   - {fileID: 392308574}
   - {fileID: 1785256597}
-  - {fileID: 1692016853}
