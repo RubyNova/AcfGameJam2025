@@ -422,11 +422,20 @@ namespace Controllers
             }
         }
 
+        void OnCollisionStay2D(Collision2D collision)
+        {
+            if (!Grounded && collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            {
+                Grounded = true;
+                _rigidbody.gravityScale = _gravityScale;
+            }
+        }
+
         void OnCollisionExit2D(Collision2D collision)
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ||
                 collision.gameObject.layer == LayerMask.NameToLayer("LightBeam") ||
-                (collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject") && this.HeldObject!= null))
+                (collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject") && this.HeldObject != null))
             {
                 Grounded = false;
             }
