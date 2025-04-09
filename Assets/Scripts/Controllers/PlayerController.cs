@@ -426,7 +426,7 @@ namespace Controllers
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ||
                 collision.gameObject.layer == LayerMask.NameToLayer("LightBeam") ||
-                collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject"))
+                (collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject") && this.HeldObject!= null))
             {
                 Grounded = false;
             }

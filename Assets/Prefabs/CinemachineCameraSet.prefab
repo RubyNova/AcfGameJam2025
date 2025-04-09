@@ -58,7 +58,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 15
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   TargetOffset: {x: -1.63, y: -3.09, z: 0}
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 4, y: 1, z: 1}
+    PositionDamping: {x: 1, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
