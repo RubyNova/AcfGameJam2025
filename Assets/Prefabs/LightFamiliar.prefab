@@ -114,7 +114,7 @@ MonoBehaviour:
   _beamChanger: {fileID: 2747804367269425522}
   _playerControllerReference: {fileID: 0}
   _rigidbody: {fileID: 7358544652446688784}
-  _movementSpeed: 5
+  _movementSpeed: 10
   ActiveCharacter: 0
   _movementVector: {x: 0, y: 0}
 --- !u!1 &3577282359850639815
@@ -371,6 +371,7 @@ MonoBehaviour:
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
   _beamPriority: 0
+  _forceAlwaysOn: 0
 --- !u!114 &4627988395739533382
 MonoBehaviour:
   m_ObjectHideFlags: 0

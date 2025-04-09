@@ -425,7 +425,8 @@ namespace Controllers
         void OnCollisionExit2D(Collision2D collision)
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ||
-                collision.gameObject.layer == LayerMask.NameToLayer("LightBeam"))
+                collision.gameObject.layer == LayerMask.NameToLayer("LightBeam") ||
+                collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject"))
             {
                 Grounded = false;
             }
