@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 320f119f3ec923b4593ef041817f1d93
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6579195572545338058
+    second: Anxiety Enemy Text Box OVERLAY_0
+  - first:
+      213: 8160030957886171285
+    second: Anxiety Enemy Text Box OVERLAY_1
+  - first:
+      213: -3211071687001818333
+    second: Anxiety Enemy Text Box OVERLAY_2
+  - first:
+      213: -8431553166629314701
+    second: Anxiety Enemy Text Box OVERLAY_3
+  - first:
+      213: -2273762805949089536
+    second: Anxiety Enemy Text Box OVERLAY_4
+  - first:
+      213: -7890443046298810874
+    second: Anxiety Enemy Text Box OVERLAY_5
+  - first:
+      213: -1235546753932964333
+    second: Anxiety Enemy Text Box OVERLAY_6
+  - first:
+      213: -6449726882522682022
+    second: Anxiety Enemy Text Box OVERLAY_7
+  - first:
+      213: -8233137871544520996
+    second: Anxiety Enemy Text Box OVERLAY_8
+  - first:
+      213: 7387844787459329536
+    second: Anxiety Enemy Text Box OVERLAY_9
+  - first:
+      213: 7152753368308001066
+    second: Anxiety Enemy Text Box OVERLAY_10
+  - first:
+      213: -5867906654246122633
+    second: Anxiety Enemy Text Box OVERLAY_11
+  - first:
+      213: 8581364998075745095
+    second: Anxiety Enemy Text Box OVERLAY_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_0
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 1489
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca3361e38ffd4b50800000000000000
+      internalID: 6579195572545338058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_1
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1489
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598eef82ce04e3170800000000000000
+      internalID: 8160030957886171285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_2
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 584
+        width: 2341
+        height: 895
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b31fb405bff63d0800000000000000
+      internalID: -3211071687001818333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_3
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 1460
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f5d36311b1dfa80800000000000000
+      internalID: -8431553166629314701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_4
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1463
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009b8ef56c8f170e0800000000000000
+      internalID: -2273762805949089536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_5
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 1463
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60688e0dad38f7290800000000000000
+      internalID: -7890443046298810874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_6
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1460
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e407406c47adee0800000000000000
+      internalID: -1235546753932964333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_7
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 578
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5da2fc8297fd76a0800000000000000
+      internalID: -6449726882522682022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_8
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 577
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdee5c31ab40ebd80800000000000000
+      internalID: -8233137871544520996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_9
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 577
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e0c3411b5e68660800000000000000
+      internalID: 7387844787459329536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_10
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 578
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a292af3aa4fa34360800000000000000
+      internalID: 7152753368308001066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_11
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 539
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77b428accf1019ea0800000000000000
+      internalID: -5867906654246122633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety Enemy Text Box OVERLAY_12
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 539
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743864eeff1271770800000000000000
+      internalID: 8581364998075745095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
