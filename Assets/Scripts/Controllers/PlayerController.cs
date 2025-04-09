@@ -321,6 +321,10 @@ namespace Controllers
 
         }
 
+        public void EnableCharacter() => ActiveCharacter = true;
+
+        public void DisableCharacter() => ActiveCharacter = false;
+
         //Beam-related functions
         public LightBeamDataGroup GetCachedBeamData() => _cachedAffectingBeam == NO_BEAM_CACHED ? null : _listOfOutsideForces[_cachedAffectingBeam];
 

@@ -21,6 +21,8 @@ namespace ACHNarrativeDriver
         [SerializeField] private GameObject _buttonPrefab;
         [SerializeField] private GameObject _nextButton;
         [SerializeField] private GameObject _dialoguePanel;
+        [SerializeField] private UnityEvent _preNarrativeEvent;
+        [SerializeField] private UnityEvent _postNarrativeEvent;
         
         //private AudioController _audioController; // this is such a hack reeeeeeee
         public UnityEvent listNextEvent;
@@ -36,6 +38,8 @@ namespace ACHNarrativeDriver
         
         public NarrativeSequence LastPlayedSequence { get; private set; }
         
+        private InputActionMap _uiInputActionMap;
+        
         private void Awake()
         {
             _isCurrentlyExecuting = false;
@@ -44,6 +48,15 @@ namespace ACHNarrativeDriver
             _narrativeRuntimeVariables = FindObjectOfType<RuntimeVariables>();
 
             _dialoguePanel.SetActive(false);
+            _uiInputActionMap = InputSystem.actions.FindActionMap("UI");
+            if(_uiInputActionMap is not null)
+            {
+                var interact = _uiInputActionMap["Interact"];
+                if(interact is not null)
+                {
+                    interact.performed += (context) => ExecuteNextDialogueLine();
+                }
+            }
             //_audioController = FindObjectOfType<AudioController>(); // let the hax continue
         }
 
@@ -184,6 +197,9 @@ namespace ACHNarrativeDriver
             {
                 ResetRollingTextRoutine();
             }
+
+            if(_preNarrativeEvent is not null)
+                _preNarrativeEvent.Invoke();
 
             _dialoguePanel.SetActive(true);
             _narrativeTextBox.text = string.Empty;

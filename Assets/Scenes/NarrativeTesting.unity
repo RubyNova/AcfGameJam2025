@@ -4412,6 +4412,11 @@ Transform:
   - {fileID: 531505049}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1114869957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7850566374596847418, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+  m_PrefabInstance: {fileID: 1308247615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1207024062
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,9 +4578,75 @@ MonoBehaviour:
   _buttonPrefab: {fileID: 0}
   _nextButton: {fileID: 0}
   _dialoguePanel: {fileID: 2030772346}
-  listNextEvent:
+  _preNarrativeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1658805627}
+        m_TargetAssemblyTypeName: Controllers.InputController, Assembly-CSharp
+        m_MethodName: RevokeControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1264091448}
+        m_TargetAssemblyTypeName: Controllers.PlayerController, Assembly-CSharp
+        m_MethodName: DisableCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1114869957}
+        m_TargetAssemblyTypeName: Controllers.PlayerController, Assembly-CSharp
+        m_MethodName: DisableCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _postNarrativeEvent:
     m_PersistentCalls:
       m_Calls: []
+  listNextEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1658805627}
+        m_TargetAssemblyTypeName: Controllers.InputController, Assembly-CSharp
+        m_MethodName: SwapCharacterMaps
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1264091448}
+        m_TargetAssemblyTypeName: Controllers.PlayerController, Assembly-CSharp
+        m_MethodName: EnableCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!222 &1214172584
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4589,6 +4660,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3063564005713471119, guid: d125d4107ec8e904a96bd03df7fec0fb, type: 3}
   m_PrefabInstance: {fileID: 1918778586}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1264091448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7751522648571147027, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+  m_PrefabInstance: {fileID: 1308247615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5545db166552be64a82880d41d008cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1308247615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4815,6 +4897,17 @@ RectTransform:
   m_AnchoredPosition: {x: -286.36, y: 127.1}
   m_SizeDelta: {x: 512, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1658805627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4431482235214926647, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+  m_PrefabInstance: {fileID: 1308247615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d342147805ff9a9359814d2cee5a06c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1910281459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5058,7 +5151,7 @@ GameObject:
   - component: {fileID: 2030772349}
   - component: {fileID: 2030772348}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: NarrativePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

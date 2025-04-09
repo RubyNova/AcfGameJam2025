@@ -447,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Anxiety Enemy Text Box OVERLAY_0: 6579195572545338058
+      Anxiety Enemy Text Box OVERLAY_1: 8160030957886171285
+      Anxiety Enemy Text Box OVERLAY_10: 7152753368308001066
+      Anxiety Enemy Text Box OVERLAY_11: -5867906654246122633
+      Anxiety Enemy Text Box OVERLAY_12: 8581364998075745095
+      Anxiety Enemy Text Box OVERLAY_2: -3211071687001818333
+      Anxiety Enemy Text Box OVERLAY_3: -8431553166629314701
+      Anxiety Enemy Text Box OVERLAY_4: -2273762805949089536
+      Anxiety Enemy Text Box OVERLAY_5: -7890443046298810874
+      Anxiety Enemy Text Box OVERLAY_6: -1235546753932964333
+      Anxiety Enemy Text Box OVERLAY_7: -6449726882522682022
+      Anxiety Enemy Text Box OVERLAY_8: -8233137871544520996
+      Anxiety Enemy Text Box OVERLAY_9: 7387844787459329536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

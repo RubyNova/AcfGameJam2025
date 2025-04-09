@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 namespace Controllers
 {
-
-
     public class FamiliarController : MonoBehaviour
     {
         [SerializeField]
@@ -33,6 +31,10 @@ namespace Controllers
         private UnityEvent<int> SwitchCamerasEvent = new();
         private InputActionMap _familiarActions;
         private int _modifierIndex = 0;
+
+
+        public void EnableCharacter() => ActiveCharacter = true;
+        public void DisableCharacter() => ActiveCharacter = false;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
