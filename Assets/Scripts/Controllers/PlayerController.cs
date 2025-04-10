@@ -321,6 +321,10 @@ namespace Controllers
 
         }
 
+        public void EnableCharacter() => ActiveCharacter = true;
+
+        public void DisableCharacter() => ActiveCharacter = false;
+
         //Beam-related functions
         public LightBeamDataGroup GetCachedBeamData() => _cachedAffectingBeam == NO_BEAM_CACHED ? null : _listOfOutsideForces[_cachedAffectingBeam];
 
@@ -422,11 +426,20 @@ namespace Controllers
             }
         }
 
+        void OnCollisionStay2D(Collision2D collision)
+        {
+            if (!Grounded && collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            {
+                Grounded = true;
+                _rigidbody.gravityScale = _gravityScale;
+            }
+        }
+
         void OnCollisionExit2D(Collision2D collision)
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") ||
                 collision.gameObject.layer == LayerMask.NameToLayer("LightBeam") ||
-                (collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject") && this.HeldObject!= null))
+                (collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject") && this.HeldObject != null))
             {
                 Grounded = false;
             }

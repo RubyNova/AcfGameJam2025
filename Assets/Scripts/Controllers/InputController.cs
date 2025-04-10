@@ -52,5 +52,10 @@ namespace Controllers
                 _playerInputComponent.SwitchCurrentActionMap(_familiarActionMapName);
             }
         }
+
+        public void RevokeControls()
+        {
+            _playerInputComponent.SwitchCurrentActionMap("UI");
+        }
     }
 }
