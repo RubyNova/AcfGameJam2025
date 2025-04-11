@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0aa127d44dc8ca34eaa4d8f0c3186e18
+guid: f7d9979e6986b7147ab1f04cb66d61cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6628354794063503834
-    second: Repeating Triangle thin lines_0
+      213: -4178046375966092550
+    second: 4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Repeating Triangle thin lines_0
+      name: 4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2302
-        height: 1240
+        x: 577
+        y: 348
+        width: 755
+        height: 892
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62e569eee6a5304a0800000000000000
-      internalID: -6628354794063503834
+      spriteID: af2de6115f89406c0800000000000000
+      internalID: -4178046375966092550
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Repeating Triangle thin lines_0: -6628354794063503834
+      4_0: -4178046375966092550
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

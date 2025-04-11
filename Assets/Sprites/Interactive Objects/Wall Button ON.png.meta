@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8531264e4959a4f42932b2099cbf0cbc
+guid: 189f294161d859b439131c917aadb125
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3593400101611909285
-    second: Repeating Triangle Pattern Colour_0
+      213: -4780146402450458529
+    second: Wall Button ON_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Repeating Triangle Pattern Colour_0
+      name: Wall Button ON_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2302
-        height: 1240
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a03e609a525ed130800000000000000
-      internalID: 3593400101611909285
+      spriteID: f58349b5c2289adb0800000000000000
+      internalID: -4780146402450458529
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Repeating Triangle Pattern Colour_0: 3593400101611909285
+      Wall Button ON_0: -4780146402450458529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
