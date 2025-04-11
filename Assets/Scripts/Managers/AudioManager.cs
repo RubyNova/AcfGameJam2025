@@ -10,8 +10,10 @@ using Utilities;
 
 namespace Managers 
 {
-    public class AudioManager : MonoSingleton<AudioManager>
+    public class AudioManager : PrefabSingleton<AudioManager>
     {
+        public static string PrefabPath = "Assets/Prefabs/AudioManager.prefab";
+
         public enum LevelState
         {
             BeamTutorial,
@@ -71,10 +73,10 @@ namespace Managers
         public UnityEvent<int> RemoveLayer; 
         
         [HideInInspector]
-        public UnityEvent<float> UpdateSoundEffectVolume;
+        public UnityEvent<float> UpdateSoundEffectVolume = new();
         
         [HideInInspector]
-        public UnityEvent<float> UpdateMusicVolume;
+        public UnityEvent<float> UpdateMusicVolume = new();
 
         private float _lowestDecibelLimit = -80.0f;
         private float _highestDecibelLimit = 20.0f;
@@ -126,22 +128,22 @@ namespace Managers
             {
                 case 1:
                 {
-                    StartCoroutine(FadeIn(_musicSourceOne, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceTwo, _musicVolume));
                     break;
                 }
                 case 2:
                 {
-                    StartCoroutine(FadeIn(_musicSourceTwo, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceThree, _musicVolume));
                     break;
                 }
                 case 3:
                 {
-                    StartCoroutine(FadeIn(_musicSourceThree, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceFour, _musicVolume));
                     break;
                 }
                 case 4:
                 {
-                    StartCoroutine(FadeIn(_musicSourceFour, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceFive, _musicVolume));
                     break;
                 }
             }
@@ -159,22 +161,22 @@ namespace Managers
             {
                 case 1:
                 {
-                    StartCoroutine(FadeOut(_musicSourceOne));
+                    StartCoroutine(FadeOut(_musicSourceTwo));
                     break;
                 }
                 case 2:
                 {
-                    StartCoroutine(FadeOut(_musicSourceTwo));
+                    StartCoroutine(FadeOut(_musicSourceThree));
                     break;
                 }
                 case 3:
                 {
-                    StartCoroutine(FadeOut(_musicSourceThree));
+                    StartCoroutine(FadeOut(_musicSourceFour));
                     break;
                 }
                 case 4:
                 {
-                    StartCoroutine(FadeOut(_musicSourceFour));
+                    StartCoroutine(FadeOut(_musicSourceFive));
                     break;
                 }
             }
@@ -197,7 +199,7 @@ namespace Managers
             return Mathf.Clamp(_lowestDecibelLimit + (_decibelRange * percentage), _lowestDecibelLimit, _highestDecibelLimit);
         }
 
-        private float GetNormalizedVolume(float percentage) => 1 * percentage;
+        private float GetNormalizedVolume(float percentage) => Mathf.Clamp(percentage, 0, 100) /100;
 
         private void StopAllTracks()
         {
@@ -269,6 +271,10 @@ namespace Managers
             while(!Mathf.Approximately(source.volume, normalizedVolume))
             {
                 source.volume += normalizedVolume * _fadeInSpeed * Time.deltaTime;
+                if (normalizedVolume - source.volume < 0.1)
+                {
+                    source.volume = normalizedVolume;
+                }
                 yield return null;
             }
 
@@ -280,6 +286,10 @@ namespace Managers
             while(!Mathf.Approximately(source.volume, 0))
             {
                 source.volume -= _fadeOutSpeed * Time.deltaTime;
+                if (source.volume < 0.05)
+                {
+                    source.volume = 0;
+                }
                 yield return null;
             }
 
@@ -289,7 +299,7 @@ namespace Managers
         private IEnumerator PlayAllTracks(double baseDuration)
         {
             double baseStartTime = AudioSettings.dspTime;
-            double layerStartTime = baseStartTime + baseDuration;
+            double layerStartTime = baseStartTime;
 
             _musicSourceTwo.volume = 0.0f;
             _musicSourceThree.volume = 0.0f;

@@ -191,7 +191,11 @@ namespace Controllers
 
             if (switchCharacters && ActiveCharacter)
             {
-                SwapCharacters();
+                if(_familiarControllerReference != null && _familiarControllerReference.gameObject.activeSelf)
+                {
+                    SwapCharacters();
+                    _familiarControllerReference.CharacterActivated.Invoke();
+                }
             }
 
             if (ActiveCharacter)
