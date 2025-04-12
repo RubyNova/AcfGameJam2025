@@ -1,19 +1,16 @@
 using System;
 using System.Collections;
-using Controllers;
 using Saveables;
 using ScriptableObjects.Audio;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
-using Utilities;
+using Unity.VisualScripting;
 
 namespace Managers 
 {
-    public class AudioManager : PrefabSingleton<AudioManager>
+    public class AudioManager : MonoBehaviour
     {
-        public static string PrefabPath = "Assets/Prefabs/AudioManager.prefab";
-
         public enum LevelState
         {
             BeamTutorial,
@@ -46,10 +43,10 @@ namespace Managers
 
         [Header("Configuration")]
         [SerializeField]
-        private float _fadeInSpeed;
+        private float _fadeInSpeed = 0.75f;
 
         [SerializeField]
-        private float _fadeOutSpeed;
+        private float _fadeOutSpeed = 0.75f;
 
         [Header("Music Values")]
         [SerializeField]
@@ -82,7 +79,63 @@ namespace Managers
         private float _highestDecibelLimit = 20.0f;
         private float _decibelRange = 100.0f;
 
-        protected override void OnInit()
+
+        //Singleton-specific Setup
+        public static string PrefabPath = "Prefabs/AudioManager";
+
+        private static AudioManager _instance;
+
+		public static AudioManager Instance
+		{
+			get
+			{
+				if (_instance == null)
+				{
+					var result = FindFirstObjectByType<AudioManager>();
+					if(result != null)
+					{
+						_instance = result;
+					}
+					else
+					{
+                        var o = Resources.Load(PrefabPath);
+						_instance = Instantiate(o).GetComponent<AudioManager>();
+					}
+				}
+
+				return _instance;
+			}
+		}
+
+        public static bool HasInstanceCreated => _instance != null;
+
+		private bool _isInitialised;
+
+        private void Awake()
+        {
+            if (_isInitialised)
+			{
+				return;
+			}
+
+			if (HasInstanceCreated)
+			{
+				throw new InvalidOperationException("Multiple instances of a singleton have been instantiated. This is not allowed.");
+			}
+
+			Init();
+        }
+
+        public void Init()
+        {
+			DontDestroyOnLoad(gameObject);
+			OnInit();
+			_instance = this;
+			_isInitialised = true;
+        }
+
+
+        protected void OnInit()
         {
             AddLayer = new();
             RemoveLayer = new();
@@ -95,7 +148,10 @@ namespace Managers
             RemoveLayer.AddListener((layerNumber) => RemoveLayerFromMusic(layerNumber));
             UpdateMusicVolume.AddListener(percentage => UpdateMusicVolumeIndependently(percentage));
             UpdateSoundEffectVolume.AddListener(percentage => UpdateSoundEffectVolumeIndependently(percentage));
+
+            PlayLayeredTrack(LevelState.BeamTutorial);
         }
+        //End Singleton-specific Setup
 
         private void UpdateSoundSettingsFromPreferences(Preferences settings)
         {
