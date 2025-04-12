@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,10 +105,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 504
-        width: 1028
+        width: 2199
         height: 1274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -122,28 +122,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Beam_5
-      rect:
-        serializedVersion: 2
-        x: 1028
-        y: 504
-        width: 1205
-        height: 1274
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a56e027b4c9e6784c86a960e435074c6
-      internalID: -1163208290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Yellow Beam_6
       rect:
         serializedVersion: 2
@@ -152,8 +130,8 @@ TextureImporter:
         width: 2867
         height: 1284
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 5, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 41, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
