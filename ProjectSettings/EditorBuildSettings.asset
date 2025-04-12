@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Puzzle0.unity
     guid: 5a4824d6ea2e9ab48bbf68fc680d110c
+  - enabled: 1
+    path: Assets/Scenes/Game/KeyPuzzle0.unity
+    guid: 031a7edfece58cb469aac37f2d4a9fa1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 51e5be2a12bb21543a7663ba51e037a4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}

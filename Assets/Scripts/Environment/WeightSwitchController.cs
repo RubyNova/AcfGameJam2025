@@ -16,7 +16,7 @@ namespace Environment
 
         protected void OnCollisionEnter2D(Collision2D collision)
         {
-            if ((collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) || collision.transform.position.y <= transform.position.y)
+            if ((collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) /*|| collision.transform.position.y <= transform.position.y*/)
             {
                 return;
             }
@@ -31,7 +31,7 @@ namespace Environment
 
         protected void OnCollisionExit2D(Collision2D collision)
         {
-            if ((collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) || collision.transform.position.y <= transform.position.y)
+            if ((collision.gameObject.layer != LayerMask.NameToLayer("InteractablePhysicsObject") && !collision.gameObject.CompareTag("Player")) /*|| collision.transform.position.y <= transform.position.y*/)
             {
                 return;
             }

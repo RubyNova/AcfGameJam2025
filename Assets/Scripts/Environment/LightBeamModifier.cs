@@ -1,6 +1,7 @@
 using Controllers;
 using Environment.Interactables;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Environment
 {
@@ -10,10 +11,20 @@ namespace Environment
         [SerializeField]
         private Color _colour;
         
-        [SerializeField]
-        public float BeamForce;
+        [SerializeField, FormerlySerializedAs("BeamForce")]
+        private float _beamForce;
 
-        public Color Colour => _colour;
+        public Color Colour
+        {
+            get => _colour;
+            set => _colour = value;
+        }
+
+        public float BeamForce
+        {
+            get => _beamForce;
+            set => _beamForce = value;
+        }
 
         public virtual void Initialise(LightBeamController sender)
         {

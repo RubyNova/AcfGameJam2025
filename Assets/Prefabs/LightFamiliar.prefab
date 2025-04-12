@@ -116,6 +116,12 @@ MonoBehaviour:
   _rigidbody: {fileID: 7358544652446688784}
   _movementSpeed: 10
   ActiveCharacter: 0
+  CharacterActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  CharacterDeactivated:
+    m_PersistentCalls:
+      m_Calls: []
   _movementVector: {x: 0, y: 0}
 --- !u!1 &3577282359850639815
 GameObject:
@@ -218,7 +224,7 @@ GameObject:
   - component: {fileID: 4627988395739533382}
   - component: {fileID: 2720897914464504946}
   - component: {fileID: 6925152222535806534}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: LFLightBeamController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
