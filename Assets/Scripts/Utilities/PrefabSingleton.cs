@@ -1,10 +1,13 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Utilities
 {
-    public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
+    public abstract class PrefabSingleton<T> : MonoBehaviour where T : PrefabSingleton<T>
     {
+		private static string PrefabPath = string.Empty;
+
 		private static T _instance;
 
 		public static T Instance
@@ -13,8 +16,15 @@ namespace Utilities
 			{
 				if (_instance == null)
 				{
-					_instance = new GameObject(typeof(T).ToString()).AddComponent<T>();
-					_instance.Init();
+					var result = FindFirstObjectByType<T>();
+					if(result != null)
+					{
+						_instance = result;
+					}
+					else
+					{
+						_instance = Instantiate(Resources.Load(PrefabPath)).GetComponent<T>();
+					}
 				}
 
 				return _instance;

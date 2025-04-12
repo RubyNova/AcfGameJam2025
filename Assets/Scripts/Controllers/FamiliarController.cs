@@ -22,6 +22,10 @@ namespace Controllers
         [SerializeField]
         public bool ActiveCharacter;
 
+        public UnityEvent CharacterActivated;
+
+        public UnityEvent CharacterDeactivated;
+
         [Header("Read-only Values")]
 
         [SerializeField]
@@ -44,7 +48,7 @@ namespace Controllers
             {
                 SwitchCamerasEvent.AddListener((int x) => cinemachineController.CinemachineSwapCameras(x));
             }
-            _familiarActions = InputSystem.actions.FindActionMap("Familiar");
+            _familiarActions = InputSystem.actions.FindActionMap("Familiar");            
         }
 
         // Update is called once per frame
@@ -122,6 +126,8 @@ namespace Controllers
                 {
                     inputComponent.SwapCharacterMaps(true);
                 }
+
+                CharacterDeactivated.Invoke();
 
                 //Swap Cameras
                 SwitchCamerasEvent.Invoke(1);
