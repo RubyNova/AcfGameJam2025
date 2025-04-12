@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 25db155953707b747969b2f0b5178b01, type: 3}
       propertyPath: m_Name
-      value: LF Sprite PSB New No Glow
+      value: LF Prefab
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 25db155953707b747969b2f0b5178b01, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.23279706
+      value: 0.160779
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 25db155953707b747969b2f0b5178b01, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.23279706
+      value: 0.160779
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 25db155953707b747969b2f0b5178b01, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.23279706
+      value: 0.160779
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 25db155953707b747969b2f0b5178b01, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,6 +64,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6082008797237133834, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6082008797237133834, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6082008797237133834, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1954326409
+      objectReference: {fileID: 0}
+    - target: {fileID: -4072886797745398988, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4072886797745398988, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1954326409
+      objectReference: {fileID: 0}
+    - target: {fileID: -1178186162433573965, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1178186162433573965, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1954326409
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794567684574124714, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794567684574124714, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1954326409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803146555218139631, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803146555218139631, guid: 25db155953707b747969b2f0b5178b01, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1954326409
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90,7 +134,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3a6fffc1ee9c2ef4bbefe8ab243b8257, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
