@@ -103,8 +103,8 @@ TextureImporter:
       name: Grey Pink Tiles_9
       rect:
         serializedVersion: 2
-        x: 256
-        y: 1792
+        x: 512
+        y: 2048
         width: 256
         height: 256
       alignment: 0
@@ -125,8 +125,8 @@ TextureImporter:
       name: Grey Pink Tiles_10
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1792
+        x: 768
+        y: 2048
         width: 256
         height: 256
       alignment: 0
@@ -147,8 +147,8 @@ TextureImporter:
       name: Grey Pink Tiles_11
       rect:
         serializedVersion: 2
-        x: 768
-        y: 1792
+        x: 1024
+        y: 2048
         width: 256
         height: 256
       alignment: 0
@@ -169,8 +169,8 @@ TextureImporter:
       name: Grey Pink Tiles_12
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1792
+        x: 1280
+        y: 2048
         width: 256
         height: 256
       alignment: 0
@@ -191,8 +191,8 @@ TextureImporter:
       name: Grey Pink Tiles_13
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1792
+        x: 1536
+        y: 2048
         width: 256
         height: 256
       alignment: 0
@@ -213,8 +213,8 @@ TextureImporter:
       name: Grey Pink Tiles_14
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 1792
+        x: 1792
+        y: 2048
         width: 256
         height: 256
       alignment: 0
@@ -235,8 +235,8 @@ TextureImporter:
       name: Grey Pink Tiles_17
       rect:
         serializedVersion: 2
-        x: 256
-        y: 1536
+        x: 512
+        y: 1792
         width: 256
         height: 256
       alignment: 0
@@ -257,8 +257,8 @@ TextureImporter:
       name: Grey Pink Tiles_18
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1536
+        x: 768
+        y: 1792
         width: 256
         height: 256
       alignment: 0
@@ -279,8 +279,8 @@ TextureImporter:
       name: Grey Pink Tiles_19
       rect:
         serializedVersion: 2
-        x: 768
-        y: 1536
+        x: 1024
+        y: 1792
         width: 256
         height: 256
       alignment: 0
@@ -301,8 +301,8 @@ TextureImporter:
       name: Grey Pink Tiles_20
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1536
+        x: 1280
+        y: 1792
         width: 256
         height: 256
       alignment: 0
@@ -323,8 +323,8 @@ TextureImporter:
       name: Grey Pink Tiles_21
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1536
+        x: 1536
+        y: 1792
         width: 256
         height: 256
       alignment: 0
@@ -345,8 +345,8 @@ TextureImporter:
       name: Grey Pink Tiles_22
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 1536
+        x: 1792
+        y: 1792
         width: 256
         height: 256
       alignment: 0
@@ -367,8 +367,8 @@ TextureImporter:
       name: Grey Pink Tiles_25
       rect:
         serializedVersion: 2
-        x: 256
-        y: 1280
+        x: 512
+        y: 1536
         width: 256
         height: 256
       alignment: 0
@@ -389,8 +389,8 @@ TextureImporter:
       name: Grey Pink Tiles_26
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1280
+        x: 768
+        y: 1536
         width: 256
         height: 256
       alignment: 0
@@ -411,8 +411,8 @@ TextureImporter:
       name: Grey Pink Tiles_27
       rect:
         serializedVersion: 2
-        x: 768
-        y: 1280
+        x: 1024
+        y: 1536
         width: 256
         height: 256
       alignment: 0
@@ -433,8 +433,8 @@ TextureImporter:
       name: Grey Pink Tiles_28
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1280
+        x: 1280
+        y: 1536
         width: 256
         height: 256
       alignment: 0
@@ -455,8 +455,8 @@ TextureImporter:
       name: Grey Pink Tiles_29
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1280
+        x: 1536
+        y: 1536
         width: 256
         height: 256
       alignment: 0
@@ -477,8 +477,8 @@ TextureImporter:
       name: Grey Pink Tiles_30
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 1280
+        x: 1792
+        y: 1536
         width: 256
         height: 256
       alignment: 0
@@ -499,8 +499,8 @@ TextureImporter:
       name: Grey Pink Tiles_33
       rect:
         serializedVersion: 2
-        x: 256
-        y: 1024
+        x: 512
+        y: 1280
         width: 256
         height: 256
       alignment: 0
@@ -521,8 +521,8 @@ TextureImporter:
       name: Grey Pink Tiles_34
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1024
+        x: 768
+        y: 1280
         width: 256
         height: 256
       alignment: 0
@@ -543,8 +543,8 @@ TextureImporter:
       name: Grey Pink Tiles_35
       rect:
         serializedVersion: 2
-        x: 768
-        y: 1024
+        x: 1024
+        y: 1280
         width: 256
         height: 256
       alignment: 0
@@ -565,8 +565,8 @@ TextureImporter:
       name: Grey Pink Tiles_36
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1024
+        x: 1280
+        y: 1280
         width: 256
         height: 256
       alignment: 0
@@ -587,8 +587,8 @@ TextureImporter:
       name: Grey Pink Tiles_37
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1024
+        x: 1536
+        y: 1280
         width: 256
         height: 256
       alignment: 0
@@ -609,8 +609,8 @@ TextureImporter:
       name: Grey Pink Tiles_38
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 1024
+        x: 1792
+        y: 1280
         width: 256
         height: 256
       alignment: 0
@@ -631,8 +631,8 @@ TextureImporter:
       name: Grey Pink Tiles_41
       rect:
         serializedVersion: 2
-        x: 256
-        y: 768
+        x: 512
+        y: 1024
         width: 256
         height: 256
       alignment: 0
@@ -653,8 +653,8 @@ TextureImporter:
       name: Grey Pink Tiles_42
       rect:
         serializedVersion: 2
-        x: 512
-        y: 768
+        x: 768
+        y: 1024
         width: 256
         height: 256
       alignment: 0
@@ -675,8 +675,8 @@ TextureImporter:
       name: Grey Pink Tiles_43
       rect:
         serializedVersion: 2
-        x: 768
-        y: 768
+        x: 1024
+        y: 1024
         width: 256
         height: 256
       alignment: 0
@@ -697,8 +697,8 @@ TextureImporter:
       name: Grey Pink Tiles_44
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 768
+        x: 1280
+        y: 1024
         width: 256
         height: 256
       alignment: 0
@@ -719,8 +719,8 @@ TextureImporter:
       name: Grey Pink Tiles_45
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 768
+        x: 1536
+        y: 1024
         width: 256
         height: 256
       alignment: 0
@@ -741,8 +741,8 @@ TextureImporter:
       name: Grey Pink Tiles_46
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 768
+        x: 1792
+        y: 1024
         width: 256
         height: 256
       alignment: 0
@@ -763,8 +763,8 @@ TextureImporter:
       name: Grey Pink Tiles_49
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
+        x: 512
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -785,8 +785,8 @@ TextureImporter:
       name: Grey Pink Tiles_50
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
+        x: 768
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -807,8 +807,8 @@ TextureImporter:
       name: Grey Pink Tiles_51
       rect:
         serializedVersion: 2
-        x: 768
-        y: 512
+        x: 1024
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -829,8 +829,8 @@ TextureImporter:
       name: Grey Pink Tiles_52
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 512
+        x: 1280
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -851,8 +851,8 @@ TextureImporter:
       name: Grey Pink Tiles_53
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 512
+        x: 1536
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -873,8 +873,8 @@ TextureImporter:
       name: Grey Pink Tiles_54
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 512
+        x: 1792
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -957,15 +957,7 @@ TextureImporter:
       Grey Pink Tiles_53: -1711068200
       Grey Pink Tiles_54: -901855821
       Grey Pink Tiles_55: -1724797114
-      Grey Pink Tiles_56: -1515558447
-      Grey Pink Tiles_57: -538317399
-      Grey Pink Tiles_58: 537148825
-      Grey Pink Tiles_59: 782386813
       Grey Pink Tiles_6: 1434012159
-      Grey Pink Tiles_60: -104389239
-      Grey Pink Tiles_61: -219357302
-      Grey Pink Tiles_62: 1912934521
-      Grey Pink Tiles_63: -1474827842
       Grey Pink Tiles_7: 1765057123
       Grey Pink Tiles_8: -119626213
       Grey Pink Tiles_9: 1297510168
