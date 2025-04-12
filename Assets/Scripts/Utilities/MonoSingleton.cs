@@ -13,7 +13,7 @@ namespace Utilities
 			{
 				if (_instance == null)
 				{
-					_instance = new GameObject().AddComponent<T>();
+					_instance = new GameObject(typeof(T).ToString()).AddComponent<T>();
 					_instance.Init();
 				}
 
