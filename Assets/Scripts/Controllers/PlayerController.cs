@@ -187,7 +187,15 @@ namespace Controllers
 
         void Update()
         {
-            MinColliderPoint = new Vector2 { x = _collider.bounds.min.x, y = _collider.bounds.min.y };
+            if(_feetTargetTransform != null)
+            {
+                MinColliderPoint = new Vector2(_feetTargetTransform.position.x, _feetTargetTransform.position.y);
+            }
+            else
+            {
+                MinColliderPoint = new Vector2(_collider.bounds.min.x, _collider.bounds.min.y);
+            }
+            
 
             if (switchCharacters && ActiveCharacter)
             {
