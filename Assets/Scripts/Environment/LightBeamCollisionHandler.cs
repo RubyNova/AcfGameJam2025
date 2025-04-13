@@ -31,7 +31,12 @@ public class LightBeamCollisionHandler : MonoBehaviour
                 }
 
                     _isColliding = true;
-                    playerComponent._rigidbody.linearVelocity = Vector2.zero;
+                    if (!playerComponent.WasRidingBeam)
+                    {
+                        playerComponent.WasRidingBeam = true;
+                        playerComponent._rigidbody.linearVelocity = Vector2.zero;
+                    }
+
                     playerComponent.SetGravityScale(playerComponent.BeamGravityScale);
                     playerComponent.SetLinearDamping(playerComponent.BeamVerticalLaunchDamping);
 

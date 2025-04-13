@@ -147,6 +147,8 @@ namespace Controllers
         public InteractableBehaviour HeldObject { get; set; }
         public Transform HeldItemPoint => _heldItemPoint;
 
+        public bool WasRidingBeam {get => _wasRidingBeam; set => _wasRidingBeam = value; }
+
         private bool switchCharacters = false;
         private InputActionMap _playerActions;
         private UnityEvent<int> SwitchCamerasEvent = new();
@@ -271,14 +273,12 @@ namespace Controllers
                     KeyValuePair<int, LightBeamDataGroup> forceWithMaxPriority = _listOfOutsideForces.Aggregate(
                         (left, right) => left.Value.Priority > right.Value.Priority ? left : right);
                     _cachedAffectingBeam = forceWithMaxPriority.Key;
-                    _wasRidingBeam = true;
                     _outsideForces += forceWithMaxPriority.Value.DirectionAndForce;
                 }
                 else if (outsideForcesCount > 0)
                 {
                     var force = _listOfOutsideForces.ElementAt(0);
                     _cachedAffectingBeam = force.Key;
-                    _wasRidingBeam = true;
                     _outsideForces += force.Value.DirectionAndForce;
                     if (transform.rotation.z > 0)
                     {
