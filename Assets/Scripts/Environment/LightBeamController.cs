@@ -50,6 +50,14 @@ namespace Environment
         [SerializeField]
         private bool _forceAlwaysOn = false;
 
+        [Header("Read-only values")]
+        [SerializeField]
+        private Vector2 _intersectedPosition = Vector2.zero;
+
+        [SerializeField]
+        private Vector2 _perceivedMinColliderpoint = Vector2.zero;
+
+
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
@@ -245,7 +253,43 @@ namespace Environment
             }
             else
             {
-                BoxCollider.enabled = true;
+                Vector2? highestPoint = null;
+
+                foreach (var point in _colliderPoints)
+                {   
+                    if (!highestPoint.HasValue || (highestPoint.Value.y < point.y && point != secondLowestPoint.Value))
+                    {
+                        highestPoint = point;
+                    }
+                }
+
+                Vector2 intersectedPosition = new();
+
+                if (Mathf.Approximately(secondLowestPoint.Value.x, highestPoint.Value.x))
+                {
+                    intersectedPosition = new(secondLowestPoint.Value.x, yValue);
+                }
+                else
+                {
+                    float slope = (highestPoint.Value.y - secondLowestPoint.Value.y) / (highestPoint.Value.x - secondLowestPoint.Value.x);
+                    float yIntercept = secondLowestPoint.Value.y - slope * secondLowestPoint.Value.x;
+                    float finalYPoint = slope * _playerControllerForBoundsChecks.MinColliderPoint.x + yIntercept;
+
+                    intersectedPosition = new(_playerControllerForBoundsChecks.MinColliderPoint.x, finalYPoint);
+                }
+
+                _intersectedPosition = intersectedPosition;
+                _perceivedMinColliderpoint = _playerControllerForBoundsChecks.MinColliderPoint;
+
+                if (intersectedPosition.y > _playerControllerForBoundsChecks.MinColliderPoint.y && !Mathf.Approximately(intersectedPosition.y, _playerControllerForBoundsChecks.MinColliderPoint.y))
+                {
+                   BoxCollider.enabled = false; 
+                }
+                else
+                {
+                    BoxCollider.enabled = true;
+                }
+
             }
         }
 

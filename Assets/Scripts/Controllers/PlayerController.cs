@@ -136,6 +136,9 @@ namespace Controllers
         [SerializeField]
         public Vector2 MinColliderPoint;
 
+        [SerializeField]
+        private Vector3 _feetsiesGlobalPosition;
+
         
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
@@ -188,6 +191,7 @@ namespace Controllers
 
         void Update()
         {
+            _feetsiesGlobalPosition = _feetTargetTransform.transform.position;
             if(_feetTargetTransform != null)
             {
                 MinColliderPoint = new Vector2(_feetTargetTransform.position.x, _feetTargetTransform.position.y);
