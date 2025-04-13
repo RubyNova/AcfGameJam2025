@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Controllers;
 using Environment.Interactables;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Environment
@@ -25,7 +23,7 @@ namespace Environment
         private Transform _targetTransform;
 
         [SerializeField]
-        private BoxCollider2D _boxCollider;
+        public BoxCollider2D BoxCollider;
 
         [Header("Configuration")]
         [SerializeField]
@@ -209,7 +207,7 @@ namespace Environment
 
         private void CheckForPlayerBelow()
         {
-            var targetTransform = _boxCollider.transform;
+            var targetTransform = BoxCollider.transform;
             var startPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(0));
             var endPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(1));
             var halfHeight = _renderer.startWidth * 0.5f;
@@ -243,11 +241,11 @@ namespace Environment
             var yValue = _playerControllerForBoundsChecks.MinColliderPoint.y;
             if (yValue < secondLowestPoint.Value.y && !_forceAlwaysOn)
             {
-                _boxCollider.enabled = false;
+                BoxCollider.enabled = false;
             }
             else
             {
-                _boxCollider.enabled = true;
+                BoxCollider.enabled = true;
             }
         }
 
@@ -263,11 +261,11 @@ namespace Environment
             _renderer.startColor = _beamModifierData.Colour;
             _renderer.endColor = _beamModifierData.Colour;
 
-            _boxCollider.size = new Vector2(Vector2.Distance(positions[0], positions[1]), _renderer.startWidth);
+            BoxCollider.size = new Vector2(Vector2.Distance(positions[0], positions[1]), _renderer.startWidth);
 
             var centrePosition = _targetTransform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
 
-            _boxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
+            BoxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
 
             CheckForPlayerBelow();
             CalculateTopsideSnapPoint();
