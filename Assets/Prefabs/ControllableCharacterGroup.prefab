@@ -133,7 +133,7 @@ MonoBehaviour:
   ActiveCharacter: 1
   Grounded: 1
   _toggleSprintEnabled: 1
-  _isRunning: 0
+  _isRunning: 1
   JumpRequested: 0
   _keyboardIsDevice: 0
   _cachedAffectingBeam: 0
