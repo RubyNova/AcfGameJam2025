@@ -386,7 +386,7 @@ MonoBehaviour:
   _axisHelper: {fileID: 7768159041964217798}
   _beamModifierData: {fileID: 7518634984758403798}
   _targetTransform: {fileID: 6115993174357101783}
-  _boxCollider: {fileID: 9085544912934145943}
+  BoxCollider: {fileID: 9085544912934145943}
   _lightBeamLength: 40
   _mode: 1
   _beamPierceDistance: 2

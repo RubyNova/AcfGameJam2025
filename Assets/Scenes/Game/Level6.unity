@@ -16988,10 +16988,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.98314553
       objectReference: {fileID: 0}
-    - target: {fileID: 3914036207532161062, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
-      propertyPath: _movementSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3923391215170929848, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_Name
       value: ControllableCharacterGroup
