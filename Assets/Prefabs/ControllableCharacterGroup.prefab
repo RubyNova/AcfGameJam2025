@@ -133,7 +133,7 @@ MonoBehaviour:
   ActiveCharacter: 1
   Grounded: 1
   _toggleSprintEnabled: 1
-  _isRunning: 0
+  _isRunning: 1
   JumpRequested: 0
   _keyboardIsDevice: 0
   _cachedAffectingBeam: 0
@@ -1120,6 +1120,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7201591611855911695}
     - target: {fileID: 5261697059083877710, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
+      propertyPath: _movementSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261697059083877710, guid: 0a3e75a5d6f4e984e8c428ebc4991068, type: 3}
       propertyPath: _playerControllerReference
       value: 
       objectReference: {fileID: 7751522648571147027}
@@ -1314,7 +1318,7 @@ MonoBehaviour:
   _axisHelper: {fileID: 2384100095630875932}
   _beamModifierData: {fileID: 9045772458707104777}
   _targetTransform: {fileID: 561445618150711165}
-  _boxCollider: {fileID: 6542828758001938945}
+  BoxCollider: {fileID: 0}
   _lightBeamLength: 10
   _mode: 2
   _beamPierceDistance: 1

@@ -35,9 +35,13 @@ namespace Environment
             switch (_modifierToAttach)
             {
                 case ModifierType.Ghosted:
-                var component = _targetAttachObject.AddComponent<GhostedModifier>();
+                GhostedModifier component = _targetAttachObject.AddComponent<GhostedModifier>();
                 component.Colour = _beamColours[0];
                 component.BeamForce = 5; 
+                break;
+                case ModifierType.Trampoline:
+                TrampolineModifier trampolineComponent = _targetAttachObject.AddComponent<TrampolineModifier>();
+                trampolineComponent.Colour = _beamColours[2];
                 break;
             }
 

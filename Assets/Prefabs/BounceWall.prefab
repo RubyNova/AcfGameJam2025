@@ -291,7 +291,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -395,6 +395,7 @@ MonoBehaviour:
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 1610458265086327465}
   _beamPriority: 0
+  _forceAlwaysOn: 0
 --- !u!114 &7518634984758403798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,4 +409,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colour: {r: 0.91764706, g: 1, b: 0, a: 0}
-  BeamForce: 5
+  _beamForce: 5

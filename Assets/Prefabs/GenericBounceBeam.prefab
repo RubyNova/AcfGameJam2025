@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3673076560047142501}
   - component: {fileID: 972154243405144626}
   - component: {fileID: 4648518073277434858}
+  - component: {fileID: 3057647050049841435}
   m_Layer: 7
   m_Name: GenericBounceBeam
   m_TagString: Untagged
@@ -129,6 +130,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3057647050049841435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063564005713471119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c5f588e52352344a0b39fe97ac3de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerNumber: 2
+  DistanceValue: 5
+  TriggerThresholdValue: 1.7
+  CutoffValue: 0.4
 --- !u!1 &4616394690009637818
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +303,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

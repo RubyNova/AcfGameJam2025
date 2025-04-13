@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7644500039548275150}
   - component: {fileID: 7779559341712548569}
   - component: {fileID: 398167092836814192}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Warp Pad
   m_TagString: Untagged
   m_Icon: {fileID: 0}

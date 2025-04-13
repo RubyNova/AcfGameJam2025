@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 
 namespace Managers 
 {
@@ -13,9 +14,10 @@ namespace Managers
     {
         public enum LevelState
         {
-            BeamTutorial,
-            LFTutorial,
-            Puzzle0
+            Level1,
+            Level2,
+            Level3,
+            Level4
         }
 
         [Header("Dependencies")]
@@ -78,6 +80,11 @@ namespace Managers
         private float _lowestDecibelLimit = -80.0f;
         private float _highestDecibelLimit = 20.0f;
         private float _decibelRange = 100.0f;
+
+        private List<int> _layersFadingIn = new();
+        private List<int> _layersFadingOut = new();
+
+        private Dictionary<int, int> _layerModificationDictionary = new();
 
 
         //Singleton-specific Setup
@@ -149,7 +156,7 @@ namespace Managers
             UpdateMusicVolume.AddListener(percentage => UpdateMusicVolumeIndependently(percentage));
             UpdateSoundEffectVolume.AddListener(percentage => UpdateSoundEffectVolumeIndependently(percentage));
 
-            PlayLayeredTrack(LevelState.BeamTutorial);
+            PlayLayeredTrack(LevelState.Level1);
         }
         //End Singleton-specific Setup
 
@@ -180,26 +187,29 @@ namespace Managers
             //0-based
             if(layer > 4 || layer < 1)  return;
 
+            if(!_layersFadingIn.Contains(layer))
+                _layersFadingIn.Add(layer);
+
             switch(layer)
             {
                 case 1:
                 {
-                    StartCoroutine(FadeIn(_musicSourceTwo, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceTwo, _musicVolume, layer));
                     break;
                 }
                 case 2:
                 {
-                    StartCoroutine(FadeIn(_musicSourceThree, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceThree, _musicVolume, layer));
                     break;
                 }
                 case 3:
                 {
-                    StartCoroutine(FadeIn(_musicSourceFour, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceFour, _musicVolume, layer));
                     break;
                 }
                 case 4:
                 {
-                    StartCoroutine(FadeIn(_musicSourceFive, _musicVolume));
+                    StartCoroutine(FadeIn(_musicSourceFive, _musicVolume, layer));
                     break;
                 }
             }
@@ -213,26 +223,29 @@ namespace Managers
 
             if(layer > 4 || layer < 1)  return;
 
+            if(!_layersFadingOut.Contains(layer))
+                _layersFadingOut.Add(layer);
+
             switch(layer)
             {
                 case 1:
                 {
-                    StartCoroutine(FadeOut(_musicSourceTwo));
+                    StartCoroutine(FadeOut(_musicSourceTwo, layer));
                     break;
                 }
                 case 2:
                 {
-                    StartCoroutine(FadeOut(_musicSourceThree));
+                    StartCoroutine(FadeOut(_musicSourceThree, layer));
                     break;
                 }
                 case 3:
                 {
-                    StartCoroutine(FadeOut(_musicSourceFour));
+                    StartCoroutine(FadeOut(_musicSourceFour, layer));
                     break;
                 }
                 case 4:
                 {
-                    StartCoroutine(FadeOut(_musicSourceFive));
+                    StartCoroutine(FadeOut(_musicSourceFive, layer));
                     break;
                 }
             }
@@ -320,11 +333,80 @@ namespace Managers
             _currentLayerPlayingCount++;       
         }
 
+        public void CancelFadeInIfApplicable(int layer)
+        {
+            if (layer < 1 || layer > 5)
+                return;
+
+            if(_layersFadingIn.Contains(layer))
+            {
+                _layersFadingIn.Remove(layer);
+            }
+        }
+
+        public void CancelFadeOutIfApplicable(int layer)
+        {
+            if (layer < 1 || layer > 5)
+                return;
+
+            if(_layersFadingOut.Contains(layer))
+            {
+                _layersFadingOut.Remove(layer);
+            }
+        }
+
+        public void SetLayerVolume(int hashCode, int layer, float percentage)
+        {
+            if(layer < 0 || layer > 4)
+                return;
+
+            if(!_layerModificationDictionary.ContainsKey(layer))
+            {
+                //We'll lock the layer being modified if it's directly being touched here
+                _layerModificationDictionary.Add(layer, hashCode);
+            }
+
+            if(_layerModificationDictionary.TryGetValue(layer, out int cachedHashCode) && hashCode != cachedHashCode)
+                return;
+
+            float normalizedVolume = GetNormalizedVolume(percentage);
+
+            switch(layer)
+            {
+                case 1:
+                {
+                    _musicSourceTwo.volume = Mathf.Clamp(normalizedVolume, 0, GetNormalizedVolume(_musicVolume));
+                    break;
+                }
+                case 2:
+                {
+                    _musicSourceThree.volume = Mathf.Clamp(normalizedVolume, 0, GetNormalizedVolume(_musicVolume));
+                    break;
+                }
+                case 3:
+                {
+                    _musicSourceFour.volume = Mathf.Clamp(normalizedVolume, 0, GetNormalizedVolume(_musicVolume));;
+                    break;
+                }
+                case 4:
+                {
+                    _musicSourceFive.volume = Mathf.Clamp(normalizedVolume, 0, GetNormalizedVolume(_musicVolume));;
+                    break;
+                }
+            }
+
+            if(percentage < 1.0f)
+            {
+                //Percentage is too low, so we'll release the lock now.
+                _layerModificationDictionary.Remove(layer);
+            }
+        }
+
         //Coroutines
-        private IEnumerator FadeIn(AudioSource source, float desiredVolumeInPercentage)
+        private IEnumerator FadeIn(AudioSource source, float desiredVolumeInPercentage, int layer)
         {
             float normalizedVolume = GetNormalizedVolume(desiredVolumeInPercentage);
-            while(!Mathf.Approximately(source.volume, normalizedVolume))
+            while(!Mathf.Approximately(source.volume, normalizedVolume) && _layersFadingIn.Contains(layer))
             {
                 source.volume += normalizedVolume * _fadeInSpeed * Time.deltaTime;
                 if (normalizedVolume - source.volume < 0.1)
@@ -337,9 +419,9 @@ namespace Managers
             yield break;
         }
 
-        private IEnumerator FadeOut(AudioSource source)
+        private IEnumerator FadeOut(AudioSource source, int layer)
         {
-            while(!Mathf.Approximately(source.volume, 0))
+            while(!Mathf.Approximately(source.volume, 0) && _layersFadingOut.Contains(layer))
             {
                 source.volume -= _fadeOutSpeed * Time.deltaTime;
                 if (source.volume < 0.05)
