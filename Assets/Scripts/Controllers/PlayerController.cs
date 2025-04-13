@@ -152,6 +152,7 @@ namespace Controllers
         private bool _resetMovement = false;
         private bool _triggered = false;
         private float _capMultiplierForOutsideForces;
+        private bool _hopDownTriggered = false;
 
         void Start()
         {
@@ -212,6 +213,26 @@ namespace Controllers
                 if (_interactAction != null && _interactAction.WasPressedThisFrame())
                 {
                     HandleInteractions();
+                }
+
+                //HopDown
+                if(_hopDownTriggered)
+                {
+                    //do things
+                    gameObject.layer = LayerMask.NameToLayer("IgnoreBeams");
+                    _hopDownTriggered = false;
+                    var data = GetCachedBeamData();
+                    if(data != null)
+                    {
+                        ResetRotation();
+                        _rigidbody.linearVelocity = Vector2.zero;
+                        _listOfOutsideForces.Remove(_cachedAffectingBeam);
+                        if (_listOfOutsideForces.Count == 0)
+                        {
+                            _cachedAffectingBeam = NO_BEAM_CACHED;
+                            _triggerCollider.enabled = false;
+                        }
+                    }
                 }
 
                 //Movement
@@ -376,9 +397,9 @@ namespace Controllers
         }
 
         //Physics-related (Non-collision) functions
-        public void RotateCharacterToBeam(Vector3 localEulerAngles)
+
+        public void ResetRotation()
         {
-            //Reset rotation first
             if (_spriteRotator.rotation.z > 0)
             {
                 _spriteRotator.Rotate(-_spriteRotator.localEulerAngles);
@@ -387,6 +408,12 @@ namespace Controllers
             {
                 _spriteRotator.Rotate(_spriteRotator.localEulerAngles);
             }
+        }
+
+        public void RotateCharacterToBeam(Vector3 localEulerAngles)
+        {
+            //Reset rotation first
+            ResetRotation();
 
             _spriteRotator.Rotate(localEulerAngles);
         }
@@ -424,6 +451,10 @@ namespace Controllers
                     _rigidbody.gravityScale = _gravityScale;
                     //Reset linear damping just in case
                     _rigidbody.linearDamping = _gravityScale;
+                }
+                if(gameObject.layer != LayerMask.NameToLayer("Player"))
+                {
+                    gameObject.layer = LayerMask.NameToLayer("Player");
                 }
 
                 _biggestOutsideForcesCount = 0;
@@ -645,6 +676,14 @@ namespace Controllers
 
                 switchCharacters = true;
             }
+        }
+
+        void OnHopDown(InputValue _)
+        {
+            if(!ActiveCharacter)
+                return;
+            
+            _hopDownTriggered = true;
         }
 
         void OnZoomOut(InputValue value)
