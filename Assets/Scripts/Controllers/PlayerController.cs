@@ -139,6 +139,8 @@ namespace Controllers
         [SerializeField]
         private Vector3 _feetsiesGlobalPosition;
 
+        [SerializeField]
+        private bool _wasRidingBeam = false;
         
         public int BeamCollisionCount => _listOfOutsideForces.Count;
         public bool Triggered => _triggered;
@@ -269,12 +271,14 @@ namespace Controllers
                     KeyValuePair<int, LightBeamDataGroup> forceWithMaxPriority = _listOfOutsideForces.Aggregate(
                         (left, right) => left.Value.Priority > right.Value.Priority ? left : right);
                     _cachedAffectingBeam = forceWithMaxPriority.Key;
+                    _wasRidingBeam = true;
                     _outsideForces += forceWithMaxPriority.Value.DirectionAndForce;
                 }
                 else if (outsideForcesCount > 0)
                 {
                     var force = _listOfOutsideForces.ElementAt(0);
                     _cachedAffectingBeam = force.Key;
+                    _wasRidingBeam = true;
                     _outsideForces += force.Value.DirectionAndForce;
                     if (transform.rotation.z > 0)
                     {
@@ -295,10 +299,11 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                if (_cachedAffectingBeam != NO_BEAM_CACHED)
+                if (_wasRidingBeam && !Grounded)
                 {
-                    _currentMovementVector.x = 0;   
+                    _currentMovementVector.x = 0;
                 }
+
 
                 if (_rigidbody.linearVelocityY < 0 &&
                      _rigidbody.linearVelocityX > -_fallingVelocityXThreshold && 
@@ -343,7 +348,7 @@ namespace Controllers
 
                 int basicMovementAdjustment = 0;
 
-                basicMovementAdjustment += _isRunning && _cachedAffectingBeam == NO_BEAM_CACHED ? 1 : 0;
+                basicMovementAdjustment += _isRunning && !_wasRidingBeam ? 1 : 0;
 
                 _currentVelocityCap =  _baseVelocityCap * ((_biggestOutsideForcesCount * _capMultiplierForOutsideForces) + basicMovementAdjustment);
                 if (_rigidbody.linearVelocity != Vector2.zero)
@@ -455,6 +460,7 @@ namespace Controllers
             if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") || collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject"))
             {
                 Grounded = true;
+                _wasRidingBeam = false;
                 if(_rigidbody.gravityScale != _gravityScale)
                 {
                     _rigidbody.gravityScale = _gravityScale;
@@ -483,6 +489,7 @@ namespace Controllers
             if (!Grounded && collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 Grounded = true;
+                _wasRidingBeam = false;
                 _rigidbody.gravityScale = _gravityScale;
             }
         }
