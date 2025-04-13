@@ -295,6 +295,11 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
+                if (_cachedAffectingBeam != NO_BEAM_CACHED)
+                {
+                    _currentMovementVector.x = 0;   
+                }
+
                 if (_rigidbody.linearVelocityY < 0 &&
                      _rigidbody.linearVelocityX > -_fallingVelocityXThreshold && 
                      _rigidbody.linearVelocityX < _fallingVelocityXThreshold && 
@@ -338,7 +343,7 @@ namespace Controllers
 
                 int basicMovementAdjustment = 0;
 
-                basicMovementAdjustment += _isRunning ? 1 : 0;
+                basicMovementAdjustment += _isRunning && _cachedAffectingBeam == NO_BEAM_CACHED ? 1 : 0;
 
                 _currentVelocityCap =  _baseVelocityCap * ((_biggestOutsideForcesCount * _capMultiplierForOutsideForces) + basicMovementAdjustment);
                 if (_rigidbody.linearVelocity != Vector2.zero)
