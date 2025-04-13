@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TutorialLayeredTrack
   m_EditorClassIdentifier: 
   _layers:
+  - {fileID: 8300000, guid: 7e3b80133341b68468d26bca9c1d8f41, type: 3}
   - {fileID: 8300000, guid: 19eab4b4829051c4684bf92bce291912, type: 3}
   - {fileID: 8300000, guid: d4361a9d6ea28634c8af5ae91c8a3dd8, type: 3}
-  - {fileID: 8300000, guid: 96c60ccf306afc64593934b59b6bad6a, type: 3}
