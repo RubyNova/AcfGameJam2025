@@ -430,6 +430,14 @@ namespace Controllers
             ResetRotation();
 
             _spriteRotator.Rotate(localEulerAngles);
+
+            if (_spriteRotator.up.y < 0)
+            {
+                var rotEuler =_spriteRotator.rotation.eulerAngles;
+                rotEuler.z = -rotEuler.z;
+                _spriteRotator.rotation = Quaternion.Euler(rotEuler);
+                _spriteRotator.Rotate(new Vector3(0, 0, 180));
+            }
         }
 
         public void FlipCharacterSprite(bool normalDirection = true)
