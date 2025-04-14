@@ -76,6 +76,7 @@ public class LightBeamCollisionHandler : MonoBehaviour
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
             if(playerComponent != null)
             {
+                playerComponent.ResetRotation();
                 var cachedBeamOnPlayer = playerComponent.GetCachedBeamData();
 
                 _parentController.BeamModifierData.ClearBeamEffectOnPlayer(_parentController, 
