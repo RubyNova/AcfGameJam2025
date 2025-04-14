@@ -61,6 +61,7 @@ namespace Environment
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
+        private bool _isAlreadyUnregistering = false;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[10];
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
@@ -69,6 +70,7 @@ namespace Environment
         private Vector2[] _colliderPoints = new Vector2[4];
         private Vector2 _playerSnapPoint;
         private HashSet<GenericBeamForceReactor> _trackedPhyscsInteractables = new();
+        private bool _isAlreadyRegistering;
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
 
@@ -302,6 +304,12 @@ namespace Environment
                 potentialHitPoint ?? translatedPosition
             };
             _renderer.SetPositions(positions);
+
+            if (_beamModifierData == null)
+            {
+                _beamModifierData = GetComponentInChildren<LightBeamModifier>();
+            }
+
             _renderer.startColor = _beamModifierData.Colour;
             _renderer.endColor = _beamModifierData.Colour;
 
@@ -381,11 +389,12 @@ namespace Environment
                 throw new System.Exception("Sender cannot be self.");
             }
 
-            if (_mode == LightBeamMode.Source)
+            if (_isAlreadyRegistering || sender == null || sender.BeamModifierData == null || _mode == LightBeamMode.Source)
             {
                 return;
             }
 
+            _isAlreadyRegistering = true;
             _currentSender = sender;
 
             _beamPriority = sender.BeamPriority + 1;
@@ -419,14 +428,18 @@ namespace Environment
                 default:
                     break;
             }
+
+            _isAlreadyRegistering = false;
         }
 
         public void UnregisterHit()
         {
-            if (_mode == LightBeamMode.Source)
+            if (_isAlreadyUnregistering || _mode == LightBeamMode.Source)
             {
                 return;
             }
+
+            _isAlreadyUnregistering = true;
 
             if (_targetHit != null)
             {
@@ -444,10 +457,12 @@ namespace Environment
                 _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);   
             }
 
+
             _currentSender = null;
             _targetTransform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
             _emissionPoint = null;
+            _isAlreadyUnregistering = false;
         }
 
         public void ChangeBeamModifier(LightBeamModifier newModifier)
