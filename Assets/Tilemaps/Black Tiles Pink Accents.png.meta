@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 58a59c7828054f44a8d6361eb7e9ad2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7144252463019624136
+    second: Black Tiles Pink Accents_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 255
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7fcb54750bce24e916b08bbc6d0555
+      internalID: 2038546662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_42
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00c12cd34a4e7741b2c67a5dcbdf4e5
+      internalID: -1927211721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_43
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343f29d8d04ced348ba5fd000691fbc7
+      internalID: -838532878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_44
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72aab5e1db44264f84311cc9b9d163c
+      internalID: 757485180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_45
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624499e01dbdd644eb68f732fe836396
+      internalID: -1505795898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18868509d55a614082612d439fe68a4
+      internalID: -1161654108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_62
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6565c8b5b1e30664982b6d5b41e9496e
+      internalID: -1977094404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents_63
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057d1981c3b1c0149915ca8a44e0bf3d
+      internalID: -200162651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b3e46e0ee2b5202419128263de20e17f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Black Tiles Pink Accents_0: -7144252463019624136
+      Black Tiles Pink Accents_1: 1805128942
+      Black Tiles Pink Accents_10: 1739004272
+      Black Tiles Pink Accents_11: 1338500867
+      Black Tiles Pink Accents_12: -1480267658
+      Black Tiles Pink Accents_13: -1442040262
+      Black Tiles Pink Accents_14: -1003535496
+      Black Tiles Pink Accents_15: -1649614797
+      Black Tiles Pink Accents_16: -1985379556
+      Black Tiles Pink Accents_17: 2100266622
+      Black Tiles Pink Accents_18: 1422982587
+      Black Tiles Pink Accents_19: 583530385
+      Black Tiles Pink Accents_2: -1314165857
+      Black Tiles Pink Accents_20: -249491903
+      Black Tiles Pink Accents_21: -1649309567
+      Black Tiles Pink Accents_22: -1192760664
+      Black Tiles Pink Accents_23: -1535004827
+      Black Tiles Pink Accents_24: 1742466566
+      Black Tiles Pink Accents_25: 1454057069
+      Black Tiles Pink Accents_26: -732419235
+      Black Tiles Pink Accents_27: -1987981484
+      Black Tiles Pink Accents_28: -2061617786
+      Black Tiles Pink Accents_29: -1652334413
+      Black Tiles Pink Accents_3: 1456042648
+      Black Tiles Pink Accents_30: -486601415
+      Black Tiles Pink Accents_31: -1505119516
+      Black Tiles Pink Accents_32: -1390094673
+      Black Tiles Pink Accents_33: 1964753042
+      Black Tiles Pink Accents_34: -945246112
+      Black Tiles Pink Accents_35: -862205117
+      Black Tiles Pink Accents_36: -1785369966
+      Black Tiles Pink Accents_37: 770983662
+      Black Tiles Pink Accents_38: -530462898
+      Black Tiles Pink Accents_39: 1226149684
+      Black Tiles Pink Accents_4: -634301275
+      Black Tiles Pink Accents_40: 1365338884
+      Black Tiles Pink Accents_41: 2038546662
+      Black Tiles Pink Accents_42: -1927211721
+      Black Tiles Pink Accents_43: -838532878
+      Black Tiles Pink Accents_44: 757485180
+      Black Tiles Pink Accents_45: -1505795898
+      Black Tiles Pink Accents_46: 1198574331
+      Black Tiles Pink Accents_47: 1700235308
+      Black Tiles Pink Accents_48: -81907541
+      Black Tiles Pink Accents_49: -1869334935
+      Black Tiles Pink Accents_5: -507607031
+      Black Tiles Pink Accents_50: 931106043
+      Black Tiles Pink Accents_51: -1011256768
+      Black Tiles Pink Accents_52: -2111845576
+      Black Tiles Pink Accents_53: 1271436
+      Black Tiles Pink Accents_54: -492135409
+      Black Tiles Pink Accents_55: 1557636933
+      Black Tiles Pink Accents_56: 1958452811
+      Black Tiles Pink Accents_57: 1823895403
+      Black Tiles Pink Accents_58: -1460465030
+      Black Tiles Pink Accents_59: 413677246
+      Black Tiles Pink Accents_6: -514551345
+      Black Tiles Pink Accents_60: -1649426178
+      Black Tiles Pink Accents_61: -1161654108
+      Black Tiles Pink Accents_62: -1977094404
+      Black Tiles Pink Accents_63: -200162651
+      Black Tiles Pink Accents_64: 1057000963
+      Black Tiles Pink Accents_65: 555831291
+      Black Tiles Pink Accents_66: -362570408
+      Black Tiles Pink Accents_67: -1388087564
+      Black Tiles Pink Accents_68: -974635067
+      Black Tiles Pink Accents_69: -602030422
+      Black Tiles Pink Accents_7: 393973403
+      Black Tiles Pink Accents_70: -1051978339
+      Black Tiles Pink Accents_71: 1734772393
+      Black Tiles Pink Accents_72: -882780074
+      Black Tiles Pink Accents_73: 849465835
+      Black Tiles Pink Accents_74: 1315631394
+      Black Tiles Pink Accents_75: 779000933
+      Black Tiles Pink Accents_76: 1960835037
+      Black Tiles Pink Accents_77: 567073017
+      Black Tiles Pink Accents_78: -1993365039
+      Black Tiles Pink Accents_79: -850992966
+      Black Tiles Pink Accents_8: -1557853514
+      Black Tiles Pink Accents_80: -279872791
+      Black Tiles Pink Accents_81: 2087495301
+      Black Tiles Pink Accents_82: -2139291112
+      Black Tiles Pink Accents_83: -2000573569
+      Black Tiles Pink Accents_84: -1875021631
+      Black Tiles Pink Accents_85: 514057995
+      Black Tiles Pink Accents_86: -609322238
+      Black Tiles Pink Accents_87: -1924366571
+      Black Tiles Pink Accents_88: 1130830279
+      Black Tiles Pink Accents_89: 1314616778
+      Black Tiles Pink Accents_9: 925797851
+      Black Tiles Pink Accents_90: -1552032830
+      Black Tiles Pink Accents_91: -359561395
+      Black Tiles Pink Accents_92: -333178222
+      Black Tiles Pink Accents_93: -1166392329
+      Black Tiles Pink Accents_94: 352166037
+      Black Tiles Pink Accents_95: -548210237
+      Black Tiles Pink Accents_96: 1816622254
+      Black Tiles Pink Accents_97: -1020228087
+      Black Tiles Pink Accents_98: 1704155516
+      Black Tiles Pink Accents_99: -508712765
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

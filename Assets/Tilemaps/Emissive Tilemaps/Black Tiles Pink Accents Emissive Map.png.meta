@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 7da6f4f449845da41a99a894de73774f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6864384726793552773
+    second: Black Tiles Pink Accents Emissive Map_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 255
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0be1258c4c5e0141aae445a7abd7eb3
+      internalID: 1979488935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_42
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bdf3ab2fd06ec4792b746434a5055f
+      internalID: 1015035190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_43
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226c1e2afdc2dbd4f8f3ea378c9f3659
+      internalID: 24480158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_44
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872f85870e0735c4a950ade68720d7bf
+      internalID: 830042722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_45
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23e7559bc670b34083578fb760f1637
+      internalID: 1361375887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f027c6c8edf9249a0bdfa5d29f6507
+      internalID: 40704951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_62
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266afc42b7bb96045bc0b0bf79e009b5
+      internalID: 95492559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black Tiles Pink Accents Emissive Map_63
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8107f39a7f62db340a1f2c7c0a203b11
+      internalID: -409709721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: da871d88cf80bf64f87774d169002700
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Black Tiles Pink Accents Emissive Map_0: 6864384726793552773
+      Black Tiles Pink Accents Emissive Map_1: 1503302068
+      Black Tiles Pink Accents Emissive Map_10: 719454953
+      Black Tiles Pink Accents Emissive Map_11: -690810240
+      Black Tiles Pink Accents Emissive Map_12: -373934072
+      Black Tiles Pink Accents Emissive Map_13: 807000459
+      Black Tiles Pink Accents Emissive Map_14: -840200373
+      Black Tiles Pink Accents Emissive Map_15: 135993101
+      Black Tiles Pink Accents Emissive Map_16: 890683248
+      Black Tiles Pink Accents Emissive Map_17: 185525393
+      Black Tiles Pink Accents Emissive Map_18: -688201979
+      Black Tiles Pink Accents Emissive Map_19: 748915861
+      Black Tiles Pink Accents Emissive Map_2: -1888211043
+      Black Tiles Pink Accents Emissive Map_20: -572414157
+      Black Tiles Pink Accents Emissive Map_21: 10013328
+      Black Tiles Pink Accents Emissive Map_22: -1365724105
+      Black Tiles Pink Accents Emissive Map_23: 1173821455
+      Black Tiles Pink Accents Emissive Map_24: 140489894
+      Black Tiles Pink Accents Emissive Map_25: 1852177367
+      Black Tiles Pink Accents Emissive Map_26: 1707207260
+      Black Tiles Pink Accents Emissive Map_27: -1480583229
+      Black Tiles Pink Accents Emissive Map_28: 1487746015
+      Black Tiles Pink Accents Emissive Map_29: -1646353895
+      Black Tiles Pink Accents Emissive Map_3: -502759268
+      Black Tiles Pink Accents Emissive Map_30: -1865580931
+      Black Tiles Pink Accents Emissive Map_31: 1260075931
+      Black Tiles Pink Accents Emissive Map_32: -96259554
+      Black Tiles Pink Accents Emissive Map_33: 1253009210
+      Black Tiles Pink Accents Emissive Map_34: -2133803717
+      Black Tiles Pink Accents Emissive Map_35: 1594313549
+      Black Tiles Pink Accents Emissive Map_36: -29454379
+      Black Tiles Pink Accents Emissive Map_37: 278283230
+      Black Tiles Pink Accents Emissive Map_38: -2127539161
+      Black Tiles Pink Accents Emissive Map_39: -312940819
+      Black Tiles Pink Accents Emissive Map_4: 168424894
+      Black Tiles Pink Accents Emissive Map_40: -989243065
+      Black Tiles Pink Accents Emissive Map_41: 1979488935
+      Black Tiles Pink Accents Emissive Map_42: 1015035190
+      Black Tiles Pink Accents Emissive Map_43: 24480158
+      Black Tiles Pink Accents Emissive Map_44: 830042722
+      Black Tiles Pink Accents Emissive Map_45: 1361375887
+      Black Tiles Pink Accents Emissive Map_46: 1389135216
+      Black Tiles Pink Accents Emissive Map_47: -40899829
+      Black Tiles Pink Accents Emissive Map_48: 1991692724
+      Black Tiles Pink Accents Emissive Map_49: 983811321
+      Black Tiles Pink Accents Emissive Map_5: -848915842
+      Black Tiles Pink Accents Emissive Map_50: -1977673606
+      Black Tiles Pink Accents Emissive Map_51: 1377564824
+      Black Tiles Pink Accents Emissive Map_52: -615610682
+      Black Tiles Pink Accents Emissive Map_53: -143139390
+      Black Tiles Pink Accents Emissive Map_54: 1072677671
+      Black Tiles Pink Accents Emissive Map_55: 425697020
+      Black Tiles Pink Accents Emissive Map_56: 215716323
+      Black Tiles Pink Accents Emissive Map_57: -658555506
+      Black Tiles Pink Accents Emissive Map_58: 499259512
+      Black Tiles Pink Accents Emissive Map_59: 1267441813
+      Black Tiles Pink Accents Emissive Map_6: 39181615
+      Black Tiles Pink Accents Emissive Map_60: -1620521522
+      Black Tiles Pink Accents Emissive Map_61: 40704951
+      Black Tiles Pink Accents Emissive Map_62: 95492559
+      Black Tiles Pink Accents Emissive Map_63: -409709721
+      Black Tiles Pink Accents Emissive Map_64: -786076351
+      Black Tiles Pink Accents Emissive Map_65: 1597958971
+      Black Tiles Pink Accents Emissive Map_66: 374002222
+      Black Tiles Pink Accents Emissive Map_67: 1197308118
+      Black Tiles Pink Accents Emissive Map_68: 926413901
+      Black Tiles Pink Accents Emissive Map_69: 466750412
+      Black Tiles Pink Accents Emissive Map_7: -1590951557
+      Black Tiles Pink Accents Emissive Map_70: -1690258867
+      Black Tiles Pink Accents Emissive Map_71: 459551651
+      Black Tiles Pink Accents Emissive Map_72: -111272380
+      Black Tiles Pink Accents Emissive Map_73: -2016290486
+      Black Tiles Pink Accents Emissive Map_74: -1680278700
+      Black Tiles Pink Accents Emissive Map_75: -1247235461
+      Black Tiles Pink Accents Emissive Map_76: 1904039576
+      Black Tiles Pink Accents Emissive Map_77: 930561672
+      Black Tiles Pink Accents Emissive Map_78: -175693981
+      Black Tiles Pink Accents Emissive Map_79: -129909659
+      Black Tiles Pink Accents Emissive Map_8: -602551448
+      Black Tiles Pink Accents Emissive Map_80: 1897725744
+      Black Tiles Pink Accents Emissive Map_81: 1557168815
+      Black Tiles Pink Accents Emissive Map_82: -1190801080
+      Black Tiles Pink Accents Emissive Map_83: -586967358
+      Black Tiles Pink Accents Emissive Map_84: -1438270066
+      Black Tiles Pink Accents Emissive Map_85: 1481372949
+      Black Tiles Pink Accents Emissive Map_86: -64937097
+      Black Tiles Pink Accents Emissive Map_87: 1495278702
+      Black Tiles Pink Accents Emissive Map_88: -1869423300
+      Black Tiles Pink Accents Emissive Map_89: -1880694128
+      Black Tiles Pink Accents Emissive Map_9: 896619923
+      Black Tiles Pink Accents Emissive Map_90: 1918568803
+      Black Tiles Pink Accents Emissive Map_91: -276778300
+      Black Tiles Pink Accents Emissive Map_92: 108916399
+      Black Tiles Pink Accents Emissive Map_93: -1634133285
+      Black Tiles Pink Accents Emissive Map_94: 437399584
+      Black Tiles Pink Accents Emissive Map_95: -1902620256
+      Black Tiles Pink Accents Emissive Map_96: -1880826191
+      Black Tiles Pink Accents Emissive Map_97: -643579483
+      Black Tiles Pink Accents Emissive Map_98: -7388891
+      Black Tiles Pink Accents Emissive Map_99: 644426245
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
