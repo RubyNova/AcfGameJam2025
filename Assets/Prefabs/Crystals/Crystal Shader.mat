@@ -55,7 +55,7 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _LightTolerance: 0.454
-    - _ShadowInterpolation: 0.042
+    - _ShadowInterpolation: 0.05
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
