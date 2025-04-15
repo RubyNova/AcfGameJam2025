@@ -54,13 +54,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _LightTolerance: 0.5
-    - _ShadowInterpolation: 0.1
+    - _LightTolerance: 0.454
+    - _ShadowInterpolation: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColour: {r: 0, g: 0, b: 0.462745, a: 0}
+    - _ShadowColour: {r: 0, g: 0.025419082, b: 0.509434, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &630179428356631435
