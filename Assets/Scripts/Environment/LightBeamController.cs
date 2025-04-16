@@ -88,6 +88,8 @@ namespace Environment
 
         public Vector3 EmissionPoint => _emissionPoint ?? _targetTransform.position;
 
+        public Vector3 UpwardsNormal => _targetTransform.up;
+
         private Vector3? RegisterPotentialBeamHit()
         {
             var hitCount = Physics2D.Raycast(EmissionPoint, _targetTransform.right, _beamRaycastFilter, _beamRaycastData, LightBeamLength);
