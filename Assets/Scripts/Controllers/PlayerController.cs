@@ -581,6 +581,7 @@ namespace Controllers
                 if (interactable != null)
                 {
                     interactable.Interact(this);
+                    break;
                 }
             }
         }
