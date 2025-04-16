@@ -14,15 +14,12 @@ namespace Environment
                 return;   
             }
 
-            // currentVelocity.x += currentVelocity.x < 0 ? -1 : 1;
-            // currentVelocity.y += currentVelocity.y < 0 ? -1 : 1;
-
-            //var reversed = currentVelocity * -1;
+            
 
             var reflected = Vector2.Reflect(currentVelocity, sender.UpwardsNormal);
+            reflected.y += BeamForce;
 
             target.RegisterIncomingForce(sender, beamPriority, reflected, 1);
-            print("IM RICK JAMES BITCH");
         }
 
         public override void ClearBeamEffectOnObject(LightBeamController sender, int beamPriority, GenericBeamForceReactor target)

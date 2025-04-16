@@ -29,8 +29,8 @@ namespace Environment.Interactables
 
         protected void Update()
         {
-            _rigidbodyToDrive.linearVelocityX = Mathf.Clamp(_rigidbodyToDrive.linearVelocityX, -VelocityCap.x, VelocityCap.x);
-            _rigidbodyToDrive.linearVelocityY = Mathf.Clamp(_rigidbodyToDrive.linearVelocityY, -VelocityCap.y, VelocityCap.y);
+            // _rigidbodyToDrive.linearVelocityX = Mathf.Clamp(_rigidbodyToDrive.linearVelocityX, -VelocityCap.x, VelocityCap.x);
+            // _rigidbodyToDrive.linearVelocityY = Mathf.Clamp(_rigidbodyToDrive.linearVelocityY, -VelocityCap.y, VelocityCap.y);
         }
 
         public void RegisterIncomingForce(LightBeamController sender, int priority, Vector2 senderBeamDirection, float force)

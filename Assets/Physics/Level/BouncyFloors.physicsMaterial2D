@@ -9,6 +9,6 @@ PhysicsMaterial2D:
   m_Name: BouncyFloors
   serializedVersion: 2
   friction: 0
-  bounciness: 1.5
+  bounciness: 1.25
   m_FrictionCombine: 0
-  m_BounceCombine: 4
+  m_BounceCombine: 0
