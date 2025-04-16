@@ -14,6 +14,8 @@ namespace Environment.Interactables
 
         private float _startingGravityScale;
 
+        public Rigidbody2D Rigidbody => _rigidbodyToDrive;
+
         protected void Start()
         {
             _startingGravityScale = _rigidbodyToDrive.gravityScale;
