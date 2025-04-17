@@ -514,7 +514,7 @@ namespace Controllers
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.transform.gameObject.layer == LayerMask.NameToLayer("InteractableObject"))
+            if (collision.transform.gameObject.layer == LayerMask.NameToLayer("InteractableObject") && !WasRidingBeam)
             {
                 return; 
             }
