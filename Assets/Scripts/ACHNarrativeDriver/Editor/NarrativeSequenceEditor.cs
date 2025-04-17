@@ -41,71 +41,6 @@ namespace ACHNarrativeDriver.Editor
                 "Predefined Variables", _predefinedVariables, typeof(PredefinedVariables),
                 false);
 
-            var previousSprite = _currentNarrativeSequence.BackgroundSprite;
-            _currentNarrativeSequence.BackgroundSprite = (Sprite)EditorGUILayout.ObjectField("Background Image",
-                _currentNarrativeSequence.BackgroundSprite, typeof(Sprite), false);
-            var backgroundSpriteChanged = _currentNarrativeSequence.BackgroundSprite != previousSprite;
-            
-            GUILayout.Label("Music files", EditorStyles.label);
-
-            bool musicCollectionModified = false;
-            //Hakky hack to get Unity Editor to stop complaining about things that don't exist.
-            try{
-            for (int index = 0; index < _currentNarrativeSequence.MusicFiles.Count; index++)
-            {
-                var previousClip = _currentNarrativeSequence.MusicFiles[index];
-                _currentNarrativeSequence.MusicFiles[index] =
-                    (AudioClip)EditorGUILayout.ObjectField($"Music {index}",
-                        _currentNarrativeSequence.MusicFiles[index], typeof(AudioClip), false);
-
-                if (previousClip != _currentNarrativeSequence.MusicFiles[index])
-                {
-                    musicCollectionModified = true;
-                }
-            }
-            }catch{}
-            
-            if (GUILayout.Button("Add new"))
-            {
-                _currentNarrativeSequence.MusicFiles.Add(null);
-                musicCollectionModified = true;
-            }
-
-            if (GUILayout.Button("Remove last") && _currentNarrativeSequence.MusicFiles.Count > 0)
-            {
-                _currentNarrativeSequence.MusicFiles.RemoveAt(_currentNarrativeSequence.MusicFiles.Count - 1);
-                musicCollectionModified = true;
-            }
-            
-            GUILayout.Label("Music files", EditorStyles.label);
-
-            bool soundEffectCollectionModified = false;
-
-            for (int index = 0; index < _currentNarrativeSequence.SoundEffectFiles.Count; index++)
-            {
-                var previousClip = _currentNarrativeSequence.SoundEffectFiles[index];
-                _currentNarrativeSequence.SoundEffectFiles[index] =
-                    (AudioClip)EditorGUILayout.ObjectField($"Sound Effect {index}",
-                        _currentNarrativeSequence.SoundEffectFiles[index], typeof(AudioClip), false);
-
-                if (previousClip != _currentNarrativeSequence.SoundEffectFiles[index])
-                {
-                    soundEffectCollectionModified = true;
-                }
-            }
-            
-            if (GUILayout.Button("Add new"))
-            {
-                _currentNarrativeSequence.SoundEffectFiles.Add(null);
-                soundEffectCollectionModified = true;
-            }
-
-            if (GUILayout.Button("Remove last") && _currentNarrativeSequence.SoundEffectFiles.Count > 0)
-            {
-                _currentNarrativeSequence.SoundEffectFiles.RemoveAt(_currentNarrativeSequence.SoundEffectFiles.Count - 1);
-                soundEffectCollectionModified = true;
-            }
-
             GUILayout.Label("Source Script", EditorStyles.label);
             var previousSourceScript = _currentNarrativeSequence.SourceScript;
             _currentNarrativeSequence.SourceScript = GUILayout.TextArea(_currentNarrativeSequence.SourceScript,
@@ -178,8 +113,7 @@ namespace ACHNarrativeDriver.Editor
                 }
             }
 
-            if (sourceScriptChanged || musicCollectionModified || soundEffectCollectionModified || nextNarrativeSequenceModified ||
-                compiledScriptChanged || backgroundSpriteChanged)
+            if (sourceScriptChanged || nextNarrativeSequenceModified || compiledScriptChanged)
             {
                 EditorUtility.SetDirty(_currentNarrativeSequence);
             }

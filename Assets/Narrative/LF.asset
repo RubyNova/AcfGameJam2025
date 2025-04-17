@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1308ae6c805751409f82c81b7ec1f52, type: 3}
-  m_Name: NewNarrativeSequence 1
+  m_Script: {fileID: 11500000, guid: ce7ea9c778f1d634b9f3f52206e8a7ab, type: 3}
+  m_Name: LF
   m_EditorClassIdentifier: 
-  _variables: []
+  _name: LF
+  _poses:
+  - {fileID: 21300000, guid: ad2925b4dadb6f9408c0016d137001a1, type: 3}
+  _nameplateSprite: {fileID: 0}
