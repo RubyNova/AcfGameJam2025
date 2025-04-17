@@ -15,8 +15,12 @@ namespace ACHNarrativeDriver
         [SerializeField] private TMP_Text _narrativeTextBox;
         [SerializeField] private TMP_Text _characterNameTextBox;
         [SerializeField] private Image _characterRenderer;
+        [SerializeField] private Image _characterTwoRenderer;
         [SerializeField] private Image _backgroundRenderer;
         [SerializeField] private Image _nameplateRenderer;
+        [SerializeField] private GameObject _leftTextBubblePrefab;
+        [SerializeField] private GameObject _rightTextBubblePrefab;
+        [SerializeField] private GameObject _narratorTextBubblePrefab;
         [SerializeField] private Transform _choicesButtonView;
         [SerializeField] private GameObject _buttonPrefab;
         [SerializeField] private GameObject _nextButton;
@@ -126,28 +130,54 @@ namespace ACHNarrativeDriver
 
             var characterDialogueInfo = _currentNarrativeSequence.CharacterDialoguePairs[_currentDialogueIndex];
 
+            if(characterDialogueInfo.NarratorSpeaking)
+            {
+                _characterRenderer.enabled = false;
+                _characterTwoRenderer.enabled = false;
+            }
+
             if (characterDialogueInfo.PoseIndex is { } poseIndex)
             {
                 _characterRenderer.sprite = characterDialogueInfo.Character.Poses[poseIndex];
-                
+
                 if (!_characterRenderer.enabled && _characterRenderer.sprite != null)
                 {
                     _characterRenderer.enabled = true;
                 }
             }
-            
-            if(_nameplateRenderer != null &&  characterDialogueInfo.Character.NameplateSprite != null)
-                _nameplateRenderer.sprite = characterDialogueInfo.Character.NameplateSprite;
 
-            // if (characterDialogueInfo.PlayMusicIndex is { } playMusicIndex)
-            // {
-            //     _audioController.PlayMusic(_currentNarrativeSequence.MusicFiles[playMusicIndex]);
-            // }
+            if(characterDialogueInfo.SecondPoseIndex is { } secondPoseIndex)
+            {
+                _characterTwoRenderer.sprite = characterDialogueInfo.CharacterTwo.Poses[secondPoseIndex];
 
-            // if (characterDialogueInfo.PlaySoundEffectIndex is {} soundEffectIndex)
-            // {
-            //     _audioController.PlayEffect(_currentNarrativeSequence.SoundEffectFiles[soundEffectIndex]);
-            // }
+                if(!_characterTwoRenderer.enabled && _characterTwoRenderer.sprite != null)
+                {
+                    _characterTwoRenderer.enabled = true;
+                }
+            }
+            else if(characterDialogueInfo.CharacterTwo is null)
+            {
+                _characterTwoRenderer.enabled = false;
+            }
+
+            if(characterDialogueInfo.NarratorSpeaking)
+            {
+                _narratorTextBubblePrefab.SetActive(true);
+                _leftTextBubblePrefab.SetActive(false);
+                _rightTextBubblePrefab.SetActive(false);
+            }
+            else if(characterDialogueInfo.LeftCharacterTalking)
+            {
+                _narratorTextBubblePrefab.SetActive(false);
+                _leftTextBubblePrefab.SetActive(true);
+                _rightTextBubblePrefab.SetActive(false);
+            }
+            else
+            {
+                _narratorTextBubblePrefab.SetActive(false);
+                _leftTextBubblePrefab.SetActive(false);
+                _rightTextBubblePrefab.SetActive(true);
+            }
             
             _rollingTextRoutine =
                 StartCoroutine(

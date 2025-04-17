@@ -17,11 +17,9 @@ namespace ACHNarrativeDriver.ScriptableObjects
             [SerializeField] private bool _hasSecondCharacterPoseIndex;
             [SerializeField] private int _poseIndex;
             [SerializeField] private int _poseIndexTwo;
-            [SerializeField] private bool _hasPlayMusicIndex;
-            [SerializeField] private int _playMusicIndex;
-            [SerializeField] private bool _hasPlaySoundEffectIndex;
-            [SerializeField] private int _playSoundEffectIndex;
             [SerializeField] private string _text;
+            [SerializeField] private bool _leftCharacterTalking = true;
+            [SerializeField] private bool _narratorSpeaking = false;
 
             public Character Character
             {
@@ -69,39 +67,24 @@ namespace ACHNarrativeDriver.ScriptableObjects
                 }
             }
             
-            public int? PlayMusicIndex
+            public bool LeftCharacterTalking 
             {
-                get => _hasPlayMusicIndex ? _playMusicIndex : null;
+                get => _hasSecondCharacterPoseIndex ? _leftCharacterTalking : true;
                 set
                 {
-                    if (value.HasValue)
-                    {
-                        _playMusicIndex = value.Value;
-                        _hasPlayMusicIndex = true;
-                    }
-                    else
-                    {
-                        _hasPlayMusicIndex = false;
-                    }
+                    _leftCharacterTalking = value;
                 }
             }
-            
-            public int? PlaySoundEffectIndex
+
+            public bool NarratorSpeaking 
             {
-                get => _hasPlaySoundEffectIndex ? _playSoundEffectIndex : null;
+                get => _narratorSpeaking;
                 set
                 {
-                    if (value.HasValue)
-                    {
-                        _playSoundEffectIndex = value.Value;
-                        _hasPlaySoundEffectIndex = true;
-                    }
-                    else
-                    {
-                        _hasPlaySoundEffectIndex = false;
-                    }
+                    _narratorSpeaking = value;
                 }
             }
+
 
             public string Text
             {
