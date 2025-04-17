@@ -12,8 +12,11 @@ namespace ACHNarrativeDriver.ScriptableObjects
         public class CharacterDialogueInfo
         {
             [SerializeField] private Character _character;
+            [SerializeField] private Character _characterTwo;
             [SerializeField] private bool _hasPoseIndex;
+            [SerializeField] private bool _hasSecondCharacterPoseIndex;
             [SerializeField] private int _poseIndex;
+            [SerializeField] private int _poseIndexTwo;
             [SerializeField] private bool _hasPlayMusicIndex;
             [SerializeField] private int _playMusicIndex;
             [SerializeField] private bool _hasPlaySoundEffectIndex;
@@ -24,6 +27,12 @@ namespace ACHNarrativeDriver.ScriptableObjects
             {
                 get => _character;
                 set => _character = value;
+            }
+
+            public Character CharacterTwo
+            {
+                get => _characterTwo;
+                set => _characterTwo = value;
             }
 
             public int? PoseIndex
@@ -39,6 +48,23 @@ namespace ACHNarrativeDriver.ScriptableObjects
                     else
                     {
                         _hasPoseIndex = false;
+                    }
+                }
+            }
+
+            public int? SecondPoseIndex
+            {
+                get => _hasSecondCharacterPoseIndex ? _poseIndexTwo : null;
+                set
+                {
+                    if (value.HasValue)
+                    {
+                        _poseIndexTwo = value.Value;
+                        _hasSecondCharacterPoseIndex = true;
+                    }
+                    else
+                    {
+                        _hasSecondCharacterPoseIndex = false;
                     }
                 }
             }
