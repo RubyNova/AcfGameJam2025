@@ -514,6 +514,11 @@ namespace Controllers
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
+            if (collision.transform.gameObject.layer == LayerMask.NameToLayer("InteractableObject"))
+            {
+                return; 
+            }
+
             var lightBeamController = collision.GetComponentInParent<LightBeamController>();
             if (lightBeamController != null && _cachedAffectingBeam != lightBeamController.gameObject.GetHashCode())
             {
@@ -579,14 +584,26 @@ namespace Controllers
 
             foreach (var hit in hitCount)
             {
-                InteractableBehaviour interactable = hit.transform.gameObject.GetComponent<InteractableBehaviour>();
+
+                Transform testTarget = hit.transform;
+
+                while (testTarget.parent != null)
+                {
+                    testTarget = testTarget.parent;
+                }
+                
+                InteractableBehaviour interactable = testTarget.transform.gameObject.GetComponentInChildren<InteractableBehaviour>();
+
                 if (interactable != null && (highestPriorityTarget == null || highestPriorityTarget.Priority < interactable.Priority))
                 {
                     highestPriorityTarget = interactable;
                 }
             }
 
-            highestPriorityTarget.Interact(this);
+            if (highestPriorityTarget != null)
+            {
+                highestPriorityTarget.Interact(this);
+            }
         }
 
         public void OnDrawGizmos()

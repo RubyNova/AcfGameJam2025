@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1610458265086327465, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371476466567640324, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5830128634995634832, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -70,19 +78,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8021479550274355630, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
       propertyPath: m_Size.x
-      value: 1.8
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 8021479550274355630, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
       propertyPath: m_Size.y
-      value: 4.7
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 8021479550274355630, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5.12
+      value: 3.4133334
       objectReference: {fileID: 0}
     - target: {fileID: 8021479550274355630, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.12
+      value: 3.4133334
       objectReference: {fileID: 0}
     - target: {fileID: 8430857117571596053, guid: 0b1c8e42343e99c47b08b013c7612372, type: 3}
       propertyPath: m_Name
@@ -129,4 +137,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f86442800df4543a4347383bc94fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _priority: 0
   _rotationAmount: 20
