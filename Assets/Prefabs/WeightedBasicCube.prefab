@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbodyToDrive: {fileID: 2860529767675633969}
+  VelocityCap: {x: 0, y: 0}
 --- !u!114 &5804564217194741854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcea0f1817f2ba41a1e6a3234b99430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _priority: 10
 --- !u!114 &5492658568588601921
 MonoBehaviour:
   m_ObjectHideFlags: 0

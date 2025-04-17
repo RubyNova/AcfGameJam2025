@@ -575,15 +575,18 @@ namespace Controllers
            //Physics2D.RaycastAll(_spriteRotator.position, _spriteRotator.right, distance: _interactionRayLength);
             RaycastHit2D[] hitCount = Physics2D.CircleCastAll(_spriteRotator.position, 1, _spriteRotator.right, _interactionRayLength);
 
+            InteractableBehaviour highestPriorityTarget = null;
+
             foreach (var hit in hitCount)
             {
                 InteractableBehaviour interactable = hit.transform.gameObject.GetComponent<InteractableBehaviour>();
-                if (interactable != null)
+                if (interactable != null && (highestPriorityTarget == null || highestPriorityTarget.Priority < interactable.Priority))
                 {
-                    interactable.Interact(this);
-                    break;
+                    highestPriorityTarget = interactable;
                 }
             }
+
+            highestPriorityTarget.Interact(this);
         }
 
         public void OnDrawGizmos()
