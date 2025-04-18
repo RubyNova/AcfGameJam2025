@@ -66,8 +66,8 @@ namespace ACHNarrativeDriver.ScriptableObjects
                     }
                 }
             }
-            
-            public bool LeftCharacterTalking 
+
+            public bool LeftCharacterTalking
             {
                 get => _hasSecondCharacterPoseIndex ? _leftCharacterTalking : true;
                 set
@@ -76,7 +76,7 @@ namespace ACHNarrativeDriver.ScriptableObjects
                 }
             }
 
-            public bool NarratorSpeaking 
+            public bool NarratorSpeaking
             {
                 get => _narratorSpeaking;
                 set
@@ -116,7 +116,7 @@ namespace ACHNarrativeDriver.ScriptableObjects
                 set => _narrativeResponse = value;
             }
         }
-        
+
         [SerializeField] private Sprite _backgroundSprite;
         [SerializeField] private NarrativeSequence _nextSequence;
         [SerializeField] private List<AudioClip> _musicFiles;
@@ -126,7 +126,12 @@ namespace ACHNarrativeDriver.ScriptableObjects
 
         public List<ChoiceInfo> Choices
         {
-            get => _choices;
+            get
+            {
+                _choices ??= new();
+                return _choices;
+            }
+
             set => _choices = value;
         }
 
@@ -141,7 +146,7 @@ namespace ACHNarrativeDriver.ScriptableObjects
             get => _musicFiles;
             set => _musicFiles = value;
         }
-        
+
         public List<AudioClip> SoundEffectFiles
         {
             get => _soundEffectFiles;
