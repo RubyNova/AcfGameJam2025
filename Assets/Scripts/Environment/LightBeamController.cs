@@ -130,11 +130,6 @@ namespace Environment
 
                     bool isAWallAndShouldBeIgnored = beamControllerTest == null && beamControllerParentTest == null && ShouldIgnoreWalls && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ghosted");
 
-                    if (gameObject.name == "LightFamiliar" && isAWallAndShouldBeIgnored)
-                    {
-                        print(hit.transform.gameObject.name); 
-                    }
-
                     bool anyIgnoredObjects = _objectsToIgnoreDuringHitChecks.Any(x => x.transform.gameObject == hit.transform.gameObject);
 
                     bool isPlayerOrTaggedForIgnore = hit.transform.CompareTag("IgnoredByBeam") || hit.transform.CompareTag("Player");
