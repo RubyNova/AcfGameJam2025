@@ -570,7 +570,11 @@ namespace Controllers
         {
             if (HeldObject != null)
             {
-                HeldObject.GetComponent<Collider2D>().enabled = true;
+                //HeldObject.GetComponent<Collider2D>().enabled = true;
+                foreach (var collider in HeldObject.GetComponentsInChildren<Collider2D>())
+                {
+                    collider.enabled = true;
+                }
                 HeldObject.transform.parent = null;
                 HeldObject.GetComponent<Rigidbody2D>().simulated = true;
                 HeldObject = null;
