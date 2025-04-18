@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
-  m_Name: Seq18
+  m_Name: Seq24
   m_EditorClassIdentifier: 
   _backgroundSprite: {fileID: 0}
   _nextSequence: {fileID: 0}
@@ -21,9 +21,9 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
+    _poseIndex: 7
     _poseIndexTwo: 0
-    _text: 'So...do you decide what happens at the end of this? '
+    _text: Oh, your next piece is already free? The cell must have opened by itself.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -32,59 +32,44 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: "Whether I\u2019m worthy?"
+    _text: "I wonder why it didn\u2019t just leave?\u201D"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 9
     _poseIndexTwo: 0
-    _text: 'It is in the hands of The Gods. '
+    _text: Unmerged, the light cannot pass through prism walls of this colour, without
+      physical assistance.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 2
     _poseIndexTwo: 0
-    _text: But you give them feedback, right?
+    _text: I get it! So once you merge, you should be able to travel more freely?
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 2
     _poseIndexTwo: 0
-    _text: Outstanding performance, bad at nicknames?
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'If you complete the trial, you will be worthy.  '
+    _text: Indeed, and faster. That speed will enable you to navigate the final challenges
+      more freely.
     _leftCharacterTalking: 0
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
-    _poseIndexTwo: 0
-    _text: WHEN I complete the trial.
-    _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So...do you decide
-    what happens at the end of this? \n\r\nMainChar,LF: 9,0: MainChar: Whether I\u2019m
-    worthy?\r\n\r\nMainChar,LF: 6,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
-    6,0: MainChar: But you give them feedback, right?\n\r\nMainChar,LF: 6,0: MainChar:
-    Outstanding performance, bad at nicknames?\r\n\r\nMainChar,LF: 6,0: LF: If you
-    complete the trial, you will be worthy.  \r\n\r\nMainChar,LF: 14,0: MainChar:
-    WHEN I complete the trial.\r\n"
+  <SourceScript>k__BackingField: "MainChar,LF: 7,0: MainChar: Oh, your next piece
+    is already free? The cell must have opened by itself.\r\n\r\nMainChar,LF: 9,0:
+    MainChar: I wonder why it didn\u2019t just leave?\u201D\r\n\r\nMainChar,LF: 9,0:
+    LF: Unmerged, the light cannot pass through prism walls of this colour, without
+    physical assistance.\r\n\r\nMainChar,LF: 2,0: MainChar: I get it! So once you
+    merge, you should be able to travel more freely?\r\n\r\nMainChar,LF: 2,0: LF:
+    Indeed, and faster. That speed will enable you to navigate the final challenges
+    more freely.\r\n"

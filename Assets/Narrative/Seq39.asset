@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
+  m_Name: Seq39
+  m_EditorClassIdentifier: 
+  _backgroundSprite: {fileID: 0}
+  _nextSequence: {fileID: 0}
+  _musicFiles: []
+  _soundEffectFiles: []
+  _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 20
+    _poseIndexTwo: 0
+    _text: I can finally leave this wretched prison.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 20
+    _poseIndexTwo: 0
+    _text: 'Hear me, brothers and sisters.  '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 20
+    _poseIndexTwo: 0
+    _text: LFName has returned.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 20
+    _poseIndexTwo: 0
+    _text: 'We will eradicate the non-believers. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 20
+    _poseIndexTwo: 0
+    _text: Our victory is inevitable.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  _choices: []
+  <SourceScript>k__BackingField: "MainChar: 20: I can finally leave this wretched
+    prison.\n\nMainChar: 20: Hear me, brothers and sisters.  \n\nMainChar: 20: LFName
+    has returned.\n\nMainChar: 20: We will eradicate the non-believers. \n\nMainChar:
+    20: Our victory is inevitable.\r\n"

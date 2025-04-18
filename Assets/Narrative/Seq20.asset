@@ -10,81 +10,71 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
-  m_Name: Seq18
+  m_Name: Seq20
   m_EditorClassIdentifier: 
   _backgroundSprite: {fileID: 0}
   _nextSequence: {fileID: 0}
   _musicFiles: []
   _soundEffectFiles: []
   _characterDialoguePairs:
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
-    _text: 'So...do you decide what happens at the end of this? '
+    _text: Is it time?
     _leftCharacterTalking: 1
-    _narratorSpeaking: 0
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
+    _poseIndex: 0
     _poseIndexTwo: 0
-    _text: "Whether I\u2019m worthy?"
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'It is in the hands of The Gods. '
+    _text: Soon. You are the second to merge. There is one more.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 1
     _poseIndexTwo: 0
-    _text: But you give them feedback, right?
+    _text: "Um, sorry to interrupt\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 1
     _poseIndexTwo: 0
-    _text: Outstanding performance, bad at nicknames?
+    _text: "I\u2019ve been wondering, why are you separated like this anyway?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
+    _poseIndexTwo: 0
+    _text: They do not know?
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 1
     _poseIndexTwo: 0
-    _text: 'If you complete the trial, you will be worthy.  '
+    _text: They are here to complete their trial.
     _leftCharacterTalking: 0
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
-    _poseIndexTwo: 0
-    _text: WHEN I complete the trial.
-    _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So...do you decide
-    what happens at the end of this? \n\r\nMainChar,LF: 9,0: MainChar: Whether I\u2019m
-    worthy?\r\n\r\nMainChar,LF: 6,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
-    6,0: MainChar: But you give them feedback, right?\n\r\nMainChar,LF: 6,0: MainChar:
-    Outstanding performance, bad at nicknames?\r\n\r\nMainChar,LF: 6,0: LF: If you
-    complete the trial, you will be worthy.  \r\n\r\nMainChar,LF: 14,0: MainChar:
-    WHEN I complete the trial.\r\n"
+  <SourceScript>k__BackingField: "Narrator: Is it time?\r\n\r\r\r\nMainChar,LF: 0,0:
+    LF: Soon. You are the second to merge. There is one more.\r\n\r\nMainChar,LF:
+    1,0: MainChar: Um, sorry to interrupt\u2026\r\n\nMainChar,LF: 1,0: MainChar:
+    I\u2019ve been wondering, why are you separated like this anyway?\r\n\r\nNarrator:
+    They do not know?\r\n\r\nMainChar,LF: 1,0: LF: They are here to complete their
+    trial.\r\n"

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
-  m_Name: Seq18
+  m_Name: Seq21
   m_EditorClassIdentifier: 
   _backgroundSprite: {fileID: 0}
   _nextSequence: {fileID: 0}
@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: 'So...do you decide what happens at the end of this? '
+    _text: "That wasn\u2019t really an answer, LFName"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -32,43 +32,25 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: "Whether I\u2019m worthy?"
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'It is in the hands of The Gods. '
+    _text: It was not my choice, I am merely following the path I am set.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 12
     _poseIndexTwo: 0
-    _text: But you give them feedback, right?
+    _text: By The Gods.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 12
     _poseIndexTwo: 0
-    _text: Outstanding performance, bad at nicknames?
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'If you complete the trial, you will be worthy.  '
+    _text: Correct.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -77,14 +59,11 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 14
     _poseIndexTwo: 0
-    _text: WHEN I complete the trial.
+    _text: Okay.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So...do you decide
-    what happens at the end of this? \n\r\nMainChar,LF: 9,0: MainChar: Whether I\u2019m
-    worthy?\r\n\r\nMainChar,LF: 6,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
-    6,0: MainChar: But you give them feedback, right?\n\r\nMainChar,LF: 6,0: MainChar:
-    Outstanding performance, bad at nicknames?\r\n\r\nMainChar,LF: 6,0: LF: If you
-    complete the trial, you will be worthy.  \r\n\r\nMainChar,LF: 14,0: MainChar:
-    WHEN I complete the trial.\r\n"
+  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: That wasn\u2019t really
+    an answer, LFName\r\n\r\nMainChar,LF: 9,0: LF: It was not my choice, I am merely
+    following the path I am set.\r\n\r\nMainChar,LF: 12,0: MainChar: By The Gods.\r\n\r\nMainChar,LF:
+    12,0: LF: Correct.\r\n\r\nMainChar,LF: 14,0: MainChar: Okay.\r\n"

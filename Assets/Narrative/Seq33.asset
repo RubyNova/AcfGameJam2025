@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
-  m_Name: Seq18
+  m_Name: Seq33
   m_EditorClassIdentifier: 
   _backgroundSprite: {fileID: 0}
   _nextSequence: {fileID: 0}
@@ -21,70 +21,79 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
+    _poseIndex: 18
     _poseIndexTwo: 0
-    _text: 'So...do you decide what happens at the end of this? '
+    _text: "Ugh that one felt\u2026different?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
+    _poseIndex: 18
     _poseIndexTwo: 0
-    _text: "Whether I\u2019m worthy?"
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'It is in the hands of The Gods. '
+    _text: Do not be alarmed, your mind is adjusting to my presence.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 16
     _poseIndexTwo: 0
-    _text: But you give them feedback, right?
+    _text: "It\u2019s overwhelming"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 16
     _poseIndexTwo: 0
-    _text: Outstanding performance, bad at nicknames?
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'If you complete the trial, you will be worthy.  '
+    _text: One more piece and I will be whole again.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
+    _poseIndex: 17
     _poseIndexTwo: 0
-    _text: WHEN I complete the trial.
+    _text: "I need a moment, I feel\u2026like\u2026I\u2019m not fully here"
     _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 17
+    _poseIndexTwo: 0
+    _text: We must hurry!
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 12
+    _poseIndexTwo: 0
+    _text: " I need to stop\u2026I feel\u2026"
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 12
+    _poseIndexTwo: 0
+    _text: No PlayerName. We must continue!
+    _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So...do you decide
-    what happens at the end of this? \n\r\nMainChar,LF: 9,0: MainChar: Whether I\u2019m
-    worthy?\r\n\r\nMainChar,LF: 6,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
-    6,0: MainChar: But you give them feedback, right?\n\r\nMainChar,LF: 6,0: MainChar:
-    Outstanding performance, bad at nicknames?\r\n\r\nMainChar,LF: 6,0: LF: If you
-    complete the trial, you will be worthy.  \r\n\r\nMainChar,LF: 14,0: MainChar:
-    WHEN I complete the trial.\r\n"
+  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Ugh that one felt\u2026different?\n\nMainChar,LF:
+    18,0: LF: Do not be alarmed, your mind is adjusting to my presence.\n\nMainChar,LF:
+    16,0: MainChar: It\u2019s overwhelming\n\nMainChar,LF: 16,0: LF: One more piece
+    and I will be whole again.\n\nMainChar,LF: 17,0: MainChar: I need a moment, I
+    feel\u2026like\u2026I\u2019m not fully here\n\nMainChar,LF: 17,0: LF: We must
+    hurry!\n\nMainChar,LF: 12,0: MainChar:  I need to stop\u2026I feel\u2026\n\nMainChar,LF:
+    12,0: LF: No PlayerName. We must continue!\n\n\n\n\n\n"

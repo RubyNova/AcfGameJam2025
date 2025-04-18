@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
-  m_Name: Seq18
+  m_Name: Seq31
   m_EditorClassIdentifier: 
   _backgroundSprite: {fileID: 0}
   _nextSequence: {fileID: 0}
@@ -21,70 +21,50 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
+    _poseIndex: 7
     _poseIndexTwo: 0
-    _text: 'So...do you decide what happens at the end of this? '
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
-    _poseIndexTwo: 0
-    _text: "Whether I\u2019m worthy?"
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'It is in the hands of The Gods. '
+    _text: We are now one, is that ok?
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 7
     _poseIndexTwo: 0
-    _text: But you give them feedback, right?
+    _text: "Woah, I can hear you in my head, it feels bizarre\u2026kinda tingly?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 7
     _poseIndexTwo: 0
-    _text: Outstanding performance, bad at nicknames?
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
-    _poseIndexTwo: 0
-    _text: 'If you complete the trial, you will be worthy.  '
+    _text: Thank you for accepting me, I could not merge unless you were willing.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
+    _poseIndex: 4
     _poseIndexTwo: 0
-    _text: WHEN I complete the trial.
+    _text: "Don\u2019t mention it, we\u2019re in this together!"
     _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 4
+    _poseIndexTwo: 0
+    _text: Indeed we are.
+    _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So...do you decide
-    what happens at the end of this? \n\r\nMainChar,LF: 9,0: MainChar: Whether I\u2019m
-    worthy?\r\n\r\nMainChar,LF: 6,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
-    6,0: MainChar: But you give them feedback, right?\n\r\nMainChar,LF: 6,0: MainChar:
-    Outstanding performance, bad at nicknames?\r\n\r\nMainChar,LF: 6,0: LF: If you
-    complete the trial, you will be worthy.  \r\n\r\nMainChar,LF: 14,0: MainChar:
-    WHEN I complete the trial.\r\n"
+  <SourceScript>k__BackingField: "MainChar,LF: 7,0: LF: We are now one, is that ok?\n\nMainChar,LF:
+    7,0: MainChar: Woah, I can hear you in my head, it feels bizarre\u2026kinda tingly?\n\nMainChar,LF:
+    7,0: LF: Thank you for accepting me, I could not merge unless you were willing.\n\nMainChar,LF:
+    4,0: MainChar: Don\u2019t mention it, we\u2019re in this together!\n\nMainChar,LF:
+    4,0: LF: Indeed we are."

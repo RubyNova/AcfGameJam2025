@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
+  m_Name: Seq28
+  m_EditorClassIdentifier: 
+  _backgroundSprite: {fileID: 0}
+  _nextSequence: {fileID: 0}
+  _musicFiles: []
+  _soundEffectFiles: []
+  _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: I need to get through this and go home.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: Show the others that I did it and then forge my own path
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 12
+    _poseIndexTwo: 0
+    _text: ....
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 17
+    _poseIndexTwo: 0
+    _text: ....
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  _choices: []
+  <SourceScript>k__BackingField: 'MainChar: 14: I need to get through this and go
+    home.
+
+
+    MainChar: 14: Show the others that I did it and then forge my own
+    path
+
+    
+
+    MainChar: 12: ....
+
+    
+
+    MainChar: 17: ....
+
+'
