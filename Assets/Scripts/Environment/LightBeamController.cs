@@ -128,7 +128,12 @@ namespace Environment
 
                     bool isSendingController = (beamControllerTest != null && beamControllerTest == _currentSender) || (beamControllerParentTest != null && beamControllerParentTest == _currentSender);
 
-                    bool isAWallAndShouldBeIgnored = beamControllerTest == null && beamControllerParentTest == null && ShouldIgnoreWalls;
+                    bool isAWallAndShouldBeIgnored = beamControllerTest == null && beamControllerParentTest == null && ShouldIgnoreWalls && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ghosted");
+
+                    if (gameObject.name == "LightFamiliar" && isAWallAndShouldBeIgnored)
+                    {
+                        print(hit.transform.gameObject.name); 
+                    }
 
                     bool anyIgnoredObjects = _objectsToIgnoreDuringHitChecks.Any(x => x.transform.gameObject == hit.transform.gameObject);
 
