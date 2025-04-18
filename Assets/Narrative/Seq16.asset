@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
+  m_Name: Seq16
+  m_EditorClassIdentifier: 
+  _backgroundSprite: {fileID: 0}
+  _nextSequence: {fileID: 0}
+  _musicFiles: []
+  _soundEffectFiles: []
+  _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 0
+    _poseIndexTwo: 0
+    _text: So you do not feel whole?
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 1
+    _poseIndexTwo: 0
+    _text: "I don\u2019t know for sure\u2026 "
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 1
+    _poseIndexTwo: 0
+    _text: 'My Dad died before I was born. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 1
+    _poseIndexTwo: 0
+    _text: He was defending our home against Apostates.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 1
+    _poseIndexTwo: 0
+    _text: A hero, giving his life to defend the glory of The Gods.
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: 'Yeah, I guess so. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: My mother served The Gods too.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: 'She was picked to take her trial soon after I was born. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: ' I was told that she impressed The Gods so much, she was taken to serve
+      under them directly. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: 'A huge honour. '
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: Uh-huh, but that meant leaving me on my own.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: You were deemed worthy to be here today.
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: I worked hard to understand why The Gods were important to them.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: "Now I\u2019m going to impress them, too!"
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: Show them that your family's strength and faith lies within you.
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  _choices: []
+  <SourceScript>k__BackingField: "MainChar,LF: 0,0: LF: So you do not feel whole?\r\n\r\nMainChar,LF:
+    1,0: MainChar: I don\u2019t know for sure\u2026 \n\r\nMainChar,LF: 1,0: MainChar:
+    My Dad died before I was born. \n\r\nMainChar,LF: 1,0: MainChar: He was defending
+    our home against Apostates.\r\n\r\nMainChar,LF: 1,0: LF: A hero, giving his life
+    to defend the glory of The Gods.\r\n\r\nMainChar,LF: 10,0: MainChar: Yeah, I
+    guess so. \n\r\nMainChar,LF: 10,0: MainChar: My mother served The Gods too.\n\r\nMainChar,LF:
+    10,0: MainChar: She was picked to take her trial soon after I was born. \n\r\nMainChar,LF:
+    10,0: MainChar:  I was told that she impressed The Gods so much, she was taken
+    to serve under them directly. \r\n\r\nMainChar,LF: 10,0: LF: A huge honour. \r\n\r\nMainChar,LF:
+    10,0: MainChar: Uh-huh, but that meant leaving me on my own.\r\n\r\nMainChar,LF:
+    10,0: LF: You were deemed worthy to be here today.\r\n\r\nMainChar,LF: 14,0:
+    MainChar: I worked hard to understand why The Gods were important to them.\n\r\nMainChar,LF:
+    14,0: MainChar: Now I\u2019m going to impress them, too!\r\n\r\nMainChar,LF:
+    10,0: LF: Show them that your family's strength and faith lies within you.\r\n"

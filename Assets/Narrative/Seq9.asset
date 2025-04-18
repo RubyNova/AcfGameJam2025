@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
+  m_Name: Seq9
+  m_EditorClassIdentifier: 
+  _backgroundSprite: {fileID: 0}
+  _nextSequence: {fileID: 0}
+  _musicFiles: []
+  _soundEffectFiles: []
+  _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 3
+    _poseIndexTwo: 0
+    _text: Our first real challenge!
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 15
+    _poseIndexTwo: 0
+    _text: "We\u2019ve got this, LFName!"
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 15
+    _poseIndexTwo: 0
+    _text: "I\u2019m sure. If you need my assistance, you know what to do."
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: Sure thing, Sparky!
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 19
+    _poseIndexTwo: 0
+    _text: "That\u2019s [LF NAME]!\u201D"
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 6
+    _poseIndexTwo: 0
+    _text: " ...Please.\u201D"
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  _choices: []
+  <SourceScript>k__BackingField: "MainChar,LF: 3,0: MainChar: Our first real challenge!\r\n\r\nMainChar,LF:
+    15,0: MainChar: We\u2019ve got this, LFName!\r\n\r\nMainChar,LF: 15,0: LF: I\u2019m
+    sure. If you need my assistance, you know what to do.\r\n\r\nMainChar,LF: 14,0:
+    MainChar: Sure thing, Sparky!\r\n\r\nMainChar,LF: 19,0: LF: That\u2019s [LF NAME]!\u201D\r\nMainChar,LF:
+    6,0: LF:  ...Please.\u201D\n\r\n\r\n\r\n"

@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
+  m_Name: Seq12
+  m_EditorClassIdentifier: 
+  _backgroundSprite: {fileID: 0}
+  _nextSequence: {fileID: 0}
+  _musicFiles: []
+  _soundEffectFiles: []
+  _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 2
+    _poseIndexTwo: 0
+    _text: So, have you been to this prism before?
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 2
+    _poseIndexTwo: 0
+    _text: Part of me lives here
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 7
+    _poseIndexTwo: 0
+    _text: Part?
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 7
+    _poseIndexTwo: 0
+    _text: "I am\u2026incomplete"
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 7
+    _poseIndexTwo: 0
+    _text: 'Pieces of me are scattered throughout the prisms. '
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 7
+    _poseIndexTwo: 0
+    _text: By rejoining with each part, I gain new abilities that will aid you on
+      your trial
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 4
+    _poseIndexTwo: 0
+    _text: Oh wow, OK. We were never taught about that at school!
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 4
+    _poseIndexTwo: 0
+    _text: That sounds Neat!
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 9
+    _poseIndexTwo: 0
+    _text: ...Did it hurt?
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 9
+    _poseIndexTwo: 0
+    _text: What?
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 9
+    _poseIndexTwo: 0
+    _text: Being separated.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 9
+    _poseIndexTwo: 0
+    _text: "I\u2026 cannot remember. It happened so long ago."
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: Ok, then! Let's get the band back together
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  _choices: []
+  <SourceScript>k__BackingField: "\rMainChar,LF: 2,0: MainChar: So, have you been
+    to this prism before?\r\n\r\nMainChar,LF: 2,0: LF: Part of me lives here\r\n\r\nMainChar,LF:
+    7,0: MainChar: Part?\r\n\r\nMainChar,LF: 7,0: LF: I am\u2026incomplete\r\n\r\nMainChar,LF:
+    7,0: LF: Pieces of me are scattered throughout the prisms. \nMainChar,LF: 7,0:
+    LF: By rejoining with each part, I gain new abilities that will aid you on your
+    trial\r\n\r\nMainChar,LF: 4,0: MainChar: Oh wow, OK. We were never taught about
+    that at school!\r\nMainChar,LF: 4,0: MainChar: That sounds Neat!\r\n\r\nMainChar,LF:
+    9,0: MainChar: ...Did it hurt?\r\n\r\nMainChar,LF: 9,0: LF: What?\r\n\r\nMainChar,LF:
+    9,0: MainChar: Being separated.\r\n\r\nMainChar,LF: 9,0: LF: I\u2026 cannot remember.
+    It happened so long ago.\r\n\r\nMainChar,LF: 14,0: MainChar: Ok, then! Let's
+    get the band back together\r\n\r"
