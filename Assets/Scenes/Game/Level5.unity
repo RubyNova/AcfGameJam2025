@@ -10329,7 +10329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 343529432515065455, guid: 7e014c833d7def74da36b9431e16f7dd, type: 3}
       propertyPath: _onActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 343529432515065455, guid: 7e014c833d7def74da36b9431e16f7dd, type: 3}
       propertyPath: _onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -10341,7 +10341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 343529432515065455, guid: 7e014c833d7def74da36b9431e16f7dd, type: 3}
       propertyPath: _onDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 343529432515065455, guid: 7e014c833d7def74da36b9431e16f7dd, type: 3}
       propertyPath: _onDeactivate.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -11878,7 +11878,7 @@ PrefabInstance:
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1480680242}
+      objectReference: {fileID: 268125791}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
