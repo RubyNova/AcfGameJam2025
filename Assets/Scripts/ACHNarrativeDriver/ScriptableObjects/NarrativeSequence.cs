@@ -143,19 +143,34 @@ namespace ACHNarrativeDriver.ScriptableObjects
 
         public List<AudioClip> MusicFiles
         {
-            get => _musicFiles;
+            get
+            {
+                _musicFiles ??= new();
+                return _musicFiles;
+            }
+
             set => _musicFiles = value;
         }
 
         public List<AudioClip> SoundEffectFiles
         {
-            get => _soundEffectFiles;
+            get
+            {
+                _soundEffectFiles ??= new();
+                return _soundEffectFiles;
+            }
+
             set => _soundEffectFiles = value;
         }
 
         public List<CharacterDialogueInfo> CharacterDialoguePairs
         {
-            get => _characterDialoguePairs;
+            get
+            {
+                _characterDialoguePairs ??= new();
+                return _characterDialoguePairs;
+            }
+
             set => _characterDialoguePairs = value;
         }
 
