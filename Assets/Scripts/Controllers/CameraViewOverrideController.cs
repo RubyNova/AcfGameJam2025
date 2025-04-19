@@ -15,13 +15,14 @@ namespace Controllers
         [SerializeField] private bool _overrideTrackingPosition = false;
         [SerializeField] private Vector3 _trackingPositionOverride = Vector3.zero;
 
-        private float _originalOrthographicSize = 0.0f;
-        private Vector3 _originalTrackingPosition = Vector3.zero;
+        [Header("Readonly")]
+        [SerializeField] private float _originalOrthographicSize = 0.0f;
+        [SerializeField] private Vector3 _originalTrackingPosition = Vector3.zero;
 
-        private bool _switchingToOriginal = false;
-        private bool _switchingToOverride = false;
-        private float _lerpAmount = 0.0f;
-        private Vector3 _vectorLerp = Vector3.zero;
+        [SerializeField] private bool _switchingToOriginal = false;
+        [SerializeField] private bool _switchingToOverride = false;
+        [SerializeField] private float _lerpAmount = 0.0f;
+        [SerializeField] private Vector3 _vectorLerp = Vector3.zero;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -53,17 +54,10 @@ namespace Controllers
 
         void OnTriggerEnter2D(Collider2D collision)
         {
+            print("yaaaasss");
             if(collision.tag == "Player" || collision.tag == "Familiar")
             {
                 OverrideCamera();
-            }
-        }
-
-        void OnTriggerExit2D(Collider2D collision)
-        {
-            if(collision.tag == "Player" || collision.tag == "Familiar")
-            {
-                ResetCamera();
             }
         }
 
@@ -81,7 +75,9 @@ namespace Controllers
             if(_orbitalFollowToOverride is not null)
             {
                 _orbitalFollowToOverride.TargetOffset += _vectorLerp;
-                if(Vector2.Distance(_orbitalFollowToOverride.TargetOffset, _trackingPositionOverride) < 0.1)
+                var dist = Vector2.Distance(_orbitalFollowToOverride.TargetOffset, _trackingPositionOverride);
+                
+                if(dist < 0.1)
                 {
                     _orbitalFollowToOverride.TargetOffset = _trackingPositionOverride;
                 }
@@ -102,7 +98,9 @@ namespace Controllers
             if(_orbitalFollowToOverride is not null)
             {
                 _orbitalFollowToOverride.TargetOffset -= _vectorLerp;
-                if(Vector2.Distance(_orbitalFollowToOverride.TargetOffset, _originalTrackingPosition) < 0.1)
+                var dist = _orbitalFollowToOverride.TargetOffset - _originalTrackingPosition;
+                //hack for time
+                if(dist.y < 0.1)
                 {
                     _orbitalFollowToOverride.TargetOffset = _originalTrackingPosition;
                 }
