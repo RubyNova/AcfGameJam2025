@@ -12,7 +12,12 @@ GameObject:
   - component: {fileID: 7525251501113283827}
   - component: {fileID: 7358544652446688784}
   - component: {fileID: 5261697059083877710}
-  m_Layer: 0
+  - component: {fileID: 5532546385933586850}
+  - component: {fileID: 4011669431391792846}
+  - component: {fileID: 2755238905218247179}
+  - component: {fileID: 7865389344026311259}
+  - component: {fileID: 5527013252253388842}
+  m_Layer: 10
   m_Name: LightFamiliar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,14 +85,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416081020816024146}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -98,7 +103,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5261697059083877710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,10 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d528655db02ce4aa3ed5957063cb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beamChanger: {fileID: 2747804367269425522}
+  _beamChanger: {fileID: 5532546385933586850}
   _playerControllerReference: {fileID: 0}
   _rigidbody: {fileID: 7358544652446688784}
-  _movementSpeed: 10
+  _movementSpeed: 20
   ActiveCharacter: 0
   CharacterActivated:
     m_PersistentCalls:
@@ -123,6 +128,92 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _movementVector: {x: 0, y: 0}
+--- !u!114 &5532546385933586850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416081020816024146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cd5d0a84940db4cafb67c3190392b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 2262687684910580198}
+  _axisHelper: {fileID: 6792053646727862388}
+  _beamModifierData: {fileID: 4011669431391792846}
+  _targetTransform: {fileID: 8691553076496259605}
+  BoxCollider: {fileID: 6327128574526691114}
+  _lightBeamLength: 10
+  _mode: 2
+  _beamPierceDistance: 1
+  _beamExitVelocityMultiplier: 0
+  _snapPointOffset: 1
+  _objectsToIgnoreDuringHitChecks:
+  - {fileID: 1416081020816024146}
+  - {fileID: 3577282359850639815}
+  - {fileID: 6458314666040974726}
+  _beamPriority: 0
+  _forceAlwaysOn: 0
+  _intersectedPosition: {x: 0, y: 0}
+  _perceivedMinColliderpoint: {x: 0, y: 0}
+--- !u!114 &4011669431391792846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416081020816024146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9586ab9f8ddd2f54295d1284e305dfd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 1, g: 1, b: 1, a: 1}
+  _beamForce: 10
+--- !u!114 &2755238905218247179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416081020816024146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b2fda522cc0cf4cbb0583fe35dc756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 1, g: 0.59788513, b: 0, a: 1}
+  _beamForce: 100
+--- !u!114 &7865389344026311259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416081020816024146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec5bf09ed2c76d469d418b92295893a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 0.07406576, g: 0.7264151, b: 0, a: 1}
+  _beamForce: 10
+--- !u!114 &5527013252253388842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416081020816024146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407ca2e230e0c2848a1118d13a2bff87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 0, g: 0.7900574, b: 1, a: 1}
+  _beamForce: 5
 --- !u!1 &3577282359850639815
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,12 +311,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8691553076496259605}
   - component: {fileID: 2262687684910580198}
-  - component: {fileID: 2747804367269425522}
-  - component: {fileID: 4627988395739533382}
-  - component: {fileID: 2720897914464504946}
-  - component: {fileID: 6925152222535806534}
+  - component: {fileID: 6327128574526691114}
+  - component: {fileID: 3434360020737550369}
   m_Layer: 7
-  m_Name: LFLightBeamController
+  m_Name: LFLightBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +385,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -353,7 +442,53 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &2747804367269425522
+--- !u!61 &6327128574526691114
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6458314666040974726}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0
+--- !u!114 &3434360020737550369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,61 +497,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6458314666040974726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4cd5d0a84940db4cafb67c3190392b1, type: 3}
+  m_Script: {fileID: 11500000, guid: be96411980d93b44d941ed7e07afca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 2262687684910580198}
-  _axisHelper: {fileID: 6792053646727862388}
-  _beamModifierData: {fileID: 4627988395739533382}
-  _targetTransform: {fileID: 0}
-  _boxCollider: {fileID: 0}
-  _lightBeamLength: 10
-  _mode: 2
-  _beamPierceDistance: 0
-  _beamExitVelocityMultiplier: 0
-  _snapPointOffset: 1
-  _objectsToIgnoreDuringHitChecks: []
-  _beamPriority: 0
-  _forceAlwaysOn: 0
---- !u!114 &4627988395739533382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6458314666040974726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9586ab9f8ddd2f54295d1284e305dfd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colour: {r: 1, g: 1, b: 1, a: 1}
-  BeamForce: 0
---- !u!114 &2720897914464504946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6458314666040974726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9b2fda522cc0cf4cbb0583fe35dc756, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colour: {r: 1, g: 0.59788513, b: 0, a: 1}
-  BeamForce: 0
---- !u!114 &6925152222535806534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6458314666040974726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec5bf09ed2c76d469d418b92295893a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colour: {r: 0.07406576, g: 0.7264151, b: 0, a: 1}
-  BeamForce: 0
+  _parentController: {fileID: 5532546385933586850}
+  _boxCollider: {fileID: 6327128574526691114}

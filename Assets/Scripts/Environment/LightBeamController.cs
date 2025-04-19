@@ -251,8 +251,13 @@ namespace Environment
             }
 
             var yValue = _playerControllerForBoundsChecks.MinColliderPoint.y;
-            if (yValue < secondLowestPoint.Value.y && !_forceAlwaysOn)
+
+            if ((yValue < secondLowestPoint.Value.y) && !_forceAlwaysOn)
             {
+                if (gameObject.name == "LightFamiliar")
+                {
+                    print("Disabling!");
+                }
                 BoxCollider.enabled = false;
             }
             else
@@ -378,8 +383,11 @@ namespace Environment
         {
             if (_mode != LightBeamMode.Source && !_renderer.enabled)
             {
+                BoxCollider.enabled = false;
                 return;
             }
+
+            BoxCollider.enabled = true;
 
             ProduceBeam();
         }
