@@ -11,7 +11,7 @@ namespace Managers
         void Start()
         {
             //Fix this later
-            AudioManager.Instance.PlayLayeredTrack(AudioManager.LevelState.Level1);
+            AudioManager.Instance.PlayLayeredTrack(AudioManager.TrackState.Track1);
 
             SceneManager.LoadScene(_levelToLoad);
         }

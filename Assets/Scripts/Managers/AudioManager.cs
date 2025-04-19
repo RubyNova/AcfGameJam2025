@@ -12,12 +12,12 @@ namespace Managers
 {
     public class AudioManager : MonoBehaviour
     {
-        public enum LevelState
+        public enum TrackState
         {
-            Level1,
-            Level2,
-            Level3,
-            Level4
+            Track1,
+            Track2,
+            Track3,
+            Track4
         }
 
         [Header("Dependencies")]
@@ -51,8 +51,9 @@ namespace Managers
         private float _fadeOutSpeed = 0.75f;
 
         [Header("Music Values")]
-        [SerializeField]
-        private LayeredAudioTrack _tutorialMusicTrack;
+        [SerializeField] private LayeredAudioTrack _tutorialMusicTrack;
+        [SerializeField] private LayeredAudioTrack _layeredTrackTwo;
+        [SerializeField] private LayeredAudioTrack _layeredTrackThree;
         
 
         [Header("Read-only Values")]
@@ -156,7 +157,7 @@ namespace Managers
             UpdateMusicVolume.AddListener(percentage => UpdateMusicVolumeIndependently(percentage));
             UpdateSoundEffectVolume.AddListener(percentage => UpdateSoundEffectVolumeIndependently(percentage));
 
-            PlayLayeredTrack(LevelState.Level1);
+            PlayLayeredTrack(TrackState.Track1);
         }
         //End Singleton-specific Setup
 
@@ -279,18 +280,10 @@ namespace Managers
             _musicSourceFive.Stop();
         }
 
-        public void PlayLayeredTrack(LevelState level)
+        public void PlayLayeredTrack(TrackState requestedTrack)
         {
-            LayeredAudioTrack track;
-            switch(level)
-            {
-                default:
-                {
-                    track = _tutorialMusicTrack;
-                    break;
-                }
-            }
-
+            LayeredAudioTrack track = DetermineTrack(requestedTrack);
+            
             StopAllTracks();
 
             double baseDuration = 0.0f;
@@ -331,6 +324,26 @@ namespace Managers
 
             StartCoroutine(PlayAllTracks(baseDuration));    
             _currentLayerPlayingCount++;       
+        }
+
+        private LayeredAudioTrack DetermineTrack(TrackState level)
+        {
+            switch(level)
+            {
+                case TrackState.Track1:
+                default:
+                {
+                    return _tutorialMusicTrack;
+                }
+                case TrackState.Track2:
+                {
+                    return _layeredTrackTwo;
+                }
+                case TrackState.Track3:
+                {
+                    return _layeredTrackThree;
+                }
+            }
         }
 
         public void CancelFadeInIfApplicable(int layer)
@@ -452,6 +465,73 @@ namespace Managers
             _musicSourceFive.PlayScheduled(layerStartTime);
 
             yield break;
+        }
+
+        public void TransitionTo(TrackState requestedTrack)
+        {
+            LayeredAudioTrack track = DetermineTrack(requestedTrack);
+            
+            while(!Mathf.Approximately(_musicSourceOne.volume, 0))
+            {
+                _musicSourceOne.volume -= _fadeOutSpeed * Time.deltaTime;
+                _musicSourceTwo.volume -= _fadeOutSpeed * Time.deltaTime;
+                _musicSourceThree.volume -= _fadeOutSpeed * Time.deltaTime;
+                _musicSourceFour.volume -= _fadeOutSpeed * Time.deltaTime;
+                _musicSourceFive.volume -= _fadeOutSpeed * Time.deltaTime;
+
+                if (_musicSourceOne.volume < 0.05)
+                {
+                    _musicSourceTwo.volume = 0;
+                    _musicSourceThree.volume = 0;
+                    _musicSourceFour.volume = 0;
+                    _musicSourceFive.volume = 0;
+                    _musicSourceOne.volume = 0;
+                    break;
+                }
+            }
+            StopAllTracks();
+
+            //Reset main source volume
+            _musicSourceOne.volume = GetNormalizedVolume(_musicVolume);
+
+            double baseDuration = 0.0f;
+            int layerCount = track.LayeredTracks.Count;
+
+            for(int i = 0; i < layerCount; i++)
+            {
+                switch(i)
+                {
+                    case 0:
+                    {
+                        _musicSourceOne.clip = track.LayeredTracks[i];
+                        baseDuration = track.LayeredTracks[i].samples / track.LayeredTracks[i].frequency;
+                        break;
+                    }
+                    case 1:
+                    {
+                        _musicSourceTwo.clip = track.LayeredTracks[i];
+                        break;
+                    }
+                    case 2:
+                    {
+                        _musicSourceThree.clip = track.LayeredTracks[i];
+                        break;
+                    }
+                    case 3:
+                    {
+                        _musicSourceFour.clip = track.LayeredTracks[i];
+                        break;
+                    }
+                    case 4:
+                    {
+                        _musicSourceFive.clip = track.LayeredTracks[i];
+                        break;
+                    }
+                }
+            }
+
+            StartCoroutine(PlayAllTracks(baseDuration));    
+            _currentLayerPlayingCount++;
         }
 
     }

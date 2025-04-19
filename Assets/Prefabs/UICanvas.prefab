@@ -287,14 +287,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5310321115320980523}
   - component: {fileID: 1842579940340248576}
-  - component: {fileID: 2824107127975162233}
   m_Layer: 0
   m_Name: NarrativeContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5310321115320980523
 RectTransform:
   m_ObjectHideFlags: 0
@@ -321,7 +320,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871572910696743744}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 112eca6795ddd7d4d8ae85e48ca96b18, type: 3}
   m_Name: 
@@ -408,14 +407,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!222 &2824107127975162233
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871572910696743744}
-  m_CullTransparentMesh: 1
 --- !u!1 &2591505612791025966
 GameObject:
   m_ObjectHideFlags: 0

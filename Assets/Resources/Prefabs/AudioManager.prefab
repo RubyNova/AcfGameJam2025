@@ -59,6 +59,8 @@ MonoBehaviour:
   _fadeInSpeed: 0.5
   _fadeOutSpeed: 0.5
   _tutorialMusicTrack: {fileID: 11400000, guid: 121f6d70c2225624ab4df0741dafb1ac, type: 2}
+  _layeredTrackTwo: {fileID: 11400000, guid: 4bb0c610f0c8b5cf795a8ea976f67f6a, type: 2}
+  _layeredTrackThree: {fileID: 11400000, guid: 5e90d90259622a626b864bc2ca1c70fd, type: 2}
   _sfxVolume: 75
   _musicVolume: 75
   _currentLayerPlayingCount: 0
