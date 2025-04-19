@@ -13,6 +13,8 @@ public class LightBeamCollisionHandler : MonoBehaviour
     private Collider2D _boxCollider;
 
     private bool _isColliding = false;
+
+    public LightBeamController ParentController => _parentController;
     
 
     public void OnCollisionEnter2D(Collision2D collision)

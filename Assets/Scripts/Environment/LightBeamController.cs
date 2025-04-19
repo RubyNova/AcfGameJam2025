@@ -124,6 +124,21 @@ namespace Environment
                     var beamControllerTest = hit.transform.GetComponentInChildren<LightBeamController>();
                     var beamControllerParentTest = hit.transform.GetComponentInParent<LightBeamController>();
 
+                    if (beamControllerTest == null && beamControllerParentTest == null )
+                    {
+                        var beamCollisionHandlerTest = hit.transform.GetComponentInChildren<LightBeamCollisionHandler>();
+
+                        if (beamCollisionHandlerTest == null)
+                        {
+                            beamCollisionHandlerTest = hit.transform.GetComponentInParent<LightBeamCollisionHandler>();   
+                        }
+
+                        if (beamCollisionHandlerTest != null)
+                        {
+                            beamControllerTest = beamCollisionHandlerTest.ParentController;
+                        }
+                    }
+
                     bool isSelf = beamControllerTest == this || beamControllerParentTest == this;
 
                     bool isSendingController = (beamControllerTest != null && beamControllerTest == _currentSender) || (beamControllerParentTest != null && beamControllerParentTest == _currentSender);
@@ -252,12 +267,8 @@ namespace Environment
 
             var yValue = _playerControllerForBoundsChecks.MinColliderPoint.y;
 
-            if ((yValue < secondLowestPoint.Value.y) && !_forceAlwaysOn)
+            if (yValue < secondLowestPoint.Value.y && !_forceAlwaysOn)
             {
-                if (gameObject.name == "LightFamiliar")
-                {
-                    print("Disabling!");
-                }
                 BoxCollider.enabled = false;
             }
             else
