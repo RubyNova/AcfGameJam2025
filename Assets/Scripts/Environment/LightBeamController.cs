@@ -403,7 +403,7 @@ namespace Environment
 
             _emissionPoint = hitPoint;
             _renderer.enabled = true;
-            var senderDirection = (sender.transform.position - hitPoint).normalized;
+            var senderDirection = (sender.EmissionPoint - hitPoint).normalized;
 
             switch (_mode)
             {
