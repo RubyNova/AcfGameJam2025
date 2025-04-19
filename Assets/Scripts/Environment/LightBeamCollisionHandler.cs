@@ -81,8 +81,14 @@ public class LightBeamCollisionHandler : MonoBehaviour
                 playerComponent.ResetRotation();
                 var cachedBeamOnPlayer = playerComponent.GetCachedBeamData();
 
-                _parentController.BeamModifierData.ClearBeamEffectOnPlayer(_parentController, 
+                var data = _parentController.BeamModifierData;
+                
+                if (data != null)
+                {
+                    data.ClearBeamEffectOnPlayer(_parentController, 
                     _parentController.BeamPriority, playerComponent);
+                }
+
                 _parentController.CurrentPlayer = null;
 
                 if(cachedBeamOnPlayer != null && cachedBeamOnPlayer.Priority > _parentController.BeamPriority && playerComponent.BeamCollisionCount > 1)

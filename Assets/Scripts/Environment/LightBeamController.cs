@@ -450,6 +450,13 @@ namespace Environment
                         BoxCollider.enabled = false;
                         _renderer.enabled = false;
                         _isAlreadyRegistering = false;
+
+                        if (_targetHit != null)
+                        {
+                            _targetHit.UnregisterHit();
+                        }
+
+                        _targetHit = null;
                         return;
                     }
 
@@ -480,9 +487,19 @@ namespace Environment
                 _targetHit.UnregisterHit();
                 _targetHit = null;
             }
+            
+            foreach (var trackedReactor in _trackedPhyscsInteractables)
+            {
+                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);   
+            }
 
             if (_mode != LightBeamMode.Source)
             {
+                if (CurrentPlayer != null)
+                {
+                    _beamModifierData.ClearBeamEffectOnPlayer(this, BeamPriority, CurrentPlayer);
+                }
+
                 _beamModifierData.Shutdown(this);
 
                 if (_mode == LightBeamMode.Bounce)
@@ -491,10 +508,6 @@ namespace Environment
                 }
             }
             
-            foreach (var trackedReactor in _trackedPhyscsInteractables)
-            {
-                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);   
-            }
 
 
             _currentSender = null;
