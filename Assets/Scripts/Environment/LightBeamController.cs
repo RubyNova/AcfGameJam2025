@@ -440,10 +440,10 @@ namespace Environment
                     _targetTransform.rotation = Quaternion.Euler(0, 0, reflectedAngle);
                     break;
                 case LightBeamMode.Transform:
-                    senderDirection = -senderDirection;
-                    _emissionPoint += senderDirection * _beamPierceDistance;
+                    var inverseSenderDirection = -senderDirection;
+                    _emissionPoint += inverseSenderDirection * _beamPierceDistance;
                     LightBeamLength = sender.LightBeamLength - Vector2.Distance(EmissionPoint, sender.EmissionPoint);
-                    var lookAtAngle = Mathf.Atan2(senderDirection.y, senderDirection.x) * Mathf.Rad2Deg;
+                    var lookAtAngle = Mathf.Atan2(inverseSenderDirection.y, inverseSenderDirection.x) * Mathf.Rad2Deg;
                     _targetTransform.rotation = Quaternion.Euler(0, 0, lookAtAngle);
                     _beamModifierData.Initialise(this);
                     break;
