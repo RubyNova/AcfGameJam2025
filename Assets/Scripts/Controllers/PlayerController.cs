@@ -263,6 +263,15 @@ namespace Controllers
                 }
                 
 
+
+            }
+            else
+            {
+                if (_currentMovementVector.x != 0 || _currentMovementVector.y != 0)
+                {
+                    _currentMovementVector = Vector2.zero;
+                }
+            }
                 // Outside Forces
                 _outsideForces = Vector2.zero;
                 //Sort by priority and only apply the right outside forces if applicable
@@ -290,22 +299,13 @@ namespace Controllers
                 {
                     _biggestOutsideForcesCount = outsideForcesCount;
                 }
-            }
-            else
-            {
-                if (_currentMovementVector.x != 0 || _currentMovementVector.y != 0)
-                {
-                    _currentMovementVector = Vector2.zero;
-                }
-            }
-
             UpdateAnims();
         }
 
         void FixedUpdate()
         {
-            if (ActiveCharacter)
-            {
+            //if (ActiveCharacter)
+            //{
                 if (_wasRidingBeam && !Grounded)
                 {
                     _currentMovementVector.x = 0;
@@ -371,7 +371,7 @@ namespace Controllers
                         _rigidbody.AddForce(-difference, ForceMode2D.Impulse);
                     }
                 }
-            }
+            //}
 
         }
 
@@ -632,7 +632,11 @@ namespace Controllers
     
         private void HandleSprinting(InputAction.CallbackContext context)
         {
-            if(!ActiveCharacter) return;
+            if(!ActiveCharacter)
+            {
+                _isRunning = false;
+                return;
+            }
 
             if(context.control?.device is Keyboard)
             {
@@ -689,7 +693,10 @@ namespace Controllers
         private void HandleMovement(InputAction.CallbackContext context)
         {
             if (!ActiveCharacter)
+            {
+                _cachedMovementVector = Vector3.zero;
                 return;
+            }
 
             _cachedMovementVector = context.ReadValue<Vector2>();
             if(context.control?.device is Keyboard)
@@ -763,7 +770,7 @@ namespace Controllers
                 _familiarControllerReference.ActiveCharacter = true;
                 
                 //Shutdown velocity for this character
-                _rigidbody.linearVelocity = Vector2.zero;
+                //_rigidbody.linearVelocity = Vector2.zero;
                 
                 //Change Input Action Maps
                 var inputComponent = GetComponentInParent<InputController>();
