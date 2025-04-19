@@ -426,6 +426,7 @@ namespace Environment
                     LightBeamLength = sender.LightBeamLength - Vector2.Distance(EmissionPoint, sender.EmissionPoint);
                     var lookAtAngle = Mathf.Atan2(senderDirection.y, senderDirection.x) * Mathf.Rad2Deg;
                     _targetTransform.rotation = Quaternion.Euler(0, 0, lookAtAngle);
+                    _beamModifierData.Initialise(this);
                     break;
                 default:
                     break;
@@ -449,9 +450,14 @@ namespace Environment
                 _targetHit = null;
             }
 
-            if (_mode == LightBeamMode.Bounce)
+            if (_mode != LightBeamMode.Source)
             {
-                _beamModifierData = null;
+                _beamModifierData.Shutdown(this);
+
+                if (_mode == LightBeamMode.Bounce)
+                {
+                    _beamModifierData = null;
+                }
             }
             
             foreach (var trackedReactor in _trackedPhyscsInteractables)
