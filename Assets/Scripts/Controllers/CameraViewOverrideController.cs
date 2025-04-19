@@ -72,7 +72,7 @@ namespace Controllers
                     _switchingToOverride = false;
                 }   
             }       
-            if(_orbitalFollowToOverride is not null)
+            if(_overrideTrackingPosition && _orbitalFollowToOverride is not null)
             {
                 _orbitalFollowToOverride.TargetOffset += _vectorLerp;
                 var dist = Vector2.Distance(_orbitalFollowToOverride.TargetOffset, _trackingPositionOverride);
@@ -95,7 +95,7 @@ namespace Controllers
                     _switchingToOverride = false;
                 }   
             }       
-            if(_orbitalFollowToOverride is not null)
+            if(_overrideTrackingPosition && _orbitalFollowToOverride is not null)
             {
                 _orbitalFollowToOverride.TargetOffset -= _vectorLerp;
                 var dist = _orbitalFollowToOverride.TargetOffset - _originalTrackingPosition;
