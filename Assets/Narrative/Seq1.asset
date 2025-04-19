@@ -24,7 +24,7 @@ MonoBehaviour:
     _poseIndex: 7
     _poseIndexTwo: 0
     _text: "Woah, that was wild\u2026 I\u2019m actually inside. It\u2019s so pretty
-      in here!              (Press F to Continue)"
+      in here!\\r\\n(Press F to Continue)"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
