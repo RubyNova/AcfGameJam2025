@@ -291,7 +291,14 @@ namespace Controllers
                     _biggestOutsideForcesCount = outsideForcesCount;
                 }
             }
-       
+            else
+            {
+                if (_currentMovementVector.x != 0 || _currentMovementVector.y != 0)
+                {
+                    _currentMovementVector = Vector2.zero;
+                }
+            }
+
             UpdateAnims();
         }
 
