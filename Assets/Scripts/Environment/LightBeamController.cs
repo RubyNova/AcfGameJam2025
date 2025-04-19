@@ -442,10 +442,22 @@ namespace Environment
                 case LightBeamMode.Transform:
                     var inverseSenderDirection = -senderDirection;
                     _emissionPoint += inverseSenderDirection * _beamPierceDistance;
-                    LightBeamLength = sender.LightBeamLength - Vector2.Distance(EmissionPoint, sender.EmissionPoint);
+                    var distanceCheck = Vector2.Distance(EmissionPoint, sender.EmissionPoint);
+
+                    if (distanceCheck < _beamPierceDistance)
+                    {
+                        _currentSender = null;
+                        BoxCollider.enabled = false;
+                        _renderer.enabled = false;
+                        _isAlreadyRegistering = false;
+                        return;
+                    }
+
+                    LightBeamLength = sender.LightBeamLength - distanceCheck;
                     var lookAtAngle = Mathf.Atan2(inverseSenderDirection.y, inverseSenderDirection.x) * Mathf.Rad2Deg;
                     _targetTransform.rotation = Quaternion.Euler(0, 0, lookAtAngle);
                     _beamModifierData.Initialise(this);
+
                     break;
                 default:
                     break;
