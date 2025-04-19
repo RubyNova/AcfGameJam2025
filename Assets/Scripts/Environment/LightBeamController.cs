@@ -391,7 +391,7 @@ namespace Environment
                 throw new System.Exception("Sender cannot be self.");
             }
 
-            if (_isAlreadyRegistering || sender == null || sender.BeamModifierData == null || _mode == LightBeamMode.Source)
+            if (_isAlreadyRegistering || sender == null || sender.BeamModifierData == null || _mode == LightBeamMode.Source || (_currentSender != null && _currentSender.BeamPriority > sender.BeamPriority))
             {
                 return;
             }
