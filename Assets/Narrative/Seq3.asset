@@ -21,7 +21,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 0
-    _poseIndex: 7
+    _poseIndex: 5
     _poseIndexTwo: 0
     _text: "Phew, I didn\u2019t fall to my death! No memorial sermon for me!"
     _leftCharacterTalking: 1
@@ -36,6 +36,6 @@ MonoBehaviour:
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar: 7: Phew, I didn\u2019t fall to my death!
+  <SourceScript>k__BackingField: "MainChar: 5: Phew, I didn\u2019t fall to my death!
     No memorial sermon for me!\n\nMainChar: 15: I\u2019m gonna meet the guide and
     get some answers!"

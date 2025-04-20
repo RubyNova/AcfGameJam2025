@@ -30,12 +30,12 @@ MonoBehaviour:
     _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 0
-    _poseIndex: 9
+    _poseIndex: 15
     _poseIndexTwo: 0
     _text: "Let's see if I can find out what\u2019s going on\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar: 9: Hmm, The Deacon said I\u2019d know
-    what to do when I got here.\r\n\nMainChar: 9: Let's see if I can find out what\u2019s
+    what to do when I got here.\r\n\nMainChar: 15: Let's see if I can find out what\u2019s
     going on\u2026"

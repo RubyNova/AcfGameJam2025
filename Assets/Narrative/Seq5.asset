@@ -17,18 +17,18 @@ MonoBehaviour:
   _musicFiles: []
   _soundEffectFiles: []
   _characterDialoguePairs:
-  - _character: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _characterTwo: {fileID: 0}
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 0
-    _poseIndex: 0
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 2
     _poseIndexTwo: 0
     _text: Good. There should be two locks between here and the transporter.
-    _leftCharacterTalking: 1
+    _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: 'LF: 0: Good. There should be two locks between
-    here and the transporter.
+  <SourceScript>k__BackingField: 'MainChar,LF: 2,0: LF: Good. There should be two
+    locks between here and the transporter.
 
 
 

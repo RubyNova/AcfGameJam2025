@@ -35,3 +35,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c7cd35e8818d04045bc049242ee342a9, type: 3}
   - {fileID: 21300000, guid: 7f43629c8c54fd44cbdd449794f3a169, type: 3}
   - {fileID: 21300000, guid: ae63f314ccd2a644b95d9add8c8ce29c, type: 3}
+  - {fileID: 21300000, guid: 9e8b6126787aa7e428dbfad7d68f65ed, type: 3}
+  - {fileID: 21300000, guid: b7b73b38dedc5d244a1e8c597d6676df, type: 3}
+  _nameplateSprite: {fileID: 0}
