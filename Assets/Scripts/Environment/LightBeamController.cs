@@ -50,6 +50,9 @@ namespace Environment
         [SerializeField]
         private bool _forceAlwaysOn = false;
 
+        [SerializeField]
+        private bool _forceAlwaysOff = false;
+
         [Header("Read-only values")]
         [SerializeField]
         private Vector2 _intersectedPosition = Vector2.zero;
@@ -267,7 +270,7 @@ namespace Environment
 
             var yValue = _playerControllerForBoundsChecks.MinColliderPoint.y;
 
-            if (yValue < secondLowestPoint.Value.y && !_forceAlwaysOn)
+            if (_forceAlwaysOff || (yValue < secondLowestPoint.Value.y && !_forceAlwaysOn))
             {
                 BoxCollider.enabled = false;
             }
