@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Environment;
@@ -160,6 +161,7 @@ namespace Controllers
         private bool _triggered = false;
         private float _capMultiplierForOutsideForces;
         private bool _hopDownTriggered = false;
+        private Coroutine _resetLayerRoutine;
 
         void Start()
         {
@@ -191,6 +193,21 @@ namespace Controllers
                 _runAction.performed += (context) => HandleSprinting(context);
                 _runAction.canceled += (context) => HandleSprintCancel(context);
             }
+        }
+
+        private IEnumerator ResetLayerRoutine()
+        {
+            float timer = 0;
+            float limit = 0.5f;
+            
+            while (timer < limit)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            _resetLayerRoutine = null;
         }
 
         void Update()
@@ -227,7 +244,12 @@ namespace Controllers
                 if(_hopDownTriggered)
                 {
                     //do things
-                    gameObject.layer = LayerMask.NameToLayer("IgnoreBeams");
+                    if (_resetLayerRoutine == null)
+                    {
+                        gameObject.layer = LayerMask.NameToLayer("IgnoreBeams");
+                        _resetLayerRoutine = StartCoroutine(ResetLayerRoutine());
+                    }
+
                     _hopDownTriggered = false;
                     var data = GetCachedBeamData();
                     if(data != null)
