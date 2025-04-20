@@ -18,27 +18,36 @@ MonoBehaviour:
   _soundEffectFiles: []
   _characterDialoguePairs:
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 18
     _poseIndexTwo: 0
-    _text: "Where are they anyway? They\u2019re supposed to be here\u2026"
+    _text: 'Where are they anyway? '
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 18
     _poseIndexTwo: 0
-    _text: "H\u2026hello? Is someone there?"
-    _leftCharacterTalking: 0
+    _text: "They\u2019re supposed to be here\u2026"
+    _leftCharacterTalking: 1
     _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
+    _poseIndexTwo: 0
+    _text: "H\u2026hello? Is someone there?"
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 7
     _poseIndexTwo: 0
     _text: Oh!
@@ -50,7 +59,16 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 4
     _poseIndexTwo: 0
-    _text: "There you are! I\u2019m here for my trial!"
+    _text: 'There you are! '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 4
+    _poseIndexTwo: 0
+    _text: "I\u2019m here for my trial!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -86,7 +104,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: "It\u2019s so great to finally meet you. I\u2019m\u2026"
+    _text: "It\u2019s so great to finally meet you. "
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -95,7 +113,25 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: Welcome! You may call me...
+    _text: "I\u2019m Shadynasty!"
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 3
+    _poseIndexTwo: 0
+    _text: 'Welcome! '
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 3
+    _poseIndexTwo: 0
+    _text: You may call me Mr Skibbidy Rizzler
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -122,7 +158,16 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 14
     _poseIndexTwo: 0
-    _text: "Let\u2019s not be too hasty, are you prepared for what lies ahead?"
+    _text: "Let\u2019s not be too hasty."
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: Are you prepared for what lies ahead?
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -131,7 +176,16 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 15
     _poseIndexTwo: 0
-    _text: "I passed every test, followed every rule. I finished top of my class\u2026"
+    _text: 'I passed every test, followed every rule. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 15
+    _poseIndexTwo: 0
+    _text: "I finished top of my class\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -167,23 +221,33 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 14
     _poseIndexTwo: 0
-    _text: "In that case, let\u2019s begin by unlocking this cell, there should be
-      a button nearby?"
+    _text: "In that case, let\u2019s begin by unlocking this cell."
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 14
+    _poseIndexTwo: 0
+    _text: There should be a button nearby.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Where are they anyway?
-    They\u2019re supposed to be here\u2026\n\nMainChar,LF: 18,0: LF: H\u2026hello?
-    Is someone there?\n\nMainChar,LF: 7,0: MainChar: Oh!\r\n\nMainChar,LF: 4,0: MainChar:
-    There you are! I\u2019m here for my trial!\n\nMainChar,LF: 4,0: LF: Your trial?\n\r\nMainChar,LF:
+  <SourceScript>k__BackingField: "MainChar: 18: Where are they anyway? \n\nMainChar:
+    18: They\u2019re supposed to be here\u2026\n\nNarrator: H\u2026hello? Is someone
+    there?\n\nMainChar: 7: Oh!\r\n\nMainChar,LF: 4,0: MainChar: There you are! \n\nMainChar,LF:
+    4,0: MainChar: I\u2019m here for my trial!\n\nMainChar,LF: 4,0: LF: Your trial?\n\r\nMainChar,LF:
     4,0: LF: Ah, Of course. \n\r\nMainChar,LF: 4,0: LF: Forgive me, it has been a
     while since I heard another voice.\n\r\nMainChar,LF: 3,0: MainChar: It\u2019s
-    so great to finally meet you. I\u2019m\u2026\n\nMainChar,LF: 3,0: LF: Welcome!
-    You may call me...\n\nMainChar,LF: 4,0: MainChar: Name and Name!\n\nMainChar,LF:
-    14,0: MainChar: A duo destined for success!\n\nMainChar,LF: 14,0: LF: Let\u2019s
-    not be too hasty, are you prepared for what lies ahead?\n\nMainChar,LF: 15,0:
-    MainChar: I passed every test, followed every rule. I finished top of my class\u2026\r\n\r\nMainChar,LF:
-    15,0: LF: Does that make you worthy of serving The Gods?\r\n\nMainChar,LF: 14,0:
-    MainChar: It means I'm ready to prove I am.\r\n\r\nMainChar,LF: 14,0: LF: I see.\n\nMainChar,LF:
-    14,0: LF: In that case, let\u2019s begin by unlocking this cell, there should
-    be a button nearby?\r\n"
+    so great to finally meet you. \n\nMainChar,LF: 3,0: I\u2019m Shadynasty!\n\nMainChar,LF:
+    3,0: LF: Welcome! \n\nMainChar,LF: 3,0: LF: You may call me Mr Skibbidy Rizzler\n\nMainChar,LF:
+    4,0: MainChar: Name and Name!\n\nMainChar,LF: 14,0: MainChar: A duo destined
+    for success!\n\nMainChar,LF: 14,0: LF: Let\u2019s not be too hasty.\n\nMainChar,LF:
+    14,0: LF: Are you prepared for what lies ahead?\n\nMainChar,LF: 15,0: MainChar:
+    I passed every test, followed every rule. \n\nMainChar,LF: 15,0: MainChar: I
+    finished top of my class\u2026\r\n\r\nMainChar,LF: 15,0: LF: Does that make you
+    worthy of serving The Gods?\r\n\nMainChar,LF: 14,0: MainChar: It means I'm ready
+    to prove I am.\r\n\r\nMainChar,LF: 14,0: LF: I see.\n\nMainChar,LF: 14,0: LF:
+    In that case, let\u2019s begin by unlocking this cell.\n\nMainChar,LF: 14,0:
+    LF: There should be a button nearby.\r\n"

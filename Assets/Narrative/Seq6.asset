@@ -23,7 +23,8 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 5
     _poseIndexTwo: 0
-    _text: "There doesn\u2019t seem to be anything down here that I can use..."
+    _text: "There doesn\u2019t seem to be anything down here that I can use to hold
+      this button down."
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -33,6 +34,15 @@ MonoBehaviour:
     _poseIndex: 5
     _poseIndexTwo: 0
     _text: ' Allow Me.'
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 5
+    _poseIndexTwo: 0
+    _text: I can move objects by turning light beams blue.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
@@ -46,5 +56,6 @@ MonoBehaviour:
     _narratorSpeaking: 1
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 5,0: MainChar: There doesn\u2019t
-    seem to be anything down here that I can use...\n\nMainChar,LF: 5,0: LF:  Allow
-    Me.\n\nNarrator: Press E to switch between characters. "
+    seem to be anything down here that I can use to hold this button down.\n\nMainChar,LF:
+    5,0: LF:  Allow Me.\n\nMainChar,LF: 5,0: LF: I can move objects by turning light
+    beams blue.\n\nNarrator: Press E to switch between characters. "
