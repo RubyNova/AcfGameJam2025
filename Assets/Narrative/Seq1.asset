@@ -23,26 +23,25 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 7
     _poseIndexTwo: 0
-    _text: "Woah, that was wild\u2026 I\u2019m actually inside. It\u2019s so pretty
-      in here!\\r\\n(Press F to Continue)"
+    _text: "Woah, that was wild\u2026  (Press F to Continue) "
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 0
-    _poseIndex: 9
+    _poseIndex: 7
     _poseIndexTwo: 0
-    _text: "Hmm, The Deacon said I\u2019d know what to do."
+    _text: "I\u2019m actually inside.       "
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 0
-    _poseIndex: 9
+    _poseIndex: 7
     _poseIndexTwo: 0
-    _text: "Let's see if I can find out what\u2019s going on\u2026"
+    _text: "It\u2019s so pretty in here!              "
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
@@ -51,7 +50,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: Press A and D to move. Use Space to Jump.
+    _text: 'Press A and D to move.       '
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
@@ -60,12 +59,11 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: Press F to Use Buttons or Carry Objects.
+    _text: Use Space to Jump.
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
   _choices: []
-  <SourceScript>k__BackingField: "MainChar: 7: Woah, that was wild\u2026 I\u2019m
-    actually inside. It\u2019s so pretty in here!              (Press F to Continue)\r\n\r\n\rMainChar:
-    9: Hmm, The Deacon said I\u2019d know what to do.\r\n\nMainChar: 9: Let's see
-    if I can find out what\u2019s going on\u2026\r\n\nNarrator: Press A and D to
-    move. Use Space to Jump.\n\nNarrator: Press F to Use Buttons or Carry Objects.\n"
+  <SourceScript>k__BackingField: "MainChar: 7: Woah, that was wild\u2026  (Press
+    F to Continue) \n\nMainChar: 7: I\u2019m actually inside.       \n\nMainChar:
+    7: It\u2019s so pretty in here!              \r\n\r\n\rNarrator: Press A and
+    D to move.       \n\nNarrator: Use Space to Jump.\n"
