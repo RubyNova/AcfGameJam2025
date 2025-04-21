@@ -7,6 +7,7 @@ namespace Environment
     {
         [SerializeField] private bool _disableGameObjectAfterTrigger = false;
         [SerializeField] private UnityEvent EventsToFire = new();
+        [SerializeField] private bool YeetAfterUse = false;
 
         void OnTriggerEnter2D(Collider2D collision)
         {
@@ -14,7 +15,11 @@ namespace Environment
             {
                 EventsToFire.Invoke();
 
-                if (_disableGameObjectAfterTrigger)
+                if(YeetAfterUse)
+                {
+                    Destroy(this);
+                }
+                else if (_disableGameObjectAfterTrigger)
                 {
                     gameObject.SetActive(false);
                 }
