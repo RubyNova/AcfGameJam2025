@@ -16,6 +16,35 @@ MonoBehaviour:
   _nextSequence: {fileID: 0}
   _musicFiles: []
   _soundEffectFiles: []
-  _characterDialoguePairs: []
+  _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 18
+    _poseIndexTwo: 0
+    _text: Ahh
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 16
+    _poseIndexTwo: 0
+    _text: Careful, I could've been crushed!
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 16
+    _poseIndexTwo: 0
+    _text: "My apologies, I forget what it\u2019s like to have a physical form."
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: 
+  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Ahh\n\nMainChar,LF:
+    16,0: MainChar: Careful, I could've been crushed!\n\nMainChar,LF: 16,0: LF: My
+    apologies, I forget what it\u2019s like to have a physical form."
