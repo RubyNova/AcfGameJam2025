@@ -10,7 +10,7 @@ namespace Environment
 
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.tag == "Player" || collision.tag == "LightFamiliar")
+            if(collision.tag == "Player" || collision.gameObject.layer == LayerMask.NameToLayer("LightFamiliar"))
             {
                 EventsToFire.Invoke();
 
