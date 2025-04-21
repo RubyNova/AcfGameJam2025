@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/KennysTestingLab.unity
-    guid: 42c1ce801509d9c4bafe9a226ae0fa8d
   - enabled: 1
     path: Assets/Scenes/Game/Preloader.unity
     guid: 955da95d8358aac4f8d462db374bb691
@@ -23,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/KeyPuzzle0.unity
     guid: 031a7edfece58cb469aac37f2d4a9fa1
+  - enabled: 1
+    path: Assets/Scenes/Game/Level6.unity
+    guid: 5a18a2a6e39277c4aa539db3db0ba27c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 51e5be2a12bb21543a7663ba51e037a4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
