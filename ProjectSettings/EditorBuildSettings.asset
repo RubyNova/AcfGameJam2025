@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/KeyPuzzle0.unity
     guid: 031a7edfece58cb469aac37f2d4a9fa1
   - enabled: 1
+    path: Assets/Scenes/Game/Level5.unity
+    guid: 390a3a21e2aee78489555a72eed37cc9
+  - enabled: 1
     path: Assets/Scenes/Game/Level6.unity
     guid: 5a18a2a6e39277c4aa539db3db0ba27c
   m_configObjects:
