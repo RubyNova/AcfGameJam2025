@@ -75,5 +75,5 @@ MonoBehaviour:
   <SourceScript>k__BackingField: "MainChar,LF: 3,0: MainChar: Our first real challenge!\r\n\r\nMainChar,LF:
     15,0: MainChar: We\u2019ve got this, LFName!\r\n\r\nMainChar,LF: 15,0: LF: I\u2019m
     sure. If you need my assistance, you know what to do.\r\n\r\nMainChar,LF: 14,0:
-    MainChar: Sure thing, Sparky!\r\n\r\nMainChar,LF: 19,0: LF: That\u2019s [LF NAME]!\u201D\r\nMainChar,LF:
+    MainChar: Sure thing, Sparky!\r\n\r\nMainChar,LF: 19,0: LF: That\u2019s [LF NAME]!\u201D\n\r\nMainChar,LF:
     6,0: LF:  ...Please.\u201D\n\r\n\r\n\r\n"
