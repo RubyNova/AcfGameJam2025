@@ -23,12 +23,12 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 2
     _poseIndexTwo: 0
-    _text: Good. There should be two locks between here and the transporter.
+    _text: Good. There should be a door between here and the transporter.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: 'MainChar,LF: 2,0: LF: Good. There should be two
-    locks between here and the transporter.
+  <SourceScript>k__BackingField: 'MainChar,LF: 2,0: LF: Good. There should be a door
+    between here and the transporter.
 
 
 
