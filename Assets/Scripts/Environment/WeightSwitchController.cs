@@ -5,6 +5,10 @@ namespace Environment
 {
     public class WeightSwitchController : MonoBehaviour
     {
+        [Header("Dependencies")]
+        [SerializeField]
+        private Animator _buttonAnimator;
+
         [Header("Button Actions")]
         [SerializeField]
         private UnityEvent _onActivate;
@@ -23,6 +27,7 @@ namespace Environment
 
             if (_entityCount == 0)
             {
+                _buttonAnimator.SetBool("IsPressed", true);
                 _onActivate.Invoke();
             }
 
@@ -40,6 +45,7 @@ namespace Environment
 
             if (_entityCount == 0)
             {
+                _buttonAnimator.SetBool("IsPressed", false);
                 _onDeactivate.Invoke();
             }
 
