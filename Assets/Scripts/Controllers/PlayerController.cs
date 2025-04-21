@@ -107,7 +107,6 @@ namespace Controllers
         [SerializeField]
         private bool _toggleSprintEnabled = true;
 
-        [SerializeField]
         private bool _isRunning = true;
 
         [SerializeField]
@@ -155,7 +154,6 @@ namespace Controllers
         private UnityEvent<int> SwitchCamerasEvent = new();
         private Dictionary<int, LightBeamDataGroup> _listOfOutsideForces = new();
         private InputAction _moveAction;
-        private InputAction _runAction;
         private InputAction _interactAction;
         private bool _resetMovement = false;
         private bool _triggered = false;
@@ -187,12 +185,12 @@ namespace Controllers
                 _moveAction.canceled += (context) => HandleMovementCanceled(context);
             }
             
-            _runAction = _playerActions["Run"];
-            if(_runAction != null)
-            {
-                _runAction.performed += (context) => HandleSprinting(context);
-                _runAction.canceled += (context) => HandleSprintCancel(context);
-            }
+            // _runAction = _playerActions["Run"];
+            // if(_runAction != null)
+            // {
+            //     _runAction.performed += (context) => HandleSprinting(context);
+            //     _runAction.canceled += (context) => HandleSprintCancel(context);
+            // }
         }
 
         private IEnumerator ResetLayerRoutine()
@@ -652,46 +650,6 @@ namespace Controllers
             _toggleSprintEnabled = settings.ToggleSprint;
         }
     
-        private void HandleSprinting(InputAction.CallbackContext context)
-        {
-            if(!ActiveCharacter)
-            {
-                _isRunning = false;
-                return;
-            }
-
-            if(context.control?.device is Keyboard)
-            {
-                if(_toggleSprintEnabled)
-                {
-                    _isRunning = !_isRunning;
-                }
-                else
-                {
-                    _isRunning = true;
-                }
-            }
-            else
-            {
-                if(!_isRunning)
-                {
-                    _isRunning = true;
-                }
-            }
-        }
-
-        private void HandleSprintCancel(InputAction.CallbackContext context)
-        {
-            if(!ActiveCharacter) return;
-
-            if(context.control?.device is not Keyboard) return;
-            
-            if(!_toggleSprintEnabled)
-            {
-                _isRunning = false;
-            }
-        }
-    
         public void OnDeviceChanged(InputDevice device, InputDeviceChange change)
         {
             if(change == InputDeviceChange.Added ||
@@ -700,13 +658,11 @@ namespace Controllers
                 change == InputDeviceChange.SoftReset)
             {
                 if(device is Keyboard)
-                {
-                    _isRunning = false;
+                {   
                     _keyboardIsDevice = true;
                 }
                 else
                 {
-                    _isRunning = true;
                     _keyboardIsDevice = false;
                 }
             }
