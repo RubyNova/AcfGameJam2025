@@ -9,6 +9,6 @@ PhysicsMaterial2D:
   m_Name: PCPhysicsMat
   serializedVersion: 2
   friction: 1
-  bounciness: 0
+  bounciness: 1
   m_FrictionCombine: 0
-  m_BounceCombine: 4
+  m_BounceCombine: 3
