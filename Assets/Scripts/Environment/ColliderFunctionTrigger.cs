@@ -6,23 +6,62 @@ namespace Environment
     public class ColliderFunctionTrigger : MonoBehaviour
     {
         [SerializeField] private bool _disableGameObjectAfterTrigger = false;
-        [SerializeField] private UnityEvent EventsToFire = new();
         [SerializeField] private bool YeetAfterUse = false;
-
+        [SerializeField] public bool FireOnExit = false;
+        [SerializeField] private float FiringDelay = 0.0f;
+        [SerializeField] private UnityEvent EventsToFire = new();
+        
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.tag == "Player" || collision.gameObject.layer == LayerMask.NameToLayer("LightFamiliar"))
+            if(collision.tag == "Player" 
+                || collision.gameObject.layer == LayerMask.NameToLayer("LightFamiliar")
+                || collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject"))
             {
-                EventsToFire.Invoke();
+                if(!FireOnExit)
+                {
+                    if(FiringDelay == 0.0f)
+                    {
+                        InvokeEvents();
+                    }
+                    else
+                    {
+                        Invoke("InvokeEvents", FiringDelay);
+                    }
+                }
+            }
+        }
 
-                if(YeetAfterUse)
+        void OnTriggerExit2D(Collider2D collision)
+        {
+            if(collision.tag == "Player" 
+                || collision.gameObject.layer == LayerMask.NameToLayer("LightFamiliar")
+                || collision.gameObject.layer == LayerMask.NameToLayer("InteractablePhysicsObject"))
+            {
+                if(FireOnExit)
                 {
-                    Destroy(this);
+                    if(FiringDelay == 0.0f)
+                    {
+                        InvokeEvents();
+                    }
+                    else
+                    {
+                        Invoke("InvokeEvents", FiringDelay);
+                    }
                 }
-                else if (_disableGameObjectAfterTrigger)
-                {
-                    gameObject.SetActive(false);
-                }
+            }
+        }
+
+        private void InvokeEvents()
+        {
+            EventsToFire.Invoke();
+
+            if(YeetAfterUse)
+            {
+                Destroy(this);
+            }
+            else if (_disableGameObjectAfterTrigger)
+            {
+                gameObject.SetActive(false);
             }
         }
     }
