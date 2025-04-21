@@ -187,15 +187,4 @@ MonoBehaviour:
     3,0: MainChar: Did you get a new power?\r\n\r\nMainChar,LF: 3,0: LF: Indeed.
     If I touch a beam, you can now use it to pass through [colour] light barriers\r\n\r\nMainChar,LF:
     4,0: MainChar: Awesome! I bet it felt good to get a piece of you back?\r\n\r\nMainChar,LF:
-    4,0: LF: I feel stronger.\r\n\r\n\rMainChar,LF: 2,0: MainChar: That part was
-    able to talk before it merged.\r\nMainChar,LF: 2,0: MainChar: Does that mean
-    you have two voices in your mind now?\r\n\r\nMainChar,LF: 2,0: LF: No, we form
-    one whole. Do humans not have parts like this that make them whole?\r\n\r\nMainChar,LF:
-    9,0: MainChar: No\u2026I don\u2019t think so?\r\n\r\nMainChar,LF: 10,0: MainChar:
-    We have families\u2026 I guess that\u2019s sort of similar.\r\n\r\nMainChar,LF:
-    10,0: LF: \u2018Families\u2019?\r\n\r\nMainChar,LF: 10,0: MainChar: We have parents,
-    a Mum and Dad who created us. \r\nMainChar,LF: 10,0: MainChar: Some have brothers
-    and sisters they grew up with.\r\n\r\nMainChar,LF: 10,0: LF: We do not have families.
-    I was created by The Gods.\r\n\r\nMainChar,LF: 10,0: LF: Does family make you
-    whole?\r\n\r\nMainChar,LF: 10,0: MainChar: I never knew mine, not properly.\r\n\r\nMainChar,LF:
-    10,0: LF: ..."
+    4,0: LF: I feel stronger.\r\n\r\n\r"

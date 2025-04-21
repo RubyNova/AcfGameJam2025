@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 6
     _poseIndexTwo: 0
-    _text: " We\u2019re halfway through!"
+    _text: " We\u2019re almost halfway through!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -72,8 +72,8 @@ MonoBehaviour:
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 6,0: MainChar:  We\u2019re halfway
-    through!\n\r\n\rMainChar,LF: 17,0: MainChar: I\u2019m a little tired but it seems
-    to be going well\n\r\nMainChar,LF: 17,0: LF: You have worked admirably.\n\nMainChar,LF:
+  <SourceScript>k__BackingField: "MainChar,LF: 6,0: MainChar:  We\u2019re almost
+    halfway through!\n\r\n\rMainChar,LF: 17,0: MainChar: I\u2019m a little tired
+    but it seems to be going well\n\r\nMainChar,LF: 17,0: LF: You have worked admirably.\n\nMainChar,LF:
     3,0: MainChar: Back at ya, Sparky!\n\r\n\rMainChar,LF: 3,0: LF: LFName.\n\r\n\rMainChar,LF:
     5,0: MainChar: Alright, Alright. LFName."

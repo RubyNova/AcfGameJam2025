@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
+  m_Name: Seq15part2
+  m_EditorClassIdentifier: 
+  _backgroundSprite: {fileID: 0}
+  _nextSequence: {fileID: 0}
+  _musicFiles: []
+  _soundEffectFiles: []
+  _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 2
+    _poseIndexTwo: 0
+    _text: That part was able to talk before it merged.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 2
+    _poseIndexTwo: 0
+    _text: Does that mean you have two voices in your mind now?
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 2
+    _poseIndexTwo: 0
+    _text: No, we form one whole. Do humans not have parts like this that make them
+      whole?
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 9
+    _poseIndexTwo: 0
+    _text: "No\u2026I don\u2019t think so?"
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: "We have families\u2026 I guess that\u2019s sort of similar."
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: "\u2018Families\u2019?"
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: 'We have parents, a Mum and Dad who created us. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: Some have brothers and sisters they grew up with.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: We do not have families. I was created by The Gods.
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: Does family make you whole?
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: I never knew mine, not properly.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 10
+    _poseIndexTwo: 0
+    _text: ...
+    _leftCharacterTalking: 0
+    _narratorSpeaking: 0
+  _choices: []
+  <SourceScript>k__BackingField: "MainChar,LF: 2,0: MainChar: That part was able
+    to talk before it merged.\n\r\nMainChar,LF: 2,0: MainChar: Does that mean you
+    have two voices in your mind now?\r\n\r\nMainChar,LF: 2,0: LF: No, we form one
+    whole. Do humans not have parts like this that make them whole?\r\n\r\nMainChar,LF:
+    9,0: MainChar: No\u2026I don\u2019t think so?\r\n\r\nMainChar,LF: 10,0: MainChar:
+    We have families\u2026 I guess that\u2019s sort of similar.\r\n\r\nMainChar,LF:
+    10,0: LF: \u2018Families\u2019?\r\n\r\nMainChar,LF: 10,0: MainChar: We have parents,
+    a Mum and Dad who created us. \n\r\nMainChar,LF: 10,0: MainChar: Some have brothers
+    and sisters they grew up with.\r\n\r\nMainChar,LF: 10,0: LF: We do not have families.
+    I was created by The Gods.\r\n\r\nMainChar,LF: 10,0: LF: Does family make you
+    whole?\r\n\r\nMainChar,LF: 10,0: MainChar: I never knew mine, not properly.\r\n\r\nMainChar,LF:
+    10,0: LF: ..."
