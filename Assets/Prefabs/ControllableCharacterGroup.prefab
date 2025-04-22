@@ -317,7 +317,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: eae9d10914c0b134a8bf12a611a57bcb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -339,8 +339,11 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: -15.23, y: 11.15, z: 0.004709914}
+  - {x: -12.4794, y: 11.15, z: 0.004709914}
+  - {x: -9.7794, y: 11.15, z: 0.004709914}
+  - {x: -7.0794, y: 11.15, z: 0.004709914}
+  - {x: 1.477, y: 11.15, z: 0.004709914}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.5
@@ -362,7 +365,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -377,23 +380,23 @@ LineRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 64571
       atime1: 65535
-      atime2: 0
-      atime3: 0
+      atime2: 65535
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
+      m_Mode: 1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureMode: 1
+    textureScale: {x: 1, y: -1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -509,9 +512,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInputComponent: {fileID: 8419510844817589331}
+  _pausePanel: {fileID: 0}
+  _options: {fileID: 0}
   _defaultActionMapName: Player
   _playerActionMapName: Player
   _familiarActionMapName: Familiar
+  _uiInputActionMap:
+    m_Name: Ui Input
+    m_Id: dbf064ea-bdf4-4d41-b8a1-f11e88f1d223
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
   _currentActionMapName: 
 --- !u!114 &8419510844817589331
 MonoBehaviour:
@@ -848,10 +859,9 @@ MonoBehaviour:
   - {fileID: 5688382727879582895}
   - {fileID: 2807066728222202094}
   _beamPriority: 0
+  _maxLengthBetweenBeamSections: 3
   _forceAlwaysOn: 0
   _forceAlwaysOff: 0
-  _intersectedPosition: {x: 0, y: 0}
-  _perceivedMinColliderpoint: {x: 0, y: 0}
 --- !u!114 &5258074328753728422
 MonoBehaviour:
   m_ObjectHideFlags: 0

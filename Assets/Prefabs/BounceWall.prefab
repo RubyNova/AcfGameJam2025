@@ -192,7 +192,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: eae9d10914c0b134a8bf12a611a57bcb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,16 +215,19 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: -15.23, y: 11.15, z: 0.004709914}
-  - {x: 4.7700005, y: 11.15, z: 0.004709914}
+  - {x: -12.4794, y: 11.15, z: 0.004709914}
+  - {x: -9.7794, y: 11.15, z: 0.004709914}
+  - {x: -7.0794, y: 11.15, z: 0.004709914}
+  - {x: 1.477, y: 11.15, z: 0.004709914}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -236,8 +239,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.91764706, g: 1, b: 0, a: 1}
-      key1: {r: 0.91764706, g: 1, b: 0, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -252,23 +255,23 @@ LineRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 64571
       atime1: 65535
-      atime2: 0
-      atime3: 0
+      atime2: 65535
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
+      m_Mode: 1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureMode: 1
+    textureScale: {x: 1, y: -1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -395,7 +398,9 @@ MonoBehaviour:
   _objectsToIgnoreDuringHitChecks:
   - {fileID: 1610458265086327465}
   _beamPriority: 0
+  _maxLengthBetweenBeamSections: 3
   _forceAlwaysOn: 0
+  _forceAlwaysOff: 0
 --- !u!114 &7518634984758403798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,5 +413,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9586ab9f8ddd2f54295d1284e305dfd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colour: {r: 0.91764706, g: 1, b: 0, a: 0}
+  _colour: {r: 1, g: 1, b: 1, a: 1}
   _beamForce: 5
