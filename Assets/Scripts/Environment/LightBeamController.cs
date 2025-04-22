@@ -48,24 +48,24 @@ namespace Environment
         private int _beamPriority;
 
         [SerializeField]
+        private float _maxLengthBetweenBeamSections = 3f;
+
+        [SerializeField]
         private bool _forceAlwaysOn = false;
 
         [SerializeField]
         private bool _forceAlwaysOff = false;
 
-        [Header("Read-only values")]
-        [SerializeField]
         private Vector2 _intersectedPosition = Vector2.zero;
 
-        [SerializeField]
         private Vector2 _perceivedMinColliderpoint = Vector2.zero;
-
 
         private Quaternion _cachedStartRotation;
         private LightBeamController _targetHit;
         private Vector3? _emissionPoint;
         private bool _isAlreadyUnregistering = false;
         private RaycastHit2D[] _beamRaycastData = new RaycastHit2D[10];
+        private Gradient _originalGradient;
         private ContactFilter2D _beamRaycastFilter;
         private LightBeamController _currentSender;
 
@@ -127,13 +127,13 @@ namespace Environment
                     var beamControllerTest = hit.transform.GetComponentInChildren<LightBeamController>();
                     var beamControllerParentTest = hit.transform.GetComponentInParent<LightBeamController>();
 
-                    if (beamControllerTest == null && beamControllerParentTest == null )
+                    if (beamControllerTest == null && beamControllerParentTest == null)
                     {
                         var beamCollisionHandlerTest = hit.transform.GetComponentInChildren<LightBeamCollisionHandler>();
 
                         if (beamCollisionHandlerTest == null)
                         {
-                            beamCollisionHandlerTest = hit.transform.GetComponentInParent<LightBeamCollisionHandler>();   
+                            beamCollisionHandlerTest = hit.transform.GetComponentInParent<LightBeamCollisionHandler>();
                         }
 
                         if (beamCollisionHandlerTest != null)
@@ -279,7 +279,7 @@ namespace Environment
                 Vector2? highestPoint = null;
 
                 foreach (var point in _colliderPoints)
-                {   
+                {
                     if (!highestPoint.HasValue || (highestPoint.Value.y < point.y && point != secondLowestPoint.Value))
                     {
                         highestPoint = point;
@@ -306,7 +306,7 @@ namespace Environment
 
                 if (intersectedPosition.y > _playerControllerForBoundsChecks.MinColliderPoint.y && !Mathf.Approximately(intersectedPosition.y, _playerControllerForBoundsChecks.MinColliderPoint.y))
                 {
-                   BoxCollider.enabled = false; 
+                    BoxCollider.enabled = false;
                 }
                 else
                 {
@@ -321,9 +321,24 @@ namespace Environment
             var potentialHitPoint = RegisterPotentialBeamHit();
             var translatedPosition = EmissionPoint;
             translatedPosition += _targetTransform.right * LightBeamLength;
-            var positions = new[] { EmissionPoint,
-                potentialHitPoint ?? translatedPosition
-            };
+
+            var startPoint = EmissionPoint;
+            var endPoint = potentialHitPoint ?? translatedPosition;
+
+            var currentBeamPoint = startPoint;
+
+            List<Vector3> beamPoints = new() { startPoint };
+
+            while (Vector2.Distance((Vector2)currentBeamPoint, (Vector2)endPoint) > _maxLengthBetweenBeamSections)
+            {
+                currentBeamPoint += _targetTransform.right * _maxLengthBetweenBeamSections;
+                beamPoints.Add(currentBeamPoint);
+            }
+
+            beamPoints.Add(endPoint);
+
+            var positions = beamPoints.ToArray();
+            _renderer.positionCount = positions.Length;
             _renderer.SetPositions(positions);
 
             if (_beamModifierData == null)
@@ -331,13 +346,21 @@ namespace Environment
                 _beamModifierData = GetComponentInChildren<LightBeamModifier>();
             }
 
-            _renderer.startColor = _beamModifierData.Colour;
-            _renderer.endColor = _beamModifierData.Colour;
+            // It's a reference type so I have no idea if this is needed, but after the stupid native method nonsense with the colour keys I just had to spend way too long debugging im not checking.
+            // Wanted me to try? Too bad. Tell an engineer who cares enough. - Matt
+            var newGradient = _originalGradient;
+            var colourKeyArray = newGradient.colorKeys;
+
+            for (int i = 0; i < colourKeyArray.Length; i++)
+            {
+                colourKeyArray[i].color = _beamModifierData.Colour;
+            }
+
+            newGradient.colorKeys = colourKeyArray; 
+            _renderer.colorGradient = newGradient;
 
             BoxCollider.size = new Vector2(Vector2.Distance(positions[0], positions[1]), _renderer.startWidth);
-
             var centrePosition = _targetTransform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
-
             BoxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
 
             CheckForPlayerBelow();
@@ -379,6 +402,7 @@ namespace Environment
 
         protected void Start()
         {
+            _originalGradient = _renderer.colorGradient;
             _beamRaycastFilter = new ContactFilter2D().NoFilter();
             _cachedStartRotation = _targetTransform.rotation;
             _playerControllerForBoundsChecks = FindFirstObjectByType<PlayerController>();
@@ -490,10 +514,10 @@ namespace Environment
                 _targetHit.UnregisterHit();
                 _targetHit = null;
             }
-            
+
             foreach (var trackedReactor in _trackedPhyscsInteractables)
             {
-                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);   
+                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);
             }
 
             if (_mode != LightBeamMode.Source)
@@ -510,7 +534,7 @@ namespace Environment
                     _beamModifierData = null;
                 }
             }
-            
+
 
 
             _currentSender = null;
@@ -529,9 +553,9 @@ namespace Environment
 
             foreach (var trackedReactor in _trackedPhyscsInteractables)
             {
-                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);   
+                _beamModifierData.ClearBeamEffectOnObject(this, BeamPriority, trackedReactor);
             }
-            
+
             _beamModifierData.Shutdown(this);
 
             _beamModifierData = newModifier;
@@ -544,7 +568,7 @@ namespace Environment
 
             foreach (var trackedReactor in _trackedPhyscsInteractables)
             {
-                _beamModifierData.ApplyBeamEffectToObject(this, BeamPriority, trackedReactor, _targetTransform.right);   
+                _beamModifierData.ApplyBeamEffectToObject(this, BeamPriority, trackedReactor, _targetTransform.right);
             }
         }
 

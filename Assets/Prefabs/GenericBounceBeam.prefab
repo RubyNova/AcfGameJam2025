@@ -60,7 +60,9 @@ MonoBehaviour:
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
   _beamPriority: 0
+  _maxLengthBetweenBeamSections: 5
   _forceAlwaysOn: 0
+  _forceAlwaysOff: 0
 --- !u!114 &972154243405144626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +148,8 @@ MonoBehaviour:
   DistanceValue: 5
   TriggerThresholdValue: 1.7
   CutoffValue: 0.4
+  distance: 0
+  threshold: 0
 --- !u!1 &4616394690009637818
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +231,9 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: -15.23, y: 11.15, z: 0.004709914}
+  - {x: -12.4794, y: 11.15, z: 0.004709914}
+  - {x: -9.7794, y: 11.15, z: 0.004709914}
+  - {x: -7.0794, y: 11.15, z: 0.004709914}
   - {x: 1.477, y: 11.15, z: 0.004709914}
   m_Parameters:
     serializedVersion: 3
