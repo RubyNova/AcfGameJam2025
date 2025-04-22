@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 0820ed268aa839a4181b0bddd0ec5a1a
+guid: 5843eb9856330334eba74876741761d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7884492340949171110
-    second: Starmap_0
+      213: -1583616042959915813
+    second: Starmap Transparent_0
+  - first:
+      213: -644155887003946398
+    second: Starmap Transparent_1
+  - first:
+      213: -3066873527635006766
+    second: Starmap Transparent_2
+  - first:
+      213: -4255014948128299377
+    second: Starmap Transparent_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +57,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Starmap_0
+      name: Starmap Transparent_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 252
+        y: 1333
+        width: 776
+        height: 1174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,74 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ab3090a2085b6d60800000000000000
-      internalID: 7884492340949171110
+      spriteID: bd4b3ca699dd50ae0800000000000000
+      internalID: -1583616042959915813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Starmap_1
+      name: Starmap Transparent_1
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 1519
+        y: 1328
+        width: 802
+        height: 1184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e48f881418ff8bd4189ecdfa9ddc26d8
-      internalID: 26399835
+      spriteID: 262372732af7f07f0800000000000000
+      internalID: -644155887003946398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Starmap_2
+      name: Starmap Transparent_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 1280
+        x: 267
+        y: 169
+        width: 746
+        height: 942
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 13b126d7c125551409e2d22a013c03f1
-      internalID: 2095943881
+      spriteID: 2da244e86c64075d0800000000000000
+      internalID: -3066873527635006766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Starmap_3
+      name: Starmap Transparent_3
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 1280
-        height: 1280
+        x: 1459
+        y: 141
+        width: 922
+        height: 998
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ce013f3f87245a142a0bc265bf52e2cc
-      internalID: -1873395483
+      spriteID: f86e5ded27623f4c0800000000000000
+      internalID: -4255014948128299377
       vertices: []
       indices: 
       edges: []
@@ -204,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 19e542fab30a60144b49c57fa82070f2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -213,11 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Starmap_0: 7884492340949171110
-      Starmap_1: 26399835
-      Starmap_2: 2095943881
-      Starmap_3: -1873395483
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
