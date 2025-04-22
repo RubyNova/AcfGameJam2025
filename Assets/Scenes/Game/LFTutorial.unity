@@ -2168,6 +2168,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 200026348}
     m_Modifications:
     - target: {fileID: -3178391123574929724, guid: 82d8dbd0eb2d1aa4aad3b6201026bc09, type: 3}
+      propertyPath: FiringDelay
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3178391123574929724, guid: 82d8dbd0eb2d1aa4aad3b6201026bc09, type: 3}
       propertyPath: YeetAfterUse
       value: 1
       objectReference: {fileID: 0}
