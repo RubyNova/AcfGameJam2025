@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: 'So...do you decide what happens at the end of this? '
+    _text: 'So... do you decide what happens at the end of this? '
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -81,7 +81,7 @@ MonoBehaviour:
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So...do you decide
+  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So... do you decide
     what happens at the end of this? \n\r\nMainChar,LF: 9,0: MainChar: Whether I\u2019m
     worthy?\r\n\r\nMainChar,LF: 6,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
     6,0: MainChar: But you give them feedback, right?\n\r\nMainChar,LF: 6,0: MainChar:

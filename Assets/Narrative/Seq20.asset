@@ -26,14 +26,14 @@ MonoBehaviour:
     _text: Is it time?
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+  - _character: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
     _text: Soon. You are the second to merge. There is one more.
-    _leftCharacterTalking: 0
+    _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
@@ -72,9 +72,8 @@ MonoBehaviour:
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "Narrator: Is it time?\r\n\r\r\r\nMainChar,LF: 0,0:
-    LF: Soon. You are the second to merge. There is one more.\r\n\r\nMainChar,LF:
-    1,0: MainChar: Um, sorry to interrupt\u2026\r\n\nMainChar,LF: 1,0: MainChar:
-    I\u2019ve been wondering, why are you separated like this anyway?\r\n\r\nNarrator:
-    They do not know?\r\n\r\nMainChar,LF: 1,0: LF: They are here to complete their
-    trial.\r\n"
+  <SourceScript>k__BackingField: "Narrator: Is it time?\r\n\r\r\r\nLF: 0: Soon. You
+    are the second to merge. There is one more.\r\n\r\nMainChar,LF: 1,0: MainChar:
+    Um, sorry to interrupt\u2026\r\n\nMainChar,LF: 1,0: MainChar: I\u2019ve been
+    wondering, why are you separated like this anyway?\r\n\r\nNarrator: They do not
+    know?\r\n\r\nMainChar,LF: 1,0: LF: They are here to complete their trial.\r\n"
