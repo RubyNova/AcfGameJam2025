@@ -42,7 +42,7 @@ namespace Environment
         private float _snapPointOffset = 1;
 
         [SerializeField]
-        private GameObject[] _objectsToIgnoreDuringHitChecks;
+        public GameObject[] _objectsToIgnoreDuringHitChecks;
 
         [SerializeField]
         private int _beamPriority;

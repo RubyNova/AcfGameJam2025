@@ -13,6 +13,8 @@ namespace Environment.Interactables
         [Header("Configuration")]
         [SerializeField]
         public Vector2 VelocityCap;
+        
+        [SerializeField] private bool _limitVelocity = false;
 
         private int _beamPriority = 0;
 
@@ -29,8 +31,11 @@ namespace Environment.Interactables
 
         protected void Update()
         {
-            // _rigidbodyToDrive.linearVelocityX = Mathf.Clamp(_rigidbodyToDrive.linearVelocityX, -VelocityCap.x, VelocityCap.x);
-            // _rigidbodyToDrive.linearVelocityY = Mathf.Clamp(_rigidbodyToDrive.linearVelocityY, -VelocityCap.y, VelocityCap.y);
+            if(_limitVelocity)
+            {
+                _rigidbodyToDrive.linearVelocityX = Mathf.Clamp(_rigidbodyToDrive.linearVelocityX, -VelocityCap.x, VelocityCap.x);
+                _rigidbodyToDrive.linearVelocityY = Mathf.Clamp(_rigidbodyToDrive.linearVelocityY, -VelocityCap.y, VelocityCap.y);
+            }
         }
 
         public void RegisterIncomingForce(LightBeamController sender, int priority, Vector2 senderBeamDirection, float force)

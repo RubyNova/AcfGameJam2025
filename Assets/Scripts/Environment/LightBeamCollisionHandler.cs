@@ -1,3 +1,4 @@
+using System.Linq;
 using Controllers;
 using Environment;
 using UnityEngine;
@@ -19,7 +20,10 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        var collisionHashCode = collision.gameObject.GetHashCode();
+        var ignoreCollision = _parentController._objectsToIgnoreDuringHitChecks.Any(x => x.GetHashCode() == collisionHashCode);
+
+        if(collision.gameObject.CompareTag("Player") && !ignoreCollision)
         {
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
             if(playerComponent != null)
@@ -73,7 +77,10 @@ public class LightBeamCollisionHandler : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        var collisionHashCode = collision.gameObject.GetHashCode();
+        var ignoreCollision = _parentController._objectsToIgnoreDuringHitChecks.Any(x => x.GetHashCode() == collisionHashCode);
+
+        if(collision.gameObject.CompareTag("Player") && !ignoreCollision)
         {
             var playerComponent = collision.gameObject.GetComponent<PlayerController>();
             if(playerComponent != null)
