@@ -96,6 +96,8 @@ namespace Controllers
         [SerializeField]
         private Transform _heldItemPoint;
 
+        [SerializeField] public Transform FamiliarSnapPoint;
+
         [Header("Read-only Values")]
 
         [SerializeField]

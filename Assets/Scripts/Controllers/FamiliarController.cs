@@ -35,6 +35,7 @@ namespace Controllers
         private UnityEvent<int> SwitchCamerasEvent = new();
         private InputActionMap _familiarActions;
         private int _modifierIndex = 0;
+        private bool _snapToPlayer = false;
 
 
         public void EnableCharacter() => ActiveCharacter = true;
@@ -64,7 +65,14 @@ namespace Controllers
         {
             if (ActiveCharacter)
             {
-                _rigidbody.linearVelocity = _movementVector * _movementSpeed;
+                if(_snapToPlayer && _playerControllerReference is not null)
+                {
+                    _rigidbody.linearVelocity = Vector2.zero;
+                    transform.position = _playerControllerReference.FamiliarSnapPoint.position;
+                    _snapToPlayer = false;
+                }
+                else
+                    _rigidbody.linearVelocity = _movementVector * _movementSpeed;
             }
         }
 
@@ -74,6 +82,14 @@ namespace Controllers
                 return;
 
             _movementVector = value.Get<Vector2>();
+        }
+
+        void OnSnapToPlayer(InputValue _)
+        {
+            if (!ActiveCharacter)
+                return;
+
+            _snapToPlayer = true;
         }
 
         void OnCollisionEnter2D(Collision2D collision)

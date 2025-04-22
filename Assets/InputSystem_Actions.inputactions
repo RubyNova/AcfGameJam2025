@@ -925,6 +925,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SnapToPlayer",
+                    "type": "Button",
+                    "id": "8b0878f4-e9ca-4f8a-812e-d669f13ddff7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1233,6 +1242,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "CycleBeamModifier",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9a71f73-31b5-4d25-880e-b4a7d5310819",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SnapToPlayer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
