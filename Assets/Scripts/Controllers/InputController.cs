@@ -1,5 +1,4 @@
-using System;
-using UnityEditor.SearchService;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +15,10 @@ namespace Controllers
         [Header("Dependencies")]
         [SerializeField]
         private PlayerInput _playerInputComponent;
+
+        [SerializeField] private GameObject _pausePanel;
+
+        [SerializeField] private OptionsController _options;
         
         [Header("Configuration")]
         [SerializeField]
@@ -27,6 +30,9 @@ namespace Controllers
         [SerializeField]
         private string _familiarActionMapName;
 
+        [SerializeField]
+        private InputActionMap _uiInputActionMap;
+
         [Header("Read Only")]
         [SerializeField]
         private string _currentActionMapName = string.Empty;
@@ -36,11 +42,23 @@ namespace Controllers
         private InputActionMap _familiarActionMap;
 
         private ControllerState _previousState = ControllerState.Player;
+        private float _timeScale = 0;
+
+        private bool _paused = false;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             _playerActionMap = InputSystem.actions.FindActionMap(_playerActionMapName);
             _familiarActionMap = InputSystem.actions.FindActionMap(_familiarActionMapName);
+            _uiInputActionMap = InputSystem.actions.FindActionMap("UI");
+            // if(_uiInputActionMap is not null)
+            // {
+            //     var pause = _uiInputActionMap["Pause"];
+            //     if(pause is not null)
+            //     {
+            //         pause.performed += (context) => PauseGame();
+            //     }
+            // }
             
             _playerInputComponent.SwitchCurrentActionMap(_defaultActionMapName);
         }
@@ -90,6 +108,40 @@ namespace Controllers
         public void RevokeControls()
         {
             _playerInputComponent.SwitchCurrentActionMap("UI");
+        }
+
+        void OnPause()
+        {
+            PauseGame();
+        }
+
+        private void PauseGame()
+        {
+            if(!_paused)
+            {
+                if(_pausePanel is not null)
+                {
+                    _pausePanel.SetActive(true);
+                    RevokeControls();
+                    _timeScale = Time.timeScale;
+                    Time.timeScale = 0;
+                    _paused = true;
+                }
+            }
+            else
+            {
+                if(_pausePanel is not null)
+                {
+                    _pausePanel.SetActive(false);
+                }
+                if(_options is not null)
+                {
+                    _options.SaveSettings();
+                }
+                ResetControls();
+                Time.timeScale = _timeScale;
+                _paused = false;
+            }
         }
     }
 }

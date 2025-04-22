@@ -96,6 +96,8 @@ AudioMixerController:
     name: BasicMovementPitch
   - guid: a4dae5046cd08080b88891f5b6cf88be
     name: FallLandPitch
+  - guid: 4ce45d3ef58eec94882f08d17b72d569
+    name: Volume
   m_AudioMixerGroupViews:
   - guids:
     - 4d8cd85db0185184ab90e46d0b94f1bb

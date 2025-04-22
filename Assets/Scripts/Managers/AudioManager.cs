@@ -266,7 +266,7 @@ namespace Managers
                 return _highestDecibelLimit;
             }
 
-            return Mathf.Clamp(_lowestDecibelLimit + (_decibelRange * percentage), _lowestDecibelLimit, _highestDecibelLimit);
+            return Mathf.Clamp(_lowestDecibelLimit + (_decibelRange * GetNormalizedVolume(percentage)), _lowestDecibelLimit, _highestDecibelLimit);
         }
 
         private float GetNormalizedVolume(float percentage) => Mathf.Clamp(percentage, 0, 100) /100;

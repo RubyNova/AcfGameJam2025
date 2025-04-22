@@ -740,6 +740,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &289677505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4862319901049927214, guid: e12d0fe5da2116443a2cd66c11c4252e, type: 3}
+  m_PrefabInstance: {fileID: 1568213589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &289677509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 840530173993531712, guid: e12d0fe5da2116443a2cd66c11c4252e, type: 3}
+  m_PrefabInstance: {fileID: 1568213589}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289677505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693bc7ba67a8a6140af5649e40b7880f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &297599695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,17 +1168,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_CancelAction: {fileID: -2274977058780471332, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: a4af4494d33fa5c42b67623e95f2255c, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -1337,6 +1353,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControllableCharacterGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 4431482235214926647, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: _options
+      value: 
+      objectReference: {fileID: 289677509}
+    - target: {fileID: 4431482235214926647, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: _pausePanel
+      value: 
+      objectReference: {fileID: 289677505}
+    - target: {fileID: 4431482235214926647, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: _uiInputActionMap.m_Id
+      value: 2761cb5f-6e4e-4381-b8a7-d389cd1848b9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431482235214926647, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: _uiInputActionMap.m_Name
+      value: Ui Input
+      objectReference: {fileID: 0}
     - target: {fileID: 5386375581471930236, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.8313164
@@ -1389,6 +1421,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000027937936
       objectReference: {fileID: 0}
+    - target: {fileID: 8419510844817589331, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 541896728}
     m_RemovedComponents:
     - {fileID: 157540246616712076, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
     - {fileID: 3460603776212991289, guid: 96a693b72cc46a146a61a47e2fd66554, type: 3}
@@ -2283,6 +2319,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.12, y: 6.66}
   m_EdgeRadius: 0
+--- !u!1 &1139079143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8445960638741941713, guid: 919bacf1164b2a74895a9afa787dc72f, type: 3}
+  m_PrefabInstance: {fileID: 1637579926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1139079146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139079143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd16371d51665a4792b32d2af741fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1159617876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5472687430339024638, guid: 82d8dbd0eb2d1aa4aad3b6201026bc09, type: 3}
@@ -50073,7 +50126,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8445960638741941713, guid: 919bacf1164b2a74895a9afa787dc72f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1139079146}
   m_SourcePrefab: {fileID: 100100000, guid: 919bacf1164b2a74895a9afa787dc72f, type: 3}
 --- !u!1001 &1687555646
 PrefabInstance:
