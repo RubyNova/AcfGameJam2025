@@ -176,7 +176,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 15
     _poseIndexTwo: 0
-    _text: 'I passed every test, followed every rule. '
+    _text: I passed every test.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -185,7 +185,16 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 15
     _poseIndexTwo: 0
-    _text: "I finished top of my class\u2026"
+    _text: 'Followed every rule. '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 15
+    _poseIndexTwo: 0
+    _text: "Finished top of my class\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -245,9 +254,9 @@ MonoBehaviour:
     4,0: MainChar: Name and Name!\n\nMainChar,LF: 21,0: MainChar: A duo destined
     for success!\n\nMainChar,LF: 14,0: LF: Let\u2019s not be too hasty.\n\nMainChar,LF:
     14,0: LF: Are you prepared for what lies ahead?\n\nMainChar,LF: 15,0: MainChar:
-    I passed every test, followed every rule. \n\nMainChar,LF: 15,0: MainChar: I
-    finished top of my class\u2026\r\n\r\nMainChar,LF: 15,0: LF: Does that make you
-    worthy of serving The Gods?\r\n\nMainChar,LF: 22,0: MainChar: It means I'm ready
-    to prove I am.\r\n\r\nMainChar,LF: 14,0: LF: I see.\n\nMainChar,LF: 14,0: LF:
-    In that case, let\u2019s begin by unlocking this cell.\n\nMainChar,LF: 14,0:
-    LF: There should be a button nearby.\r\n"
+    I passed every test.\n\nMainChar,LF: 15,0: MainChar: Followed every rule. \n\nMainChar,LF:
+    15,0: MainChar: Finished top of my class\u2026\r\n\r\nMainChar,LF: 15,0: LF:
+    Does that make you worthy of serving The Gods?\r\n\nMainChar,LF: 22,0: MainChar:
+    It means I'm ready to prove I am.\r\n\r\nMainChar,LF: 14,0: LF: I see.\n\nMainChar,LF:
+    14,0: LF: In that case, let\u2019s begin by unlocking this cell.\n\nMainChar,LF:
+    14,0: LF: There should be a button nearby.\r\n"
