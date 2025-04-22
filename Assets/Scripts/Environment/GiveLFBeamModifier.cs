@@ -42,6 +42,7 @@ namespace Environment
                 case ModifierType.Trampoline:
                 TrampolineModifier trampolineComponent = _targetAttachObject.AddComponent<TrampolineModifier>();
                 trampolineComponent.Colour = _beamColours[2];
+                trampolineComponent.BeamForce = 1;
                 break;
             }
 
