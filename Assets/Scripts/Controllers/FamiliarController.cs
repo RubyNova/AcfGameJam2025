@@ -74,6 +74,10 @@ namespace Controllers
                 else
                     _rigidbody.linearVelocity = _movementVector * _movementSpeed;
             }
+            else
+            {
+                _rigidbody.linearVelocity = Vector2.zero;
+            }
         }
 
         void OnMove(InputValue value)

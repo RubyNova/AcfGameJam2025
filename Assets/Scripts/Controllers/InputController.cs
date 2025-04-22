@@ -1,3 +1,5 @@
+using System;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +7,12 @@ namespace Controllers
 {
     public class InputController : MonoBehaviour
     {
+        public enum ControllerState
+        {
+            Familiar,
+            Player
+        }
+
         [Header("Dependencies")]
         [SerializeField]
         private PlayerInput _playerInputComponent;
@@ -26,6 +34,8 @@ namespace Controllers
         private InputActionMap _playerActionMap;
 
         private InputActionMap _familiarActionMap;
+
+        private ControllerState _previousState = ControllerState.Player;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -45,11 +55,35 @@ namespace Controllers
         {
             if(player)
             {
+                _previousState = ControllerState.Player;
                 _playerInputComponent.SwitchCurrentActionMap(_playerActionMapName);
             }
             else
             {
+                _previousState = ControllerState.Familiar;
                 _playerInputComponent.SwitchCurrentActionMap(_familiarActionMapName);
+            }
+        }
+
+        public void ResetControls()
+        {
+            if(_previousState == ControllerState.Player)
+            {
+                _playerInputComponent.SwitchCurrentActionMap(_playerActionMapName);
+                var pc = FindAnyObjectByType<PlayerController>();
+                if(pc is not null)
+                {
+                    pc.EnableCharacter();
+                }
+            }
+            else
+            {
+                _playerInputComponent.SwitchCurrentActionMap(_familiarActionMapName);
+                var pc = FindAnyObjectByType<FamiliarController>();
+                if(pc is not null)
+                {
+                    pc.EnableCharacter();
+                }
             }
         }
 
