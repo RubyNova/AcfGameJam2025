@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f7d9979e6986b7147ab1f04cb66d61cc
+guid: 564d552e1aaaac045813f4ebadfe7419
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4178046375966092550
-    second: 4_0
+      213: -7792168487926068885
+    second: White Gradient_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,12 +37,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 4_0
+      name: White Gradient_0
       rect:
         serializedVersion: 2
-        x: 577
-        y: 348
-        width: 755
-        height: 892
+        x: 0
+        y: 0
+        width: 3307
+        height: 4162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af2de6115f89406c0800000000000000
-      internalID: -4178046375966092550
+      spriteID: b698c2f7b08acd390800000000000000
+      internalID: -7792168487926068885
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      4_0: -4178046375966092550
+      White Gradient_0: -7792168487926068885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,6 +9,8 @@ namespace Audio
         public float DistanceValue = 0;
         public float TriggerThresholdValue = 0;
         public float CutoffValue = 0;
+		public float distance = 0;
+		public float threshold = 0;
 
         private PlayerController _playerReference;
 
@@ -21,13 +23,13 @@ namespace Audio
         {
             if(_playerReference != null)
             {
-                float distance = Vector3.Distance(transform.position, _playerReference.transform.position);
+                distance = Vector3.Distance(transform.position, _playerReference.transform.position);
                 if(distance < DistanceValue)
                 {
                     //TriggerThresholdValue / Distance == Percentage Volume we should be at
                     if(distance != 0f)
                     {
-                        float threshold = TriggerThresholdValue / distance;
+                        threshold = TriggerThresholdValue / distance;
                         if(threshold > CutoffValue)
                         {
                             AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, (TriggerThresholdValue / distance) * 100);

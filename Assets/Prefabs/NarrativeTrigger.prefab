@@ -92,6 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _disableGameObjectAfterTrigger: 1
+  YeetAfterUse: 0
+  FireOnExit: 0
+  FiringDelay: 0.5
   EventsToFire:
     m_PersistentCalls:
       m_Calls:
