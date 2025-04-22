@@ -239,7 +239,7 @@ namespace Environment
         {
             var targetTransform = BoxCollider.transform;
             var startPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(0));
-            var endPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(1));
+            var endPoint = targetTransform.InverseTransformPoint(_renderer.GetPosition(_renderer.positionCount - 1));
             var halfHeight = _renderer.startWidth * 0.5f;
             _colliderPoints[0] = targetTransform.TransformPoint(new Vector2(startPoint.x, startPoint.y + halfHeight));
             _colliderPoints[1] = targetTransform.TransformPoint(new Vector2(startPoint.x, startPoint.y - halfHeight));
@@ -359,8 +359,8 @@ namespace Environment
             newGradient.colorKeys = colourKeyArray; 
             _renderer.colorGradient = newGradient;
 
-            BoxCollider.size = new Vector2(Vector2.Distance(positions[0], positions[1]), _renderer.startWidth);
-            var centrePosition = _targetTransform.InverseTransformPoint((positions[0] + positions[1]) * 0.5f);
+            BoxCollider.size = new Vector2(Vector2.Distance(positions[0], positions.Last()), _renderer.startWidth);
+            var centrePosition = _targetTransform.InverseTransformPoint((positions[0] + positions.Last()) * 0.5f);
             BoxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
 
             CheckForPlayerBelow();
