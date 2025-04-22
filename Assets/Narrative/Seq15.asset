@@ -17,6 +17,15 @@ MonoBehaviour:
   _musicFiles: []
   _soundEffectFiles: []
   _characterDialoguePairs:
+  - _character: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
+    _poseIndexTwo: 0
+    _text: We are now one.
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
@@ -50,8 +59,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: Indeed. If I touch a beam, you can now use it to pass through [colour]
-      light barriers
+    _text: Indeed. We can now use beams to pass through light barriers.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -60,7 +68,16 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 4
     _poseIndexTwo: 0
-    _text: Awesome! I bet it felt good to get a piece of you back?
+    _text: 'Awesome! '
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 0
+  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _hasPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 1
+    _poseIndex: 4
+    _poseIndexTwo: 0
+    _text: I bet it felt good to get a piece of you back?
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -72,119 +89,10 @@ MonoBehaviour:
     _text: I feel stronger.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 2
-    _poseIndexTwo: 0
-    _text: That part was able to talk before it merged.
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 2
-    _poseIndexTwo: 0
-    _text: Does that mean you have two voices in your mind now?
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 2
-    _poseIndexTwo: 0
-    _text: No, we form one whole. Do humans not have parts like this that make them
-      whole?
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 9
-    _poseIndexTwo: 0
-    _text: "No\u2026I don\u2019t think so?"
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: "We have families\u2026 I guess that\u2019s sort of similar."
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: "\u2018Families\u2019?"
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: 'We have parents, a Mum and Dad who created us. '
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: Some have brothers and sisters they grew up with.
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: We do not have families. I was created by The Gods.
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: Does family make you whole?
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: I never knew mine, not properly.
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
-    _poseIndexTwo: 0
-    _text: ...
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 3,0: MainChar:  Woah\u2026are you
-    OK?\r\n\r\nMainChar,LF: 3,0: LF: Yes. That\u2019s much better.\r\n\r\nMainChar,LF:
+  <SourceScript>k__BackingField: "LF: 0: We are now one.\n\nMainChar,LF: 3,0: MainChar: 
+    Woah\u2026are you OK?\r\n\r\nMainChar,LF: 3,0: LF: Yes. That\u2019s much better.\r\n\r\nMainChar,LF:
     3,0: MainChar: Did you get a new power?\r\n\r\nMainChar,LF: 3,0: LF: Indeed.
-    If I touch a beam, you can now use it to pass through [colour] light barriers\r\n\r\nMainChar,LF:
-    4,0: MainChar: Awesome! I bet it felt good to get a piece of you back?\r\n\r\nMainChar,LF:
-    4,0: LF: I feel stronger.\r\n\r\n\r"
+    We can now use beams to pass through light barriers.\r\n\r\nMainChar,LF: 4,0:
+    MainChar: Awesome! \n\nMainChar,LF: 4,0: MainChar: I bet it felt good to get
+    a piece of you back?\r\n\r\nMainChar,LF: 4,0: LF: I feel stronger."
