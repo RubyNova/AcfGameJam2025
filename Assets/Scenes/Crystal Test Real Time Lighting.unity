@@ -653,6 +653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GenericBounceBeam
       objectReference: {fileID: 0}
+    - target: {fileID: 7697161256769109243, guid: d125d4107ec8e904a96bd03df7fec0fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

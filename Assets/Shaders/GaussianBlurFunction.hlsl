@@ -31,7 +31,7 @@ void GaussianBlur_float(UnityTexture2D targetTexture, float2 texelSize, float2 U
     }
 
     col /= kernelSum;
-    OutRGBA = float4(col.r, col.g, col.b, 1);
+    OutRGBA = float4(col.r, col.g, col.b, col.a);
 }
 
 #endif
