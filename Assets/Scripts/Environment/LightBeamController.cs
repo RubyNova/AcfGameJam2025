@@ -329,13 +329,29 @@ namespace Environment
 
             List<Vector3> beamPoints = new() { startPoint };
 
-            while (Vector2.Distance((Vector2)currentBeamPoint, (Vector2)endPoint) > _maxLengthBetweenBeamSections)
+            float previousDistance = Vector2.Distance((Vector2)currentBeamPoint, (Vector2)endPoint);
+
+            bool beamDrawBailed = false;
+
+            while (previousDistance > _maxLengthBetweenBeamSections)
             {
                 currentBeamPoint += _targetTransform.right * _maxLengthBetweenBeamSections;
                 beamPoints.Add(currentBeamPoint);
+                float newDistance = Vector2.Distance((Vector2)currentBeamPoint, (Vector2)endPoint);
+
+                if (newDistance > previousDistance)
+                {
+                    beamDrawBailed = true;
+                    break; //how did you get here?   
+                }
+
+                previousDistance = newDistance;
             }
 
-            beamPoints.Add(endPoint);
+            if (!beamDrawBailed)
+            {
+                beamPoints.Add(endPoint);
+            }
 
             var positions = beamPoints.ToArray();
             _renderer.positionCount = positions.Length;
