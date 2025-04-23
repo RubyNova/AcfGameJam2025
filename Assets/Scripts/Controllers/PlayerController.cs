@@ -252,6 +252,7 @@ namespace Controllers
                         //do things
                         if (_resetLayerRoutine == null)
                         {
+                            print("Exiting!");
                             gameObject.layer = LayerMask.NameToLayer("IgnoreBeams");
                             _resetLayerRoutine = StartCoroutine(ResetLayerRoutine());
                         }
