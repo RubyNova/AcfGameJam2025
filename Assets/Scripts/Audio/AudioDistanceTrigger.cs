@@ -6,11 +6,12 @@ namespace Audio
 {
     public class AudioDistanceTrigger : AudioTrigger
     {
+        public bool GizmosEnabled = false;
         public float DistanceValue = 0;
         public float TriggerThresholdValue = 0;
         public float CutoffValue = 0;
-		public float distance = 0;
-		public float threshold = 0;
+		private float distance = 0;
+		private float threshold = 0;
 
         private PlayerController _playerReference;
 
@@ -45,6 +46,24 @@ namespace Audio
                     }
                     
                 }
+            }
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            if(GizmosEnabled)
+            {
+                var direction = transform.right * DistanceValue;
+                var thresholdDirection = transform.right * (TriggerThresholdValue / DistanceValue) * DistanceValue;
+                var endpoint = transform.position + direction;
+                var threshold = transform.position + thresholdDirection;
+
+                Gizmos.color = Color.green;
+                Gizmos.DrawRay(transform.position, direction);
+                Gizmos.color = Color.magenta;
+                Gizmos.DrawSphere(endpoint, 0.25f);
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawSphere(threshold, 0.25f);
             }
         }
     }
