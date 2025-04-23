@@ -1944,8 +1944,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7237893390964871183, guid: c086fa69191666641a4b556e3f0a082f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 966409444}
   m_SourcePrefab: {fileID: 100100000, guid: c086fa69191666641a4b556e3f0a082f, type: 3}
+--- !u!1 &966409443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7237893390964871183, guid: c086fa69191666641a4b556e3f0a082f, type: 3}
+  m_PrefabInstance: {fileID: 966409442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &966409444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966409443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c5f588e52352344a0b39fe97ac3de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerNumber: 3
+  DistanceValue: 15
+  TriggerThresholdValue: 0.85
+  CutoffValue: 0.1
+  distance: 9.341806
+  threshold: 0.09098883
 --- !u!1001 &986224940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50194,8 +50220,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7237893390964871183, guid: c086fa69191666641a4b556e3f0a082f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1687555648}
   m_SourcePrefab: {fileID: 100100000, guid: c086fa69191666641a4b556e3f0a082f, type: 3}
+--- !u!1 &1687555647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7237893390964871183, guid: c086fa69191666641a4b556e3f0a082f, type: 3}
+  m_PrefabInstance: {fileID: 1687555646}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1687555648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687555647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c5f588e52352344a0b39fe97ac3de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerNumber: 3
+  DistanceValue: 15
+  TriggerThresholdValue: 0.85
+  CutoffValue: 0.1
+  distance: 9.341806
+  threshold: 0.09098883
 --- !u!1001 &1699995118
 PrefabInstance:
   m_ObjectHideFlags: 0
