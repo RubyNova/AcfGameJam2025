@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7644500039548275150}
   - component: {fileID: 7779559341712548569}
   - component: {fileID: 398167092836814192}
+  - component: {fileID: 6300925829995948502}
   m_Layer: 3
   m_Name: Warp Pad
   m_TagString: Untagged
@@ -228,6 +229,24 @@ PolygonCollider2D:
       - {x: 5.15, y: -1.4}
       - {x: -5.15, y: -1.4}
   m_UseDelaunayMesh: 0
+--- !u!114 &6300925829995948502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237893390964871183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c5f588e52352344a0b39fe97ac3de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerNumber: 3
+  DistanceValue: 15
+  TriggerThresholdValue: 0.85
+  CutoffValue: 0.1
+  distance: 9.341806
+  threshold: 0.09098883
 --- !u!1 &9034771415041111726
 GameObject:
   m_ObjectHideFlags: 0
