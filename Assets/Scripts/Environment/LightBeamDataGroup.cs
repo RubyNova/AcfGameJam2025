@@ -6,5 +6,7 @@ namespace Environment
     {
         public int Priority { get; set; }
         public Vector2 DirectionAndForce { get; set; }
+
+        public bool CanBeExited { get; set; } = true;
     }
 }

@@ -36,6 +36,9 @@ namespace Environment
         private float _beamPierceDistance;
 
         [SerializeField]
+        public bool CanBeExited = true;
+
+        [SerializeField]
         private float _beamExitVelocityMultiplier;
 
         [SerializeField]
