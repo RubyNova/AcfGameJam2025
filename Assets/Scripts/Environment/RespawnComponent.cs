@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 
 namespace Environment
@@ -12,6 +13,13 @@ namespace Environment
             _respawnPosition = transform.position;
         }
 
-        public void Respawn() => transform.position = _respawnPosition;
+        public void Respawn()
+        { 
+            var pc = FindAnyObjectByType<PlayerController>();
+            if(pc != null && pc.HeldObject != null && pc.HeldObject.gameObject.GetHashCode() == gameObject.GetHashCode())
+                return;
+                
+            transform.position = _respawnPosition;
+        }
     }
 }
