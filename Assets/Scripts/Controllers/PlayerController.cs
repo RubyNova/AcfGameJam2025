@@ -243,17 +243,19 @@ namespace Controllers
                 //HopDown
                 if(_hopDownTriggered)
                 {
-                    //do things
-                    if (_resetLayerRoutine == null)
-                    {
-                        gameObject.layer = LayerMask.NameToLayer("IgnoreBeams");
-                        _resetLayerRoutine = StartCoroutine(ResetLayerRoutine());
-                    }
-
                     _hopDownTriggered = false;
+                    
                     var data = GetCachedBeamData();
-                    if(data != null)
+
+                    if(data != null && data.CanBeExited)
                     {
+                        //do things
+                        if (_resetLayerRoutine == null)
+                        {
+                            gameObject.layer = LayerMask.NameToLayer("IgnoreBeams");
+                            _resetLayerRoutine = StartCoroutine(ResetLayerRoutine());
+                        }
+
                         ResetRotation();
                         _rigidbody.linearVelocity = Vector2.zero;
                         _listOfOutsideForces.Remove(_cachedAffectingBeam);
@@ -411,7 +413,8 @@ namespace Controllers
                 _listOfOutsideForces.Add(sender.gameObject.GetHashCode(), new LightBeamDataGroup
                 {
                     Priority = beamPriority,
-                    DirectionAndForce = senderBeamDirection * beamForce
+                    DirectionAndForce = senderBeamDirection * beamForce,
+                    CanBeExited = sender.CanBeExited
                 });
                 _capMultiplierForOutsideForces += beamForce * _outsideForceInfluenceMultiplier;
                 _triggerCollider.enabled = true;
