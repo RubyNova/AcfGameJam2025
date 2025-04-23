@@ -57,19 +57,15 @@ MonoBehaviour:
   <SourceScript>k__BackingField: 'Narrator: The day has finally come?
 
 
-
     MainChar,LF:
     3,0: LF: Indeed. We must assist Kymbr with their trial.
-
 
 
     Narrator: Understood.
     Am I the first to merge?
 
 
-
     MainChar,LF: 3,0: LF: Yes.
-
 
 
 '

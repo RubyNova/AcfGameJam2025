@@ -41,10 +41,12 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 4
     _poseIndexTwo: 0
-    _text: Open the door and I can merge my pieces together.
+    _text: Once the cell door is open, I can merge by touching the piece of me held
+      inside.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 4,0: MainChar: Another cell! A piece
     of you must be in here, right? \r\n\nMainChar,LF: 4,0: LF: Correct. \r\n\r\nMainChar,LF:
-    4,0: LF: Open the door and I can merge my pieces together."
+    4,0: LF: Once the cell door is open, I can merge by touching the piece of me
+    held inside."
