@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 17
     _poseIndexTwo: 0
-    _text: "I\u2019m scared\u2026I feel like I\u2019m fainting!"
+    _text: "I\u2019m scared\u2026 I feel like I\u2019m fainting!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -56,5 +56,5 @@ MonoBehaviour:
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 13,0: MainChar: I don\u2019t want
     to\u2026\n\nMainChar,LF: 13,0: LF: We must!\n\nMainChar,LF: 17,0: MainChar: I\u2019m
-    scared\u2026I feel like I\u2019m fainting!\n\nMainChar,LF: 17,0: LF: I will carry
-    us the rest of the way."
+    scared\u2026 I feel like I\u2019m fainting!\n\nMainChar,LF: 17,0: LF: I will
+    carry us the rest of the way."

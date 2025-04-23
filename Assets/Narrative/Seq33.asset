@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 18
     _poseIndexTwo: 0
-    _text: "Ugh that one felt\u2026different?"
+    _text: "Ugh that one felt\u2026 different?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 16
     _poseIndexTwo: 0
-    _text: "It\u2019s overwhelming"
+    _text: "It\u2019s overwhelming!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -59,7 +59,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 17
     _poseIndexTwo: 0
-    _text: "I need a moment, I feel\u2026like\u2026I\u2019m not fully here"
+    _text: "I need a moment, I feel\u2026 like\u2026 I\u2019m not fully here."
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -77,7 +77,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 12
     _poseIndexTwo: 0
-    _text: " I need to stop\u2026I feel\u2026"
+    _text: " I need to stop\u2026 I feel\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -90,10 +90,10 @@ MonoBehaviour:
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Ugh that one felt\u2026different?\n\nMainChar,LF:
-    18,0: LF: Do not be alarmed, your mind is adjusting to my presence.\n\nMainChar,LF:
-    16,0: MainChar: It\u2019s overwhelming\n\nMainChar,LF: 16,0: LF: One more piece
-    and I will be whole again.\n\nMainChar,LF: 17,0: MainChar: I need a moment, I
-    feel\u2026like\u2026I\u2019m not fully here\n\nMainChar,LF: 17,0: LF: We must
-    hurry!\n\nMainChar,LF: 12,0: MainChar:  I need to stop\u2026I feel\u2026\n\nMainChar,LF:
-    12,0: LF: No Kymbr. We must continue!\n\n\n\n\n\n"
+  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Ugh that one felt\u2026
+    different?\n\nMainChar,LF: 18,0: LF: Do not be alarmed, your mind is adjusting
+    to my presence.\n\nMainChar,LF: 16,0: MainChar: It\u2019s overwhelming!\n\nMainChar,LF:
+    16,0: LF: One more piece and I will be whole again.\n\nMainChar,LF: 17,0: MainChar:
+    I need a moment, I feel\u2026 like\u2026 I\u2019m not fully here.\n\nMainChar,LF:
+    17,0: LF: We must hurry!\n\nMainChar,LF: 12,0: MainChar:  I need to stop\u2026
+    I feel\u2026\n\nMainChar,LF: 12,0: LF: No Kymbr. We must continue!\n\n\n\n\n\n"

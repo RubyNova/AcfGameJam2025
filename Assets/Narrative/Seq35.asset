@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 16
     _poseIndexTwo: 0
-    _text: You wish to understand why your Mother left?
+    _text: You wish to understand why your mother left?
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -71,7 +71,7 @@ MonoBehaviour:
 
 
     MainChar,LF: 16,0:
-    LF: You wish to understand why your Mother left?
+    LF: You wish to understand why your mother left?
 
 
     MainChar,LF: 16,0: LF:

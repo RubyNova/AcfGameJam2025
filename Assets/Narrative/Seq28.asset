@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 14
     _poseIndexTwo: 0
-    _text: Show the others that I did it and then forge my own path
+    _text: Show the others that I did it and then forge my own path.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -59,13 +59,11 @@ MonoBehaviour:
 
 
     MainChar: 14: Show the others that I did it and then forge my own
-    path
+    path.
 
-    
 
     MainChar: 12: ....
 
-    
 
     MainChar: 17: ....
 

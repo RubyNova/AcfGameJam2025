@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: Glory awaits
+    _text: Glory awaits!
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
   _choices: []
@@ -52,4 +52,4 @@ MonoBehaviour:
     0: Your wait is over, you are the last to merge.
 
 
-    Narrator: Glory awaits'
+    Narrator: Glory awaits!'

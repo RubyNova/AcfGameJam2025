@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 7
     _poseIndexTwo: 0
-    _text: "Woah, I can hear you in my head, it feels bizarre\u2026kinda tingly?"
+    _text: "Woah, I can hear you in my head, it feels bizarre\u2026 kinda tingly?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -64,7 +64,7 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 7,0: LF: We are now one, is that ok?\n\nMainChar,LF:
-    7,0: MainChar: Woah, I can hear you in my head, it feels bizarre\u2026kinda tingly?\n\nMainChar,LF:
-    7,0: LF: Thank you for accepting me, I could not merge unless you were willing.\n\nMainChar,LF:
-    4,0: MainChar: Don\u2019t mention it, we\u2019re in this together!\n\nMainChar,LF:
-    4,0: LF: Indeed we are."
+    7,0: MainChar: Woah, I can hear you in my head, it feels bizarre\u2026 kinda
+    tingly?\n\nMainChar,LF: 7,0: LF: Thank you for accepting me, I could not merge
+    unless you were willing.\n\nMainChar,LF: 4,0: MainChar: Don\u2019t mention it,
+    we\u2019re in this together!\n\nMainChar,LF: 4,0: LF: Indeed we are."

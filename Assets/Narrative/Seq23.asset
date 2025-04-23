@@ -59,7 +59,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 18
     _poseIndexTwo: 0
-    _text: ' You are sure?'
+    _text: You are sure?
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -84,6 +84,6 @@ MonoBehaviour:
   <SourceScript>k__BackingField: "MainChar,LF: 16,0: MainChar: One more Prism left.\n\r\n\rMainChar,LF:
     17,0: MainChar: All this bouncing around is exhausting!\r\n\r\nMainChar,LF: 17,0:
     LF: You wish to give up so close to the end?\r\n\r\nMainChar,LF: 18,0: MainChar:
-    No! I didn\u2019t mean anything like that!\r\n\r\nMainChar,LF: 18,0: MainChar: 
+    No! I didn\u2019t mean anything like that!\r\n\r\nMainChar,LF: 18,0: MainChar:
     You are sure?\r\n\r\nMainChar,LF: 15,0: MainChar: Absolutely, I need to see this
     through!\r\n\r\nMainChar,LF: 15,0: LF: The Gods will be pleased.\r\n"

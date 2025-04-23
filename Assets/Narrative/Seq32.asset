@@ -30,7 +30,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 15
+    _poseIndex: 21
     _poseIndexTwo: 0
     _text: I feel incredible!
     _leftCharacterTalking: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 15
+    _poseIndex: 21
     _poseIndexTwo: 0
     _text: 'This is merely half of the strength bestowed upon me. '
     _leftCharacterTalking: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 15
+    _poseIndex: 19
     _poseIndexTwo: 0
     _text: 'You wish to become worthy of this, through your trial. '
     _leftCharacterTalking: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 15
+    _poseIndex: 19
     _poseIndexTwo: 0
     _text: To understand why those before you have given their lives to The Gods?
     _leftCharacterTalking: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
+    _poseIndex: 15
     _poseIndexTwo: 0
     _text: I'm ready!
     _leftCharacterTalking: 1
@@ -75,16 +75,16 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
+    _poseIndex: 15
     _poseIndexTwo: 0
     _text: Continue forth and you shall find the answers.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 7,0: MainChar: Woaah, wowweee!\n\nMainChar,LF:
-    15,0: MainChar: I feel incredible!\n\nMainChar,LF: 15,0: LF: This is merely half
-    of the strength bestowed upon me. \n\nMainChar,LF: 15,0: LF: You wish to become
-    worthy of this, through your trial. \r\n\nMainChar,LF: 15,0: LF: To understand
-    why those before you have given their lives to The Gods?\n\nMainChar,LF: 14,0:
-    MainChar: I'm ready!\n\nMainChar,LF: 14,0: LF: Continue forth and you shall find
+    21,0: MainChar: I feel incredible!\n\nMainChar,LF: 21,0: LF: This is merely half
+    of the strength bestowed upon me. \n\nMainChar,LF: 19,0: LF: You wish to become
+    worthy of this, through your trial. \r\n\nMainChar,LF: 19,0: LF: To understand
+    why those before you have given their lives to The Gods?\n\nMainChar,LF: 15,0:
+    MainChar: I'm ready!\n\nMainChar,LF: 15,0: LF: Continue forth and you shall find
     the answers."

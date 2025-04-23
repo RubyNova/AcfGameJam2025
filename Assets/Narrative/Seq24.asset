@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: Unmerged, the light cannot pass through prism walls of this colour, without
+    _text: Unmerged, my light cannot pass through prism walls of this colour, without
       physical assistance.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   <SourceScript>k__BackingField: "MainChar,LF: 7,0: MainChar: Oh, your next piece
     is already free? The cell must have opened by itself.\r\n\r\nMainChar,LF: 9,0:
     MainChar: I wonder why it didn\u2019t just leave?\u201D\r\n\r\nMainChar,LF: 9,0:
-    LF: Unmerged, the light cannot pass through prism walls of this colour, without
+    LF: Unmerged, my light cannot pass through prism walls of this colour, without
     physical assistance.\r\n\r\nMainChar,LF: 2,0: MainChar: I get it! So once you
     merge, you should be able to travel more freely?\r\n\r\nMainChar,LF: 2,0: LF:
     Indeed, and faster. That speed will enable you to navigate the final challenges

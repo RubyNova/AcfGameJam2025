@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 16
     _poseIndexTwo: 0
-    _text: "It is done\u2026soon, you will join your friends..."
+    _text: "It is done\u2026 soon, you will join your friends..."
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -68,7 +68,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 1
     _poseIndexTwo: 0
-    _text: I...didn't...
+    _text: I... didn't...
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -77,12 +77,12 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: ...want this...
+    _text: ... want this...
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 16,0: MainChar: I can\u2019t do it!
-    I don\u2019t want this feeling!\n\nMainChar,LF: 16,0: LF: It is done\u2026soon,
+    I don\u2019t want this feeling!\n\nMainChar,LF: 16,0: LF: It is done\u2026 soon,
     you will join your friends...\n\nMainChar,LF: 16,0: LF: and your parents.\n\nMainChar,LF:
     16,0: MainChar: I can't!\n\nMainChar,LF: 16,0: LF: Let go.\n\nMainChar,LF: 1,0:
-    MainChar: I...didn't...\n\nMainChar,LF: 0,0: MainChar: ...want this..."
+    MainChar: I... didn't...\n\nMainChar,LF: 0,0: MainChar: ... want this..."
