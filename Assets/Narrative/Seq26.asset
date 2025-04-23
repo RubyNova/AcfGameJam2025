@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Seq26
   m_EditorClassIdentifier: 
   _backgroundSprite: {fileID: 0}
-  _nextSequence: {fileID: 0}
+  _nextSequence: {fileID: 11400000, guid: fb36cbda46ff5484284d9b96022ee19d, type: 2}
   _musicFiles: []
   _soundEffectFiles: []
   _characterDialoguePairs:
@@ -77,7 +77,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 16
     _poseIndexTwo: 0
-    _text: I won't!
+    _text: I will return as soon as I can.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
@@ -86,4 +86,5 @@ MonoBehaviour:
     out?!\r\n\r\nMainChar,LF: 18,0: LF: Hmm, yes. Something seems off here.\r\n\r\nMainChar,LF:
     16,0: MainChar: I can\u2019t believe this! Did I take a wrong turn?\r\n\r\nMainChar,LF:
     16,0: LF: The beams may be misaligned or blocked, let me see what I can do\u2026\r\n\r\nMainChar,LF:
-    17,0: MainChar: Don\u2019t leave me here!\r\n\r\nMainChar,LF: 16,0: LF: I won't!\n\n"
+    17,0: MainChar: Don\u2019t leave me here!\r\n\r\nMainChar,LF: 16,0: LF: I will
+    return as soon as I can."
