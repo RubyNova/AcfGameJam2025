@@ -1967,11 +1967,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerNumber: 3
+  GizmosEnabled: 0
   DistanceValue: 15
   TriggerThresholdValue: 0.85
   CutoffValue: 0.1
-  distance: 9.341806
-  threshold: 0.09098883
 --- !u!1001 &986224940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1986,7 +1985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1998,6 +1997,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
@@ -2013,11 +2016,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 482724801}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2072710136}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
@@ -2033,6 +2044,10 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Environment.AnimatorFlagUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2045,12 +2060,20 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -2073,11 +2096,19 @@ PrefabInstance:
       value: ShouldOpen
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
+      value: ShouldOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: ACHNarrativeDriver.ScriptableObjects.NarrativeSequence, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626432194623438368, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+      propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9183213121873146200, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
@@ -50243,11 +50274,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerNumber: 3
+  GizmosEnabled: 0
   DistanceValue: 15
   TriggerThresholdValue: 0.85
   CutoffValue: 0.1
-  distance: 9.341806
-  threshold: 0.09098883
 --- !u!1001 &1699995118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66937,6 +66967,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &2072710136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 771084537901868183, guid: 8dcba2729019cf849b692eeb9c499734, type: 3}
+  m_PrefabInstance: {fileID: 986224940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2097541967
 PrefabInstance:
   m_ObjectHideFlags: 0
