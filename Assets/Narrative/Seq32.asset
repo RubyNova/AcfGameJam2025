@@ -68,7 +68,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 14
     _poseIndexTwo: 0
-    _text: Im ready!
+    _text: I'm ready!
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -86,5 +86,5 @@ MonoBehaviour:
     of the strength bestowed upon me. \n\nMainChar,LF: 15,0: LF: You wish to become
     worthy of this, through your trial. \r\n\nMainChar,LF: 15,0: LF: To understand
     why those before you have given their lives to The Gods?\n\nMainChar,LF: 14,0:
-    MainChar: Im ready!\n\nMainChar,LF: 14,0: LF: Continue forth and you shall find
+    MainChar: I'm ready!\n\nMainChar,LF: 14,0: LF: Continue forth and you shall find
     the answers."

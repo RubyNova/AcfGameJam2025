@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: Indeed. We must assist Player with their trial.
+    _text: Indeed. We must assist Kymbr with their trial.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
@@ -59,7 +59,7 @@ MonoBehaviour:
 
 
     MainChar,LF:
-    3,0: LF: Indeed. We must assist Player with their trial.
+    3,0: LF: Indeed. We must assist Kymbr with their trial.
 
 
 

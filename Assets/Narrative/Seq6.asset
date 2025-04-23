@@ -33,7 +33,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 5
     _poseIndexTwo: 0
-    _text: ' Allow Me.'
+    _text: ' Allow me.'
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -51,11 +51,11 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: 'Press E to switch between characters. '
+    _text: 'Press E to switch between Kymbr and Cymkin. '
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 5,0: MainChar: There doesn\u2019t
     seem to be anything down here that I can use to hold this button down.\n\nMainChar,LF:
     5,0: LF:  Allow me.\n\nMainChar,LF: 5,0: LF: I can move objects by turning light
-    beams blue.\n\nNarrator: Press E to switch between characters. "
+    beams blue.\n\nNarrator: Press E to switch between Kymbr and Cymkin. "

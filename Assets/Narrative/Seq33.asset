@@ -86,7 +86,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 12
     _poseIndexTwo: 0
-    _text: No PlayerName. We must continue!
+    _text: No Kymbr. We must continue!
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
@@ -96,4 +96,4 @@ MonoBehaviour:
     and I will be whole again.\n\nMainChar,LF: 17,0: MainChar: I need a moment, I
     feel\u2026like\u2026I\u2019m not fully here\n\nMainChar,LF: 17,0: LF: We must
     hurry!\n\nMainChar,LF: 12,0: MainChar:  I need to stop\u2026I feel\u2026\n\nMainChar,LF:
-    12,0: LF: No PlayerName. We must continue!\n\n\n\n\n\n"
+    12,0: LF: No Kymbr. We must continue!\n\n\n\n\n\n"

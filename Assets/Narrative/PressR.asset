@@ -23,8 +23,9 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: Press R to Fast Travel
+    _text: Press R to send Cymkin back to where Kymbr is standing.
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
   _choices: []
-  <SourceScript>k__BackingField: 'Narrator: Press R to Fast Travel'
+  <SourceScript>k__BackingField: 'Narrator: Press R to send Cymkin back to where
+    Kymbr is standing.'

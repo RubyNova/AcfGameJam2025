@@ -113,7 +113,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: "I\u2019m Shadynasty!"
+    _text: "I\u2019m Kymbr!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -140,7 +140,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 4
     _poseIndexTwo: 0
-    _text: Name and Cymkin!
+    _text: Kymbr and Cymkin!
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -249,9 +249,9 @@ MonoBehaviour:
     4,0: MainChar: I\u2019m here for my trial!\n\nMainChar,LF: 2,0: LF: Your trial?\n\r\nMainChar,LF:
     2,0: LF: Ah, of course. \n\r\nMainChar,LF: 2,0: LF: Forgive me, it has been a
     while since I have heard another voice.\n\r\nMainChar,LF: 3,0: MainChar: It\u2019s
-    so great to finally meet you. \n\nMainChar,LF: 3,0: I\u2019m Shadynasty!\n\nMainChar,LF:
+    so great to finally meet you. \n\nMainChar,LF: 3,0: I\u2019m Kymbr!\n\nMainChar,LF:
     2,0: LF: Welcome! \n\nMainChar,LF: 2,0: LF: You may call me Cymkin.\n\nMainChar,LF:
-    4,0: MainChar: Name and Cymkin!\n\nMainChar,LF: 21,0: MainChar: A duo destined
+    4,0: MainChar: Kymbr and Cymkin!\n\nMainChar,LF: 21,0: MainChar: A duo destined
     for success!\n\nMainChar,LF: 14,0: LF: Let\u2019s not be too hasty.\n\nMainChar,LF:
     14,0: LF: Are you prepared for what lies ahead?\n\nMainChar,LF: 15,0: MainChar:
     I passed every test.\n\nMainChar,LF: 15,0: MainChar: Followed every rule. \n\nMainChar,LF:
