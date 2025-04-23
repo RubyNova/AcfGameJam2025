@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 7
     _poseIndexTwo: 0
-    _text: "Ooh, bouncy beams? That sounds\u2026fun!"
+    _text: "Ooh, bouncy beams? That sounds\u2026 fun!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -57,5 +57,5 @@ MonoBehaviour:
   <SourceScript>k__BackingField: "MainChar,LF: 3,0: MainChar: Another cell! I can\u2019t
     wait to see what you can do next!\r\n\r\nMainChar,LF: 3,0: LF: With this, I will
     be able to deflect objects off of the beams.\r\n\r\nMainChar,LF: 7,0: MainChar:
-    Ooh, bouncy beams? That sounds\u2026fun!\r\n\r\nMainChar,LF: 5,0: MainChar: If
-    not a little dangerous!\r\n"
+    Ooh, bouncy beams? That sounds\u2026 fun!\r\n\r\nMainChar,LF: 5,0: MainChar:
+    If not a little dangerous!\r\n"

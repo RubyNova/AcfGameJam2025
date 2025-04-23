@@ -51,14 +51,14 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: "No\u2026I don\u2019t think so?"
+    _text: "No\u2026 I don\u2019t think so?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
+    _poseIndex: 1
     _poseIndexTwo: 0
     _text: "We have families\u2026 I guess that\u2019s sort of similar."
     _leftCharacterTalking: 1
@@ -67,34 +67,34 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
+    _poseIndex: 0
     _poseIndexTwo: 0
-    _text: "\u2018Families\u2019?"
+    _text: Families?
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
+    _poseIndex: 1
     _poseIndexTwo: 0
-    _text: 'We have parents, a Mum and Dad who created us. '
+    _text: 'We have parents, a mum and dad who created us. '
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
+    _poseIndex: 1
     _poseIndexTwo: 0
-    _text: Some have brothers and sisters they grew up with.
+    _text: Some have siblings they grew up with.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: We do not have families. I was created by The Gods.
     _leftCharacterTalking: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 10
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: Does family make you whole?
     _leftCharacterTalking: 0
@@ -131,11 +131,11 @@ MonoBehaviour:
     to talk before it merged.\n\r\nMainChar,LF: 2,0: MainChar: Does that mean you
     have two voices in your mind now?\r\n\r\nMainChar,LF: 2,0: LF: No, we form one
     whole. Do humans not have parts like this that make them whole?\r\n\r\nMainChar,LF:
-    9,0: MainChar: No\u2026I don\u2019t think so?\r\n\r\nMainChar,LF: 10,0: MainChar:
+    9,0: MainChar: No\u2026 I don\u2019t think so?\r\n\r\nMainChar,LF: 1,0: MainChar:
     We have families\u2026 I guess that\u2019s sort of similar.\r\n\r\nMainChar,LF:
-    10,0: LF: \u2018Families\u2019?\r\n\r\nMainChar,LF: 10,0: MainChar: We have parents,
-    a Mum and Dad who created us. \n\r\nMainChar,LF: 10,0: MainChar: Some have brothers
-    and sisters they grew up with.\r\n\r\nMainChar,LF: 10,0: LF: We do not have families.
-    I was created by The Gods.\r\n\r\nMainChar,LF: 10,0: LF: Does family make you
-    whole?\r\n\r\nMainChar,LF: 10,0: MainChar: I never knew mine, not properly.\r\n\r\nMainChar,LF:
-    10,0: LF: ..."
+    0,0: LF: Families?\r\n\r\nMainChar,LF: 1,0: MainChar: We have parents, a mum
+    and dad who created us. \n\r\nMainChar,LF: 1,0: MainChar: Some have siblings
+    they grew up with.\r\n\r\nMainChar,LF: 0,0: LF: We do not have families. I was
+    created by The Gods.\r\n\r\nMainChar,LF: 0,0: LF: Does family make you whole?\r\n\r\nMainChar,LF:
+    10,0: MainChar: I never knew mine, not properly.\r\n\r\nMainChar,LF: 10,0: LF:
+    ..."

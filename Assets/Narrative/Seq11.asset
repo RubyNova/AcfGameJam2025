@@ -21,7 +21,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
+    _poseIndex: 5
     _poseIndexTwo: 0
     _text: "That wasn\u2019t so bad!"
     _leftCharacterTalking: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 5
     _poseIndexTwo: 0
-    _text: 'Oh! Ok, sorry! I just assumed. '
+    _text: 'Oh! Okay, sorry! I just assumed. '
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -68,7 +68,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: "So many people attempt the trials each year\u2026\u201D"
+    _text: "So many people attempt the trials each year\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -90,10 +90,10 @@ MonoBehaviour:
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 14,0: MainChar: That wasn\u2019t so
+  <SourceScript>k__BackingField: "MainChar,LF: 5,0: MainChar: That wasn\u2019t so
     bad!\r\n\r\nMainChar,LF: 3,0: MainChar: How did I compare to your other trialists?\r\n\r\nMainChar,LF:
     3,0: LF: ...\n\r\nMainChar,LF: 3,0: LF: You are the first trialist that has been
-    assigned to me.\n\r\r\nMainChar,LF: 5,0: MainChar: Oh! Ok, sorry! I just assumed.
-    \n\r\nMainChar,LF: 3,0: MainChar: So many people attempt the trials each year\u2026\u201D\r\n\r\nMainChar,LF:
+    assigned to me.\n\r\r\nMainChar,LF: 5,0: MainChar: Oh! Okay, sorry! I just assumed.
+    \n\r\nMainChar,LF: 3,0: MainChar: So many people attempt the trials each year\u2026\r\n\r\nMainChar,LF:
     3,0: LF: They will have been assigned to different prisms. \n\r\nMainChar,LF:
     3,0: LF: Speaking of which, we should move on."

@@ -50,26 +50,26 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: Yes
+    _text: Yes.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: 'Narrator: The day has finally come?
 
-    
+
 
     MainChar,LF:
     3,0: LF: Indeed. We must assist Player with their trial.
 
-    
 
-    Narrator:
-    Understood. Am I the first to merge?
 
-    
+    Narrator: Understood.
+    Am I the first to merge?
 
-    MainChar,LF: 3,0: LF: Yes
 
-    
+
+    MainChar,LF: 3,0: LF: Yes.
+
+
 
 '

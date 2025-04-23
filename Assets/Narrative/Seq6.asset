@@ -57,5 +57,5 @@ MonoBehaviour:
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 5,0: MainChar: There doesn\u2019t
     seem to be anything down here that I can use to hold this button down.\n\nMainChar,LF:
-    5,0: LF:  Allow Me.\n\nMainChar,LF: 5,0: LF: I can move objects by turning light
+    5,0: LF:  Allow me.\n\nMainChar,LF: 5,0: LF: I can move objects by turning light
     beams blue.\n\nNarrator: Press E to switch between characters. "

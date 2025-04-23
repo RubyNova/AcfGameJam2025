@@ -21,7 +21,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 2
+    _poseIndex: 1
     _poseIndexTwo: 0
     _text: So, have you been to this prism before?
     _leftCharacterTalking: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 2
     _poseIndexTwo: 0
-    _text: Part of me lives here
+    _text: Part of me lives here.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -50,7 +50,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 7
     _poseIndexTwo: 0
-    _text: "I am\u2026incomplete"
+    _text: "I am\u2026 incomplete."
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -69,7 +69,7 @@ MonoBehaviour:
     _poseIndex: 7
     _poseIndexTwo: 0
     _text: By rejoining with each part, I gain new abilities that will aid you on
-      your trial
+      your trial.
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -78,7 +78,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 4
     _poseIndexTwo: 0
-    _text: Oh wow, OK. We were never taught about that at school!
+    _text: Oh wow, Okay. We were never taught about that at school!
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -87,7 +87,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 4
     _poseIndexTwo: 0
-    _text: That sounds Neat!
+    _text: That sounds neat!
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -132,18 +132,18 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 14
     _poseIndexTwo: 0
-    _text: Ok, then! Let's get the band back together
+    _text: Okay, then! Let's get the band back together
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "\rMainChar,LF: 2,0: MainChar: So, have you been
-    to this prism before?\r\n\r\nMainChar,LF: 2,0: LF: Part of me lives here\r\n\r\nMainChar,LF:
-    7,0: MainChar: Part?\r\n\r\nMainChar,LF: 7,0: LF: I am\u2026incomplete\r\n\r\nMainChar,LF:
-    7,0: LF: Pieces of me are scattered throughout the prisms. \nMainChar,LF: 7,0:
+  <SourceScript>k__BackingField: "\rMainChar,LF: 1,0: MainChar: So, have you been
+    to this prism before?\r\n\r\nMainChar,LF: 2,0: LF: Part of me lives here.\r\n\r\nMainChar,LF:
+    7,0: MainChar: Part?\r\n\r\nMainChar,LF: 7,0: LF: I am\u2026 incomplete.\r\n\r\nMainChar,LF:
+    7,0: LF: Pieces of me are scattered throughout the prisms. \n\nMainChar,LF: 7,0:
     LF: By rejoining with each part, I gain new abilities that will aid you on your
-    trial\r\n\r\nMainChar,LF: 4,0: MainChar: Oh wow, OK. We were never taught about
-    that at school!\r\nMainChar,LF: 4,0: MainChar: That sounds Neat!\r\n\r\nMainChar,LF:
+    trial.\r\n\r\nMainChar,LF: 4,0: MainChar: Oh wow, Okay. We were never taught
+    about that at school!\n\r\nMainChar,LF: 4,0: MainChar: That sounds neat!\r\n\r\nMainChar,LF:
     9,0: MainChar: ...Did it hurt?\r\n\r\nMainChar,LF: 9,0: LF: What?\r\n\r\nMainChar,LF:
     9,0: MainChar: Being separated.\r\n\r\nMainChar,LF: 9,0: LF: I\u2026 cannot remember.
-    It happened so long ago.\r\n\r\nMainChar,LF: 14,0: MainChar: Ok, then! Let's
+    It happened so long ago.\r\n\r\nMainChar,LF: 14,0: MainChar: Okay, then! Let's
     get the band back together\r\n\r"

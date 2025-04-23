@@ -39,7 +39,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 2
+    _poseIndex: 12
     _poseIndexTwo: 0
     _text: 'I guess? '
     _leftCharacterTalking: 1
@@ -86,7 +86,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 12
     _poseIndexTwo: 0
-    _text: "All adults ever talked about was my Dad\u2019s sacrifice or my Mum\u2019s
+    _text: "All adults ever talked about was my dad\u2019s sacrifice or my mum\u2019s
       success."
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 10
     _poseIndexTwo: 0
-    _text: "Friends\u2026were they \u2018Family\u2019 too?"
+    _text: "Friends\u2026 were they \"Family\" too?"
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -169,7 +169,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 11
     _poseIndexTwo: 0
-    _text: Quite a few, they never came back after.
+    _text: Quite a few. \r\n They never came back after.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -193,18 +193,18 @@ MonoBehaviour:
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 10,0: LF: You seem concerned. \n\r\nMainChar,LF:
     10,0: LF: Were you not set on a path by The Gods yourself?\r\n\r\nMainChar,LF:
-    2,0: MainChar: I guess? \r\n\nMainChar,LF: 2,0: MainChar: Being here is just
+    12,0: MainChar: I guess? \r\n\nMainChar,LF: 2,0: MainChar: Being here is just
     a lot.\r\n\r\nMainChar,LF: 2,0: LF: You trained for this, is it not what you
     wanted?\r\n\r\nMainChar,LF: 5,0: MainChar: I don\u2019t think I was ever asked.\r\n\r\nMainChar,LF:
     5,0: LF: What do you mean?\r\n\r\nMainChar,LF: 12,0: MainChar: All adults ever
-    talked about was my Dad\u2019s sacrifice or my Mum\u2019s success.\r\n\nMainChar,LF:
+    talked about was my dad\u2019s sacrifice or my mum\u2019s success.\r\n\nMainChar,LF:
     11,0: MainChar:  Both of them abandoned me.\r\n\r\nMainChar,LF: 11,0: LF: In
     service to The Gods.\r\n\r\nMainChar,LF: 16,0: MainChar: Sure, but was that worth
     it?\r\n\n\rMainChar,LF: 10,0: MainChar: My friends didn\u2019t think so\u2026\n\r\nMainChar,LF:
     10,0: MainChar: Some would do the trials just to find out why it was worth abandoning
-    us over.\r\n\r\nMainChar,LF: 10,0: LF: Friends\u2026were they \u2018Family\u2019
-    too?\r\n\r\nMainChar,LF: 10,0: MainChar: We lived together, kids who had lost
-    their parents.\r\n\r\n\rMainChar,LF: 10,0: LF: Did many get to attempt the trial?\r\n\r\nMainChar,LF:
-    11,0: MainChar: Quite a few, they never came back after.\r\n\r\nMainChar,LF:
-    11,0: LF: The Gods found them worthy.\r\n\r\nMainChar,LF: 9,0: MainChar: I really
-    hope so...\r\n\r"
+    us over.\r\n\r\nMainChar,LF: 10,0: LF: Friends\u2026 were they \"Family\" too?\r\n\r\nMainChar,LF:
+    10,0: MainChar: We lived together, kids who had lost their parents.\r\n\r\n\rMainChar,LF:
+    10,0: LF: Did many get to attempt the trial?\r\n\r\nMainChar,LF: 11,0: MainChar:
+    Quite a few. \\r\\n They never came back after.\r\n\r\nMainChar,LF: 11,0: LF:
+    The Gods found them worthy.\r\n\r\nMainChar,LF: 9,0: MainChar: I really hope
+    so...\r\n\r"

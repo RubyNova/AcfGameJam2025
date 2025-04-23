@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 3
     _poseIndexTwo: 0
-    _text: " Woah\u2026are you OK?"
+    _text: " Woah\u2026 are you Okay?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -91,7 +91,7 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "LF: 0: We are now one.\n\nMainChar,LF: 3,0: MainChar: 
-    Woah\u2026are you OK?\r\n\r\nMainChar,LF: 3,0: LF: Yes. That\u2019s much better.\r\n\r\nMainChar,LF:
+    Woah\u2026 are you Okay?\r\n\r\nMainChar,LF: 3,0: LF: Yes. That\u2019s much better.\r\n\r\nMainChar,LF:
     3,0: MainChar: Did you get a new power?\r\n\r\nMainChar,LF: 3,0: LF: Indeed.
     We can now use beams to pass through light barriers.\r\n\r\nMainChar,LF: 4,0:
     MainChar: Awesome! \n\nMainChar,LF: 4,0: MainChar: I bet it felt good to get

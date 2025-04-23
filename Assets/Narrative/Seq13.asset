@@ -32,15 +32,6 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 4
     _poseIndexTwo: 0
-    _text: "What happens now?\u201D"
-    _leftCharacterTalking: 1
-    _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 4
-    _poseIndexTwo: 0
     _text: 'Correct. '
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
@@ -55,6 +46,5 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 4,0: MainChar: Another cell! A piece
-    of you must be in here, right? \r\n\nMainChar,LF: 4,0: MainChar: What happens
-    now?\u201D\r\n\nMainChar,LF: 4,0: LF: Correct. \r\n\r\nMainChar,LF: 4,0: LF:
-    Open the door and I can merge my pieces together."
+    of you must be in here, right? \r\n\nMainChar,LF: 4,0: LF: Correct. \r\n\r\nMainChar,LF:
+    4,0: LF: Open the door and I can merge my pieces together."

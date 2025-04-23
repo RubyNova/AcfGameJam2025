@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: "Hmm, The Deacon said I\u2019d know what to do when I got here."
+    _text: "Hmm, the Deacon said I\u2019d know what to do when I got here."
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -36,6 +36,6 @@ MonoBehaviour:
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar: 9: Hmm, The Deacon said I\u2019d know
+  <SourceScript>k__BackingField: "MainChar: 9: Hmm, the Deacon said I\u2019d know
     what to do when I got here.\r\n\nMainChar: 15: Let's see if I can find out what\u2019s
     going on\u2026"

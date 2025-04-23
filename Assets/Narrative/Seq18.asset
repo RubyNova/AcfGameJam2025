@@ -39,7 +39,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 6
+    _poseIndex: 9
     _poseIndexTwo: 0
     _text: 'It is in the hands of The Gods. '
     _leftCharacterTalking: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
     _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
     _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 14
+    _poseIndex: 21
     _poseIndexTwo: 0
     _text: WHEN I complete the trial.
     _leftCharacterTalking: 1
@@ -83,8 +83,8 @@ MonoBehaviour:
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: So... do you decide
     what happens at the end of this? \n\r\nMainChar,LF: 9,0: MainChar: Whether I\u2019m
-    worthy?\r\n\r\nMainChar,LF: 6,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
+    worthy?\r\n\r\nMainChar,LF: 9,0: LF: It is in the hands of The Gods. \r\n\r\nMainChar,LF:
     6,0: MainChar: But you give them feedback, right?\n\r\nMainChar,LF: 6,0: MainChar:
     Outstanding performance, bad at nicknames?\r\n\r\nMainChar,LF: 6,0: LF: If you
-    complete the trial, you will be worthy.  \r\n\r\nMainChar,LF: 14,0: MainChar:
+    complete the trial, you will be worthy.  \r\n\r\nMainChar,LF: 21,0: MainChar:
     WHEN I complete the trial.\r\n"

@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 7
     _poseIndexTwo: 0
-    _text: "Woah, that was wild\u2026 \\r\\n (Press F to Continue) "
+    _text: "Woah, that was wild\u2026 \\r\\n (Press F to continue) "
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -59,11 +59,11 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: Use Space to Jump.
+    _text: Use Space to jump.
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
   _choices: []
   <SourceScript>k__BackingField: "MainChar: 7: Woah, that was wild\u2026 \\r\\n (Press
-    F to Continue) \n\nMainChar: 7: I\u2019m actually inside.       \n\nMainChar:
+    F to continue) \n\nMainChar: 7: I\u2019m actually inside.       \n\nMainChar:
     7: It\u2019s so pretty in here!              \r\n\r\n\rNarrator: Press A and
-    D to move.       \n\nNarrator: Use Space to Jump.\n"
+    D to move.       \n\nNarrator: Use Space to jump.\n"

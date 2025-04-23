@@ -45,6 +45,6 @@ MonoBehaviour:
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Ahh\n\nMainChar,LF:
+  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Ahh!\n\nMainChar,LF:
     16,0: MainChar: Careful, I could've been crushed!\n\nMainChar,LF: 16,0: LF: My
     apologies, I forget what it\u2019s like to have a physical form."

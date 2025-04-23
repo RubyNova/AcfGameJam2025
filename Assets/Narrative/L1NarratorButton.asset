@@ -23,8 +23,8 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: Press F to Use Buttons or Objects.
+    _text: Press F to use buttons or objects.
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
   _choices: []
-  <SourceScript>k__BackingField: 'Narrator: Press F to Use Buttons or Objects.'
+  <SourceScript>k__BackingField: 'Narrator: Press F to use buttons or objects.'
