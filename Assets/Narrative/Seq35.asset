@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 16
     _poseIndexTwo: 0
-    _text: LFName! Please, let me rest!
+    _text: Cymkin! Please, let me rest!
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -63,7 +63,7 @@ MonoBehaviour:
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: 'MainChar,LF: 16,0: MainChar: LFName! Please, let
+  <SourceScript>k__BackingField: 'MainChar,LF: 16,0: MainChar: Cymkin! Please, let
     me rest!
 
 

@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: LFName are you alright?
+    _text: Cymkin are you alright?
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -104,7 +104,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 14
     _poseIndexTwo: 0
-    _text: "Ok, I\u2019ve got you, Sp\u2026LFName."
+    _text: "Ok, I\u2019ve got you, Sp\u2026Cymkin."
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -126,12 +126,12 @@ MonoBehaviour:
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: LFName are you alright?\n\nMainChar,LF:
+  <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: Cymkin are you alright?\n\nMainChar,LF:
     9,0: LF: Fixing the beam required me to unmerge\r\n\nMainChar,LF: 9,0: LF: I
     am afraid the task has severely weakened me.\n\nMainChar,LF: 6,0: MainChar: Thank
     you! I was so scared I was going to be stuck there!\r\n\nMainChar,LF: 6,0: LF:
     Imagine\n\nMainChar,LF: 5,0: MainChar: Ah, yes.\n\nMainChar,LF: 9,0: MainChar:
     Where is the rest of you?\n\nMainChar,LF: 9,0: LF: You will need to search on
     my behalf.\n\nMainChar,LF: 9,0: LF: I will aid you through any obstacles by passing
-    my abilities to you.\n\nMainChar,LF: 14,0: MainChar: Ok, I\u2019ve got you, Sp\u2026LFName.\n\nMainChar,LF:
+    my abilities to you.\n\nMainChar,LF: 14,0: MainChar: Ok, I\u2019ve got you, Sp\u2026Cymkin.\n\nMainChar,LF:
     14,0: LF: I believe in you.\n\nMainChar,LF: 14,0: LF: Come closer. "

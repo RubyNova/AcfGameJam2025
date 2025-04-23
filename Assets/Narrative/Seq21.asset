@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 9
     _poseIndexTwo: 0
-    _text: "That wasn\u2019t really an answer, LFName"
+    _text: "That wasn\u2019t really an answer, Cymkin"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -64,6 +64,6 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: That wasn\u2019t really
-    an answer, LFName\r\n\r\nMainChar,LF: 9,0: LF: It was not my choice, I am merely
+    an answer, Cymkin\r\n\r\nMainChar,LF: 9,0: LF: It was not my choice, I am merely
     following the path I am set.\r\n\r\nMainChar,LF: 12,0: MainChar: By The Gods.\r\n\r\nMainChar,LF:
     12,0: LF: Correct.\r\n\r\nMainChar,LF: 12,0: MainChar: Okay.\r\n"

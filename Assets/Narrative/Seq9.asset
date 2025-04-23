@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 15
     _poseIndexTwo: 0
-    _text: "We\u2019ve got this, LFName!"
+    _text: "We\u2019ve got this!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -59,7 +59,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 18
     _poseIndexTwo: 0
-    _text: "That\u2019s [LF NAME]!"
+    _text: "That\u2019s Cymkin!"
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -73,7 +73,7 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 3,0: MainChar: Our first real challenge!\r\n\r\nMainChar,LF:
-    15,0: MainChar: We\u2019ve got this, LFName!\r\n\r\nMainChar,LF: 15,0: LF: I\u2019m
-    sure. If you need my assistance, you know what to do.\r\n\r\nMainChar,LF: 14,0:
-    MainChar: Sure thing, Sparky!\r\n\r\nMainChar,LF: 18,0: LF: That\u2019s [LF NAME]!\n\r\nMainChar,LF:
+    15,0: MainChar: We\u2019ve got this!\r\n\r\nMainChar,LF: 15,0: LF: I\u2019m sure.
+    If you need my assistance, you know what to do.\r\n\r\nMainChar,LF: 14,0: MainChar:
+    Sure thing, Sparky!\r\n\r\nMainChar,LF: 18,0: LF: That\u2019s Cymkin!\n\r\nMainChar,LF:
     6,0: LF:  ...Please.\n\r\n\r\n\r\n"

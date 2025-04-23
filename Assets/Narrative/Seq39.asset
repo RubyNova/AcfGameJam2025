@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 20
     _poseIndexTwo: 0
-    _text: LFName has returned.
+    _text: Cymkin has returned.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -64,6 +64,6 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar: 20: I can finally leave this wretched
-    prison.\n\nMainChar: 20: Hear me, brothers and sisters.  \n\nMainChar: 20: LFName
+    prison.\n\nMainChar: 20: Hear me, brothers and sisters.  \n\nMainChar: 20: Cymkin
     has returned.\n\nMainChar: 20: We will eradicate the non-believers. \n\nMainChar:
     20: Our victory is inevitable.\r\n"

@@ -32,7 +32,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 18
     _poseIndexTwo: 0
-    _text: "LFNAME I can\u2019t see a way out?!"
+    _text: "Cymkin, I can\u2019t see a way out?!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -82,7 +82,7 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "MainChar,LF: 9,0: MainChar: Wait, something went
-    wrong there.\r\n\r\nMainChar,LF: 18,0: MainChar: LFNAME I can\u2019t see a way
+    wrong there.\r\n\r\nMainChar,LF: 18,0: MainChar: Cymkin, I can\u2019t see a way
     out?!\r\n\r\nMainChar,LF: 18,0: LF: Hmm yes something seems off here\r\n\r\nMainChar,LF:
     16,0: MainChar: I can\u2019t believe this! Did I take a wrong turn?\r\n\r\nMainChar,LF:
     16,0: LF: The beams may be misaligned or blocked, let me see what I can do\u2026\r\n\r\nMainChar,LF:
