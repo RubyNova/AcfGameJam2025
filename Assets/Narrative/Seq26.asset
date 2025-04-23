@@ -86,4 +86,4 @@ MonoBehaviour:
     out?!\r\n\r\nMainChar,LF: 18,0: LF: Hmm yes something seems off here\r\n\r\nMainChar,LF:
     16,0: MainChar: I can\u2019t believe this! Did I take a wrong turn?\r\n\r\nMainChar,LF:
     16,0: LF: The beams may be misaligned or blocked, let me see what I can do\u2026\r\n\r\nMainChar,LF:
-    17,0: MainChar: Don\u2019t leave me here!\r\n\r\nMainChar,LF: 16,0: LF: I won't!\n"
+    17,0: MainChar: Don\u2019t leave me here!\r\n\r\nMainChar,LF: 16,0: LF: I won't!\n\n"
