@@ -141192,6 +141192,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 562984960562502282, guid: 3470fdbacfd636d42b6a477dd3f03125, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1919905193}
+    - targetCorrespondingSourceObject: {fileID: 562984960562502282, guid: 3470fdbacfd636d42b6a477dd3f03125, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1919905190}
   m_SourcePrefab: {fileID: 100100000, guid: 3470fdbacfd636d42b6a477dd3f03125, type: 3}
 --- !u!1 &1919905189 stripped
@@ -141242,6 +141245,67 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1628902530}
+        m_TargetAssemblyTypeName: ACHNarrativeDriver.NarrativeUIController, Assembly-CSharp
+        m_MethodName: ExecuteSequence
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3407b6e3f625a55419be279e06248a4c, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ACHNarrativeDriver.ScriptableObjects.NarrativeSequence,
+            Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1919905189}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!58 &1919905193
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919905189}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 8}
+  m_Radius: 4.7
 --- !u!61 &1992801794 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 2334132911147143043, guid: 5c3a267292b49d34ea1b4d80288189a4, type: 3}
