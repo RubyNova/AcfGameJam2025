@@ -24,6 +24,8 @@ namespace Controllers
         [SerializeField] private float _lerpAmount = 0.0f;
         [SerializeField] private Vector3 _vectorLerp = Vector3.zero;
 
+        private bool _transitioned = false;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -63,48 +65,62 @@ namespace Controllers
 
         void LerpToOverride()
         {
-            if(_cinemachineCameraToOverride is not null)
+            bool transitionTest = false;
+            if(_cinemachineCameraToOverride is not null && !_transitioned)
             {
-                _cinemachineCameraToOverride.Lens.OrthographicSize += _lerpAmount;
-                if(_cinemachineCameraToOverride.Lens.OrthographicSize > _orthographicSizeOverride)
+                if(_cinemachineCameraToOverride.Lens.OrthographicSize >= _orthographicSizeOverride)
                 {
                     _cinemachineCameraToOverride.Lens.OrthographicSize = _orthographicSizeOverride;
                     _switchingToOverride = false;
-                }   
-            }       
-            if(_overrideTrackingPosition && _orbitalFollowToOverride is not null)
-            {
-                _orbitalFollowToOverride.TargetOffset += _vectorLerp;
-                var dist = Vector2.Distance(_orbitalFollowToOverride.TargetOffset, _trackingPositionOverride);
-                
-                if(dist < 0.1)
+                    transitionTest = true;
+                }
+                else
+                    _cinemachineCameraToOverride.Lens.OrthographicSize += _lerpAmount;
+                   
+
+                if(_overrideTrackingPosition && _orbitalFollowToOverride is not null)
                 {
-                    _orbitalFollowToOverride.TargetOffset = _trackingPositionOverride;
+                    var dist = Vector2.Distance(_orbitalFollowToOverride.TargetOffset, _trackingPositionOverride);
+                    
+                    if(dist < 0.1 && !_transitioned)
+                    {
+                        _orbitalFollowToOverride.TargetOffset = _trackingPositionOverride;
+                    }
+                    else
+                    {
+                        _orbitalFollowToOverride.TargetOffset += _vectorLerp;
+                    }
                 }
             }
+            _transitioned = transitionTest;
         }
 
         void LerpFromOverride()
         {
-            if(_cinemachineCameraToOverride is not null)
+            bool transitionTest = false;
+            if(_cinemachineCameraToOverride is not null && _transitioned)
             {
                 _cinemachineCameraToOverride.Lens.OrthographicSize -= _lerpAmount;
                 if(_cinemachineCameraToOverride.Lens.OrthographicSize < _originalOrthographicSize)
                 {
                     _cinemachineCameraToOverride.Lens.OrthographicSize = _originalOrthographicSize;
                     _switchingToOverride = false;
-                }   
-            }       
-            if(_overrideTrackingPosition && _orbitalFollowToOverride is not null)
-            {
-                _orbitalFollowToOverride.TargetOffset -= _vectorLerp;
-                var dist = _orbitalFollowToOverride.TargetOffset - _originalTrackingPosition;
-                //hack for time
-                if(dist.y < 0.1)
-                {
-                    _orbitalFollowToOverride.TargetOffset = _originalTrackingPosition;
+                    transitionTest = true;
                 }
+
+                if(_overrideTrackingPosition && _orbitalFollowToOverride is not null)
+                {
+                    _orbitalFollowToOverride.TargetOffset -= _vectorLerp;
+                    var dist = _orbitalFollowToOverride.TargetOffset - _originalTrackingPosition;
+                    //hack for time
+                    if(dist.y < 0.1)
+                    {
+                        _orbitalFollowToOverride.TargetOffset = _originalTrackingPosition;
+                    }
+                }   
             }
+
+            _transitioned = !transitionTest;       
         }
 
         public void ResetCamera()
