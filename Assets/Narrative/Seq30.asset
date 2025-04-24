@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Seq30
   m_EditorClassIdentifier: 
   _backgroundSprite: {fileID: 0}
-  _nextSequence: {fileID: 0}
+  _nextSequence: {fileID: 11400000, guid: e7516e61d34d0944784bc5b9c8f77f2a, type: 2}
   _musicFiles: []
   _soundEffectFiles: []
   _characterDialoguePairs:

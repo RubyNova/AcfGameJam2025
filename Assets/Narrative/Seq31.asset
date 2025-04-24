@@ -63,8 +63,8 @@ MonoBehaviour:
     _leftCharacterTalking: 0
     _narratorSpeaking: 0
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 7,0: LF: We are now one, is that ok?\n\nMainChar,LF:
-    7,0: MainChar: Woah, I can hear you in my head, it feels bizarre\u2026 kinda
-    tingly?\n\nMainChar,LF: 7,0: LF: Thank you for accepting me, I could not merge
-    unless you were willing.\n\nMainChar,LF: 4,0: MainChar: Don\u2019t mention it,
-    we\u2019re in this together!\n\nMainChar,LF: 4,0: LF: Indeed we are."
+  <SourceScript>k__BackingField: "Narrator: We are now one, is that ok?\n\nMainChar:
+    7: Woah, I can hear you in my head, it feels bizarre\u2026 kinda tingly?\n\nNarrator:
+    Thank you for accepting me, I could not merge unless you were willing.\n\nMainChar:
+    4: Don\u2019t mention it, we\u2019re in this together!\n\nNarrator: Indeed we
+    are."
