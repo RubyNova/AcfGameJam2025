@@ -463,6 +463,8 @@ namespace Environment
 
             BoxCollider.enabled = true;
 
+            _targetTransform.position = EmissionPoint;
+
             ProduceBeam();
         }
 
