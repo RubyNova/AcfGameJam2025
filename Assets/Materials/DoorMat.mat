@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fuck
-  m_Shader: {fileID: -6465566751694194690, guid: 57d0354ac725ac242bff13790a2c7230, type: 3}
+  m_Name: DoorMat
+  m_Shader: {fileID: -6465566751694194690, guid: b10273077c10c194685852837df65761, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -18,18 +18,17 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _AdditionalMapInput:
+    - _AlphaTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: bc39b73fbaa97e4499e288a430625af0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -44,8 +43,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _OriginalEmissiveMap:
-        m_Texture: {fileID: 2800000, guid: 2acfacddd18c84948b4dee25f5faa833, type: 3}
+    - _RecolourMap:
+        m_Texture: {fileID: 2800000, guid: 42f302630f32df84ba15a878e8d66e4b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -63,15 +62,20 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _QueueControl: 0
-    - _QueueOffset: 0
+    - _KernelSize: 21
+    - _RecolourAlphaTolerance: 0.5
+    - _ShadowInterpolation: 0.1
+    - _UVBlurOffset: 100
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColourRetarget: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissiveColour: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &1487634579248650486
+--- !u!114 &301849956097213704
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

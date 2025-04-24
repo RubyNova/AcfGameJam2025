@@ -40,6 +40,7 @@ namespace ACH.Utilities.Editor
                         _targetTexture.Update();
                         Debug.Log("All textures processed, emission/recolour frames should now be generated.");
                         _isProcessing = false;
+                        GUI.enabled = true;
                         return;
                     }
 

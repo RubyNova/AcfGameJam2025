@@ -60,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 16228b7b1dc76d244bd9b31bf108837c, type: 2}
+  - {fileID: 2100000, guid: ccd272d8df7195748a0c4f687d5a01d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbodyToDrive: {fileID: 2860529767675633969}
   VelocityCap: {x: 0, y: 0}
+  _limitVelocity: 0
 --- !u!114 &5804564217194741854
 MonoBehaviour:
   m_ObjectHideFlags: 0

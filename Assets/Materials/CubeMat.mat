@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestCube
+  m_Name: CubeMat
   m_Shader: {fileID: -6465566751694194690, guid: b10273077c10c194685852837df65761, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -74,8 +74,9 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColourRetarget: {r: 0.9811321, g: 0, b: 0.9811321, a: 1}
+    - _ColourRetarget: {r: 1, g: 1, b: 1, a: 1}
     - _ColourRetargetActually: {r: 1, g: 0.69411767, b: 1, a: 0}
+    - _EmissiveColour: {r: 0.98039216, g: 0, b: 0.98039216, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Door CyanRecolourAndOrEmissionMap_0: 595156388952308834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
