@@ -53,9 +53,11 @@ MonoBehaviour:
   _beamModifierData: {fileID: 972154243405144626}
   _targetTransform: {fileID: 7697161256769109243}
   BoxCollider: {fileID: 2446526771299501827}
+  _particleSystem: {fileID: 8366070599388435501}
   _lightBeamLength: 40
   _mode: 0
   _beamPierceDistance: 0
+  CanBeExited: 1
   _beamExitVelocityMultiplier: 1
   _snapPointOffset: 1
   _objectsToIgnoreDuringHitChecks: []
@@ -145,11 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerNumber: 2
+  GizmosEnabled: 0
   DistanceValue: 5
   TriggerThresholdValue: 1.7
   CutoffValue: 0.4
-  distance: 0
-  threshold: 0
 --- !u!1 &4616394690009637818
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +440,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -546,7 +547,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -927,7 +928,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 50
+    maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -995,7 +996,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 1, y: 3, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1631,8 +1632,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0.5019608}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1648,8 +1649,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 1725
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -1658,7 +1659,7 @@ ParticleSystem:
         m_Mode: 0
         m_ColorSpace: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1810,10 +1811,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 7884492340949171110, guid: 0820ed268aa839a4181b0bddd0ec5a1a, type: 3}
-    - sprite: {fileID: 26399835, guid: 0820ed268aa839a4181b0bddd0ec5a1a, type: 3}
-    - sprite: {fileID: 2095943881, guid: 0820ed268aa839a4181b0bddd0ec5a1a, type: 3}
-    - sprite: {fileID: -1873395483, guid: 0820ed268aa839a4181b0bddd0ec5a1a, type: 3}
+    - sprite: {fileID: -6189289526238714443, guid: febdac98ad9623648ba59c2b085435fc, type: 3}
+    - sprite: {fileID: -7699328018653931357, guid: febdac98ad9623648ba59c2b085435fc, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -1821,7 +1820,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
