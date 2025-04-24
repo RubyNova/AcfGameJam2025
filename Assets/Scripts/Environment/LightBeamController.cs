@@ -383,7 +383,7 @@ namespace Environment
 
             var finalDistance = Vector2.Distance(positions[0], positions.Last());
 
-            newGradient.colorKeys = colourKeyArray; 
+            newGradient.colorKeys = colourKeyArray;
             _renderer.colorGradient = newGradient;
 
             var mainModule = _particleSystem.main;
@@ -445,7 +445,11 @@ namespace Environment
             else
             {
                 _renderer.enabled = false;
-                _particleSystem.Stop();
+
+                if (!_particleSystem.isStopped)
+                {
+                    _particleSystem.Stop();
+                }
             }
         }
 
@@ -489,7 +493,12 @@ namespace Environment
 
             _emissionPoint = hitPoint;
             _renderer.enabled = true;
-            _particleSystem.Play();
+
+            if (!_particleSystem.isPlaying)
+            {
+                _particleSystem.Play();
+            }
+
             var senderDirection = (sender.EmissionPoint - hitPoint).normalized;
 
             switch (_mode)
@@ -517,7 +526,10 @@ namespace Environment
                         _currentSender = null;
                         BoxCollider.enabled = false;
                         _renderer.enabled = false;
-                        _particleSystem.Stop();
+                        if (!_particleSystem.isStopped)
+                        {
+                            _particleSystem.Stop();
+                        }
                         _isAlreadyRegistering = false;
 
                         if (_targetHit != null)
@@ -582,7 +594,10 @@ namespace Environment
             _currentSender = null;
             _targetTransform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
-            _particleSystem.Stop();
+            if (!_particleSystem.isStopped)
+            {
+                _particleSystem.Stop();
+            }
             _emissionPoint = null;
             _isAlreadyUnregistering = false;
         }
