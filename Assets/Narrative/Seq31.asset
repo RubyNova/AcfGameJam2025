@@ -17,51 +17,51 @@ MonoBehaviour:
   _musicFiles: []
   _soundEffectFiles: []
   _characterDialoguePairs:
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 7
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: We are now one, is that ok?
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 7
     _poseIndexTwo: 0
     _text: "Woah, I can hear you in my head, it feels bizarre\u2026 kinda tingly?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 7
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: Thank you for accepting me, I could not merge unless you were willing.
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 4
     _poseIndexTwo: 0
     _text: "Don\u2019t mention it, we\u2019re in this together!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 4
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: Indeed we are.
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   _choices: []
   <SourceScript>k__BackingField: "Narrator: We are now one, is that ok?\n\nMainChar:
     7: Woah, I can hear you in my head, it feels bizarre\u2026 kinda tingly?\n\nNarrator:
