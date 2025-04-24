@@ -53,7 +53,6 @@ MonoBehaviour:
   _beamModifierData: {fileID: 972154243405144626}
   _targetTransform: {fileID: 7697161256769109243}
   BoxCollider: {fileID: 2446526771299501827}
-  _particleSystem: {fileID: 8366070599388435501}
   _lightBeamLength: 40
   _mode: 0
   _beamPierceDistance: 0
@@ -1813,6 +1812,7 @@ ParticleSystem:
     sprites:
     - sprite: {fileID: -6189289526238714443, guid: febdac98ad9623648ba59c2b085435fc, type: 3}
     - sprite: {fileID: -7699328018653931357, guid: febdac98ad9623648ba59c2b085435fc, type: 3}
+    - sprite: {fileID: -1789972206, guid: febdac98ad9623648ba59c2b085435fc, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
