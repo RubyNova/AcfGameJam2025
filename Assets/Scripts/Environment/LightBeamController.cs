@@ -449,6 +449,14 @@ namespace Environment
             ProduceBeam();
         }
 
+        protected void OnDisable()
+        {
+            if (_targetHit != null)
+            {
+                _targetHit.UnregisterHit();
+            }
+        }
+
         public void RegisterHit(LightBeamController sender, Vector3 hitPoint, Vector2 normal)
         {
             if (sender == this)
