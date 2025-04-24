@@ -41,7 +41,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
     _poseIndexTwo: 0
-    _text: "As soon as I figure this out, I\u2019ll come back for you!  "
+    _text: "\"As soon as I figure this out, I\u2019ll come back for you!\""
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -68,7 +68,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 13
     _poseIndexTwo: 0
-    _text: 'Carelessly riding the beams. '
+    _text: Carelessly riding the beams.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -86,7 +86,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 10
     _poseIndexTwo: 0
-    _text: '.... '
+    _text: ....
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -131,7 +131,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 11
     _poseIndexTwo: 0
-    _text: 'Then what? '
+    _text: Then what?
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -149,7 +149,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 17
     _poseIndexTwo: 0
-    _text: "So stupid. I don\u2019t need their praise. "
+    _text: "So stupid. I don\u2019t need their praise."
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
@@ -172,13 +172,13 @@ MonoBehaviour:
     _narratorSpeaking: 0
   _choices: []
   <SourceScript>k__BackingField: "\rMainChar: 17: ...\n\nMainChar: 12: That\u2019s
-    what they always say.\r\n\r\nMainChar:  10: As soon as I figure this out, I\u2019ll
-    come back for you!  \r\n\r\nMainChar: 13: But they never do!\r\n\r\nMainChar:
-    13: I can\u2019t believe I thought I\u2019d be any different.\r\n\nMainChar:
-    13: Carelessly riding the beams. \r\n\nMainChar: 13: Winging it\u2026 As usual.\n\r\nMainChar:
-    10: .... \n\nMainChar: 10: .... ....\n\nMainChar: 11: .... .... ....\n\r\nMainChar:
+    what they always say.\r\n\r\nMainChar:  10: \"As soon as I figure this out, I\u2019ll
+    come back for you!\"\n\r\nMainChar: 13: But they never do!\n\r\nMainChar: 13:
+    I can\u2019t believe I thought I\u2019d be any different.\n\nMainChar: 13: Carelessly
+    riding the beams.\n\nMainChar: 13: Winging it\u2026 As usual.\n\r\nMainChar:
+    10: ....\n\nMainChar: 10: .... ....\n\nMainChar: 11: .... .... ....\n\r\nMainChar:
     11: I don\u2019t even know what I expected from completing this.\n\r\nMainChar:
     11: \u201CWow, you did it! So impressive, just like your mum was!\u201D\n\r\nMainChar:
-    11: Then what? \n\r\nMainChar: 11: \u201CHere she is now, to congratulate you!\u201D\r\n\r\nMainChar:
-    17: So stupid. I don\u2019t need their praise. \n\r\nMainChar: 17: She doesn\u2019t
-    need me.\n\r\nMainChar: 17: Nobody does\u2026\n\n"
+    11: Then what?\n\r\nMainChar: 11: \u201CHere she is now, to congratulate you!\u201D\n\r\nMainChar:
+    17: So stupid. I don\u2019t need their praise.\n\r\nMainChar: 17: She doesn\u2019t
+    need me.\n\r\nMainChar: 17: Nobody does\u2026"
