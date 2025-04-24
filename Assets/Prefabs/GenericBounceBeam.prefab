@@ -53,7 +53,8 @@ MonoBehaviour:
   _beamModifierData: {fileID: 972154243405144626}
   _targetTransform: {fileID: 7697161256769109243}
   BoxCollider: {fileID: 2446526771299501827}
-  _lightBeamLength: 40
+  _particleSystem: {fileID: 8366070599388435501}
+  _lightBeamLength: 5
   _mode: 0
   _beamPierceDistance: 0
   CanBeExited: 1
@@ -64,6 +65,7 @@ MonoBehaviour:
   _maxLengthBetweenBeamSections: 5
   _forceAlwaysOn: 0
   _forceAlwaysOff: 0
+  _distancePerSecondOfLifetime: 5
 --- !u!114 &972154243405144626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +441,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2

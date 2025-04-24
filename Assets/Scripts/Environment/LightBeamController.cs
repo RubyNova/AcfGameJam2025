@@ -25,6 +25,9 @@ namespace Environment
         [SerializeField]
         public BoxCollider2D BoxCollider;
 
+        [SerializeField]
+        private ParticleSystem _particleSystem;
+
         [Header("Configuration")]
         [SerializeField]
         private float _lightBeamLength;
@@ -58,6 +61,9 @@ namespace Environment
 
         [SerializeField]
         private bool _forceAlwaysOff = false;
+
+        [SerializeField]
+        private float _distancePerSecondOfLifetime = 5;
 
         private Vector2 _intersectedPosition = Vector2.zero;
 
@@ -375,10 +381,16 @@ namespace Environment
                 colourKeyArray[i].color = _beamModifierData.Colour;
             }
 
-            newGradient.colorKeys = colourKeyArray; 
+            var finalDistance = Vector2.Distance(positions[0], positions.Last());
+
+            newGradient.colorKeys = colourKeyArray;
             _renderer.colorGradient = newGradient;
 
-            BoxCollider.size = new Vector2(Vector2.Distance(positions[0], positions.Last()), _renderer.startWidth);
+            var mainModule = _particleSystem.main;
+            mainModule.startColor = _beamModifierData.Colour;
+            mainModule.startLifetime = finalDistance / _distancePerSecondOfLifetime;
+
+            BoxCollider.size = new Vector2(finalDistance, _renderer.startWidth);
             var centrePosition = _targetTransform.InverseTransformPoint((positions[0] + positions.Last()) * 0.5f);
             BoxCollider.offset = new Vector2(centrePosition.x, centrePosition.y);
 
@@ -433,6 +445,11 @@ namespace Environment
             else
             {
                 _renderer.enabled = false;
+
+                if (!_particleSystem.isStopped)
+                {
+                    _particleSystem.Stop();
+                }
             }
         }
 
@@ -476,6 +493,12 @@ namespace Environment
 
             _emissionPoint = hitPoint;
             _renderer.enabled = true;
+
+            if (!_particleSystem.isPlaying)
+            {
+                _particleSystem.Play();
+            }
+
             var senderDirection = (sender.EmissionPoint - hitPoint).normalized;
 
             switch (_mode)
@@ -503,6 +526,10 @@ namespace Environment
                         _currentSender = null;
                         BoxCollider.enabled = false;
                         _renderer.enabled = false;
+                        if (!_particleSystem.isStopped)
+                        {
+                            _particleSystem.Stop();
+                        }
                         _isAlreadyRegistering = false;
 
                         if (_targetHit != null)
@@ -567,6 +594,10 @@ namespace Environment
             _currentSender = null;
             _targetTransform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
+            if (!_particleSystem.isStopped)
+            {
+                _particleSystem.Stop();
+            }
             _emissionPoint = null;
             _isAlreadyUnregistering = false;
         }
