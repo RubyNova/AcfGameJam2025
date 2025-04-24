@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cee53373a93284da3c8eb261a39f06, type: 3}
+  m_Name: SeqThirtyOne
+  m_EditorClassIdentifier: 
+  _backgroundSprite: {fileID: 0}
+  _nextSequence: {fileID: 0}
+  _musicFiles: []
+  _soundEffectFiles: []
+  _characterDialoguePairs: []
+  _choices: []
+  <SourceScript>k__BackingField: "Narrator: We are now one, is that ok?\n\nMainChar:
+    7: Woah, I can hear you in my head, it feels bizarre\u2026 kinda tingly?\n\nNarrator:
+    Thank you for accepting me, I could not merge unless you were willing.\n\nMainChar:
+    4: Don\u2019t mention it, we\u2019re in this together!\n\nNarrator: Indeed we
+    are."
