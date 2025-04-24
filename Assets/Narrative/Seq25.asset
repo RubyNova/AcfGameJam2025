@@ -26,17 +26,17 @@ MonoBehaviour:
     _text: I have been waiting here for so long!
     _leftCharacterTalking: 1
     _narratorSpeaking: 1
-  - _character: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _characterTwo: {fileID: 0}
+  - _character: {fileID: 11400000, guid: e42e9a750bfde724188d130fb0cf6d4b, type: 2}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 1
     _poseIndex: 0
     _poseIndexTwo: 0
     _text: Your wait is over, you are the last to merge.
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
-    _characterTwo: {fileID: 0}
+    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
     _hasPoseIndex: 0
     _hasSecondCharacterPoseIndex: 0
     _poseIndex: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
   <SourceScript>k__BackingField: 'Narrator: I have been waiting here for so long!
 
 
-    LF:
-    0: Your wait is over, you are the last to merge.
+    Lefty,LF:
+    0,0: Your wait is over, you are the last to merge.
 
 
     Narrator: Glory awaits!'
