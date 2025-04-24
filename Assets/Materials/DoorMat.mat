@@ -70,7 +70,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColourRetarget: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissiveColour: {r: 0.98039216, g: 0, b: 0.98039216, a: 1}
+    - _EmissiveColour: {r: 1, g: 0.43137255, b: 0.84705883, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
