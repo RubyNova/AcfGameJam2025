@@ -17,7 +17,8 @@ namespace Managers
             Track1,
             Track2,
             Track3,
-            Track4
+            Track4,
+            FinalLevel
         }
 
         [Header("Dependencies")]
@@ -54,6 +55,8 @@ namespace Managers
         [SerializeField] private LayeredAudioTrack _tutorialMusicTrack;
         [SerializeField] private LayeredAudioTrack _layeredTrackTwo;
         [SerializeField] private LayeredAudioTrack _layeredTrackThree;
+        [SerializeField] private LayeredAudioTrack _layeredTrackFour;
+        [SerializeField] private LayeredAudioTrack _layeredTrackFive;
         
 
         [Header("Read-only Values")]
@@ -157,7 +160,7 @@ namespace Managers
             UpdateMusicVolume.AddListener(percentage => UpdateMusicVolumeIndependently(percentage));
             UpdateSoundEffectVolume.AddListener(percentage => UpdateSoundEffectVolumeIndependently(percentage));
 
-            PlayLayeredTrack(TrackState.Track1);
+            //PlayLayeredTrack(TrackState.Track1);
         }
         //End Singleton-specific Setup
 
@@ -331,7 +334,6 @@ namespace Managers
             switch(level)
             {
                 case TrackState.Track1:
-                default:
                 {
                     return _tutorialMusicTrack;
                 }
@@ -342,6 +344,15 @@ namespace Managers
                 case TrackState.Track3:
                 {
                     return _layeredTrackThree;
+                }
+                case TrackState.Track4:
+                {
+                    return _layeredTrackFour;
+                }
+                case TrackState.FinalLevel:
+                default:
+                {
+                    return _layeredTrackFive;
                 }
             }
         }

@@ -61,6 +61,8 @@ MonoBehaviour:
   _tutorialMusicTrack: {fileID: 11400000, guid: 121f6d70c2225624ab4df0741dafb1ac, type: 2}
   _layeredTrackTwo: {fileID: 11400000, guid: 4bb0c610f0c8b5cf795a8ea976f67f6a, type: 2}
   _layeredTrackThree: {fileID: 11400000, guid: 5e90d90259622a626b864bc2ca1c70fd, type: 2}
+  _layeredTrackFour: {fileID: 11400000, guid: 69edb0de17586cd49b005a6026098459, type: 2}
+  _layeredTrackFive: {fileID: 11400000, guid: bf1ebf41b2a0d78489f6e5e30928816d, type: 2}
   _sfxVolume: 75
   _musicVolume: 75
   _currentLayerPlayingCount: 0

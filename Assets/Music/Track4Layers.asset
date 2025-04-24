@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25643bef87fc8f4993be62c95b2934b, type: 3}
+  m_Name: Track4Layers
+  m_EditorClassIdentifier: 
+  _layers:
+  - {fileID: 8300000, guid: ab3200a419a9eb74b840fa3fd18d8b8a, type: 3}
+  - {fileID: 8300000, guid: ea2568d8b44fa51478dbb813f84ec801, type: 3}
+  - {fileID: 8300000, guid: 956cb0fd86edfb745b3607ee9049f847, type: 3}
+  - {fileID: 8300000, guid: 9ac57145ae69cea49bb24dcf7faf7cc8, type: 3}
