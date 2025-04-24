@@ -9,7 +9,7 @@ namespace Managers
         [SerializeField]
         private int _levelToLoad;
 
-        public Animation anim;
+        public Animator anim;
 
         void Start()
         {
@@ -18,15 +18,20 @@ namespace Managers
             //AudioManager.Instance.PlayLayeredTrack(AudioManager.TrackState.FinalLevel);
 
             //SceneManager.LoadScene(_levelToLoad);
-            StartCoroutine(DoThings());
+        
+        }
+
+        void Update()
+        {
+            var l = anim.GetCurrentAnimatorStateInfo(0);
+            if(l.normalizedTime > 1.0f)
+            {
+                StartCoroutine(DoThings());   
+            }
         }
 
         private IEnumerator DoThings()
         {
-            while(anim.isPlaying)
-            {
-            }
-
             AsyncOperation load = SceneManager.LoadSceneAsync(_levelToLoad);
             while(!load.isDone)
             {

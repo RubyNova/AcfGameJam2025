@@ -447,45 +447,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6769759679537670067, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0995db7313cfee0458faf9f6c1848fe6, type: 2}
     - target: {fileID: 7581620123129029983, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
       propertyPath: m_Name
       value: LevelTransition
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6769759679537670067, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7581620123129029983, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 930535689}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
 --- !u!224 &930535687 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5393287708389753824, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
   m_PrefabInstance: {fileID: 930535686}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &930535688 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7581620123129029983, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
-  m_PrefabInstance: {fileID: 930535686}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &930535689
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930535688}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: a5dd03c713df99d4a91acbed783b2fa3, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1 &1016385392
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelToLoad: 9
-  anim: {fileID: 930535689}
+  anim: {fileID: 0}
 --- !u!1 &1584856736
 GameObject:
   m_ObjectHideFlags: 0
