@@ -1787,6 +1787,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1396949037576897715, guid: 38041f907d034e64f8675e990f96045c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2856383427658910766, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_Name
       value: CinemachineCameraSet
@@ -1853,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017836408948715658, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.89
+      value: 3.89
       objectReference: {fileID: 0}
     - target: {fileID: 8017836408948715658, guid: 38041f907d034e64f8675e990f96045c, type: 3}
       propertyPath: m_LocalPosition.y
