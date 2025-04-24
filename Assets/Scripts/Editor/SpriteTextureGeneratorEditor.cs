@@ -1,40 +1,77 @@
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using System;
 
 namespace ACH.Utilities.Editor
 {
     public class SpriteTextureGeneratorEditor : EditorWindow
     {
-        private Material _targetMaterial;
+        private CustomRenderTexture _targetTexture;
+        private bool _isProcessing = false;
 
         private void OnGUI()
         {
-            _targetMaterial = (Material)EditorGUILayout.ObjectField("Target Material", _targetMaterial, typeof(Material), false);
+            if (_isProcessing)
+            {
+                EditorGUILayout.HelpBox("Generating animated emission/recolour map data, please wait...", MessageType.Info);
+                GUI.enabled = false;
+            }
 
+            _targetTexture = (CustomRenderTexture)EditorGUILayout.ObjectField("Target texture", _targetTexture, typeof(CustomRenderTexture), false);
 
             if (GUILayout.Button("Generate textures!"))
             {
-                var texture = _targetMaterial.GetTexture("_MainTex");
+                _isProcessing = true;
+
+
+                var texture = _targetTexture.material.GetTexture("_MainTex");
                 var path = AssetDatabase.GetAssetPath(texture);
                 var folderPath = Path.GetDirectoryName(path);
                 var assets = AssetDatabase.FindAssets("t:Texture2D", new[] { folderPath });
 
-                foreach (var frame in assets)
+                int index = 0;
+
+                void ProcessNext()
                 {
+                    if (index >= assets.Length)
+                    {
+                        _targetTexture.material.SetTexture("_MainTex", texture);
+                        _targetTexture.Update();
+                        Debug.Log("All textures processed, emission/recolour frames should now be generated.");
+                        _isProcessing = false;
+                        return;
+                    }
+
+                    var frame = assets[index++];
                     var frameTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(AssetDatabase.GUIDToAssetPath(frame));
-                    _targetMaterial.SetTexture("_MainTex", frameTexture);
-                    var outputTexture = new Texture2D(texture.width, texture.height, TextureFormat.ARGB32, false);
-                    
-                    RenderTexture target = new(frameTexture.width, frameTexture.height, 0, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Linear);
-                    Graphics.Blit(outputTexture, _targetMaterial, -1);
-                    RenderTexture.active = target;
-                    outputTexture.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0, false);
-                    var outputPath = Path.Combine(folderPath, Path.GetFileName(frameTexture.name + "RecolourAndOrEmissionMap.png"));
-                    File.WriteAllBytes(outputPath, outputTexture.EncodeToPNG());
-                    //break;
+                    _targetTexture.material.SetTexture("_MainTex", frameTexture);
+                    _targetTexture.Update();
+
+                    EditorApplication.delayCall += () =>
+                    {
+                        var outputTexture = new Texture2D(texture.width, texture.height, TextureFormat.RGBA32, false);
+
+                        RenderTexture.active = _targetTexture;
+
+                        outputTexture.ReadPixels(new Rect(0, 0, _targetTexture.width, _targetTexture.height), 0, 0, false);
+                        outputTexture.Apply();
+                        RenderTexture.active = null;
+                        var outputPath = Path.Combine(folderPath, Path.GetFileName(frameTexture.name + "RecolourAndOrEmissionMap.png"));
+                        File.WriteAllBytes(outputPath, outputTexture.EncodeToPNG());
+
+                        EditorApplication.delayCall += ProcessNext;
+                    };
                 }
+
+                ProcessNext();
+
+                _targetTexture.material.SetTexture("_MainTex", texture);
+                _targetTexture.Update();
+
             }
+
+            GUI.enabled = true;
 
 
             //GUILayout.Label("Narrative Sequence Editor", EditorStyles.boldLabel);
