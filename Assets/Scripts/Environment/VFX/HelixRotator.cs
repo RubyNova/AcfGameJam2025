@@ -11,7 +11,7 @@ namespace Environment.VFX
         private ParticleSystem _particleSystem;
 
         private float _zValue = 0f;
-        private float _resolution = 20;
+        private float _resolution = 40;
 
         private void CreateCircle()
         {
@@ -28,7 +28,7 @@ namespace Environment.VFX
             for (int i = 0; i < _resolution; i++)
             {
                 float newTime = i/(_resolution-i);
-                float newValue = Mathf.Sin(newTime * 2 * Mathf.PI);
+                float newValue = Mathf.Sin(newTime * 4 * Mathf.PI);
                 xCurve.AddKey(newTime, newValue);
             }
 
@@ -39,11 +39,12 @@ namespace Environment.VFX
             for (int i = 0; i < _resolution; i++)
             {
                 float newTime = i/(_resolution-i);
-                float newValue = Mathf.Cos(newTime * 2 * Mathf.PI);
+                float newValue = 2;
                 yCurve.AddKey(newTime, newValue);
             }
 
-            velocity.y = new ParticleSystem.MinMaxCurve(10.0f, yCurve);
+            velocity.y = new ParticleSystem.MinMaxCurve(1f, yCurve);
+
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
