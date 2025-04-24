@@ -69,8 +69,8 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColourRetarget: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColour: {r: 1, g: 1, b: 1, a: 1}
+    - _ColourRetarget: {r: 1, g: 0.9117576, b: 0.695, a: 1}
+    - _EmissiveColour: {r: 0.98039216, g: 0, b: 0.98039216, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
