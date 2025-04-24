@@ -465,6 +465,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5393287708389753824, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
   m_PrefabInstance: {fileID: 930535686}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &952420721 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6769759679537670067, guid: 7cc7d6f4469fa3a40b27304c477a796f, type: 3}
+  m_PrefabInstance: {fileID: 930535686}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1016385392
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelToLoad: 9
-  anim: {fileID: 0}
+  anim: {fileID: 952420721}
 --- !u!1 &1584856736
 GameObject:
   m_ObjectHideFlags: 0
