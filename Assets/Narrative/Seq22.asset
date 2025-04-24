@@ -202,7 +202,7 @@ MonoBehaviour:
     service to The Gods.\r\n\r\nMainChar,LF: 16,0: MainChar: Sure, but was that worth
     it?\r\n\n\rMainChar,LF: 10,0: MainChar: My friends didn\u2019t think so\u2026\n\r\nMainChar,LF:
     10,0: MainChar: Some would do the trials just to find out why it was worth abandoning
-    us over.\r\n\r\nMainChar,LF: 10,0: LF: Friends\u2026 were they \"family\" too?\r\n\r\nMainChar,LF:
+    us over.\n\r\nMainChar,LF: 10,0: LF: Friends\u2026 were they \"family\" too?\r\n\r\nMainChar,LF:
     10,0: MainChar: We lived together, kids who had lost their parents.\r\n\r\n\rMainChar,LF:
     10,0: LF: Did many get to attempt the trial?\r\n\r\nMainChar,LF: 11,0: MainChar:
     Quite a few. \\r\\n They never came back after.\r\n\r\nMainChar,LF: 11,0: LF:
