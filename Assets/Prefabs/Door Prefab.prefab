@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4569309449594020197}
   - component: {fileID: 5991624215747387573}
   - component: {fileID: 6613566237572784486}
+  - component: {fileID: 674715733120541581}
   m_Layer: 0
   m_Name: Door Prefab
   m_TagString: Untagged
@@ -110,3 +111,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &674715733120541581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856434781078462173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d93fe4daef4a4a9d6a6b35fff2006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    target: {fileID: 5991624215747387573}
+    parameterName: _RecolourMap
+    textures:
+    - {fileID: 2800000, guid: 42f302630f32df84ba15a878e8d66e4b, type: 3}
+    - {fileID: 2800000, guid: 5f7d62a5f4d53db408130a5b11d71ad1, type: 3}
+    - {fileID: 2800000, guid: 9552bedb4a51c3845aca3fb5e22ae63e, type: 3}
+    - {fileID: 2800000, guid: dc1761dcdcfa53f4fb6186716ed197ec, type: 3}
+    - {fileID: 2800000, guid: f1793ee0456b017469ab090957d1665f, type: 3}
+    - {fileID: 2800000, guid: ccf29624fbda5ee42b1d06e9d4688c72, type: 3}
+    - {fileID: 2800000, guid: 673c58da119ddb84ea20eed241695698, type: 3}
+    - {fileID: 2800000, guid: a7939dc924436e34c9f0b5a96844f7b6, type: 3}
+    - {fileID: 2800000, guid: 4a513fa6009b47d4f80f56b4ae29114e, type: 3}
+    - {fileID: 2800000, guid: 8cb9c4f93f492eb44addf9b304f8ba00, type: 3}
+    - {fileID: 2800000, guid: 1227679ce61322b4c891ea6ea8986044, type: 3}
+    - {fileID: 2800000, guid: 81aee696148942b4d97cc7070d02b990, type: 3}
+    - {fileID: 2800000, guid: 9dbdd51e4e1b8c84086e6518127409fc, type: 3}
+    - {fileID: 2800000, guid: 1e40c55248e768448b888d2b1a68963a, type: 3}
+    - {fileID: 2800000, guid: 1c4e0e76e0afa4a4094e88afbe480ee9, type: 3}
+    - {fileID: 2800000, guid: 72d25a9059d187345ba3701a02ec2ce8, type: 3}
+    - {fileID: 2800000, guid: 0833a18e55fe6664b831e104388cbf96, type: 3}
