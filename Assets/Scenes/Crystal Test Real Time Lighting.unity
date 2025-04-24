@@ -653,6 +653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GenericBounceBeam
       objectReference: {fileID: 0}
+    - target: {fileID: 3673076560047142501, guid: d125d4107ec8e904a96bd03df7fec0fb, type: 3}
+      propertyPath: _lightBeamLength
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7697161256769109243, guid: d125d4107ec8e904a96bd03df7fec0fb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.02
@@ -678,7 +682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1588610663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,7 +896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1760387205
 MonoBehaviour:
   m_ObjectHideFlags: 0
