@@ -122,7 +122,7 @@ namespace ACHNarrativeDriver.Api
                         $"Character Pose Index was outside the bounds of the Poses collection. Length: {character.Poses.Count}, Index: {poseIndex}. Line number: {index + 1}");
                 }
 
-                if (!string.IsNullOrWhiteSpace(secondPoseString))
+                if (poseIndex.HasValue && !string.IsNullOrWhiteSpace(secondPoseString))
                 {
                     secondPoseString = ResolvePredefinedVariables(secondPoseString, predefinedVariables);
                     secondPoseIndex = int.Parse(secondPoseString);
