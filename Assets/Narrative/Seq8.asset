@@ -23,7 +23,7 @@ MonoBehaviour:
     _hasSecondCharacterPoseIndex: 1
     _poseIndex: 18
     _poseIndexTwo: 0
-    _text: Ahh
+    _text: Ahh!
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
