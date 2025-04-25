@@ -96,6 +96,9 @@ namespace Controllers
         [SerializeField]
         private Transform _heldItemPoint;
 
+        [SerializeField]
+        private GameObject _sparksObject;
+
         [SerializeField] public Transform FamiliarSnapPoint;
 
         [Header("Read-only Values")]
@@ -325,6 +328,20 @@ namespace Controllers
                     _biggestOutsideForcesCount = outsideForcesCount;
                 }
             UpdateAnims();
+
+            var beamData = GetCachedBeamData();
+
+            if (beamData != null && !_sparksObject.activeInHierarchy)
+            {
+                var sparksControls = _sparksObject.GetComponent<ParticleSystem>().main;
+                sparksControls.startColor = beamData.Controller.BeamModifierData.Colour;
+                _sparksObject.SetActive(true);
+                _sparksObject.GetComponentInChildren<SpriteRenderer>().color = beamData.Controller.BeamModifierData.Colour;
+            }
+            else if (beamData == null && _sparksObject.activeInHierarchy)
+            {
+                _sparksObject.SetActive(false);
+            }
         }
 
         void FixedUpdate()
@@ -413,6 +430,7 @@ namespace Controllers
             {
                 _listOfOutsideForces.Add(sender.gameObject.GetHashCode(), new LightBeamDataGroup
                 {
+                    Controller = sender,
                     Priority = beamPriority,
                     DirectionAndForce = senderBeamDirection * beamForce,
                     CanBeExited = sender.CanBeExited
