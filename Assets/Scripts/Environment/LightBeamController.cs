@@ -370,6 +370,11 @@ namespace Environment
             {
                 beamPoints.Add(endPoint);
             }
+            
+            if (_beamModifierData == null)
+            {
+                _beamModifierData = GetComponentInChildren<LightBeamModifier>();
+            }
 
             var positions = beamPoints.ToArray();
             _renderer.positionCount = positions.Length;
@@ -397,11 +402,8 @@ namespace Environment
             var lightShapePath = new Vector3[4] {bottomLeft, topLeft, topRight, bottomRight};
 
             _light.SetShapePath(lightShapePath);
+            _light.color = _beamModifierData.Colour;
 
-            if (_beamModifierData == null)
-            {
-                _beamModifierData = GetComponentInChildren<LightBeamModifier>();
-            }
 
             // It's a reference type so I have no idea if this is needed, but after the stupid native method nonsense with the colour keys I just had to spend way too long debugging im not checking.
             // Wanted me to try? Too bad. Tell an engineer who cares enough. - Matt

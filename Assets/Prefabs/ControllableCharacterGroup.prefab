@@ -5316,7 +5316,6 @@ Transform:
   m_Children:
   - {fileID: 561445618150711165}
   - {fileID: 2384100095630875932}
-  - {fileID: 2435522323145454308}
   - {fileID: 8077570158492271931}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5401,11 +5400,11 @@ Transform:
   m_GameObject: {fileID: 6390595210736718322}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.31878564, w: 0.94782686}
-  m_LocalPosition: {x: 5.381961, y: -5.619064, z: 0.004709914}
+  m_LocalPosition: {x: -5.7, y: -17.69, z: 0.004709914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3164417712867505803}
+  m_Father: {fileID: 2384100095630875932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &483414301821986394
 MonoBehaviour:
@@ -5562,6 +5561,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2435522323145454308}
   - {fileID: 5660163049315645918}
   m_Father: {fileID: 3164417712867505803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5646,6 +5646,7 @@ MonoBehaviour:
   _movementSpeed: 20
   ActiveCharacter: 0
   _spriteRoot: {fileID: 6792810981887795645}
+  _ambientLight: {fileID: 2154678700174108565}
   CharacterActivated:
     m_PersistentCalls:
       m_Calls: []
@@ -5785,7 +5786,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 1.4
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

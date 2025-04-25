@@ -2,6 +2,7 @@ using Environment;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 namespace Controllers
 {
@@ -24,6 +25,9 @@ namespace Controllers
 
         [SerializeField]
         private GameObject _spriteRoot;
+
+        [SerializeField]
+        private Light2D _ambientLight;
 
         public UnityEvent CharacterActivated;
 
@@ -180,6 +184,7 @@ namespace Controllers
                 renderer.color = _beamChanger.BeamModifierData.Colour;  
             }
 
+            _ambientLight.color = _beamChanger.BeamModifierData.Colour;
         }
 
     }
