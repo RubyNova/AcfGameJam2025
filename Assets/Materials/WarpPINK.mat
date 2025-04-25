@@ -62,9 +62,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _KernelSize: 10
+    - _KernelSize: 12
     - _RecolourAlphaTolerance: 1
-    - _ShadowInterpolation: 0.1
+    - _ShadowInterpolation: 0.567
     - _UVBlurOffset: 30
     - _ZWrite: 0
     m_Colors:
