@@ -32,6 +32,9 @@ namespace Environment
         [SerializeField]
         private Light2D _light;
 
+        [SerializeField]
+        private Light2D _sourceLight;
+
         [Header("Configuration")]
         [SerializeField]
         private float _lightBeamLength;
@@ -370,11 +373,6 @@ namespace Environment
             {
                 beamPoints.Add(endPoint);
             }
-            
-            if (_beamModifierData == null)
-            {
-                _beamModifierData = GetComponentInChildren<LightBeamModifier>();
-            }
 
             var positions = beamPoints.ToArray();
             _renderer.positionCount = positions.Length;
@@ -382,6 +380,7 @@ namespace Environment
 
             _light.transform.position = EmissionPoint;
             _light.transform.rotation = _targetTransform.rotation;
+            _sourceLight.transform.position = EmissionPoint;
 
             float lightLength = Vector3.Distance(startPoint, positions.Last());
             var lightStart = Vector3.zero; //new Vector3(-Vector3.Distance(startPoint, endPoint), 0, 0);
@@ -402,8 +401,11 @@ namespace Environment
             var lightShapePath = new Vector3[4] {bottomLeft, topLeft, topRight, bottomRight};
 
             _light.SetShapePath(lightShapePath);
-            _light.color = _beamModifierData.Colour;
 
+            if (_beamModifierData == null)
+            {
+                _beamModifierData = GetComponentInChildren<LightBeamModifier>();
+            }
 
             // It's a reference type so I have no idea if this is needed, but after the stupid native method nonsense with the colour keys I just had to spend way too long debugging im not checking.
             // Wanted me to try? Too bad. Tell an engineer who cares enough. - Matt
@@ -494,6 +496,7 @@ namespace Environment
                 }
 
                 _light.enabled = false;
+                _sourceLight.enabled = false;
             }
         }
 
@@ -508,6 +511,28 @@ namespace Environment
             BoxCollider.enabled = true;
 
             _targetTransform.position = EmissionPoint;
+
+            switch (_mode)
+            {
+                case LightBeamMode.Transform:
+                case LightBeamMode.Source:
+                    _light.color = BeamModifierData.Colour;
+                    _sourceLight.color = BeamModifierData.Colour;
+                break;
+                case LightBeamMode.Bounce:
+                    if (_currentSender == null)
+                    {
+                        break;
+                    }
+
+                    _light.color = _currentSender.BeamModifierData.Colour;
+                    _sourceLight.color = _currentSender.BeamModifierData.Colour;
+                    break;
+
+                default:
+                
+                    break;
+            }
 
             ProduceBeam();
         }
@@ -540,6 +565,7 @@ namespace Environment
             _emissionPoint = hitPoint;
             _renderer.enabled = true;
             _light.enabled = true;
+            _sourceLight.enabled = true;
 
             if (!_particleSystem.isPlaying)
             {
@@ -574,6 +600,7 @@ namespace Environment
                         BoxCollider.enabled = false;
                         _renderer.enabled = false;
                         _light.enabled = false;
+                        _sourceLight.enabled = false;
                         if (!_particleSystem.isStopped)
                         {
                             _particleSystem.Stop();
@@ -643,6 +670,7 @@ namespace Environment
             _targetTransform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
             _light.enabled = false;
+            _sourceLight.enabled = false;
             if (!_particleSystem.isStopped)
             {
                 _particleSystem.Stop();
