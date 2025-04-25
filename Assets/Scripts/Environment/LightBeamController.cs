@@ -65,6 +65,9 @@ namespace Environment
         [SerializeField]
         private float _distancePerSecondOfLifetime = 5;
 
+        [SerializeField]
+        private float _hueSpeed;
+
         private Vector2 _intersectedPosition = Vector2.zero;
 
         private Vector2 _perceivedMinColliderpoint = Vector2.zero;
@@ -83,6 +86,8 @@ namespace Environment
         private Vector2 _playerSnapPoint;
         private HashSet<GenericBeamForceReactor> _trackedPhyscsInteractables = new();
         private bool _isAlreadyRegistering;
+
+        private float _hueValue;
 
         public LightBeamModifier BeamModifierData => _beamModifierData;
 
@@ -387,7 +392,15 @@ namespace Environment
             _renderer.colorGradient = newGradient;
 
             var mainModule = _particleSystem.main;
-            mainModule.startColor = _beamModifierData.Colour;
+            // mainModule.startColor = _beamModifierData.Colour;
+
+            if (_hueValue > 1f)
+            {
+                _hueValue = 0f;   
+            }
+
+            mainModule.startColor = Color.HSVToRGB(_hueValue, 1, 1);
+            _hueValue += 1 * _hueSpeed * Time.deltaTime;
             mainModule.startLifetime = finalDistance / _distancePerSecondOfLifetime;
 
             BoxCollider.size = new Vector2(finalDistance, _renderer.startWidth);

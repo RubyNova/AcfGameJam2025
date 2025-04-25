@@ -68,6 +68,7 @@ Material:
     - _EnableExternalAlpha: 0
     - _KernelSize: 21
     - _LightTolerance: 0.5
+    - _RecolourAlphaTolerance: 1
     - _ShadowInterpolation: 0.106
     - _UVBlurOffset: 100
     - _UVBlurStepAmount: 4
@@ -76,7 +77,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColourRetarget: {r: 1, g: 1, b: 1, a: 1}
     - _ColourRetargetActually: {r: 1, g: 0.69411767, b: 1, a: 0}
-    - _EmissiveColour: {r: 0.98039216, g: 0, b: 0.98039216, a: 1}
+    - _EmissiveColour: {r: 1, g: 0.4292453, b: 0.847029, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

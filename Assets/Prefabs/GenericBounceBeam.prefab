@@ -66,6 +66,7 @@ MonoBehaviour:
   _forceAlwaysOn: 0
   _forceAlwaysOff: 0
   _distancePerSecondOfLifetime: 5
+  _hueSpeed: 0.1
 --- !u!114 &972154243405144626
 MonoBehaviour:
   m_ObjectHideFlags: 0
