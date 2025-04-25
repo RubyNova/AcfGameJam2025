@@ -136,6 +136,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5681153366970883781}
     m_Modifications:
+    - target: {fileID: 261503633352766155, guid: d5ffb398ea8a30b4e895ba4fcd74120e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598426173054248163, guid: d5ffb398ea8a30b4e895ba4fcd74120e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5559379a1d555724c828dcaa052ca33f, type: 2}
+    - target: {fileID: 2131424888922832412, guid: d5ffb398ea8a30b4e895ba4fcd74120e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5559379a1d555724c828dcaa052ca33f, type: 2}
     - target: {fileID: 4735668844764313148, guid: d5ffb398ea8a30b4e895ba4fcd74120e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -179,6 +191,10 @@ PrefabInstance:
     - target: {fileID: 5868296338256752223, guid: d5ffb398ea8a30b4e895ba4fcd74120e, type: 3}
       propertyPath: m_Name
       value: Floor Button Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8233079372173941898, guid: d5ffb398ea8a30b4e895ba4fcd74120e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

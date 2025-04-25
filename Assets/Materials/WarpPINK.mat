@@ -62,9 +62,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _KernelSize: 10
+    - _KernelSize: 12
     - _RecolourAlphaTolerance: 1
-    - _ShadowInterpolation: 0.1
+    - _ShadowInterpolation: 0.567
     - _UVBlurOffset: 30
     - _ZWrite: 0
     m_Colors:
@@ -75,7 +75,7 @@ Material:
     - _ShadowColour: {r: 0, g: 0, b: 0.462745, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &749833987745815994
+--- !u!114 &4808930627554907527
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
