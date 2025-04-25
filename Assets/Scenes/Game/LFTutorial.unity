@@ -50340,6 +50340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6332257743470711026, guid: ee6a8cc2d30274c4faf63b6e30e366cc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7663539844163522331, guid: ee6a8cc2d30274c4faf63b6e30e366cc, type: 3}
       propertyPath: _trackState
       value: 1
@@ -50938,6 +50942,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1020994046459519739, guid: ea8385a2a0ed8e94db0c903730a0ec8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410390353537118578, guid: ea8385a2a0ed8e94db0c903730a0ec8c, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8023859832369199405, guid: ea8385a2a0ed8e94db0c903730a0ec8c, type: 3}
