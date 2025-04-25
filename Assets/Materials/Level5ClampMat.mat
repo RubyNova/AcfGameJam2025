@@ -54,7 +54,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _MinimumLitValue: 1
+    - _MinimumLitValue: 0
     - _ShadowInterpolation: 0.092
     - _ZWrite: 0
     m_Colors:
