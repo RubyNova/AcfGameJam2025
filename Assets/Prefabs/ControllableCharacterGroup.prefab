@@ -5624,6 +5624,7 @@ GameObject:
   - component: {fileID: 6442590058952224611}
   - component: {fileID: 1329484681233923891}
   - component: {fileID: 3740199824375502146}
+  - component: {fileID: 3098621716660039546}
   - component: {fileID: 2154678700174108565}
   m_Layer: 10
   m_Name: LightFamiliar
@@ -5801,7 +5802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b2fda522cc0cf4cbb0583fe35dc756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colour: {r: 1, g: 0.59788513, b: 0, a: 1}
+  _colour: {r: 1, g: 0.9490196, b: 0, a: 1}
   _beamForce: 100
 --- !u!114 &1329484681233923891
 MonoBehaviour:
@@ -5815,7 +5816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec5bf09ed2c76d469d418b92295893a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colour: {r: 0.07406576, g: 0.7264151, b: 0, a: 1}
+  _colour: {r: 0, g: 1, b: 0.5372549, a: 1}
   _beamForce: 10
 --- !u!114 &3740199824375502146
 MonoBehaviour:
@@ -5829,8 +5830,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407ca2e230e0c2848a1118d13a2bff87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colour: {r: 0, g: 0.7900574, b: 1, a: 1}
+  _colour: {r: 0, g: 0.87058824, b: 0.99607843, a: 1}
   _beamForce: 5
+--- !u!114 &3098621716660039546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7850566374596847418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d906223c17b345b488af93a0bb279978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colour: {r: 1, g: 0.3254902, b: 0.8039216, a: 1}
+  _beamForce: 1
+  _toleranceValue: 20
 --- !u!114 &2154678700174108565
 MonoBehaviour:
   m_ObjectHideFlags: 0
