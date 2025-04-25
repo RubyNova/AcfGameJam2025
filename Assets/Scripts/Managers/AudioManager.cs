@@ -97,6 +97,7 @@ namespace Managers
         public static string PrefabPath = "Prefabs/AudioManager";
 
         private static AudioManager _instance;
+        public bool locked = false;
 
 		public static AudioManager Instance
 		{
@@ -471,6 +472,7 @@ namespace Managers
 
         private IEnumerator PlayAllTracks(double baseDuration)
         {
+            locked = true;
             double baseStartTime = AudioSettings.dspTime;
             double layerStartTime = baseStartTime;
 
@@ -485,7 +487,7 @@ namespace Managers
             _musicSourceThree.PlayScheduled(layerStartTime);
             _musicSourceFour.PlayScheduled(layerStartTime);
             _musicSourceFive.PlayScheduled(layerStartTime);
-
+            locked = false;
             yield break;
         }
 
