@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestClampMat Yellow
+  m_Name: Level6ClampMat
   m_Shader: {fileID: -6465566751694194690, guid: f4c36140d12d22f48b49cb2c277a3481, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
