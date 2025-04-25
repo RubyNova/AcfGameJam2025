@@ -47,7 +47,7 @@ namespace Environment
             transitioning = true;
             if(_switchMusic)
             {
-                AudioManager.Instance.TransitionTo(_trackState);
+                AudioManager.Instance.PlayLayeredTracks(_trackState);
             }
         }
 
