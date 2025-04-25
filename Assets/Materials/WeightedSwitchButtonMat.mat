@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WeightedSwitchButtonMat
-  m_Shader: {fileID: -6465566751694194690, guid: b10273077c10c194685852837df65761, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f4c36140d12d22f48b49cb2c277a3481, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -68,6 +68,7 @@ Material:
     - _EnableExternalAlpha: 0
     - _KernelSize: 21
     - _LightTolerance: 0.5
+    - _MinimumLitValue: 0.5
     - _RecolourAlphaTolerance: 1
     - _ShadowInterpolation: 0.106
     - _UVBlurOffset: 100
