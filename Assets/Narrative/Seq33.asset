@@ -18,82 +18,81 @@ MonoBehaviour:
   _soundEffectFiles: []
   _characterDialoguePairs:
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 18
     _poseIndexTwo: 0
     _text: "Ugh that one felt\u2026 different?"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 18
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: Do not be alarmed, your mind is adjusting to my presence.
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 16
     _poseIndexTwo: 0
     _text: "It\u2019s overwhelming!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 16
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: One more piece and I will be whole again.
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 17
     _poseIndexTwo: 0
     _text: "I need a moment, I feel\u2026 like\u2026 I\u2019m not fully here."
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 17
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: We must hurry!
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 12
     _poseIndexTwo: 0
     _text: " I need to stop\u2026 I feel\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 12
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: No Kymbr. We must continue!
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 18,0: MainChar: Ugh that one felt\u2026
-    different?\n\nMainChar,LF: 18,0: LF: Do not be alarmed, your mind is adjusting
-    to my presence.\n\nMainChar,LF: 16,0: MainChar: It\u2019s overwhelming!\n\nMainChar,LF:
-    16,0: LF: One more piece and I will be whole again.\n\nMainChar,LF: 17,0: MainChar:
-    I need a moment, I feel\u2026 like\u2026 I\u2019m not fully here.\n\nMainChar,LF:
-    17,0: LF: We must hurry!\n\nMainChar,LF: 12,0: MainChar:  I need to stop\u2026
-    I feel\u2026\n\nMainChar,LF: 12,0: LF: No Kymbr. We must continue!\n\n\n\n\n\n"
+  <SourceScript>k__BackingField: "MainChar: 18: MainChar: Ugh that one felt\u2026
+    different?\n\nNarrator: Do not be alarmed, your mind is adjusting to my presence.\n\nMainChar:
+    16: MainChar: It\u2019s overwhelming!\n\nNarrator: One more piece and I will
+    be whole again.\n\nMainChar: 17: MainChar: I need a moment, I feel\u2026 like\u2026
+    I\u2019m not fully here.\n\nNarrator: We must hurry!\n\nMainChar: 12: MainChar: 
+    I need to stop\u2026 I feel\u2026\n\nNarrator: No Kymbr. We must continue!\n\n\n\n\n\n"
