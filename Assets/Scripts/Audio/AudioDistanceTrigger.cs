@@ -24,27 +24,35 @@ namespace Audio
         {
             if(_playerReference != null)
             {
-                distance = Vector3.Distance(transform.position, _playerReference.transform.position);
-                if(distance < DistanceValue)
+                bool l = AudioManager.Instance.locked;
+                if(!l)
                 {
-                    //TriggerThresholdValue / Distance == Percentage Volume we should be at
-                    if(distance != 0f)
+                    distance = Vector3.Distance(transform.position, _playerReference.transform.position);
+                    if(distance < DistanceValue)
                     {
-                        threshold = TriggerThresholdValue / distance;
-                        if(threshold > CutoffValue)
+                        //TriggerThresholdValue / Distance == Percentage Volume we should be at
+                        if(distance != 0f)
                         {
-                            AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, (TriggerThresholdValue / distance) * 100);
+                            threshold = TriggerThresholdValue / distance;
+                            if(threshold > CutoffValue)
+                            {
+                                AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, (TriggerThresholdValue / distance) * 100);
+                            }
+                            else
+                            {
+                                AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, 0);
+                            }
                         }
                         else
                         {
-                            AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, 0);
+                            AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, 100);
                         }
+                        
                     }
-                    else
-                    {
-                        AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, 100);
-                    }
-                    
+                }
+                else
+                {
+                    AudioManager.Instance.SetLayerVolume(GetHashCode(), LayerNumber, 0);
                 }
             }
         }

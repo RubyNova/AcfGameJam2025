@@ -335,6 +335,7 @@ namespace Controllers
 
             if (beamData != null && !_sparksObject.activeInHierarchy)
             {
+                _audioController.PlayGrind();
                 var sparksControls = _sparksObject.GetComponent<ParticleSystem>().main;
                 sparksControls.startColor = beamData.Controller.BeamModifierData.Colour;
                 _sparksObject.SetActive(true);
@@ -343,6 +344,7 @@ namespace Controllers
             else if (beamData == null && _sparksObject.activeInHierarchy)
             {
                 _sparksObject.SetActive(false);
+                _audioController.StopGrind();
             }
         }
 
@@ -393,6 +395,7 @@ namespace Controllers
                     if (Grounded)
                     {
                         _rigidbody.AddForce(Vector2.up * _jumpForce * _rigidbody.mass, ForceMode2D.Impulse);
+                        _audioController.PlayJump();
                     }
                     JumpRequested = false;
                 }
