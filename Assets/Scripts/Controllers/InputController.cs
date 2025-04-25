@@ -115,7 +115,7 @@ namespace Controllers
             PauseGame();
         }
 
-        private void PauseGame()
+        public void PauseGame()
         {
             if(!_paused)
             {
