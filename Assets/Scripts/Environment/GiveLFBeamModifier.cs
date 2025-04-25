@@ -44,6 +44,10 @@ namespace Environment
                 trampolineComponent.Colour = _beamColours[2];
                 trampolineComponent.BeamForce = 1;
                 break;
+                case ModifierType.SpeedBoost:
+                SpeedBoostModifier speedBoostComponent = _targetAttachObject.AddComponent<SpeedBoostModifier>();
+                speedBoostComponent.BeamForce = 15;
+                break;
             }
 
             _isAttached = true;
