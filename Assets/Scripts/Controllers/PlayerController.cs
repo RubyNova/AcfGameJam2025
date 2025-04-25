@@ -166,6 +166,8 @@ namespace Controllers
         private bool _hopDownTriggered = false;
         private Coroutine _resetLayerRoutine;
 
+        public bool DisableFall = false;
+
         void Start()
         {
             _currentVelocityCap = _baseVelocityCap;
@@ -791,6 +793,7 @@ namespace Controllers
         {
             _characterAnimator.SetFloat("MovementX", _currentMovementVector.x);
             _characterAnimator.SetFloat("MovementY", _rigidbody.linearVelocityY);
+            _characterAnimator.SetBool("DisableFall", DisableFall);
             _characterAnimator.SetBool("CollidingWithBeam", _cachedAffectingBeam != NO_BEAM_CACHED);
 
             if (_currentMovementVector.x != 0 && _cachedAffectingBeam == NO_BEAM_CACHED)

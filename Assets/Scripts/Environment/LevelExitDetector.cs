@@ -15,17 +15,23 @@ namespace Environment
         [SerializeField] private bool _switchMusic = false;
         [SerializeField] private AudioManager.TrackState _trackState;
         [SerializeField] private Animator _levelTransition;
+        [SerializeField] private bool disableLevelTransitionAnim = false;
         private bool transitioning = false;
 
         void Update()
         {
-            if(transitioning)
+            if(transitioning && !disableLevelTransitionAnim)
             {
                 if(_levelTransition.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
                 {
                     transitioning = false;
                     StartCoroutine(SwitchLevels());
                 }
+            }
+            else if (transitioning)
+            {
+                transitioning = false;
+                StartCoroutine(SwitchLevels());
             }
         }
 
@@ -36,7 +42,8 @@ namespace Environment
                 return;
             }
 
-            _levelTransition.SetTrigger("Start");
+            if(!disableLevelTransitionAnim)
+                _levelTransition.SetTrigger("Start");
             transitioning = true;
             if(_switchMusic)
             {
