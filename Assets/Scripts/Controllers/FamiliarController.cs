@@ -22,6 +22,9 @@ namespace Controllers
         [SerializeField]
         public bool ActiveCharacter;
 
+        [SerializeField]
+        private GameObject _spriteRoot;
+
         public UnityEvent CharacterActivated;
 
         public UnityEvent CharacterDeactivated;
@@ -169,6 +172,13 @@ namespace Controllers
             }
 
             _beamChanger.ChangeBeamModifier(modifiers[_modifierIndex]);
+
+            var renderers = _spriteRoot.GetComponentsInChildren<SpriteRenderer>();
+
+            foreach (var renderer in renderers)
+            {
+                renderer.color = _beamChanger.BeamModifierData.Colour;  
+            }
 
         }
 
