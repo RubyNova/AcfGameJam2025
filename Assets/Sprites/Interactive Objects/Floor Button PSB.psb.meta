@@ -117,7 +117,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: -15, y: 4}
     spritePosition: {x: 19, y: 0}
-  - name: Button
+  - name: Floor Button Base NEW
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -127,6 +127,28 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 268
+      width: 1344
+      height: 256
+    spriteID: 29bff50615489ef428c72dbf408bfedf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 268}
+    spritePosition: {x: 19, y: 0}
+  - name: Button
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 892
+      y: 532
       width: 880
       height: 181
     spriteID: 6551bf7bbd7d25b4fb11fe862524768e
@@ -137,8 +159,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -247, y: 47}
+    uvTransform: {x: 641, y: 311}
     spritePosition: {x: 251, y: 221}
+  - name: Floor Button NEW
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 532
+      width: 880
+      height: 185
+    spriteID: 3a750077ce5d9434794bd2593a6f0f4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 532}
+    spritePosition: {x: 251, y: 217}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -212,13 +256,33 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
+  - name: Floor Button Base NEW
+    spriteName: Floor Button Base NEW
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 29bff50615489ef428c72dbf408bfedf
+    layerID: 5
+    mosaicPosition: {x: 4, y: 268}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Button
     spriteName: Button
     isGroup: 0
     parentIndex: -1
     spriteID: 6551bf7bbd7d25b4fb11fe862524768e
     layerID: 2
-    mosaicPosition: {x: 4, y: 268}
+    mosaicPosition: {x: 892, y: 532}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Floor Button NEW
+    spriteName: Floor Button NEW
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3a750077ce5d9434794bd2593a6f0f4f
+    layerID: 6
+    mosaicPosition: {x: 4, y: 532}
     flatten: 0
     isImported: 1
     isVisible: 1
