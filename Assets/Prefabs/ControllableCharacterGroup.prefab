@@ -5400,7 +5400,7 @@ Transform:
   m_GameObject: {fileID: 5973371509747481140}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.31878564, w: 0.94782686}
-  m_LocalPosition: {x: -6.14, y: -21.150002, z: 0.004709914}
+  m_LocalPosition: {x: 0, y: 0, z: 0.004709914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5447,7 +5447,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 1.4
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
