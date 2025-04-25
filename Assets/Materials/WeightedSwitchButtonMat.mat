@@ -70,7 +70,7 @@ Material:
     - _LightTolerance: 0.5
     - _MinimumLitValue: 0.5
     - _RecolourAlphaTolerance: 1
-    - _ShadowInterpolation: 0.106
+    - _ShadowInterpolation: 0.5
     - _UVBlurOffset: 100
     - _UVBlurStepAmount: 4
     - _ZWrite: 0
