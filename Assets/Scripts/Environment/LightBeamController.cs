@@ -3,6 +3,7 @@ using System.Linq;
 using Controllers;
 using Environment.Interactables;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace Environment
 {
@@ -27,6 +28,9 @@ namespace Environment
 
         [SerializeField]
         private ParticleSystem _particleSystem;
+
+        [SerializeField]
+        private Light2D _light;
 
         [Header("Configuration")]
         [SerializeField]
@@ -371,6 +375,29 @@ namespace Environment
             _renderer.positionCount = positions.Length;
             _renderer.SetPositions(positions);
 
+            _light.transform.position = EmissionPoint;
+            _light.transform.rotation = _targetTransform.rotation;
+
+            float lightLength = Vector3.Distance(startPoint, positions.Last());
+            var lightStart = Vector3.zero; //new Vector3(-Vector3.Distance(startPoint, endPoint), 0, 0);
+            var lightEnd = new Vector3(lightLength, 0, 0);
+
+            var topLeft = lightStart;
+            topLeft.y += _renderer.startWidth;
+            
+            var bottomLeft = lightStart;
+            bottomLeft.y -= _renderer.startWidth;
+            
+            var topRight = lightEnd;
+            topRight.y += _renderer.startWidth;
+            
+            var bottomRight = lightEnd;
+            bottomRight.y -= _renderer.startWidth;
+
+            var lightShapePath = new Vector3[4] {bottomLeft, topLeft, topRight, bottomRight};
+
+            _light.SetShapePath(lightShapePath);
+
             if (_beamModifierData == null)
             {
                 _beamModifierData = GetComponentInChildren<LightBeamModifier>();
@@ -463,6 +490,8 @@ namespace Environment
                 {
                     _particleSystem.Stop();
                 }
+
+                _light.enabled = false;
             }
         }
 
@@ -508,6 +537,7 @@ namespace Environment
 
             _emissionPoint = hitPoint;
             _renderer.enabled = true;
+            _light.enabled = true;
 
             if (!_particleSystem.isPlaying)
             {
@@ -541,6 +571,7 @@ namespace Environment
                         _currentSender = null;
                         BoxCollider.enabled = false;
                         _renderer.enabled = false;
+                        _light.enabled = false;
                         if (!_particleSystem.isStopped)
                         {
                             _particleSystem.Stop();
@@ -609,6 +640,7 @@ namespace Environment
             _currentSender = null;
             _targetTransform.rotation = _cachedStartRotation;
             _renderer.enabled = false;
+            _light.enabled = false;
             if (!_particleSystem.isStopped)
             {
                 _particleSystem.Stop();
