@@ -12,6 +12,10 @@ namespace Controllers
         [SerializeField] private AudioSource _source;
 
         [SerializeField] private AudioSource _sourceTwo;
+        [SerializeField] private AudioSource _sourceThree;
+        [SerializeField] private AudioSource _sourceFour;
+
+
 
         [SerializeField]
         private AudioClip _walkingOne;
@@ -30,6 +34,18 @@ namespace Controllers
 
         [SerializeField]
         private AudioClip _landTwo;
+        
+        [SerializeField]
+        private AudioClip _jump;
+
+        [SerializeField]
+        private AudioClip _grind;
+
+        void Start()
+        {
+         _sourceThree.clip = _jump;
+         _sourceFour.clip = _grind;   
+        }
 
         public void PlayWalkingClip()
         {
@@ -68,6 +84,21 @@ namespace Controllers
             _sourceTwo.clip = highFall ? _landTwo : _landOne;
             _mixer.SetFloat("FallLandPitch", Random.Range(0.5f, 1.5f));
             _sourceTwo.PlayScheduled(AudioSettings.dspTime);
+        }
+
+        public void PlayJump()
+        {
+            _sourceThree.PlayScheduled(AudioSettings.dspTime);
+        }
+
+        public void PlayGrind()
+        {
+            _sourceFour.PlayScheduled(AudioSettings.dspTime);
+        }
+
+        public void StopGrind()
+        {
+            _sourceFour.Stop();
         }
 
     }
