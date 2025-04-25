@@ -103,7 +103,7 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
+      x: 2150
       y: 4
       width: 2095
       height: 2096
@@ -115,7 +115,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 2150, y: 4}
     spritePosition: {x: 1003, y: 1008}
   - name: Ellipse 1
     originalName: 
@@ -125,8 +125,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 2108
+      x: 4253
+      y: 4
       width: 2092
       height: 2092
     spriteID: 6b3b338a4ecfad34db37176fa757e714
@@ -137,7 +137,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2108}
+    uvTransform: {x: 4253, y: 4}
     spritePosition: {x: 1004, y: 1010}
   - name: Ellipse 3
     originalName: 
@@ -148,7 +148,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4208
+      y: 2150
       width: 2092
       height: 2092
     spriteID: 176bbe1dc2485d34cb5326db7bb5c5ec
@@ -159,7 +159,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4208}
+    uvTransform: {x: 4, y: 2150}
     spritePosition: {x: 1004, y: 1010}
   - name: Nucleus copy
     originalName: 
@@ -169,8 +169,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 6308
+      x: 6353
+      y: 4
       width: 1415
       height: 1415
     spriteID: 2470be17749ea444fa799029151f5cad
@@ -181,8 +181,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 6308}
+    uvTransform: {x: 6353, y: 4}
     spritePosition: {x: 1341, y: 1340}
+  - name: Thick Ring
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 2138
+      height: 2138
+    spriteID: edf158ea22e8b824eb6247717cd87af1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 981, y: 987}
   - name: Ring
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -191,8 +213,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2107
-      y: 4
+      x: 2104
+      y: 2150
       width: 2092
       height: 2092
     spriteID: 4a81369a1ef8da04bbce23dbdcf291aa
@@ -203,7 +225,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2107, y: 4}
+    uvTransform: {x: 2104, y: 2150}
     spritePosition: {x: 1004, y: 1010}
   spriteImportData: []
   rigSpriteImportData: []
@@ -274,7 +296,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 0f8b2cc67bb4ebe4cbd1579a576f6db5
     layerID: 46
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 2150, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -284,7 +306,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 6b3b338a4ecfad34db37176fa757e714
     layerID: 13
-    mosaicPosition: {x: 4, y: 2108}
+    mosaicPosition: {x: 4253, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -294,7 +316,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 176bbe1dc2485d34cb5326db7bb5c5ec
     layerID: 38
-    mosaicPosition: {x: 4, y: 4208}
+    mosaicPosition: {x: 4, y: 2150}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -304,7 +326,17 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2470be17749ea444fa799029151f5cad
     layerID: 48
-    mosaicPosition: {x: 4, y: 6308}
+    mosaicPosition: {x: 6353, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Thick Ring
+    spriteName: Thick Ring
+    isGroup: 0
+    parentIndex: -1
+    spriteID: edf158ea22e8b824eb6247717cd87af1
+    layerID: 50
+    mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -314,7 +346,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 4a81369a1ef8da04bbce23dbdcf291aa
     layerID: 10
-    mosaicPosition: {x: 2107, y: 4}
+    mosaicPosition: {x: 2104, y: 2150}
     flatten: 0
     isImported: 1
     isVisible: 1
