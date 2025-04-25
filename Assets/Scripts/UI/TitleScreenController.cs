@@ -67,6 +67,15 @@ namespace UI
             navTime = true;
         }
 
+        public void GoToCreds()
+        {
+            if(!navTime)
+            {
+                navTime = true;
+                StartCoroutine(GoToCredits());
+            }
+        }
+
         private IEnumerator StartGame(int secondsDelay)
         {
             while(audioSource.volume != 0.0f)
@@ -80,6 +89,22 @@ namespace UI
             AudioManager.Instance.PlayLayeredTrack(TrackToLoad);
 
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LevelFromBuildIndexToLoad);
+            while(!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+        }
+
+        private IEnumerator GoToCredits()
+        {
+
+            while(audioSource.volume != 0.0f)
+            {
+                audioSource.volume -= Mathf.Lerp(75, 0, Time.deltaTime);
+                if(audioSource.volume > 1.0f)
+                    audioSource.volume = 0.0f;
+            }
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(10); // credits scene
             while(!asyncLoad.isDone)
             {
                 yield return null;
