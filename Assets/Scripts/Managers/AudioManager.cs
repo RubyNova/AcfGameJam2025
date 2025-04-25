@@ -223,17 +223,17 @@ namespace Managers
             _currentLayerPlayingCount++;
         }
 
-        private void RemoveLayerFromMusic(int layer)
+        public void RemoveLayerFromMusic(int layer)
         {
             if(layer > 4) return;
 
-            if(layer > 4 || layer < 1)  return;
+            if(layer > 4 || layer < 0)  return;
 
             if(!_layersFadingOut.Contains(layer))
                 _layersFadingOut.Add(layer);
 
             switch(layer)
-            {
+            {                
                 case 1:
                 {
                     StartCoroutine(FadeOut(_musicSourceTwo, layer));
@@ -252,6 +252,11 @@ namespace Managers
                 case 4:
                 {
                     StartCoroutine(FadeOut(_musicSourceFive, layer));
+                    break;
+                }
+                default:
+                {
+                    StartCoroutine(FadeOut(_musicSourceOne, layer));
                     break;
                 }
             }
@@ -276,7 +281,7 @@ namespace Managers
 
         private float GetNormalizedVolume(float percentage) => Mathf.Clamp(percentage, 0, 100) /100;
 
-        private void StopAllTracks()
+        public void StopAllTracks()
         {
             _musicSourceOne.Stop();
             _musicSourceTwo.Stop();
