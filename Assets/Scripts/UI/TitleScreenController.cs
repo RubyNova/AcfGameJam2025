@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Managers;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using static Managers.AudioManager;
 
@@ -51,6 +52,14 @@ namespace UI
         }
 
         private void EnableAnyButton() => AnyButtonButton.SetActive(true);
+
+        void OnAnyKey(InputValue _)
+        {
+            if(!navTime)
+            {
+                BeginGame();
+            }
+        }
 
         public void BeginGame()
         {

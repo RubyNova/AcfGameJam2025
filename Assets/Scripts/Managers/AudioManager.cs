@@ -14,6 +14,7 @@ namespace Managers
     {
         public enum TrackState
         {
+            Title,
             Track1,
             Track2,
             Track3,
@@ -52,6 +53,7 @@ namespace Managers
         private float _fadeOutSpeed = 0.75f;
 
         [Header("Music Values")]
+        [SerializeField] private LayeredAudioTrack _titleTrack;
         [SerializeField] private LayeredAudioTrack _tutorialMusicTrack;
         [SerializeField] private LayeredAudioTrack _layeredTrackTwo;
         [SerializeField] private LayeredAudioTrack _layeredTrackThree;
@@ -333,6 +335,10 @@ namespace Managers
         {
             switch(level)
             {
+                case TrackState.Title:
+                {
+                    return _titleTrack;
+                }
                 case TrackState.Track1:
                 {
                     return _tutorialMusicTrack;
