@@ -18,43 +18,42 @@ MonoBehaviour:
   _soundEffectFiles: []
   _characterDialoguePairs:
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 13
     _poseIndexTwo: 0
     _text: "I don\u2019t want to\u2026"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 13
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: We must!
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
+    _characterTwo: {fileID: 0}
     _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
+    _hasSecondCharacterPoseIndex: 0
     _poseIndex: 17
     _poseIndexTwo: 0
     _text: "I\u2019m scared\u2026 I feel like I\u2019m fainting!"
     _leftCharacterTalking: 1
     _narratorSpeaking: 0
-  - _character: {fileID: 11400000, guid: 4ef67433d0f3fb44ea72e0859c818f67, type: 2}
-    _characterTwo: {fileID: 11400000, guid: 7f749282c9edb3245bcb661e4107fc11, type: 2}
-    _hasPoseIndex: 1
-    _hasSecondCharacterPoseIndex: 1
-    _poseIndex: 17
+  - _character: {fileID: 11400000, guid: 12210783913a5c84d905b0da80c330d3, type: 2}
+    _characterTwo: {fileID: 0}
+    _hasPoseIndex: 0
+    _hasSecondCharacterPoseIndex: 0
+    _poseIndex: 0
     _poseIndexTwo: 0
     _text: I will carry us the rest of the way.
-    _leftCharacterTalking: 0
-    _narratorSpeaking: 0
+    _leftCharacterTalking: 1
+    _narratorSpeaking: 1
   _choices: []
-  <SourceScript>k__BackingField: "MainChar,LF: 13,0: MainChar: I don\u2019t want
-    to\u2026\n\nMainChar,LF: 13,0: LF: We must!\n\nMainChar,LF: 17,0: MainChar: I\u2019m
-    scared\u2026 I feel like I\u2019m fainting!\n\nMainChar,LF: 17,0: LF: I will
-    carry us the rest of the way."
+  <SourceScript>k__BackingField: "MainChar: 13: I don\u2019t want to\u2026\n\nNarrator:
+    We must!\n\nMainChar: 17: MainChar: I\u2019m scared\u2026 I feel like I\u2019m
+    fainting!\n\nNarrator: I will carry us the rest of the way."
