@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WarpPINK
-  m_Shader: {fileID: -6465566751694194690, guid: 11248c7986c0aef4c881329cd15ceefa, type: 3}
+  m_Name: WeightedSwitchButtonMat
+  m_Shader: {fileID: -6465566751694194690, guid: b10273077c10c194685852837df65761, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -28,11 +28,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 44a69fd355200ae41a488316e82fd507, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6823808d6f224704481e6b7dad79ac09, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 13ffc8512c80fa14b9cab4692433cbca, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6493c2304c98afa4ca4640b45ef0250a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -43,8 +43,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RecolourAndEmissionMap:
+        m_Texture: {fileID: 2800000, guid: 49a47122fc7ca394da7529878aa65825, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _RecolourMap:
-        m_Texture: {fileID: 2800000, guid: 42f302630f32df84ba15a878e8d66e4b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6823808d6f224704481e6b7dad79ac09, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -62,20 +66,23 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _KernelSize: 10
+    - _KernelSize: 21
+    - _LightTolerance: 0.5
     - _RecolourAlphaTolerance: 1
-    - _ShadowInterpolation: 0.1
-    - _UVBlurOffset: 30
+    - _ShadowInterpolation: 0.106
+    - _UVBlurOffset: 100
+    - _UVBlurStepAmount: 4
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColourRetarget: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColour: {r: 0.98039216, g: 0, b: 0.98039216, a: 1}
+    - _ColourRetargetActually: {r: 1, g: 0.69411767, b: 1, a: 0}
+    - _EmissiveColour: {r: 1, g: 0.4292453, b: 0.847029, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColour: {r: 0, g: 0, b: 0.462745, a: 0}
+    - _ShadowColour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &4808930627554907527
+--- !u!114 &2707704467797047446
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
