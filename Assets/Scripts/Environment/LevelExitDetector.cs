@@ -1,3 +1,4 @@
+using System.Collections;
 using Controllers;
 using Managers;
 using ScriptableObjects.Audio;
@@ -13,6 +14,20 @@ namespace Environment
 
         [SerializeField] private bool _switchMusic = false;
         [SerializeField] private AudioManager.TrackState _trackState;
+        [SerializeField] private Animator _levelTransition;
+        private bool transitioning = false;
+
+        void Update()
+        {
+            if(transitioning)
+            {
+                if(_levelTransition.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
+                {
+                    transitioning = false;
+                    StartCoroutine(SwitchLevels());
+                }
+            }
+        }
 
         protected void OnTriggerEnter2D(Collider2D collision)
         {
@@ -21,12 +36,21 @@ namespace Environment
                 return;
             }
 
+            _levelTransition.SetTrigger("Start");
+            transitioning = true;
             if(_switchMusic)
             {
                 AudioManager.Instance.TransitionTo(_trackState);
             }
+        }
 
-            SceneManager.LoadScene(_levelToLoad);
+        private IEnumerator SwitchLevels()
+        {
+            AsyncOperation ao = SceneManager.LoadSceneAsync(_levelToLoad);
+            while(!ao.isDone)
+            {
+                yield return null;
+            }
         }
     }
 }
