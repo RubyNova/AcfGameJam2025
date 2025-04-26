@@ -24,7 +24,7 @@ MonoBehaviour:
     _poseIndex: 0
     _poseIndexTwo: 0
     _text: Press S while riding a beam to drop off of it.
-    _leftCharacterTalking: 1
+    _leftCharacterTalking: 0
     _narratorSpeaking: 1
   _choices: []
   <SourceScript>k__BackingField: 'Narrator: Press S while riding a beam to drop off
