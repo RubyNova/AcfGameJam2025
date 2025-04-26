@@ -442,6 +442,7 @@ namespace Controllers
                 });
                 _capMultiplierForOutsideForces += beamForce * _outsideForceInfluenceMultiplier;
                 _triggerCollider.enabled = true;
+                AudioManager.Instance.SetLayerVolume(gameObject.GetHashCode(), 2, 100); // track b
             }
             // TODO: This method is called every tick that the beam detects the player. The beam priority is a value that increments the more controllers this single beam of light
             // has been through. The senderBeamDirection dictates the direction the beam is flowing. The beamForce value is a raw force to be applied in the given direction, the simplest
@@ -459,6 +460,7 @@ namespace Controllers
                     _cachedAffectingBeam = NO_BEAM_CACHED;
                     _triggerCollider.enabled = false;
                 }
+                AudioManager.Instance.SetLayerVolume(gameObject.GetHashCode(), 2, 0); // track b
             }
             // TODO: This method is only called once by the sending beam controller to effectively flag the player is no longer under the control of that particular light beam controller.
             // This method exists to help you clean up any state, or help you track multiple controllers if your implementation requires it, and need a way to figure out which controllers to
