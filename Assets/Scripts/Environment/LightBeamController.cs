@@ -325,7 +325,7 @@ namespace Environment
                 _intersectedPosition = intersectedPosition;
                 _perceivedMinColliderpoint = _playerControllerForBoundsChecks.MinColliderPoint;
 
-                if (intersectedPosition.y > _playerControllerForBoundsChecks.MinColliderPoint.y && !Mathf.Approximately(intersectedPosition.y, _playerControllerForBoundsChecks.MinColliderPoint.y))
+                if (CurrentPlayer == null && intersectedPosition.y > _playerControllerForBoundsChecks.MinColliderPoint.y && !Mathf.Approximately(intersectedPosition.y, _playerControllerForBoundsChecks.MinColliderPoint.y))
                 {
                     BoxCollider.enabled = false;
                 }

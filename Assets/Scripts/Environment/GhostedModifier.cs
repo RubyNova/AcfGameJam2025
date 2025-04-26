@@ -29,7 +29,8 @@ namespace Environment
 
         public override void ApplyBeamEffectToPlayer(LightBeamController sender, int beamPriority, PlayerController player, Vector2 senderBeamDirection)
         {
-            if (player.gameObject.layer != _ghostedLayer && player.gameObject.layer != _ignoreBeamsLayer)
+            var cachedData = player.GetCachedBeamData();
+            if ((cachedData == null || cachedData.Priority < beamPriority) && player.gameObject.layer != _ghostedLayer && player.gameObject.layer != _ignoreBeamsLayer)
             {
                 player.gameObject.layer = _ghostedLayer;
             }
@@ -39,7 +40,8 @@ namespace Environment
 
         public override void ClearBeamEffectOnPlayer(LightBeamController sender, int beamPriority, PlayerController player)
         {
-            if (player.gameObject.layer != _ignoreBeamsLayer)
+            var cachedData = player.GetCachedBeamData();
+            if (cachedData != null && cachedData.Priority < beamPriority && player.gameObject.layer != _ignoreBeamsLayer)
             {
                 player.gameObject.layer = _defaultLayer; 
             }
