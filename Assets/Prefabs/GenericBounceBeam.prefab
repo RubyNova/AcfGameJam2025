@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c5f588e52352344a0b39fe97ac3de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerNumber: 2
+  LayerNumber: 1
   GizmosEnabled: 0
   DistanceValue: 5
   TriggerThresholdValue: 1.7
