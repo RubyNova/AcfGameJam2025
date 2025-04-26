@@ -163,6 +163,9 @@ namespace Controllers
 
         protected void OnCycleBeamModifier()
         {
+            if(!ActiveCharacter)
+                return;
+                
             CycleModifiers();
         }
 
