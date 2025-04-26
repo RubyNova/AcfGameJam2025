@@ -525,8 +525,8 @@ namespace Environment
             {
                 case LightBeamMode.Transform:
                 case LightBeamMode.Source:
-                    _light.color = BeamModifierData.Colour;
-                    _sourceLight.color = BeamModifierData.Colour;
+                    _light.color = new Color(BeamModifierData.Colour.r, BeamModifierData.Colour.g, BeamModifierData.Colour.b, 1);
+                    _sourceLight.color = new Color(BeamModifierData.Colour.r, BeamModifierData.Colour.g, BeamModifierData.Colour.b, 1);
                 break;
                 case LightBeamMode.Bounce:
                     if (_currentSender == null)
@@ -534,8 +534,8 @@ namespace Environment
                         break;
                     }
 
-                    _light.color = _currentSender.BeamModifierData.Colour;
-                    _sourceLight.color = _currentSender.BeamModifierData.Colour;
+                    _light.color = new Color(_currentSender.BeamModifierData.Colour.r, _currentSender.BeamModifierData.Colour.g, _currentSender.BeamModifierData.Colour.b, 1);
+                    _sourceLight.color = new Color(_currentSender.BeamModifierData.Colour.r, _currentSender.BeamModifierData.Colour.g, _currentSender.BeamModifierData.Colour.b, 1);
                     break;
 
                 default:
