@@ -47,6 +47,7 @@ namespace Environment
                 case ModifierType.SpeedBoost:
                 SpeedBoostModifier speedBoostComponent = _targetAttachObject.AddComponent<SpeedBoostModifier>();
                 speedBoostComponent.BeamForce = 15;
+                speedBoostComponent.Colour = _beamColours[0];
                 break;
             }
 
