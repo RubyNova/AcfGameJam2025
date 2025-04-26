@@ -1412,7 +1412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 49.6, y: -854}
+  m_AnchoredPosition: {x: 49.6, y: -897}
   m_SizeDelta: {x: 641, y: 222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550675958
@@ -4402,8 +4402,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Management\r\nGame Design\r\r\nGraphics Programming\r\nVFX\r\nLevel
-    Design\r\r\nPlaytesting"
+  m_text: "Project Management\r\nGame Design\nGameplay Programming\r\r\nGraphics
+    Programming\r\nVFX\r\nLevel Design\r\r\nPlaytesting"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cda1c85c81a6f25e9af457a360d7773f, type: 2}
   m_sharedMaterial: {fileID: 1684593151572335683, guid: cda1c85c81a6f25e9af457a360d7773f, type: 2}
