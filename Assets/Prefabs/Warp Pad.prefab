@@ -9828,9 +9828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LayerNumber: 3
   GizmosEnabled: 0
-  DistanceValue: 15
-  TriggerThresholdValue: 0.85
-  CutoffValue: 0.1
+  DistanceValue: 15.5
+  TriggerThresholdValue: 5.82
+  CutoffValue: 0.46
 --- !u!114 &7086559961295929314
 MonoBehaviour:
   m_ObjectHideFlags: 0
