@@ -19,6 +19,7 @@ namespace Environment
             if (collision.gameObject.TryGetComponent<PlayerController>(out var player) && player.HeldObject == null)
             {
                 _preventSoftlockActions.Invoke();
+                gameObject.SetActive(false);
             }
         }
     }

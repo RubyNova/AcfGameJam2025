@@ -5739,6 +5739,7 @@ MonoBehaviour:
   CharacterDeactivated:
     m_PersistentCalls:
       m_Calls: []
+  AudioThresholdDistanceValue: 5
   _movementVector: {x: 0, y: 0}
 --- !u!114 &3716510971253003466
 MonoBehaviour:
@@ -5776,6 +5777,7 @@ MonoBehaviour:
   _forceAlwaysOff: 0
   _distancePerSecondOfLifetime: 5
   _hueSpeed: 0
+  _NullCheckHack: 0
 --- !u!114 &5258074328753728422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6803,7 +6805,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
