@@ -88,7 +88,9 @@ jobs:
       # Cache
       - uses: actions/cache@v3
         with:
-          path: Library
+          path: |
+            Library
+            build/StandaloneWindows64/StandaloneWindows64_BackUpThisFolder_ButDontShipItWithYourGame
           key: Library-Win64-${{ hashFiles('Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-Win64-
@@ -106,7 +108,8 @@ jobs:
       - name: Cleanup Artifact
         shell: pwsh
         run: |
-          rm -Recurse build/StandaloneWindows64/Prismyck_BurstDebugInformation_DoNotShip
+          rm -Recurse build/StandaloneWindows64/StandaloneWindows64_BurstDebugInformation_DoNotShip
+          rm -Recurse build/StandaloneWindows64/StandaloneWindows64_BackUpThisFolder_ButDontShipItWithYourGame
 
       - name: Upload Windows Build as Artifact
         uses: actions/upload-artifact@v4
