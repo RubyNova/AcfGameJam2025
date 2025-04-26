@@ -1,4 +1,5 @@
 using Environment;
+using Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -33,6 +34,8 @@ namespace Controllers
 
         public UnityEvent CharacterDeactivated;
 
+        public float AudioThresholdDistanceValue = 5f;
+
         [Header("Read-only Values")]
 
         [SerializeField]
@@ -65,6 +68,21 @@ namespace Controllers
             if (switchCharacters && ActiveCharacter)
             {
                 SwapCharacters();
+            }
+            
+            if(ActiveCharacter)
+            {
+                AudioManager.Instance.SetLayerVolume(GetHashCode(), 2, 100);
+            }
+            else
+            {
+                if(_playerControllerReference is not null)
+                {
+                    var distance = Vector3.Distance(transform.position, _playerControllerReference.transform.position);
+                    var percentage = AudioThresholdDistanceValue / distance * 100;
+
+                    AudioManager.Instance.SetLayerVolume(GetHashCode(), 2, percentage);
+                }
             }
         }
 
@@ -165,7 +183,7 @@ namespace Controllers
         {
             if(!ActiveCharacter)
                 return;
-                
+
             CycleModifiers();
         }
 

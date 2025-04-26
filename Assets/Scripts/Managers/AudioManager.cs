@@ -289,6 +289,7 @@ namespace Managers
             _musicSourceThree.Stop();
             _musicSourceFour.Stop();
             _musicSourceFive.Stop();
+            _layerModificationDictionary.Clear();
         }
 
         public void PlayLayeredTrack(TrackState requestedTrack)
@@ -402,8 +403,8 @@ namespace Managers
                 _layerModificationDictionary.Add(layer, hashCode);
             }
 
-            if(_layerModificationDictionary.TryGetValue(layer, out int cachedHashCode) && hashCode != cachedHashCode)
-                return;
+            // if(_layerModificationDictionary.TryGetValue(layer, out int cachedHashCode) && hashCode != cachedHashCode)
+            //     return;
 
             float normalizedVolume = GetNormalizedVolume(percentage);
 
