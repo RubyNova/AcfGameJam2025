@@ -103,9 +103,15 @@ jobs:
         with:
           targetPlatform: StandaloneWindows64
 
+      - name: Cleanup Artifact
+        shell: pwsh
+        run: |
+          rm -Recurse build/StandaloneWindows64/Prismyck_BurstDebugInformation_DoNotShip
+          rm -Recurse build/StandaloneWindows64/Prismyck_BackUpThisFolder_ButDontShipItWithYourGame
+
       - name: Upload Windows Build as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Prismyck-Windows-${{ github.sha }}
-          path: build
+          path: build/StandaloneWindows64
           retention-days: 3
