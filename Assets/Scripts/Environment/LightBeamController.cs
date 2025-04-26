@@ -75,6 +75,9 @@ namespace Environment
         [SerializeField]
         private float _hueSpeed;
 
+        [SerializeField]
+        private bool _NullCheckHack = false;
+
         private Vector2 _intersectedPosition = Vector2.zero;
 
         private Vector2 _perceivedMinColliderpoint = Vector2.zero;
@@ -325,7 +328,13 @@ namespace Environment
                 _intersectedPosition = intersectedPosition;
                 _perceivedMinColliderpoint = _playerControllerForBoundsChecks.MinColliderPoint;
 
-                if (CurrentPlayer == null && intersectedPosition.y > _playerControllerForBoundsChecks.MinColliderPoint.y && !Mathf.Approximately(intersectedPosition.y, _playerControllerForBoundsChecks.MinColliderPoint.y))
+                bool boundsCheck = intersectedPosition.y > _playerControllerForBoundsChecks.MinColliderPoint.y && !Mathf.Approximately(intersectedPosition.y, _playerControllerForBoundsChecks.MinColliderPoint.y);
+                if(!_NullCheckHack)
+                {
+                    boundsCheck = boundsCheck && CurrentPlayer == null;
+                }
+
+                if (boundsCheck)
                 {
                     BoxCollider.enabled = false;
                 }

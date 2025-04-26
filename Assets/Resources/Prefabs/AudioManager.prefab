@@ -58,6 +58,7 @@ MonoBehaviour:
   _musicSourceFive: {fileID: 2807716228854559315}
   _fadeInSpeed: 0.5
   _fadeOutSpeed: 0.5
+  _titleTrack: {fileID: 11400000, guid: 751a2f5d9ecb4774da6ad921c04fd737, type: 2}
   _tutorialMusicTrack: {fileID: 11400000, guid: 121f6d70c2225624ab4df0741dafb1ac, type: 2}
   _layeredTrackTwo: {fileID: 11400000, guid: 4bb0c610f0c8b5cf795a8ea976f67f6a, type: 2}
   _layeredTrackThree: {fileID: 11400000, guid: 5e90d90259622a626b864bc2ca1c70fd, type: 2}
@@ -78,6 +79,7 @@ MonoBehaviour:
   UpdateMusicVolume:
     m_PersistentCalls:
       m_Calls: []
+  locked: 0
 --- !u!82 &6469803835312051751
 AudioSource:
   m_ObjectHideFlags: 0
