@@ -11,12 +11,12 @@ namespace Environment
         private InteractableBehaviour _targetInteractable;
 
         [SerializeField]
-        private UnityEvent _preventSoftlockActions;
+        private UnityEvent _preventSoftlockActions = new();
 
         void OnTriggerEnter2D(Collider2D collision)
         {
             print(collision.gameObject.name);
-            if (collision.gameObject.TryGetComponent<PlayerController>(out var player) && player.HeldObject != null)
+            if (collision.gameObject.TryGetComponent<PlayerController>(out var player) && player.HeldObject == null)
             {
                 _preventSoftlockActions.Invoke();
             }
