@@ -13,6 +13,12 @@ namespace Environment
         [SerializeField]
         private int _levelToLoad;
 
+        [SerializeField]
+        private bool _useDifferentLevelForCache;
+
+        [SerializeField]
+        private int _optionalLevelToSetInCache;
+
         [SerializeField] private bool _switchMusic = false;
         [SerializeField] private AudioManager.TrackState _trackState;
         [SerializeField] private Animator _levelTransition;
@@ -45,6 +51,16 @@ namespace Environment
             {
                 return;
             }
+
+            if (_useDifferentLevelForCache)
+            {
+                PlayerPrefs.SetInt("CachedLevel", _optionalLevelToSetInCache); 
+            }
+            else
+            {
+                PlayerPrefs.SetInt("CachedLevel", _levelToLoad);
+            }
+
 
             if(!disableLevelTransitionAnim)
                 _levelTransition.SetTrigger("Start");

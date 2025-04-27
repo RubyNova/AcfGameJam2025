@@ -88,6 +88,13 @@ namespace UI
 
             AudioManager.Instance.PlayLayeredTrack(TrackToLoad);
 
+            int cachedLevelValue = 0;
+
+            if (PlayerPrefs.HasKey("CachedLevel") && (cachedLevelValue = PlayerPrefs.GetInt("CachedLevel")) != -1)
+            {
+                 LevelFromBuildIndexToLoad = cachedLevelValue;
+            }
+
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LevelFromBuildIndexToLoad);
             while(!asyncLoad.isDone)
             {
