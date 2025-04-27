@@ -79,7 +79,7 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    runs-on: windows-2019
+    runs-on: windows-2022
     steps:
       # Checkout
       - name: Checkout repository
