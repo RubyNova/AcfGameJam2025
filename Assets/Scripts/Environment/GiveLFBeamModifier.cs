@@ -27,7 +27,7 @@ namespace Environment
 
         protected void OnTriggerEnter2D(Collider2D collision)
         {
-            if (!_isAttached && !collision.transform.CompareTag("Player"))
+            if (!_isAttached && !collision.transform.CompareTag("Player") && collision.gameObject.layer != LayerMask.NameToLayer("LightFamiliar"))
             {
                 return;
             }
