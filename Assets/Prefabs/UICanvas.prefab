@@ -2145,6 +2145,7 @@ MonoBehaviour:
   MusicSlider: {fileID: 2554910339776210408}
   MusicText: {fileID: 8133646789438900479}
   SfxText: {fileID: 1407862750224968722}
+  ExitToDesktopButton: {fileID: 4066139238568901708}
 --- !u!1 &5029973336608457261
 GameObject:
   m_ObjectHideFlags: 0

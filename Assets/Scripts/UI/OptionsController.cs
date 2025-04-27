@@ -13,6 +13,8 @@ namespace UI
         public TextMeshProUGUI MusicText;
         public TextMeshProUGUI SfxText;
 
+        public GameObject ExitToDesktopButton;
+
         private float _sfx;
         private float _music;
         private bool _dirty = false;
@@ -21,6 +23,14 @@ namespace UI
         {
             SfxSlider.value = PreferencesManager.Instance.Settings.SFXVolume;
             MusicSlider.value = PreferencesManager.Instance.Settings.MusicVolume;
+        }
+
+        void OnEnable()
+        {
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                ExitToDesktopButton.SetActive(false);
+            }
         }
 
         public void UpdateSfxVolume()
