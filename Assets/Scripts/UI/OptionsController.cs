@@ -1,3 +1,5 @@
+using Controllers;
+using Environment;
 using Managers;
 using Saveables;
 using TMPro;
@@ -69,6 +71,12 @@ namespace UI
             }
 
             Application.Quit();
+        }
+
+        public void RestartLevel()
+        {
+            FindFirstObjectByType<InputController>().PauseGame();
+            FindFirstObjectByType<LevelExitDetector>().RestartCurrentLevel();
         }
 
     }

@@ -64,6 +64,13 @@ namespace Environment
             }
         }
 
+        public void RestartCurrentLevel()
+        {
+            _levelToLoad = SceneManager.GetActiveScene().buildIndex;
+            _levelTransition.SetTrigger("Start");
+            transitioning = true;
+        }
+
         private IEnumerator SwitchLevels()
         {
             if(loadDelay != 0)
