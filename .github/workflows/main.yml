@@ -104,6 +104,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: StandaloneWindows64
+          dockerMemoryLimit: 15g
 
       - name: Save Cache
         id: cache-save
