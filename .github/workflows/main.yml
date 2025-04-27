@@ -79,21 +79,21 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    runs-on: windows-2022
+    runs-on: windows-2019
     steps:
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # Cache
-      - uses: actions/cache@v3
+      - name: Restore Cache
+        uses: actions/cache/restore@v4
+        id: cache-restore
         with:
           path: |
             Library
             build/StandaloneWindows64/StandaloneWindows64_BackUpThisFolder_ButDontShipItWithYourGame
-          key: Library-Win64-${{ hashFiles('Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-Win64-
+          key: Library-Win64
 
       # Build
       - name: Build project
@@ -105,10 +105,19 @@ jobs:
         with:
           targetPlatform: StandaloneWindows64
 
+      - name: Save Cache
+        id: cache-save
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            Library
+            build/StandaloneWindows64/StandaloneWindows64_BackUpThisFolder_ButDontShipItWithYourGame
+          key: ${{ steps.cache-retore.outputs.cache-primary-key }}
+
       - name: Cleanup Artifact
         shell: pwsh
         run: |
-          rm -Recurse build/StandaloneWindows64/StandaloneWindows64_BurstDebugInformation_DoNotShip
+          rm -Recurse build/StandaloneWindows64/Prismyck_BurstDebugInformation_DoNotShip
           rm -Recurse build/StandaloneWindows64/StandaloneWindows64_BackUpThisFolder_ButDontShipItWithYourGame
 
       - name: Upload Windows Build as Artifact
